@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break the Block - Lessons from Bengaluru's Rail Battle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --accent: #ff6b35;
+            --secondary: #f7931e;
+            --light: #f5f5f0;
+            --text: #2d2d2d;
+            --rail-blue: #004e89;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            color: var(--text);
+            background: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 5%;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--rail-blue) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.03) 2px,
+                rgba(255, 255, 255, 0.03) 4px
+            );
+            animation: rail-pattern 20s linear infinite;
+        }
+
+        @keyframes rail-pattern {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .hero-book-cover {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-book-cover img {
+            max-width: 100%;
+            height: auto;
+            max-height: 600px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 80px rgba(255, 107, 53, 0.2);
+            border-radius: 4px;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-book-cover img:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        /* Book Showcase */
+        .book-showcase {
+            background: white;
+            padding: 4rem 5%;
+        }
+
+        .book-showcase-grid {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .book-showcase-cover {
+            position: relative;
+        }
+
+        .book-showcase-cover img {
+            width: 100%;
+            height: auto;
+            box-shadow: 
+                20px 20px 60px rgba(0, 0, 0, 0.3),
+                0 0 40px rgba(255, 107, 53, 0.1);
+            border-radius: 4px;
+        }
+
+        .book-showcase-details h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .book-showcase-details .book-meta {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        .book-showcase-details p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .book-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .book-feature {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .book-feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .book-feature-text {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 968px) {
+            .book-showcase-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .book-showcase-cover {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .book-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .hero .tagline {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+            font-family: 'Space Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 0;
+            transition: all 0.3s;
+            border: 3px solid var(--accent);
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Section Base */
+        section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 3rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        .about-text .highlight {
+            background: linear-gradient(120deg, rgba(255, 107, 53, 0.2) 0%, rgba(255, 107, 53, 0.2) 100%);
+            padding: 0.2rem 0.4rem;
+            font-weight: 600;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat {
+            background: var(--light);
+            padding: 2rem;
+            text-align: center;
+            border-left: 4px solid var(--accent);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: 'Space Mono', monospace;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Space Mono', monospace;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        blockquote {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-style: italic;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+        }
+
+        .quote-author {
+            font-family: 'Space Mono', monospace;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--secondary);
+        }
+
+        /* Chapters Preview */
+        .chapters {
+            background: var(--light);
+        }
+
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .chapter-card {
+            background: white;
+            padding: 2rem;
+            border-left: 4px solid var(--rail-blue);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .chapter-card:hover {
+            transform: translateX(10px);
+            border-color: var(--accent);
+        }
+
+        .chapter-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-desc {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        /* Author Section */
+        .author {
+            background: white;
+        }
+
+        .author-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .author-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--rail-blue), var(--primary));
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .author-bio {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .author-bio h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--rail-blue);
+            color: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary);
+        }
+
+        /* Get the Book */
+        .get-book {
+            background: var(--accent);
+            color: white;
+            text-align: center;
+        }
+
+        .get-book h2 {
+            color: white;
+        }
+
+        .purchase-options {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .purchase-btn {
+            padding: 1.5rem 3rem;
+            background: white;
+            color: var(--accent);
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: 3px solid white;
+        }
+
+        .purchase-btn:hover {
+            background: transparent;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1.5rem;
+                font-size: 0.8rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-book-cover img {
+                max-height: 400px;
+            }
+
+            .about-grid,
+            .author-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 4rem 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#chapters">Chapters</a></li>
+            <li><a href="#author">Author</a></li>
+            <li><a href="#get-book">Get the Book</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="tagline">Lessons from Bengaluru's Rail Battle</div>
+                <h1>Break the Block</h1>
+                <p class="subtitle">A decade-long citizens' campaign that proved determined people can change complex systems</p>
+                <a href="#get-book" class="cta-button">Get the Book</a>
+            </div>
+            <div class="hero-book-cover">
+                <img src="book-cover.png" alt="Break the Block - Book Cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Showcase -->
+    <section class="book-showcase">
+        <div class="book-showcase-grid">
+            <div class="book-showcase-cover">
+                <img src="book-cover.png" alt="Break the Block - Book Cover">
+            </div>
+            <div class="book-showcase-details">
+                <h3>The Field Guide for Change-Makers</h3>
+                <div class="book-meta">Published 2021 • Non-Fiction • 160 Pages</div>
+                <p>In 2019, Bengaluru was the world's most traffic-congested city. This is the brutally honest story of how a small group of citizens fought for a decade to bring commuter rail to India's technology capital.</p>
+                <p>Not a transportation manual. Not a policy textbook. This is a field guide for anyone who wants to make their city better but doesn't know where to start.</p>
+                
+                <div class="book-features">
+                    <div class="book-feature">
+                        <div class="book-feature-icon">10</div>
+                        <div class="book-feature-text">Years of campaign documented</div>
+                    </div>
+                    <div class="book-feature">
+                        <div class="book-feature-icon">12</div>
+                        <div class="book-feature-text">Chapters of hard-earned lessons</div>
+                    </div>
+                    <div class="book-feature">
+                        <div class="book-feature-icon">✓</div>
+                        <div class="book-feature-text">Real emails & documents included</div>
+                    </div>
+                    <div class="book-feature">
+                        <div class="book-feature-icon">∞</div>
+                        <div class="book-feature-text">Applicable to any civic cause</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>The Story</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>In 2019, Bengaluru was the <span class="highlight">world's most traffic-congested city</span>. People spent the equivalent of 215 episodes of Game of Thrones stuck in gridlock every year.</p>
+                <p style="margin-top: 1.5rem;">This is the story of how a small group of citizens—armed with little more than determination, data, and democratic ideals—fought for a decade to bring commuter rail to India's technology capital.</p>
+                <p style="margin-top: 1.5rem;">It's a field guide for anyone who wants to make their city better but doesn't know where to start.</p>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Years of Campaign</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">2020</div>
+                    <div class="stat-label">Union Cabinet Approval</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Chapters of Lessons</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Citizen Power</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <blockquote>
+            "Never doubt that a small group of thoughtful, committed citizens can change the world; indeed, it's the only thing that ever has."
+        </blockquote>
+        <div class="quote-author">— Margaret Mead</div>
+    </section>
+
+    <!-- Chapters Preview -->
+    <section id="chapters" class="chapters">
+        <h2>What You'll Learn</h2>
+        <div class="chapter-grid">
+            <div class="chapter-card">
+                <div class="chapter-number">Chapter One</div>
+                <div class="chapter-title">The Online-Offline Bridge</div>
+                <div class="chapter-desc">How digital platforms transformed into real-world action</div>
+            </div>
+            <div class="chapter-card">
+                <div class="chapter-number">Chapter Two</div>
+                <div class="chapter-title">Trains of Thought</div>
+                <div class="chapter-desc">The historical context of India's railway systems</div>
+            </div>
+            <div class="chapter-card">
+                <div class="chapter-number">Chapter Six</div>
+                <div class="chapter-title">The Blocks Appear</div>
+                <div class="chapter-desc">When bureaucracy pushes back—and how to respond</div>
+            </div>
+            <div class="chapter-card">
+                <div class="chapter-number">Chapter Nine</div>
+                <div class="chapter-title">The Corridors Open</div>
+                <div class="chapter-desc">Finding leverage points in complex governance systems</div>
+            </div>
+            <div class="chapter-card">
+                <div class="chapter-number">Chapter Eleven</div>
+                <div class="chapter-title">The Pivot</div>
+                <div class="chapter-desc">When to persist and when to change strategy</div>
+            </div>
+            <div class="chapter-card">
+                <div class="chapter-number">Chapter Twelve</div>
+                <div class="chapter-title">The Reckoning</div>
+                <div class="chapter-desc">Victory and the lessons learned along the way</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section id="author" class="author">
+        <h2>About the Author</h2>
+        <div class="author-grid">
+            <div class="author-image">
+                <img src="sathya.jpg" alt="Sathya Sankaran - Author of Break the Block">
+            </div>
+            <div class="author-bio">
+                <h3>Sathya Sankaran</h3>
+                <p>Sathya Sankaran is a civic activist, technology professional, and urban mobility advocate based in Bengaluru.</p>
+                <p style="margin-top: 1rem;">As a founding member of the Namma Railu campaign, he worked tirelessly for over a decade to advocate for commuter rail services. He served as the "Bicycle Mayor" of Bengaluru in 2018 and helped launch initiatives like Cycle Day, which ran for over six years.</p>
+                <p style="margin-top: 1rem;">With degrees in Computer Science and Public Policy, Sathya has spent over two decades working at the intersection of technology, governance, and citizen engagement.</p>
+                <p style="margin-top: 1rem;"><em>Break the Block</em> is his first book.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>What Readers Are Saying</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div class="testimonial-text">"A masterclass in citizen activism. This book should be required reading for anyone who wants to understand how change actually happens in modern India."</div>
+                <div class="testimonial-author">— Urban Policy Expert</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">"Brutally honest about the setbacks, incredibly inspiring about the possibilities. Sathya doesn't just tell you what worked—he shows you why it almost didn't."</div>
+                <div class="testimonial-author">— Fellow Activist</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">"The best book I've read on navigating governance systems as a citizen. Equal parts memoir, manual, and motivation."</div>
+                <div class="testimonial-author">— Public Policy Student</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get the Book -->
+    <section id="get-book" class="get-book">
+        <h2>Get Your Copy</h2>
+        <p style="font-size: 1.3rem; margin-bottom: 2rem;">Available in paperback and digital formats</p>
+        <div class="purchase-options">
+            <a href="#" class="purchase-btn">Amazon</a>
+            <a href="#" class="purchase-btn">Flipkart</a>
+            <a href="#" class="purchase-btn">Google Books</a>
+            <a href="#" class="purchase-btn">Publisher Direct</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Sathya Sankaran | Break the Block: Lessons from Bengaluru's Rail Battle</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all chapter cards and stats
+        document.querySelectorAll('.chapter-card, .stat, .testimonial').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
