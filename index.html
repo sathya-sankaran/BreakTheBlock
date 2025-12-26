@@ -406,6 +406,321 @@
             transform: translateY(-2px);
         }
 
+        /* Free Chapters Section */
+        .free-chapters {
+            background: white;
+        }
+
+        .free-chapters-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .free-chapters-intro h2 {
+            margin-bottom: 1rem;
+        }
+
+        .free-chapters-intro p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        .chapters-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .chapter-preview-card {
+            background: var(--light);
+            padding: 2.5rem;
+            border-left: 6px solid var(--accent);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .chapter-preview-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .chapter-preview-card h3 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-preview-card h4 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-preview-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .chapter-preview-card .read-btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+        }
+
+        .chapter-preview-card .read-btn:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        /* Chapter Modal */
+        .chapter-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .chapter-modal.active {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .chapter-modal-content {
+            background: white;
+            max-width: 800px;
+            width: 100%;
+            padding: 3rem;
+            margin: 2rem auto;
+            position: relative;
+            border-radius: 4px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chapter-modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--text);
+            transition: all 0.3s;
+        }
+
+        .chapter-modal-close:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: rotate(90deg);
+        }
+
+        .chapter-modal-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-modal-content .chapter-meta {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        .chapter-modal-content .chapter-text {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            white-space: pre-wrap;
+        }
+
+        .chapter-modal-content .chapter-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .chapter-cta {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--light);
+            border-radius: 4px;
+            margin-top: 3rem;
+        }
+
+        .chapter-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Free Preview Section */
+        .free-preview {
+            background: white;
+        }
+
+        .preview-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .preview-cta {
+            background: var(--light);
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .preview-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .chapter-preview-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .chapter-btn {
+            padding: 1.2rem 2.5rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: 3px solid var(--accent);
+            cursor: pointer;
+            border-radius: 0;
+        }
+
+        .chapter-btn:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .chapter-content {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            background: var(--light);
+            padding: 3rem;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .chapter-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chapter-header {
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .chapter-number-display {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-title-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        .chapter-body {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .chapter-body p {
+            margin-bottom: 1.5rem;
+        }
+
+        .close-chapter {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--accent);
+        }
+
+        .close-btn {
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+        }
+
+        .close-btn:hover {
+            background: var(--accent);
+        }
+
         @media (max-width: 968px) {
             .book-showcase-grid {
                 grid-template-columns: 1fr;
@@ -423,6 +738,14 @@
 
             .events-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .chapters-preview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chapter-modal-content {
+                padding: 2rem 1.5rem;
             }
         }
 
@@ -776,6 +1099,7 @@
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#chapters">Chapters</a></li>
+            <li><a href="#free-preview">Read Free</a></li>
             <li><a href="#author">Author</a></li>
             <li><a href="#events">Events</a></li>
             <li><a href="#get-book">Get the Book</a></li>
@@ -869,6 +1193,86 @@
         <div class="quote-author">— Margaret Mead</div>
     </section>
 
+    <!-- Free Preview Section -->
+    <section id="free-preview" class="free-preview">
+        <h2>Read Free Chapters</h2>
+        <div class="preview-intro">
+            <p>Experience the book firsthand. Read the first two chapters absolutely free—no signup required.</p>
+        </div>
+
+        <div class="preview-cta">
+            <p><strong>Choose a chapter to start reading:</strong></p>
+            <div class="chapter-preview-buttons">
+                <button class="chapter-btn" onclick="showChapter(1)">Chapter One: The Online-Offline Bridge</button>
+                <button class="chapter-btn" onclick="showChapter(2)">Chapter Two: Trains of Thought</button>
+            </div>
+        </div>
+
+        <!-- Chapter 1 Content -->
+        <div id="chapter1" class="chapter-content">
+            <div class="chapter-header">
+                <div class="chapter-number-display">Chapter One</div>
+                <h3 class="chapter-title-text">The Online-Offline Bridge</h3>
+            </div>
+            <div class="chapter-body">
+                <p>"Union Cabinet approves, clears the Bengaluru Suburban Rail project" screamed the headline in The Hindu on October 8, 2020. Zibi Jamal of Whitefield Rising, a non-profit citizens' group working to improve the livability in the neighbourhood of Whitefield, east of Bengaluru, sent me a text in the morning. "Incredible, ten years later it's approved".</p>
+                
+                <p>The last day before the COVID-19 lockdown, I had emailed Sanjeev, Pranav, Naveen and Syed, who are named in this book, my fellow travellers on this journey. I told them that after the lockdown ended, which I thought would take three to four months, we would regroup and pick up the pieces on the Namma Railu campaign and push it all the way to the finish line. It was October, seven months into the lockdown, and the Government had announced the approval. We hadn't lifted a finger since the lockdown started.</p>
+                
+                <p>In 2007, my work trips took me to cities across Europe. Cities like Stockholm, Copenhagen, Zurich, Amsterdam, Helsinki. They all had one thing in common: infrastructure which respected people over vehicles. Public transport was frequent and accessible; the streets were friendly to people who walked and rode bicycles. Like many others in India, I wondered, why don't we have infrastructure like this?</p>
+                
+                <p>The answer: Someone has to ask for it.</p>
+                
+                <p>In April 2008, four individuals, Narasimha Shastri, Vadiraj Hombal, Pranav, and Peter Colaco set up Praja.in—a platform where Bangaloreans could discuss urban civic issues. Praja.in site members would post opinions, facts, and news about urban civic issues, and invite community dialogue. Facebook and Twitter weren't as popular as blogs back then. Blogs encouraged long-form content, suited for deeper discussion and analysis.</p>
+
+                <p>I created an account under the pseudonym of 'idontspam'. During my years in the IT industry, I learned to love well-written internet forums and mailing lists. Between 2006 and 2009, Bengaluru grew phenomenally. Jobs were booming. The technology companies collectively labelled as "IT industry" were adding people by the thousands.</p>
+
+                <p>Many of the people working in and joining these companies had travelled outside the country, mostly to the United States of America. The two biggest aspirations of Indians are to be part of a film and to own a car. With the rise in the middle class and increasing prosperity, the realisation of car ownership was within reach for many. Bengaluru was witnessing the fastest addition to its vehicle fleet among all cities in the country. The traffic congestion was apparent and worsening.</p>
+
+                <p><em>[Preview continues - Get the full book to read more...]</em></p>
+            </div>
+            <div class="close-chapter">
+                <p style="font-size: 1.2rem; margin-bottom: 1.5rem;"><strong>Enjoying the preview?</strong></p>
+                <p style="margin-bottom: 1.5rem;">Get the complete book to continue the journey and discover all 12 chapters of lessons from the decade-long campaign.</p>
+                <button class="close-btn" onclick="closeChapter()">Close Preview</button>
+                <div style="margin-top: 1.5rem;">
+                    <a href="#get-book" class="chapter-btn">Get the Full Book</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chapter 2 Content -->
+        <div id="chapter2" class="chapter-content">
+            <div class="chapter-header">
+                <div class="chapter-number-display">Chapter Two</div>
+                <h3 class="chapter-title-text">Trains of Thought</h3>
+            </div>
+            <div class="chapter-body">
+                <p>In 1846, the United Kingdom of Great Britain and Ireland passed two hundred and seventy-two Acts of Parliament setting up new railway companies. About a third of the proposed railway routes totalling fifteen thousand three hundred kilometres never got built—the companies either collapsed because of poor financial planning, or acquired by larger competitors before they could build their lines, or turned out to be fraudulent enterprises to channel investors' money into other businesses. This was the zenith of a stock market bubble called "Railway Mania". The price of railway shares increased, speculators invested more money, which further increased the price of railway shares, until the share price collapsed.</p>
+                
+                <p>James Andrew Broun-Ramsay, First Marquess of Dalhousie, was a Scottish leader. As President of the British Board of Trade in 1845, he threw himself into work during the crisis of the Railway Mania with such energy that his health partially broke down under the strain.</p>
+                
+                <p>He would become important not in his home country, but in another one. He moved to India and served as Governor-General for eight years from 1848. He was popular as Lord Dalhousie and credited with introducing passenger trains in railways, electric telegraph, and uniform postage in India. He described these as the "three great engines of social improvement". He also founded the country's Public Works Department.</p>
+                
+                <p>Indian Railways Fan Club Academy started as an electronic mailing list in 1989. Its members have documented the history of Indian Railways. It is an excellent source of the organisational and technical history of Indian railways. From their archives, I could piece together the history and the growth of railways in India. It forms a fascinating narrative on how entrepreneurship led to a massive monolith called Indian Railways that, by 2019, was carrying over twenty-three million people and three million metric tonnes of cargo per year.</p>
+
+                <p>Trains in India began with British traders wanting to move goods and manage logistics more efficiently. Small experimental railways began popping up in the nineteenth century in Chennai. Back in 1835, they lay the first piece of railway line in Chintadripet in Chennai to see if they could do this at all. They laid the second one in Red Hills, Chennai a couple of years later to haul stones from a granite quarry.</p>
+
+                <p>The 1840s saw various proposals from the East and the west of the country. This led to the establishment of the Madras Railway Company and East India Railway Company in 1845. These companies would run their first trains within the next decade, carrying passengers for the first time.</p>
+
+                <p><em>[Preview continues - Get the full book to read more...]</em></p>
+            </div>
+            <div class="close-chapter">
+                <p style="font-size: 1.2rem; margin-bottom: 1.5rem;"><strong>Want to continue reading?</strong></p>
+                <p style="margin-bottom: 1.5rem;">Chapter Two continues with the fascinating history of Indian Railways and how it shaped the Namma Railu campaign.</p>
+                <button class="close-btn" onclick="closeChapter()">Close Preview</button>
+                <div style="margin-top: 1.5rem;">
+                    <a href="#get-book" class="chapter-btn">Get the Full Book</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Chapters Preview -->
     <section id="chapters" class="chapters">
         <h2>What You'll Learn</h2>
@@ -906,6 +1310,97 @@
         </div>
     </section>
 
+    <!-- Free Chapters Section -->
+    <section id="free-preview" class="free-chapters">
+        <div class="free-chapters-intro">
+            <h2>Read the First Two Chapters Free</h2>
+            <p>Get a taste of the journey. Read Chapter 1 and Chapter 2 to see how the campaign began and understand the historical context of India's railway systems.</p>
+        </div>
+
+        <div class="chapters-preview-grid">
+            <div class="chapter-preview-card" onclick="openChapter(1)">
+                <h3>Chapter One</h3>
+                <h4>The Online-Offline Bridge</h4>
+                <p>How a small group of tech-savvy citizens transformed online discussions into real-world action. The story of how Praja.in became the launching pad for the Namma Railu campaign.</p>
+                <a href="#" class="read-btn" onclick="event.preventDefault(); openChapter(1);">Read Chapter 1</a>
+            </div>
+
+            <div class="chapter-preview-card" onclick="openChapter(2)">
+                <h3>Chapter Two</h3>
+                <h4>Trains of Thought</h4>
+                <p>From Railway Mania in 1846 Britain to modern India—the fascinating 177-year evolution of Indian Railways and why Bengaluru was left behind.</p>
+                <a href="#" class="read-btn" onclick="event.preventDefault(); openChapter(2);">Read Chapter 2</a>
+            </div>
+        </div>
+
+        <div class="chapter-cta">
+            <h3>Want to Read More?</h3>
+            <p>Discover the complete story of the decade-long campaign, the blocks encountered, and the breakthroughs achieved.</p>
+            <a href="#get-book" class="cta-button">Get the Full Book</a>
+        </div>
+    </section>
+
+    <!-- Chapter Modals -->
+    <div id="chapter1-modal" class="chapter-modal">
+        <div class="chapter-modal-content">
+            <div class="chapter-modal-close" onclick="closeChapter(1)">×</div>
+            <h2>The Online-Offline Bridge</h2>
+            <div class="chapter-meta">Chapter One</div>
+            <div class="chapter-text">
+                <p><strong>"Union Cabinet approves, clears the Bengaluru Suburban Rail project"</strong> screamed the headline in The Hindu on October 8, 2020. The journey had begun in 2009, and eleven years later, victory had arrived.</p>
+
+                <p>In 2007, my work trips took me to cities across Europe. Cities like Stockholm, Copenhagen, Zurich, Amsterdam, Helsinki. They all had one thing in common: infrastructure which respected people over vehicles. Public transport was frequent and accessible; the streets were friendly to people who walked and rode bicycles.</p>
+
+                <p>Like many others in India, I wondered: why don't we have infrastructure like this? Technology helped me find my answer. I discovered Praja.in, an online platform started by people passionate about Bengaluru's civic issues.</p>
+
+                <p>The platform was started by Malleswaram locals Sudhir Jayavarthanavelu, Narasimha Shastri, and Vadiraj Hombal. They worked in Bengaluru's booming software industry. Members would post opinions, facts, and news about urban civic issues, and invite community dialogue.</p>
+
+                <p>I created an account under a pseudonym and started participating. The discussions were rich, data-driven, and solution-oriented. But something was missing: the bridge between online discussions and offline action.</p>
+
+                <p>That bridge would be built through the Namma Railu campaign—a decade-long effort to bring commuter rail to Bengaluru that would teach us everything about navigating governance systems, building coalitions, and turning persistence into policy.</p>
+
+                <p><em>Click "Get the Full Book" below to continue reading and discover how a small group of citizens changed their city...</em></p>
+            </div>
+            <div class="chapter-cta" style="margin-top: 2rem;">
+                <a href="#get-book" class="cta-button" onclick="closeChapter(1)">Get the Full Book</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="chapter2-modal" class="chapter-modal">
+        <div class="chapter-modal-content">
+            <div class="chapter-modal-close" onclick="closeChapter(2)">×</div>
+            <h2>Trains of Thought</h2>
+            <div class="chapter-meta">Chapter Two</div>
+            <div class="chapter-text">
+                <p><strong>In 1846, the United Kingdom</strong> of Great Britain and Ireland passed two hundred and seventy-two Acts of Parliament setting up new railway companies. About a third of the proposed railway routes never got built—companies either collapsed due to poor financial planning or were acquired by larger competitors. This was the zenith of a stock market bubble called "Railway Mania."</p>
+
+                <p>James Andrew Broun-Ramsay, First Marquess of Dalhousie, threw himself into work during this crisis with such energy that his health partially broke down. He would become important not in his home country, but in India. As Governor-General from 1848, he introduced passenger trains, electric telegraph, and uniform postage—the "three great engines of social improvement."</p>
+
+                <p>Indian Railways began with British traders wanting to move goods efficiently. Small experimental railways popped up in Chennai in the 1830s. The first piece of railway line was laid in Chintadripet in 1835 just to see if trains could work in India at all.</p>
+
+                <p>When the first proposals for railways in India were being debated in Britain, there was intense lobbying from banks, traders, and shipping companies. They prevailed upon Parliament to create the Guarantee System—the government would provide free land and guarantee a certain rate of interest on capital investment to companies that constructed railways in India.</p>
+
+                <p>By 1870, private enterprises had built four thousand miles of railway tracks. The Government however turned away from the guarantee system. In 1890, they brought in the first Railway Act defining the framework for railway construction and operation.</p>
+
+                <p>The turning point came in 1920, when the East India Railway Committee recommended unified management for the railways. The Government took over actual management of all railways and separated railway finances from general governmental finances—leading to the practice of presenting the Railway Budget separately that lasted until 2017.</p>
+
+                <p>At Independence in 1947, there were forty-two separate railway systems. Today, Indian Railways is a massive monolith carrying over twenty-three million people daily. But here's the concerning part: there were fifty-two thousand kilometres of train lines in 1950. In the sixty-two years since, they added only eleven thousand kilometres. That's just one-fifth capacity added, while highways grew six-fold.</p>
+
+                <p><strong>Suburban trains</strong>—also called local trains in India and commuter trains elsewhere—are not new. In 1867, the Virar to Bombay Backbay suburban service launched. Kolkata opened its suburban railway a year later. In 1928, work began on Madras suburban lines.</p>
+
+                <p>By definition, a city is a trading area that attracts employment from neighboring towns. Commuter rails connect towns and satellite areas within a one-hour distance from the city. In contrast, Mass Rapid Transit systems serve metropolitan areas with more frequent stops.</p>
+
+                <p>This is the historical context we were stepping into. A system that had barely grown in sixty years. A bureaucracy that had ossified. And a city that desperately needed what three other metros already had: suburban rail service.</p>
+
+                <p><em>The stage was set for our decade-long campaign. Continue reading to discover how we navigated this complex system...</em></p>
+            </div>
+            <div class="chapter-cta" style="margin-top: 2rem;">
+                <a href="#get-book" class="cta-button" onclick="closeChapter(2)">Get the Full Book</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Author Section -->
     <section id="author" class="author">
         <h2>About the Author</h2>
@@ -915,10 +1410,12 @@
             </div>
             <div class="author-bio">
                 <h3>Sathya Sankaran</h3>
-                <p>Sathya Sankaran is a civic activist, technology professional, and urban mobility advocate based in Bengaluru.</p>
-                <p style="margin-top: 1rem;">As a founding member of the Namma Railu campaign, he worked tirelessly for over a decade to advocate for commuter rail services. He served as the "Bicycle Mayor" of Bengaluru in 2018 and helped launch initiatives like Cycle Day, which ran for over six years.</p>
-                <p style="margin-top: 1rem;">With degrees in Computer Science and Public Policy, Sathya has spent over two decades working at the intersection of technology, governance, and citizen engagement.</p>
-                <p style="margin-top: 1rem;"><em>Break the Block</em> is his first book.</p>
+                <p>Sathya Sankaran is a civic activist, technology professional, urban mobility advocate, and podcast host based in Bengaluru.</p>
+                <p style="margin-top: 1rem;">In 2007, Sathya discovered a second calling: advocating for better urban infrastructure and sustainable transportation in his beloved hometown. As a founding member of the Namma Railu campaign, he worked tirelessly for over a decade to bring commuter rail services to Bengaluru. His efforts in sustainable urban mobility extended far beyond rail advocacy.</p>
+                <p style="margin-top: 1rem;">As the "Bicycle Mayor" of Bengaluru—a citizen leadership role focused on promoting cycling infrastructure—Sathya helped launch Cycle Day, India's longest-running community-led open streets event, in partnership with the Government of Karnataka.</p>
+                <p style="margin-top: 1rem;">During the COVID-19 lockdown in India, his Relief Riders initiative delivered groceries and medicines to those in need. The grassroots movement spread across 12 cities with 600+ volunteer riders, earning the UN World Bicycle Day award and receiving Nobel Peace Prize nominations from supporters worldwide.</p>
+                <p style="margin-top: 1rem;">Through his work, Sathya has demonstrated that determined citizens can indeed change complex governance systems. With his background in public policy, he hosts OoruLabs, an urban affairs podcast available on YouTube, Spotify, and Apple Podcast.</p>
+                <p style="margin-top: 1rem;"><em>Break the Block</em> is his first book, chronicling the lessons learned from a decade-long campaign that successfully brought commuter rail to one of India's fastest-growing cities.</p>
             </div>
         </div>
     </section>
@@ -985,7 +1482,7 @@
                 <li style="margin-bottom: 0.8rem;">🎓 University lectures and seminars</li>
                 <li style="margin-bottom: 0.8rem;">💻 Virtual book clubs and online discussions</li>
             </ul>
-            <a href="mailto:sathya.sankaran@gmail.com" class="contact-link">Invite Sathya to Your Event</a>
+            <a href="/cdn-cgi/l/email-protection#87f4e6f3effee6a9f4e6e9ece6f5e6e9c7e0eae6eeeba9e4e8ea" class="contact-link">Invite Sathya to Your Event</a>
         </div>
     </section>
 
@@ -1025,7 +1522,7 @@
         <p>© 2026 Sathya Sankaran | Break the Block: Lessons from Bengaluru's Rail Battle</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1062,6 +1559,31 @@
             el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
             observer.observe(el);
         });
+
+        // Chapter preview functions
+        function showChapter(chapterNum) {
+            // Hide all chapters first
+            document.querySelectorAll('.chapter-content').forEach(ch => {
+                ch.classList.remove('active');
+            });
+            
+            // Show selected chapter
+            const chapter = document.getElementById(`chapter${chapterNum}`);
+            if (chapter) {
+                chapter.classList.add('active');
+                // Smooth scroll to chapter content
+                setTimeout(() => {
+                    chapter.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+
+        function closeChapter() {
+            document.querySelectorAll('.chapter-content').forEach(ch => {
+                ch.classList.remove('active');
+            });
+            // Scroll back to preview section
+            document.getElementById('free-preview').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     </script>
-</body>
-</html>
+    
