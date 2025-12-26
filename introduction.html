@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction - Break the Block</title>
+    <meta name="description" content="Read the introduction to Break the Block - how five citizens brought commuter rail to Bengaluru.">
+    <meta property="og:title" content="Introduction - Break the Block">
+    <meta property="og:description" content="Read the introduction to Break the Block - how five citizens brought commuter rail to Bengaluru.">
+    <meta property="og:image" content="https://www.breaktheblock.in/book-cover.png">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --accent: #ff6b35;
+            --secondary: #f7931e;
+            --light: #f5f5f0;
+            --text: #2d2d2d;
+            --rail-blue: #004e89;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            color: var(--text);
+            background: var(--light);
+            line-height: 1.8;
+        }
+
+        /* Progress Bar */
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--secondary);
+        }
+
+        .back-link::before {
+            content: '← ';
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .share-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .share-twitter { background: #1DA1F2; }
+        .share-facebook { background: #1877F2; }
+        .share-linkedin { background: #0A66C2; }
+        .share-whatsapp { background: #25D366; }
+        .share-email { background: #666; }
+
+        /* Reading Container */
+        .reading-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 6rem 2rem 3rem;
+            min-height: 100vh;
+        }
+
+        /* Chapter Header */
+        .chapter-header {
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .chapter-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        /* Reading Stats */
+        .reading-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Chapter Body */
+        .chapter-body {
+            font-size: 1.2rem;
+            line-height: 1.9;
+        }
+
+        .chapter-body p {
+            margin-bottom: 1.8rem;
+        }
+
+        .chapter-body p:first-of-type::first-letter {
+            font-size: 4rem;
+            font-weight: 700;
+            float: left;
+            line-height: 0.8;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent);
+        }
+
+        .chapter-body .section-heading {
+            font-size: 1.8rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .chapter-body strong {
+            font-weight: 600;
+        }
+
+        .chapter-body em {
+            font-style: italic;
+        }
+
+        /* Footnotes */
+        .footnotes {
+            border-top: 2px solid var(--accent);
+            padding-top: 2rem;
+            margin-top: 4rem;
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        .footnotes h3 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footnote-item {
+            margin-bottom: 0.8rem;
+        }
+
+        /* CTA Footer */
+        .cta-footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem;
+            margin-top: 4rem;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .cta-footer h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-footer p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: 3px solid var(--accent);
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border-color: white;
+            color: white;
+        }
+
+        .cta-button.secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Bookmark Button */
+        .bookmark-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .bookmark-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .bookmark-btn.bookmarked {
+            background: var(--rail-blue);
+        }
+
+        @media print {
+            .top-nav, .share-buttons, .bookmark-btn, .cta-footer {
+                display: none;
+            }
+            
+            .reading-container {
+                padding-top: 2rem;
+            }
+
+            body {
+                background: white;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .reading-container {
+                padding: 5rem 1.5rem 2rem;
+            }
+
+            .chapter-body {
+                font-size: 1.1rem;
+            }
+
+            .reading-stats {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                display: block;
+                text-align: center;
+            }
+
+            .bookmark-btn {
+                bottom: 1rem;
+                right: 1rem;
+                width: 48px;
+                height: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reading-progress" id="progressBar"></div>
+
+    <nav class="top-nav">
+        <a href="index.html#free-preview" class="back-link">Back to Book</a>
+        <div class="share-buttons">
+            <a href="#" class="share-btn share-twitter" onclick="shareOn('twitter')" title="Share on Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="share-btn share-facebook" onclick="shareOn('facebook')" title="Share on Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="share-btn share-linkedin" onclick="shareOn('linkedin')" title="Share on LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="share-btn share-whatsapp" onclick="shareOn('whatsapp')" title="Share on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" class="share-btn share-email" onclick="shareOn('email')" title="Share via Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="reading-container">
+        <div class="chapter-header">
+            <div class="chapter-number">Introduction</div>
+            <h1 class="chapter-title">Break the Block</h1>
+            <div class="reading-stats">
+                <span><i class="fas fa-clock"></i> 9 min read</span>
+                <span><i class="fas fa-file-alt"></i> 2263 words</span>
+            </div>
+        </div>
+
+        <div class="chapter-body">
+            <p>“Union Cabinet approves, clears the Bengaluru Suburban Rail project.”</p>
+
+            <p>The headline screamed across The Hindu on October 8, 2020. I stared at my phone, reading it three times to make sure I wasn’t hallucinating.</p>
+
+            <p>Seven months earlier, just before the COVID-19 lockdown began, I had sent an email to my fellow campaigners—Sanjeev, Pranav, Naveen, and Syed. “After the lockdown ends,” I wrote, “we’ll regroup and push this all the way to the finish line.” I thought we’d be back at it in three or four months.</p>
+
+            <p>We never regrouped. The campaign had gone silent. And yet, somehow, impossibly, we had won.</p>
+
+            <p>Ten years. Hundreds of meetings, blog posts and email correspondence. Countless rejections. And in the end, victory came when we weren’t even in the room.</p>
+
+            <p>If you’ve ever tried to change something in your city—and hit a wall—this book is for you.</p>
+
+            <h2 class="section-heading">THE CRISIS</h2>
+
+            <p>In 2019, Bengaluru earned an unwanted distinction: the world’s most traffic-congested city. People spent 243 hours per year sitting in gridlock—the equivalent of watching 215 episodes of Game of Thrones or 139 football matches. Sixty-kilometre commutes from neighbouring towns in rickety buses were commonplace. The city was choking on its own success.</p>
+
+            <p>Unlike Mumbai or Chennai, Bengaluru had no commuter rail system to take the burden off the roads. The average commute speed was less than 19 kilometres per hour—slower than a bicycle. The economic engine of India’s tech capital was sputtering, draining productivity and hope in equal measure.</p>
+
+            <p>The government of Mysore State had formed the Bangalore Transport Service in 1956 by taking over a company with a private fleet of ninety-eight buses operating since 1940. The bus was the mainstay of public transportation in what was then a pensioner’s paradise. But Bengaluru grew at thirty-eight percent every decade since liberalisation in 1991. The city’s economy doubled every two years. Bengaluru jumped past the manufacturing age straight into a technology revolution. The bus couldn’t keep up, and private vehicles took over the city streets.</p>
+
+            <p>We decided to fix it.</p>
+
+            <p>This book is the story of that decade-long campaign.</p>
+
+            <h2 class="section-heading">WHAT THIS BOOK IS (AND ISN’T)</h2>
+
+            <p>When I started working on the commuter rail campaign in 2009, I had no idea it would become a decade-long journey that would transform not just my city, but also my understanding of how change happens in complex governance systems.</p>
+
+            <p>This book is not a manual on transportation policy. It’s not a comprehensive history of Bengaluru’s urban development. And it’s definitely not a self-help book.</p>
+
+            <p>Rather, it is a chronicle of lessons learned—the hard way—about what it takes to move the needle on public policy when you’re not in a position of formal power. It’s an honest account of what happens when people who aren’t in positions of formal authority decide the system needs to change.</p>
+
+            <p>More importantly, this is a field guide for anyone who wants to make their city better.</p>
+
+            <h2 class="section-heading">WHO THIS BOOK IS FOR</h2>
+
+            <p>I wrote this book for fellow citizens who want to make a difference in their communities but don’t know where to start. For activists who have hit roadblocks and wonder whether to keep going. For public servants who want to understand the citizen’s perspective. And for students of public policy who are learning that the gap between textbook theory and real-world implementation is vast indeed.</p>
+
+            <p>This book is for you if:</p>
+
+            <p>• You’re an activist who’s hit bureaucratic walls and wonder whether to keep going or give up</p>
+
+            <p>• You’re a policy student learning that textbook theory doesn’t match ground reality</p>
+
+            <p>• You’re a public servant who wants to understand why some citizen campaigns succeed while others stall</p>
+
+            <p>• You’re an engaged citizen who wants to make your city better but doesn’t know where to start</p>
+
+            <p>• You care about how democracy actually works—not in theory, but in practice</p>
+
+            <h2 class="section-heading">WHAT YOU’LL LEARN</h2>
+
+            <p>By the end of this book, you’ll understand:</p>
+
+            <p>How to navigate governance systems and identify leverage points—the specific places where citizen pressure can actually move the needle, and how to recognise them when you see them.</p>
+
+            <p>When persistence pays off and when your strategy needs to change—because sometimes the obstacle IS the way, and sometimes it’s just an obstacle. Learning to tell the difference is crucial.</p>
+
+            <p>How to build coalitions across citizens, media, and government—including people you disagree with on everything except this one issue. Coalition-building is messy, but essential.</p>
+
+            <p>Why data matters but isn’t enough—and what else you need to turn awareness into action into policy. Numbers open doors, but relationships get you through them.</p>
+
+            <p>What bureaucratic resistance actually looks like—not abstract “red tape” but real people with real reasons (and real email addresses). Understanding their incentives changes your strategy.</p>
+
+            <p>How to maintain momentum across years—when political leaders change, budgets shift, and your own team gets exhausted. The long game requires different skills than the sprint.</p>
+
+            <p>What success looks like when it finally comes—and why it often arrives differently than you expected. Victory rarely looks like you imagined it would.</p>
+
+            <p>These aren’t theoretical lessons. They’re hard-won insights from a decade in the trenches.</p>
+
+            <h2 class="section-heading">A COLLECTIVE JOURNEY</h2>
+
+            <p>The journey described in these pages was not mine alone. It was a collective effort by dozens of committed individuals who gave their time, energy, and hope to an idea that seemed impossible. Their stories are woven throughout this narrative, and their perseverance is what ultimately made success possible.</p>
+
+            <p>Pranav, Sanjeev, Naveen, and Syed weren’t just collaborators—they were brothers-in-arms in a battle that tested all of us. When I wanted to quit, they and many others from the community on Praja.in kept going. That’s how collective action works: the load shifts between us, but someone is always carrying it.</p>
+
+            <p>This book acknowledges the many others—government officials who opened doors, journalists who kept the story alive, fellow activists from organisations like Citizens for Bengaluru and Whitefield Rising, and countless citizens who attended our events, signed our petitions, and believed their voices mattered. You’ll meet many of them in these pages.</p>
+
+            <h2 class="section-heading">MY JOURNEY TO THIS FIGHT</h2>
+
+            <p>Growing up in Bengaluru, I watched my city transform from a pensioner’s paradise to a garden city to a technology hub. Like many who graduated in the 1990s, I rode the IT boom, working across Asia, the US, and Europe. After decades in technology, I discovered a second calling in 2007: civic activism.</p>
+
+            <p>The internet had made information accessible at an unprecedented scale. Citizens were becoming less tolerant of inefficiencies in public services. Bengaluru—India’s technology capital—was at the forefront of using digital tools for civic engagement. The number of nonprofits and citizens’ groups was exploding. India had more per capita NGOs than hospital beds.</p>
+
+            <p>I wanted to be part of that change.</p>
+
+            <p>I never felt at home in places where I couldn’t change things. That restlessness drove me back to Bengaluru—back to a city where change seemed possible, if difficult. Where citizens still believed their voices mattered. A city I could fight for. A city worth fighting for.</p>
+
+            <p>After years of campaigning, I realised I needed to understand the systems I was trying to change. At age 47, twenty-five years after my undergraduate degree, I went back to school for a Postgraduate program in Public Policy. That academic framework helps me now articulate patterns I learned through trial and error. I could relate my experiences in this campaign to well-examined theories about how complex systems resist—and eventually accept—change.</p>
+
+            <h2 class="section-heading">WHY COMPLEX SYSTEMS RESIST CHANGE</h2>
+
+            <p>Public change-making is not without its pitfalls and disappointments. Governance systems and political economy are complex systems—multiple actors with different incentives, institutional histories that shape current behaviour, path dependencies that make “obvious” solutions impossible.</p>
+
+            <p>Not knowing why people behave the way they do creates blocks in your path. Sometimes those blocks are procedural. Sometimes they’re political. Sometimes they’re personal. Sometimes they’re all three at once. Learning to distinguish between them—and knowing which strategies work for which type of obstacle—is what this book is about.</p>
+
+            <p>The title “Break the Block” works on three levels:</p>
+
+            <p>Breaking through bureaucratic obstacles—the procedures, hierarchies, and institutional resistance that say “no” to citizen ideas</p>
+
+            <p>Breaking the mental block—the assumption that ordinary citizens can’t influence policy, that the system is too big or too broken to change</p>
+
+            <p>The physical blocks we broke—concrete and steel and bureaucratic inertia, transforming into actual rail infrastructure carrying actual people</p>
+
+            <h2 class="section-heading">WHAT MAKES THIS DIFFERENT</h2>
+
+            <p>There are many books about urban planning. Some about transportation policy. A few about civic activism in India. But there’s a gap between what those books teach and what actually happens when you try to implement change.</p>
+
+            <p>This book fills that gap.</p>
+
+            <p>I’m not a theorist observing from outside. I’m a practitioner who spent ten years inside this campaign. I have the emails to prove it—including the ones where officials said no, colleagues disagreed about strategy, and we made mistakes that almost tanked the whole effort. You’ll read those emails in these pages. Some of them have never been made public before.</p>
+
+            <p>I’ll be honest about the mistakes we made, the relationships we damaged, and the opportunities we missed. I’ll share the dismissive responses from officials who thought we were naive troublemakers. I’ll introduce you to the government servants who opened doors when they could have closed them, and to the journalists who kept asking uncomfortable questions when it would have been easier to move on to the next story.</p>
+
+            <p>The lessons in this book are transferable. Whether you’re fighting for better schools, cleaner air, affordable housing, or any other civic cause, the patterns repeat. The bureaucratic dance looks similar. The political calculations follow predictable logic. The coalition-building challenges mirror each other across issues and geographies.</p>
+
+            <p>This is the book I wish I’d had in 2009.</p>
+
+            <h2 class="section-heading">WHAT THIS STORY COVERS</h2>
+
+            <p>This book chronicles the campaign from 2009 to 2020, though the roots go back further and the impact continues today. It doesn’t include every person who contributed or every meeting we held—that would take volumes. What it does include are the moments that produced significant outcomes or taught us lessons worth sharing.</p>
+
+            <p>You’ll read about:</p>
+
+            <p>• How a handful of tech-savvy citizens used online platforms to build a movement, then learned why offline organising was equally crucial</p>
+
+            <p>• The historical context of Indian Railways—and why understanding 175 years of institutional history explained every obstacle we faced</p>
+
+            <p>• The trip that started it all—visiting cities across Europe and asking “why can’t we have this?”</p>
+
+            <p>• How we wrote a detailed proposal with team members scattered across three continents</p>
+
+            <p>• The flurry of action when momentum was on our side—and how to recognise that window when it opens</p>
+
+            <p>• The blocks that appeared—including a scathing email from a top bureaucrat calling our proposal “grandiose” and our approach naive</p>
+
+            <p>• The mixed messaging from government that kept us guessing whether we were winning or losing</p>
+
+            <p>• How corridors of power opened—and what it takes to turn a meeting into movement</p>
+
+            <p>• The halting moves when progress stalled and we had to decide whether to pivot or persist</p>
+
+            <p>• The reckoning when we finally understood what victory would require</p>
+
+            <p>• And the conclusion—what happened when the announcement came and we weren’t even in the room</p>
+
+            <h2 class="section-heading">A NOTE ON THIS EDITION</h2>
+
+            <p>I wrote this book in one intense month in 2021, while the memories were still fresh and the emotions still raw. It’s being published in 2026, but I have deliberately chosen not to update it with all the new activities around K-RIDE (Karnataka Rail Infrastructure Development Enterprise) and the suburban train delays and controversies that have emerged since.</p>
+
+            <p>This is a story with a clear arc: 2009 to 2020. The struggle, the setback, the victory. What happened after—the implementation challenges, the new battles, the ongoing work—is a different story. Maybe that’s for another book.</p>
+
+            <p>What you’re about to read is a chronicle of how five people with laptops and determination brought commuter rail to a city of 12 million. The story stops where the campaign achieved its goal: government approval and the beginning of construction.</p>
+
+            <p>Everything after that is the next chapter.</p>
+
+            <h2 class="section-heading">THE CORE MESSAGE</h2>
+
+            <p>If there is one message I hope you take away from this book, it is this: change is possible, even when it seems impossible.</p>
+
+            <p>But it requires patience, persistence, and the willingness to learn from every setback. The blocks we encounter are not just obstacles—they are opportunities to understand the system better and find new pathways forward.</p>
+
+            <p>Not every campaign succeeds. Not every cause is just. Not every tactic works.</p>
+
+            <p>But when they do work—when five people with determination can bring trains to India’s most traffic-congested city—democracy stops being an abstract concept and becomes something real. Something you can touch. Something that carries people to work every morning.</p>
+
+            <p>If you’re already involved in public change-making but experiencing roadblocks, this book might help you find breakthroughs. If you care about a better quality of life in your city, this might nudge you to take up civic causes, armed with practical, tested approaches. If you’re skeptical that citizen activism can work in India’s complex governance systems, this might change your mind.</p>
+
+            <p>Not because we were special. Not because we had resources or connections or luck.</p>
+
+            <p>But because we refused to accept that “no” was the final answer.</p>
+
+            <p>Let me show you how we did it.</p>
+
+            <p>And more importantly, let me show you how you can do it too.</p>
+
+            <p>This is a story that proved the quote we held as our theme during the journey:</p>
+
+            <p><em>“Never doubt that a small group of thoughtful, committed citizens can change the world; indeed, it&#39;s the only thing that ever has.” - Margaret Mead</em></p>
+        </div>
+
+
+
+        <div class="cta-footer">
+            <h3>Continue the Journey</h3>
+            <p>Discover how the campaign unfolded across 12 chapters of lessons and insights.</p>
+            <div class="cta-buttons">
+                <a href="chapter1.html" class="cta-button">Read Chapter One</a>
+                <a href="index.html#get-book" class="cta-button secondary">Get the Full Book</a>
+            </div>
+        </div>
+    </div>
+
+    <button class="bookmark-btn" id="bookmarkBtn" onclick="toggleBookmark()" title="Bookmark this page">
+        <i class="fas fa-bookmark"></i>
+    </button>
+
+    <script>
+        // Reading progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Share functions
+        function shareOn(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent('Introduction - Break the Block');
+            const text = encodeURIComponent('Reading the introduction to Break the Block - a decade-long citizen campaign for commuter rail.');
+            
+            let shareUrl;
+            switch(platform) {
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+                    break;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+                    break;
+                case 'whatsapp':
+                    shareUrl = `https://wa.me/?text=${text}%20${url}`;
+                    break;
+                case 'email':
+                    shareUrl = `mailto:?subject=${title}&body=${text}%20${url}`;
+                    break;
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            }
+            return false;
+        }
+
+        // Bookmark functionality
+        function toggleBookmark() {
+            const btn = document.getElementById('bookmarkBtn');
+            const key = 'bookmark_' + window.location.pathname;
+            
+            if (localStorage.getItem(key)) {
+                localStorage.removeItem(key);
+                btn.classList.remove('bookmarked');
+                btn.title = 'Bookmark this page';
+            } else {
+                localStorage.setItem(key, 'true');
+                btn.classList.add('bookmarked');
+                btn.title = 'Bookmarked';
+            }
+        }
+
+        // Check if bookmarked on load
+        window.addEventListener('load', () => {
+            const key = 'bookmark_' + window.location.pathname;
+            if (localStorage.getItem(key)) {
+                document.getElementById('bookmarkBtn').classList.add('bookmarked');
+                document.getElementById('bookmarkBtn').title = 'Bookmarked';
+            }
+        });
+
+        // Print stylesheet
+        function printChapter() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
