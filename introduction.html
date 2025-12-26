@@ -293,6 +293,103 @@
             background: var(--rail-blue);
         }
 
+
+        /* Text-to-Speech Button */
+        .tts-btn {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 999;
+        }
+
+        .tts-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .tts-btn.playing {
+            background: var(--rail-blue);
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .tts-controls {
+            position: fixed;
+            bottom: 6rem;
+            left: 2rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            display: none;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 998;
+            min-width: 200px;
+        }
+
+        .tts-controls.active {
+            display: flex;
+        }
+
+        .tts-controls label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+
+        .tts-controls input[type="range"] {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .tts-controls select {
+            padding: 0.5rem;
+            border: 2px solid var(--accent);
+            border-radius: 4px;
+            font-family: 'Crimson Pro', serif;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .tts-btn {
+                bottom: 5rem;
+                left: 1rem;
+                width: 48px;
+                height: 48px;
+            }
+
+            .tts-controls {
+                bottom: 9rem;
+                left: 1rem;
+            }
+        }
+
+        @media print {
+            .tts-btn, .tts-controls {
+                display: none;
+            }
+        }
+
         @media print {
             .top-nav, .share-buttons, .bookmark-btn, .cta-footer, footer {
                 display: none;
@@ -578,7 +675,19 @@
         <p>© 2026 Sathya Sankaran | Break the Block: Lessons from Bengaluru's Rail Battle</p>
     </footer>
 
-    <button class="bookmark-btn" id="bookmarkBtn" onclick="toggleBookmark()" title="Bookmark this page">
+    <!-- Text-to-Speech Controls -->
+    <div class="tts-controls" id="ttsControls">
+        <label>Speech Rate</label>
+        <input type="range" id="ttsRate" min="0.5" max="2" step="0.1" value="1">
+        <label>Voice</label>
+        <select id="ttsVoice"></select>
+    </div>
+
+    <button class="tts-btn" id="ttsBtn" onclick="toggleTTS()" title="Listen to this chapter">
+        <i class="fas fa-play"></i>
+    </button>
+
+        <button class="bookmark-btn" id="bookmarkBtn" onclick="toggleBookmark()" title="Bookmark this page">
         <i class="fas fa-bookmark"></i>
     </button>
 
@@ -622,8 +731,171 @@
             return false;
         }
 
+
+        // Text-to-Speech functionality
+        const synth = window.speechSynthesis;
+        let currentUtterance = null;
+        let isPaused = false;
+        let isSpeaking = false;
+        let currentPosition = 0;
+
+        window.toggleTTS = function() {
+            const btn = document.getElementById('ttsBtn');
+            const icon = btn.querySelector('i');
+            const controls = document.getElementById('ttsControls');
+            
+            if (isSpeaking && !isPaused) {
+                // Pause (Safari doesn't support pause well, so we cancel)
+                synth.cancel();
+                isPaused = true;
+                isSpeaking = false;
+                icon.className = 'fas fa-play';
+                btn.classList.remove('playing');
+                btn.title = 'Start reading';
+            } else {
+                // Start or restart
+                window.startReading();
+                if (!controls.classList.contains('active')) {
+                    controls.classList.add('active');
+                }
+            }
+        }
+
+        window.startReading = function() {
+            const btn = document.getElementById('ttsBtn');
+            const icon = btn.querySelector('i');
+            
+            // Cancel any ongoing speech
+            synth.cancel();
+            
+            // Small delay for Safari
+            setTimeout(() => {
+                // Get chapter text
+                const chapterBody = document.querySelector('.chapter-body');
+                const text = chapterBody.innerText;
+                
+                // Create utterance
+                currentUtterance = new SpeechSynthesisUtterance(text);
+                
+                // Get selected voice
+                const voiceSelect = document.getElementById('ttsVoice');
+                const voices = synth.getVoices();
+                if (voiceSelect.value && voices.length > 0) {
+                    const selectedVoice = voices.find(v => v.name === voiceSelect.value);
+                    if (selectedVoice) {
+                        currentUtterance.voice = selectedVoice;
+                    }
+                }
+                
+                // Get rate
+                const rate = parseFloat(document.getElementById('ttsRate').value);
+                currentUtterance.rate = rate;
+                
+                // Set pitch and volume for better quality
+                currentUtterance.pitch = 1;
+                currentUtterance.volume = 1;
+                
+                // Set up event handlers
+                currentUtterance.onstart = () => {
+                    isSpeaking = true;
+                    isPaused = false;
+                    icon.className = 'fas fa-pause';
+                    btn.classList.add('playing');
+                    btn.title = 'Stop reading';
+                };
+                
+                currentUtterance.onend = () => {
+                    isSpeaking = false;
+                    isPaused = false;
+                    icon.className = 'fas fa-play';
+                    btn.classList.remove('playing');
+                    btn.title = 'Listen to this chapter';
+                };
+                
+                currentUtterance.onerror = (event) => {
+                    console.error('Speech error:', event);
+                    isSpeaking = false;
+                    isPaused = false;
+                    icon.className = 'fas fa-play';
+                    btn.classList.remove('playing');
+                    btn.title = 'Listen to this chapter';
+                };
+                
+                // Start speaking
+                synth.speak(currentUtterance);
+            }, 100);
+        }
+
+        // Load voices (Safari-compatible)
+        window.loadVoices = function() {
+            const voices = synth.getVoices();
+            const voiceSelect = document.getElementById('ttsVoice');
+            
+            if (!voices || voices.length === 0) {
+                // Voices not loaded yet, try again
+                setTimeout(window.loadVoices, 100);
+                return;
+            }
+            
+            // Clear existing options
+            voiceSelect.innerHTML = '';
+            
+            // Filter for English voices
+            const englishVoices = voices.filter(voice => voice.lang.startsWith('en'));
+            
+            if (englishVoices.length === 0) {
+                // No English voices, use all voices
+                voices.forEach(voice => {
+                    const option = document.createElement('option');
+                    option.value = voice.name;
+                    option.textContent = `${voice.name} (${voice.lang})`;
+                    voiceSelect.appendChild(option);
+                });
+                if (voices.length > 0) {
+                    voiceSelect.value = voices[0].name;
+                }
+            } else {
+                englishVoices.forEach(voice => {
+                    const option = document.createElement('option');
+                    option.value = voice.name;
+                    option.textContent = `${voice.name} (${voice.lang})`;
+                    voiceSelect.appendChild(option);
+                });
+                // Set default to first English voice
+                voiceSelect.value = englishVoices[0].name;
+            }
+        }
+
+        // Load voices when available (Safari needs multiple attempts)
+        if (synth.onvoiceschanged !== undefined) {
+            synth.onvoiceschanged = window.loadVoices;
+        }
+        
+        // Initial load
+        setTimeout(window.loadVoices, 100);
+        
+        // Ensure voices load on page load
+        window.addEventListener('load', () => {
+            setTimeout(window.loadVoices, 200);
+        });
+
+        // Stop speech when page unloads
+        window.addEventListener('beforeunload', () => {
+            if (isSpeaking) {
+                synth.cancel();
+            }
+        });
+        
+        // Safari: Keep speech synthesis alive
+        setInterval(() => {
+            if (synth.speaking && !synth.paused) {
+                synth.pause();
+                synth.resume();
+            }
+        }, 10000);
+
         // Bookmark functionality
-        function toggleBookmark() {
+        window.toggleBookmark = function() {
             const btn = document.getElementById('bookmarkBtn');
             const key = 'bookmark_' + window.location.pathname;
             
