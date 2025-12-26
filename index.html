@@ -1425,9 +1425,6 @@
     <!-- Footer -->
     <footer>
         <p>© 2026 Sathya Sankaran | Break the Block: Lessons from Bengaluru's Rail Battle</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">
-            Contact: <a href="/cdn-cgi/l/email-protection#92e1f3e6faebf3bce1f3fcf9f3e0f3fcd2f5fff3fbfebcf1fdffade1e7f0f8f7f1e6afd0e0f7f3f9b7a0a2e6faf7b7a0a2d0fefdf1f9b7a0a2bfb7a0a2d5f7fcf7e0f3feb7a0a2dbfce3e7fbe0eb" style="color: var(--accent); text-decoration: none;"><span class="__cf_email__" data-cfemail="c9baa8bda1b0a8e7baa8a7a2a8bba8a789aea4a8a0a5e7aaa6a4">[email&#160;protected]</span></a>
-        </p>
     </footer>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
@@ -1486,4 +1483,18 @@
                     shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
                     break;
                 case 'whatsapp':
-                    shar
+                    shareUrl = `https://wa.me/?text=${text}%20${url}`;
+                    break;
+                case 'email':
+                    shareUrl = `mailto:?subject=${title}&body=${text}%20${url}`;
+                    break;
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
