@@ -404,6 +404,28 @@
             margin-top: 4rem;
         }
 
+        footer p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 0;
+        }
+
+        footer a {
+            transition: opacity 0.3s;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+        }
+
+        footer img {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .top-nav {
@@ -2817,7 +2839,15 @@
     </div>
 
     <footer>
-        <p>© 2026 Sathya Sankaran | Break the Block: Lessons from Bengaluru's Rail Battle</p>
+        <p>
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; color: inherit; text-decoration: none;">
+                <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" style="height: 1.5rem; width: 1.5rem;">
+                <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" style="height: 1.5rem; width: 1.5rem;">
+                <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="SA" style="height: 1.5rem; width: 1.5rem;">
+                <span>All content on this site is covered under CC-BY-SA 4.0 license</span>
+            </a>
+            | Break the Block: Lessons from Bengaluru's Rail Battle
+        </p>
     </footer>
 
     <script>
