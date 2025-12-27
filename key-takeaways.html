@@ -206,7 +206,7 @@
 
         /* Chapter Section */
         .chapter-section {
-            margin-bottom: 5rem;
+            margin-bottom: 3rem;
             scroll-margin-top: 100px;
         }
 
@@ -215,9 +215,18 @@
             color: white;
             padding: 2rem;
             border-radius: 8px 8px 0 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .chapter-header h2 {
+        .chapter-header:hover {
+            background: linear-gradient(135deg, #005a9e, #2d2d2d);
+        }
+
+        .chapter-header-content h2 {
             font-size: 2rem;
             margin-bottom: 0.5rem;
         }
@@ -227,11 +236,36 @@
             opacity: 0.9;
         }
 
+        .toggle-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .toggle-icon.collapsed {
+            transform: rotate(-90deg);
+        }
+
+        .lesson-count {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-family: 'Space Mono', monospace;
+            margin-top: 0.5rem;
+        }
+
         .chapter-content {
             background: white;
-            padding: 2.5rem;
+            padding: 0;
             border-radius: 0 0 8px 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.3s ease-out;
+        }
+
+        .chapter-content.expanded {
+            max-height: 10000px;
+            padding: 2.5rem;
+            transition: max-height 1s ease-in, padding 0.3s ease-in;
         }
 
         /* Lesson Boxes */
@@ -278,20 +312,29 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Coming Soon */
-        .coming-soon-box {
-            background: #f9f9f9;
-            padding: 3rem 2rem;
-            border-radius: 8px;
+        /* Expand/Collapse All Button */
+        .expand-collapse-all {
             text-align: center;
-            color: #999;
-            font-style: italic;
+            margin-bottom: 2rem;
         }
 
-        .coming-soon-box i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.5;
+        .expand-collapse-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .expand-collapse-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
         }
 
         /* CTA Section */
@@ -373,7 +416,7 @@
                 padding: 5rem 1.5rem 2rem;
             }
 
-            .chapter-content {
+            .chapter-content.expanded {
                 padding: 1.5rem;
             }
 
@@ -384,10 +427,20 @@
             .cta-buttons {
                 flex-direction: column;
             }
+
+            .chapter-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .toggle-icon {
+                align-self: flex-end;
+            }
         }
 
         @media print {
-            .top-nav, .share-buttons, .cta-section, footer {
+            .top-nav, .share-buttons, .cta-section, footer, .expand-collapse-all, .toggle-icon {
                 display: none;
             }
 
@@ -397,6 +450,11 @@
 
             .container {
                 padding-top: 2rem;
+            }
+
+            .chapter-content {
+                max-height: none !important;
+                padding: 2.5rem !important;
             }
         }
     </style>
@@ -454,21 +512,39 @@
                     </a>
                 </li>
                 <li class="toc-item">
+                    <a href="#chapter-4" class="toc-link">
+                        <span class="chapter-num">04</span>
+                        <span>The Report from Across the Seas</span>
+                    </a>
+                </li>
+                <li class="toc-item">
                     <span class="toc-link coming-soon">
-                        <span class="chapter-num">04-12</span>
+                        <span class="chapter-num">05-12</span>
                         <span>More chapters coming as we complete the enhanced edition...</span>
                     </span>
                 </li>
             </ul>
         </div>
 
+        <div class="expand-collapse-all">
+            <button class="expand-collapse-btn" onclick="toggleAll()">
+                <i class="fas fa-chevron-down"></i> Expand All Chapters
+            </button>
+        </div>
+
         <!-- CHAPTER 1 -->
         <section id="chapter-1" class="chapter-section">
-            <div class="chapter-header">
-                <h2>Chapter 1: The Online-Offline Bridge</h2>
-                <p class="chapter-subtitle">How Online Platforms and Offline Organizing Combined to Launch a Movement</p>
+            <div class="chapter-header" onclick="toggleChapter('chapter-1')">
+                <div class="chapter-header-content">
+                    <h2>Chapter 1: The Online-Offline Bridge</h2>
+                    <p class="chapter-subtitle">How Online Platforms and Offline Organizing Combined to Launch a Movement</p>
+                    <p class="lesson-count"><i class="fas fa-book-open"></i> 5 Lessons • Click to expand</p>
+                </div>
+                <div class="toggle-icon collapsed" id="toggle-chapter-1">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
             </div>
-            <div class="chapter-content">
+            <div class="chapter-content" id="content-chapter-1">
                 
                 <div class="lesson">
                     <h3 class="lesson-title">Lesson 1: Online and Offline Are Not Either/Or—They're Both/And</h3>
@@ -613,11 +689,17 @@
 
         <!-- CHAPTER 2 -->
         <section id="chapter-2" class="chapter-section">
-            <div class="chapter-header">
-                <h2>Chapter 2: Trains of Thought</h2>
-                <p class="chapter-subtitle">Understanding India's Railway Legacy and Bureaucracy</p>
+            <div class="chapter-header" onclick="toggleChapter('chapter-2')">
+                <div class="chapter-header-content">
+                    <h2>Chapter 2: Trains of Thought</h2>
+                    <p class="chapter-subtitle">Understanding India's Railway Legacy and Bureaucracy</p>
+                    <p class="lesson-count"><i class="fas fa-book-open"></i> 7 Lessons • Click to expand</p>
+                </div>
+                <div class="toggle-icon collapsed" id="toggle-chapter-2">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
             </div>
-            <div class="chapter-content">
+            <div class="chapter-content" id="content-chapter-2">
                 
                 <div class="lesson">
                     <h3 class="lesson-title">Lesson 1: Understand the System's DNA Before You Fight It</h3>
@@ -820,11 +902,17 @@
 
         <!-- CHAPTER 3 -->
         <section id="chapter-3" class="chapter-section">
-            <div class="chapter-header">
-                <h2>Chapter 3: The Trip That Started It All</h2>
-                <p class="chapter-subtitle">How a Journey to Mumbai Sparked the Campaign</p>
+            <div class="chapter-header" onclick="toggleChapter('chapter-3')">
+                <div class="chapter-header-content">
+                    <h2>Chapter 3: The Trip That Started It All</h2>
+                    <p class="chapter-subtitle">How a Journey to Mumbai Sparked the Campaign</p>
+                    <p class="lesson-count"><i class="fas fa-book-open"></i> 7 Lessons • Click to expand</p>
+                </div>
+                <div class="toggle-icon collapsed" id="toggle-chapter-3">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
             </div>
-            <div class="chapter-content">
+            <div class="chapter-content" id="content-chapter-3">
                 
                 <div class="lesson">
                     <h3 class="lesson-title">Lesson 1: Experience Trumps Analysis</h3>
@@ -1029,6 +1117,221 @@
             </div>
         </section>
 
+        <!-- CHAPTER 4 -->
+        <section id="chapter-4" class="chapter-section">
+            <div class="chapter-header" onclick="toggleChapter('chapter-4')">
+                <div class="chapter-header-content">
+                    <h2>Chapter 4: The Report from Across the Seas</h2>
+                    <p class="chapter-subtitle">How a Distributed Team Created Professional Work in Two Weeks</p>
+                    <p class="lesson-count"><i class="fas fa-book-open"></i> 7 Lessons • Click to expand</p>
+                </div>
+                <div class="toggle-icon collapsed" id="toggle-chapter-4">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="chapter-content" id="content-chapter-4">
+                
+                <div class="lesson">
+                    <h3 class="lesson-title">Lesson 1: "Bring Me a Report" Is a Test, Not a Rejection</h3>
+                    
+                    <div class="lesson-section">
+                        <h4>What Happened</h4>
+                        <p>V. Madhu listened for an hour, then said "come back in two weeks with a detailed report." This is standard bureaucratic response—testing seriousness and making activists do the technical work.</p>
+                    </div>
+
+                    <div class="lesson-section">
+                        <h4>Why It Matters</h4>
+                        <p>Most citizen campaigns die at this exact moment. Officials know that asking for a "comprehensive report" kills 95% of proposals because activists can't produce professional documentation. It's a filter that separates serious advocates from casual complainers.</p>
+                    </div>
+
+                    <div class="lesson-section">
+                        <h4>How to Apply It</h4>
+                        <ul>
+                            <li>When officials say "bring me a report," understand it's a challenge, not encouragement</li>
+                            <li>Treat it as a test of commitment—can you produce professional work?</li>
+                            <li>Use the deadline strategically—two weeks shows urgency but is usually too short (we did it anyway)</li>
+                            <li>The report itself becomes your calling card for future meetings</li>
+                            <li>Quality matters—a professional report signals you're worth taking seriously</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson">
+                    <h3 class="lesson-title">Lesson 2: Distributed Teams Need Crystal-Clear Division of Labor</h3>
+                    
+                    <div class="lesson-section">
+                        <h4>What Happened</h4>
+                        <p>Four people, three continents, two weeks. Naveen did mapping (had satellite tools). Syed did structure/layout (had design sense). Sanjeev did railway tech (had RTI data). Sathya did proposal format (had pre-sales experience). Zero overlap, zero confusion.</p>
+                    </div>
+
+                    <div class="lesson-section">
+                        <h4>Why It Matters</h4>
+                        <p>Distributed collaboration fails when roles are ambiguous. With async communication (email, different time zones), you can't afford meetings to resolve "who's doing what." Clear ownership prevents drift and duplicated effort.</p>
+                    </div>
+
+                    <div class="lesson-section">
+                        <h4>How to Apply It</h4>
+                        <ul>
+                            <li>Assign clear ownership before starting: "X owns mapping, Y owns layout, Z owns content"</li>
+                            <li>Choose team members for complementary skills, not similar ones</li>
+                            <li>Identify each person's unique advantage (Naveen's ship = satellite tools)</li>
+                            <li>Use email for coordination (async-friendly, creates paper trail)</li>
+                            <li>Aggressive deadlines prevent drift—"two weeks" focuses effort</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson">
+                    <h3 class="lesson-title">Lesson 3: Turn Constraints Into Competitive Advantages</h3>
+                    
+                    <div class="lesson-section">
+                        <h4>What Happened</h4>
+                        <p>Naveen being on a ship in the Indian Ocean seemed like a handicap. But he had access to commercial-grade satellite mapping tools civilians can't access. His "constraint" gave us better data than government probably had.</p>
+                    </div>
+
+                    <div class="lesson-section">
+                        <h4>Why It Matters</h4>
+                        <p>Constraints force creativity. We couldn't meet in person, so we perfected async workflow. Naveen couldn't use Skype, so we used email (better documentation). His ship location gave us mapping advantage. Reframe obstacles as opportunities.</p>
+                    </div>
+
+                    <div class="lesson-section">
+                        <h4>How to Apply It</h4>
+                        <ul>
+                            <li>List your team's unusual access (jobs, tools, connections, locations)</li>
+                            <li>Ask: "What can we do that others can't because of our constraints?"</li>
+                            <li>Captain on ship = satellite mapping. Someone in US = international examples.</li>
+                            <li>Don't apologize for distributed teams—brand it as "global collaboration"</li>
+                            <li>Document the advantage—we told officials we used "commercial satellite data"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson">
+                    <h3 class="lesson-title">Lesson 4: Presentation Quality Signals Seriousness</h3>
+                    
+                    <div class="lesson-section">
+                        <h4>What Happened</h4>
+                        <p>We printed on 175GSM matt paper (premium quality). Created custom logo and branding. Designed professional layout. Added schematic map. Got professor to write foreword. Spent days on visual polish.</p>
+                    </div>
+
+                    <div class="lesson-section">
+                        <h4>Why It Matters</h4>
+                        <p>Officials see hundreds of proposals. Most are badly formatted Word documents or rambling letters. A professionally designed report with maps, glossary, and references signals: "These people are serious. They invested time and money. Worth reading."</p>
+                    </div>
+
+                    <div class="lesson-section">
+                        <h4>How to Apply It</h4>
+                        <ul>
+                            <li>Never submit a Word doc if you can create a PDF with design</li>
+                            <li>Invest in good paper for physical copies (officials judge quality)</li>
+                            <li>Create visual elements: maps, charts, timelines, infographics</li>
+                            <li>Include glossary (shows you respect reader's time)</li>
+                            <li>Get credible person to write foreword (Prof. Sitharam gave us legitimacy)</li>
+                            <li>Brand it—"Namma Railu" was more memorable than "Commuter Rail"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson">
+                    <h3 class="lesson-title">Lesson 5: Make Your Work Reusable by Others</h3>
+                    
+                    <div class="lesson-section">
+                        <h4>What Happened</h4>
+                        <p>The station list we created appeared in official reports for the next decade. Our map became the reference schematic. Journalists used "Namma Railu." Government didn't just read our report—they used our data.</p>
+                    </div>
+
+                    <div class="lesson-section">
+                        <h4>Why It Matters</h4>
+                        <p>The goal isn't just to advocate—it's to make adoption easy. By providing detailed station lists, maps, and technical specifications, we did work officials would otherwise need consultants for. We made saying "yes" easier than saying "no."</p>
+                    </div>
+
+                    <div class="lesson-section">
+                        <h4>How to Apply It</h4>
+                        <ul>
+                            <li>Don't just argue for something—provide implementation details</li>
+                            <li>Create resources others can copy: station lists, route maps, cost estimates</li>
+                            <li>Make data freely available (we shared via Praja with open license)</li>
+                            <li>Include references so officials can verify your work</li>
+                            <li>Think like a consultant: "If they hired McKinsey, what would they deliver?"</li>
+                            <li>Your work should be good enough that officials plagiarize it</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson">
+                    <h3 class="lesson-title">Lesson 6: Aggressive Deadlines Prevent Perfect-Being-Enemy-of-Good</h3>
+                    
+                    <div class="lesson-section">
+                        <h4>What Happened</h4>
+                        <p>Two weeks to produce 30-page technical report. No time for analysis paralysis. We had to ship. Draft became final became reference document for decade.</p>
+                    </div>
+
+                    <div class="lesson-section">
+                        <h4>Why It Matters</h4>
+                        <p>Activist projects often die from perfectionism. "We need more data... more analysis... more review..." Meanwhile, moment passes. Aggressive deadline forces: (1) prioritization, (2) shipping over polishing, (3) good enough > perfect.</p>
+                    </div>
+
+                    <div class="lesson-section">
+                        <h4>How to Apply It</h4>
+                        <ul>
+                            <li>When officials give deadline, treat it as sacred—deliver on time or early</li>
+                            <li>Use Pareto principle: 80% quality in 20% time is often sufficient</li>
+                            <li>Don't wait for perfect data—use what's available and note limitations</li>
+                            <li>Shipping creates momentum—we could improve in version 2</li>
+                            <li>The report in official's hands beats perfect report in your head</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson">
+                    <h3 class="lesson-title">Lesson 7: Document Your Process—It Inspires Others</h3>
+                    
+                    <div class="lesson-section">
+                        <h4>What Happened</h4>
+                        <p>We posted updates on Praja throughout. V Ravichander saw the distributed collaboration and documented it for Chennai colleagues. Our process became a model for other cities' civic campaigns.</p>
+                    </div>
+
+                    <div class="lesson-section">
+                        <h4>Why It Matters</h4>
+                        <p>Your product (the report) has value. But your process (how distributed team collaborated) can inspire dozens of other campaigns. Public documentation multiplies impact beyond your specific issue.</p>
+                    </div>
+
+                    <div class="lesson-section">
+                        <h4>How to Apply It</h4>
+                        <ul>
+                            <li>Blog the process: "Today we finished station mapping from a ship in Indian Ocean"</li>
+                            <li>Share tools: what mapping software? what collaboration method?</li>
+                            <li>Credit everyone publicly (builds team morale, attracts future collaborators)</li>
+                            <li>Make it replicable—others should be able to copy your workflow</li>
+                            <li>The meta-lesson (distributed collaboration works) may matter more than specific content</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- What This Means for You -->
+                <div style="background: linear-gradient(135deg, #6a11cb, #2575fc); color: white; padding: 2.5rem; border-radius: 8px; margin-top: 3rem;">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: white;">What This Means for You</h3>
+                    
+                    <p style="font-size: 1.1rem; margin-bottom: 1rem;">If you're told "bring me a detailed proposal":</p>
+                    
+                    <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>Understand it's a test of seriousness.</strong> Most proposals die here. Officials know this. Your goal: be the 5% who actually deliver professional work.</p>
+                    
+                    <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>Assemble team for complementary skills, not credentials.</strong> Ship captain + engineer in US + RTI activist + pre-sales guy = everything needed. Don't wait for "qualified" people. Find committed people with relevant skills.</p>
+                    
+                    <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>Use constraints as advantages.</strong> Limited budget? Make it digital and shareable. Team distributed? Brand it "global collaboration." No consultants? Position yourselves as grassroots experts with lived experience.</p>
+                    
+                    <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>Invest in presentation quality.</strong> Premium paper, professional design, custom maps—these signal investment and seriousness. First impression determines if report gets read or filed.</p>
+                    
+                    <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>Make your work reusable.</strong> Provide implementation details so detailed that officials can copy-paste into their own documents. Being plagiarized is success, not theft.</p>
+                    
+                    <p style="font-size: 1.1rem; margin-bottom: 0;">This report took two months. It was referenced for ten years. The station list we created became the government's station list. The branding we created became the campaign's identity.</p>
+                    
+                    <p style="font-size: 1.3rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0; color: white;"><strong>Credentials are overrated. Commitment, complementary skills, and ability to ship—these matter infinitely more.</strong></p>
+                </div>
+
+            </div>
+        </section>
+
         <!-- CTA -->
         <div class="cta-section">
             <h3>Want the Full Story?</h3>
@@ -1083,6 +1386,71 @@
             }
             return false;
         }
+
+        // Chapter collapse/expand functionality
+        window.toggleChapter = function(chapterId) {
+            const content = document.getElementById('content-' + chapterId);
+            const toggle = document.getElementById('toggle-' + chapterId);
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                toggle.classList.add('collapsed');
+            } else {
+                content.classList.add('expanded');
+                toggle.classList.remove('collapsed');
+            }
+        }
+
+        // Toggle all chapters
+        let allExpanded = false;
+        window.toggleAll = function() {
+            const chapters = ['chapter-1', 'chapter-2', 'chapter-3', 'chapter-4'];
+            const btn = document.querySelector('.expand-collapse-btn');
+            
+            chapters.forEach(chapterId => {
+                const content = document.getElementById('content-' + chapterId);
+                const toggle = document.getElementById('toggle-' + chapterId);
+                
+                if (content) {
+                    if (allExpanded) {
+                        content.classList.remove('expanded');
+                        toggle.classList.add('collapsed');
+                    } else {
+                        content.classList.add('expanded');
+                        toggle.classList.remove('collapsed');
+                    }
+                }
+            });
+            
+            allExpanded = !allExpanded;
+            
+            if (allExpanded) {
+                btn.innerHTML = '<i class="fas fa-chevron-up"></i> Collapse All Chapters';
+            } else {
+                btn.innerHTML = '<i class="fas fa-chevron-down"></i> Expand All Chapters';
+            }
+        }
+
+        // Handle direct links to chapters (expand when linked)
+        window.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash;
+            if (hash) {
+                const chapterId = hash.substring(1); // Remove the #
+                const content = document.getElementById('content-' + chapterId);
+                const toggle = document.getElementById('toggle-' + chapterId);
+                
+                if (content && toggle) {
+                    // Expand the linked chapter
+                    content.classList.add('expanded');
+                    toggle.classList.remove('collapsed');
+                    
+                    // Scroll to it after a brief delay to ensure expansion
+                    setTimeout(() => {
+                        document.getElementById(chapterId).scrollIntoView({ behavior: 'smooth' });
+                    }, 300);
+                }
+            }
+        });
     </script>
 </body>
 </html>
