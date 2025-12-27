@@ -711,6 +711,58 @@
             opacity: 0.9;
         }
 
+        /* Lessons Grid */
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .lessons-column {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .lessons-column h4 {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .chapter-pills {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-pill {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-family: 'Space Mono', monospace;
+        }
+
+        .column-desc {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            line-height: 1.4;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .lessons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .exclusive-cta {
             display: inline-block;
             padding: 1.2rem 3rem;
@@ -898,11 +950,13 @@
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(2.5rem, 7vw, 6rem);
             font-weight: 700;
             margin-bottom: 1rem;
             letter-spacing: -2px;
             line-height: 1.1;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .hero .tagline {
@@ -1434,35 +1488,75 @@
         <div class="exclusive-badge">
             <i class="fas fa-star"></i> Online Exclusive
         </div>
-        <h2>Key Takeaways: The Field Guide</h2>
+        <h2>Key Takeaways: 90 Lessons from the Field</h2>
         
         <div class="exclusive-content">
-            <h3>Explicit Lessons for Activists</h3>
-            <p>This online-only resource extracts the actionable lessons from each chapter—the tactics, strategies, and frameworks you can apply to your own campaigns. Not available in the print edition.</p>
+            <h3>The Complete Field Guide for Activists</h3>
+            <p>All 12 chapters now available online! Each lesson breaks down What Happened, Why It Matters, and How to Apply It to your own campaigns. 90 actionable insights from a decade-long citizen movement.</p>
             
-            <div class="exclusive-features">
+            <div class="lessons-grid">
+                <div class="lessons-column">
+                    <h4>Foundation (Chapters 1-4)</h4>
+                    <div class="chapter-pills">
+                        <span class="chapter-pill">Ch 1: 5 lessons</span>
+                        <span class="chapter-pill">Ch 2: 7 lessons</span>
+                        <span class="chapter-pill">Ch 3: 7 lessons</span>
+                        <span class="chapter-pill">Ch 4: 7 lessons</span>
+                    </div>
+                    <p class="column-desc">Building credibility, research, and initial strategy</p>
+                </div>
+                
+                <div class="lessons-column">
+                    <h4>Obstacles (Chapters 5-7)</h4>
+                    <div class="chapter-pills">
+                        <span class="chapter-pill">Ch 5: 8 lessons</span>
+                        <span class="chapter-pill">Ch 6: 8 lessons</span>
+                        <span class="chapter-pill">Ch 7: 8 lessons</span>
+                    </div>
+                    <p class="column-desc">Bureaucratic resistance and navigating setbacks</p>
+                </div>
+                
+                <div class="lessons-column">
+                    <h4>Breakthrough (Chapters 8-10)</h4>
+                    <div class="chapter-pills">
+                        <span class="chapter-pill">Ch 8: 8 lessons</span>
+                        <span class="chapter-pill">Ch 9: 8 lessons</span>
+                        <span class="chapter-pill">Ch 10: 8 lessons</span>
+                    </div>
+                    <p class="column-desc">Finding champions and mass mobilization</p>
+                </div>
+                
+                <div class="lessons-column">
+                    <h4>Victory (Chapters 11-12)</h4>
+                    <div class="chapter-pills">
+                        <span class="chapter-pill">Ch 11: 8 lessons</span>
+                        <span class="chapter-pill">Ch 12: 8 lessons</span>
+                    </div>
+                    <p class="column-desc">Final reckoning and campaign reflections</p>
+                </div>
+            </div>
+
+            <div class="exclusive-features" style="margin-top: 2rem;">
                 <div class="exclusive-feature">
                     <i class="fas fa-list-check"></i>
-                    <h4>Chapter-by-Chapter</h4>
-                    <p>5-7 explicit lessons per chapter with "What Happened," "Why It Matters," and "How to Apply It"</p>
+                    <h4>Structured Learning</h4>
+                    <p>What/Why/How format for immediate application</p>
                 </div>
                 
                 <div class="exclusive-feature">
                     <i class="fas fa-lightbulb"></i>
                     <h4>Actionable Insights</h4>
-                    <p>No buried lessons—clear, direct guidance you can implement immediately</p>
+                    <p>Clear guidance you can implement immediately</p>
                 </div>
                 
                 <div class="exclusive-feature">
-                    <i class="fas fa-rocket"></i>
-                    <h4>Updated Regularly</h4>
-                    <p>New chapters added as we complete the enhanced edition</p>
+                    <i class="fas fa-book-open"></i>
+                    <h4>Complete Collection</h4>
+                    <p>All 90 lessons available now</p>
                 </div>
             </div>
-
-            <p style="margin-top: 2rem;"><strong>Currently available:</strong> All 12 chapters complete! Chapter 1 (5 lessons) • Chapter 2 (7 lessons) • Chapter 3 (7 lessons) • Chapter 4 (7 lessons) • Chapter 5 (8 lessons) • Chapter 6 (8 lessons) • Chapter 7 (8 lessons) • Chapter 8 (8 lessons) • Chapter 9 (8 lessons) • Chapter 10 (8 lessons) • Chapter 11 (8 lessons) • Chapter 12 (8 lessons) • <strong>90 total lessons</strong></p></p>
             
-            <a href="key-takeaways.html" class="exclusive-cta">View Key Takeaways</a>
+            <a href="key-takeaways.html" class="exclusive-cta">Explore All 90 Lessons</a>
         </div>
     </section>
 
