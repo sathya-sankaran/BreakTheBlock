@@ -448,6 +448,67 @@
             vertical-align: middle;
         }
 
+        /* News Coverage Section */
+        .news-coverage {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 78, 137, 0.2);
+        }
+
+        .news-coverage h4 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--rail-blue);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .news-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .news-links li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .news-links li::before {
+            content: none;
+        }
+
+        .news-links a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--rail-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .news-links a::before {
+            content: '📰';
+            font-size: 0.9rem;
+        }
+
+        .news-links a:hover {
+            color: var(--accent);
+            transform: translateX(3px);
+        }
+
+        @media (max-width: 768px) {
+            .news-links a {
+                font-size: 0.8rem;
+            }
+        }
+
         /* Mobile Styles */
         @media (max-width: 768px) {
             .top-nav {
@@ -569,6 +630,8 @@
         <a href="#year-2009">2009</a>
         <a href="#year-2010">2010</a>
         <a href="#year-2011">2011</a>
+        <a href="#year-2012">2012</a>
+        <a href="#year-2013">2013</a>
         <a href="#year-2014">2014</a>
         <a href="#year-2015">2015</a>
         <a href="#year-2016">2016</a>
@@ -675,6 +738,71 @@
                 <div class="timeline-dot"></div>
             </div>
 
+            <!-- 2012 -->
+            <div class="timeline-item" id="year-2012">
+                <div class="timeline-content">
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-title">Official Feasibility Study</div>
+                    <div class="timeline-subtitle">RITES Report Submitted</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>RITES completes comprehensive 179-page feasibility study</li>
+                            <li>Report examines 440.8 km of rail network in and around city</li>
+                            <li>Proposes development of suburban rail services in three phases</li>
+                        </ul>
+                        <div class="document-card">
+                            <a href="resources/rites_draft_report_bangalore_suburban_2012.pdf" target="_blank">
+                                <i class="fas fa-file-pdf doc-icon"></i>
+                                <span><strong>June 2012: RITES Draft Report on Commuter Rail System for Bangalore</strong> - Official feasibility study proposing suburban rail corridors and infrastructure requirements</span>
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </a>
+                        </div>
+                        <ul>
+                            <li>Final report submitted to Directorate of Urban Land Transport (DULT)</li>
+                            <li>Study provides technical foundation for government decisions</li>
+                        </ul>
+                        
+                        <div class="news-coverage">
+                            <h4>Media Coverage:</h4>
+                            <ul class="news-links">
+                                <li><a href="https://timesofindia.indiatimes.com/city/bengaluru/rites-sent-commuter-rail-feasibility-study-to-dult/articleshow/14224448.cms" target="_blank">Jun 18, 2012 - Times of India</a></li>
+                                <li><a href="https://www.dnaindia.com/bangalore/report-440-km-commuter-rail-network-planned-in-karnataka-1761946" target="_blank">Nov 10, 2012 - DNA India</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <!-- 2013 -->
+            <div class="timeline-item" id="year-2013">
+                <div class="timeline-content">
+                    <div class="timeline-year">2013</div>
+                    <div class="timeline-title">State Government Approval</div>
+                    <div class="timeline-subtitle">Budget Announcement</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>State government approves suburban rail project (July 5, 2013)</li>
+                            <li>CM Siddaramaiah announces project in 2013-14 state budget (July 9, 2013)</li>
+                            <li>Budget proposes ₹8,759 crore project with Special Purpose Vehicle</li>
+                            <li>Bengaluru Suburban Rail Corporation Limited (BSRCL) to be created</li>
+                            <li>Major milestone: formal government commitment to suburban rail</li>
+                        </ul>
+                        
+                        <div class="news-coverage">
+                            <h4>Media Coverage:</h4>
+                            <ul class="news-links">
+                                <li><a href="https://www.thehindu.com/news/cities/bangalore/green-signal-for-suburban-train-system/article4912896.ece" target="_blank">Jul 13, 2013 - The Hindu</a></li>
+                                <li><a href="https://timesofindia.indiatimes.com/city/bengaluru/bangalore-suburban-rail-a-kharge-siddu-dream/articleshow/21034729.cms" target="_blank">Jul 13, 2013 - Times of India</a></li>
+                            </ul>
+                        </div>
+                        
+                        <span class="milestone">State Approval</span>
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
             <!-- 2014 -->
             <div class="timeline-item" id="year-2014">
                 <div class="timeline-content">
@@ -683,10 +811,9 @@
                     <div class="timeline-subtitle">Navigating Bureaucratic Inertia</div>
                     <div class="timeline-description">
                         <ul>
-                            <li>Long period with no visible progress</li>
-                            <li>Internal debates: continue pushing or move on?</li>
-                            <li>Lessons in patience and strategic timing</li>
-                            <li>Understanding when to push vs. when to wait</li>
+                            <li>Period of limited visible progress</li>
+                            <li>Campaign continues background engagement with officials</li>
+                            <li>Strategic evaluation of timing and approach</li>
                         </ul>
                     </div>
                 </div>
@@ -789,28 +916,13 @@
             <div class="timeline-item" id="year-2018">
                 <div class="timeline-content">
                     <div class="timeline-year">2018</div>
-                    <div class="timeline-title">Strategic Patience</div>
-                    <div class="timeline-subtitle">Official Feasibility Study Commissioned</div>
+                    <div class="timeline-title">Continued Advocacy</div>
+                    <div class="timeline-subtitle">Sustained Engagement</div>
                     <div class="timeline-description">
                         <ul>
                             <li>Following up on Railway Minister's 2017 letter</li>
-                            <li>Government finally commissions professional feasibility study</li>
-                            <li>RITES (Railway consultancy) engaged to develop Detailed Project Report</li>
-                        </ul>
-                        <div class="document-card">
-                            <a href="resources/rites_draft_report_bangalore_suburban_2018.pdf" target="_blank">
-                                <i class="fas fa-file-pdf doc-icon"></i>
-                                <span><strong>2018: RITES Draft Report on Commuter Rail System for Bangalore</strong> - First official feasibility study commissioned as direct result of campaign pressure, proposing suburban rail corridors and infrastructure requirements</span>
-                                <i class="fas fa-external-link-alt external-icon"></i>
-                            </a>
-                        </div>
-                        <ul>
-                            <li>Report represents breakthrough: government taking suburban rail seriously</li>
-                            <li>However, proposed design raises concerns among advocates</li>
-                            <li>Sets stage for detailed technical feedback from campaign team</li>
-                            <li>Political changes affect timeline</li>
-                            <li>Strategic decisions: when to push vs. wait</li>
-                            <li>Managing hope and frustration within team</li>
+                            <li>Campaign continues engagement with government officials</li>
+                            <li>Political landscape continues to evolve</li>
                         </ul>
                     </div>
                 </div>
@@ -821,14 +933,14 @@
             <div class="timeline-item" id="year-2019">
                 <div class="timeline-content">
                     <div class="timeline-year">2019</div>
-                    <div class="timeline-title">The Reckoning</div>
-                    <div class="timeline-subtitle">Crisis Point & Critical Feedback</div>
+                    <div class="timeline-title">Technical Response</div>
+                    <div class="timeline-subtitle">Detailed Analysis of Government Proposal</div>
                     <div class="timeline-description">
                         <ul>
                             <li><strong>Bengaluru becomes world's most traffic-congested city</strong></li>
                             <li>243 hours/year stuck in traffic per commuter</li>
                             <li>Public pressure for solutions intensifies</li>
-                            <li>Campaign team analyzes RITES feasibility report in detail</li>
+                            <li>Campaign team analyzes RITES feasibility report</li>
                         </ul>
                         <div class="document-card">
                             <a href="resources/feedback_to_rites_report_2019.pdf" target="_blank">
@@ -838,15 +950,21 @@
                             </a>
                         </div>
                         <ul>
-                            <li>Campaign pushes for network extension to Tumkur, Ramanagara, Bangarpet, Dodballapur, Hosur</li>
-                            <li>Advocates against automatic fare collection barriers that would segregate suburban from mainline</li>
-                            <li>Recommends reducing elevated corridors by 10-15 km to cut costs</li>
-                            <li>Calls for 15-coach platforms instead of 6-coach limitation to match existing service capacity</li>
-                            <li>Feedback demonstrates technical expertise earned over decade of study</li>
-                            <li>Media attention increases on suburban rail project</li>
-                            <li>Government acknowledgment grows despite technical disputes</li>
+                            <li>Advocates for network extension to Tumkur, Ramanagara, Bangarpet, Dodballapur, Hosur</li>
+                            <li>Opposes automatic fare collection barriers that would segregate systems</li>
+                            <li>Recommends reducing elevated corridors by 10-15 km</li>
+                            <li>Proposes 15-coach platforms instead of 6-coach design</li>
+                            <li>Media coverage of suburban rail project increases</li>
                         </ul>
-                        <span class="milestone">Urgency Peaks</span>
+                        
+                        <div class="news-coverage">
+                            <h4>Media Coverage:</h4>
+                            <ul class="news-links">
+                                <li><a href="https://www.financialexpress.com/infrastructure/railways/long-pending-bengaluru-suburban-rail-project-worth-rs-17000-crore-awaits-clearance-from-centre-details-here/1789479/" target="_blank">Dec 6, 2019 - Financial Express</a></li>
+                            </ul>
+                        </div>
+                        
+                        <span class="milestone">Technical Engagement</span>
                     </div>
                 </div>
                 <div class="timeline-dot"></div>
@@ -856,15 +974,14 @@
             <div class="timeline-item" id="year-2020">
                 <div class="timeline-content">
                     <div class="timeline-year">2020</div>
-                    <div class="timeline-title">Victory</div>
-                    <div class="timeline-subtitle">Breaking Through the Block</div>
+                    <div class="timeline-title">Cabinet Approval</div>
+                    <div class="timeline-subtitle">Project Gets Federal Sanction</div>
                     <div class="timeline-description">
                         <ul>
-                            <li><strong>January-September:</strong> Seven months of silence</li>
-                            <li><strong>October 8:</strong> Union Cabinet approval announced!</li>
-                            <li>Unexpected breakthrough after decade-long effort</li>
-                            <li>Suburban rail network approved</li>
-                            <li>Proof that citizen advocacy works</li>
+                            <li>Union Cabinet approves Bengaluru Suburban Rail project</li>
+                            <li>Decade-long advocacy campaign reaches milestone</li>
+                            <li>Project approved for implementation</li>
+                            <li>Suburban rail network moves forward</li>
                         </ul>
                         <span class="milestone victory">Cabinet Approval</span>
                     </div>
@@ -876,17 +993,16 @@
             <div class="timeline-item" id="year-2021">
                 <div class="timeline-content">
                     <div class="timeline-year">2021-2024</div>
-                    <div class="timeline-title">Vindication</div>
-                    <div class="timeline-subtitle">The Proof</div>
+                    <div class="timeline-title">Implementation</div>
+                    <div class="timeline-subtitle">Services Begin</div>
                     <div class="timeline-description">
                         <ul>
                             <li>First suburban rail services begin operation</li>
-                            <li><strong>295% occupancy</strong> proves demand was real</li>
-                            <li>Success validates decade of advocacy</li>
-                            <li>Model for other cities and campaigns</li>
-                            <li>Book manuscript completed documenting the journey</li>
+                            <li><strong>295% occupancy</strong> demonstrates strong commuter demand</li>
+                            <li>Project implementation continues</li>
+                            <li>Book manuscript documenting the campaign journey completed</li>
                         </ul>
-                        <span class="milestone victory">Success</span>
+                        <span class="milestone victory">Services Launch</span>
                     </div>
                 </div>
                 <div class="timeline-dot"></div>
