@@ -77,6 +77,53 @@
             align-items: center;
         }
 
+        .nav-logo {
+            z-index: 1001;
+        }
+
+        .nav-logo a {
+            font-family: 'Space Mono', monospace;
+        }
+
+        /* Hamburger Button */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--light);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Nav Menu */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
         nav ul {
             list-style: none;
             display: flex;
@@ -1429,15 +1476,77 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            /* Hamburger Menu Mobile Styles */
+            .hamburger {
+                display: flex;
+            }
+
             nav {
-                flex-direction: column;
-                gap: 1rem;
                 padding: 1rem 5%;
             }
 
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 400px;
+                height: 100vh;
+                background: rgba(26, 26, 26, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 80px 2rem 2rem;
+                transition: right 0.3s ease;
+                overflow-y: auto;
+            }
+
+            .nav-menu.active {
+                right: 0;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+            }
+
             nav ul {
-                gap: 1.5rem;
-                font-size: 0.8rem;
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 1.2rem 0;
+                font-size: 1rem;
+            }
+
+            .nav-share-buttons {
+                margin-top: 2rem;
+                padding-top: 2rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .nav-share-btn {
+                width: 44px;
+                height: 44px;
+            }
+
+            /* Close menu when clicking outside */
+            body.menu-open::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
             }
 
             .hero-content {
@@ -1639,31 +1748,45 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#chapters">Chapters</a></li>
-            <li><a href="#free-preview">Read Free</a></li>
-            <li><a href="#online-exclusive">Key Takeaways</a></li>
-            <li><a href="#author">Author</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#get-book">Get the Book</a></li>
-        </ul>
-        <div class="nav-share-buttons">
-            <a href="#" class="nav-share-btn share-twitter" onclick="shareOn('twitter'); return false;" title="Share on Twitter">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="nav-share-btn share-facebook" onclick="shareOn('facebook'); return false;" title="Share on Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="nav-share-btn share-linkedin" onclick="shareOn('linkedin'); return false;" title="Share on LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="#" class="nav-share-btn share-whatsapp" onclick="shareOn('whatsapp'); return false;" title="Share on WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="#" class="nav-share-btn share-email" onclick="shareOn('email'); return false;" title="Share via Email">
-                <i class="fas fa-envelope"></i>
-            </a>
+        <div class="nav-logo">
+            <a href="#" style="color: var(--secondary); font-weight: 700; font-size: 1.2rem;">Break the Block</a>
+        </div>
+        
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Nav Menu -->
+        <div class="nav-menu">
+            <ul>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#chapters" onclick="closeMenu()">Chapters</a></li>
+                <li><a href="#free-preview" onclick="closeMenu()">Read Free</a></li>
+                <li><a href="#online-exclusive" onclick="closeMenu()">Key Takeaways</a></li>
+                <li><a href="#author" onclick="closeMenu()">Author</a></li>
+                <li><a href="#events" onclick="closeMenu()">Events</a></li>
+                <li><a href="#get-book" onclick="closeMenu()">Get the Book</a></li>
+            </ul>
+            <div class="nav-share-buttons">
+                <a href="#" class="nav-share-btn share-twitter" onclick="shareOn('twitter'); return false;" title="Share on Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="nav-share-btn share-facebook" onclick="shareOn('facebook'); return false;" title="Share on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="nav-share-btn share-linkedin" onclick="shareOn('linkedin'); return false;" title="Share on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="nav-share-btn share-whatsapp" onclick="shareOn('whatsapp'); return false;" title="Share on WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="nav-share-btn share-email" onclick="shareOn('email'); return false;" title="Share via Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -2138,4 +2261,50 @@
                     break;
             }
             
-            if (shareUrl
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            }
+        }
+
+        // Hamburger Menu Functions
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+            const body = document.body;
+            
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        }
+
+        function closeMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+            const body = document.body;
+            
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+            const isClickInsideMenu = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
