@@ -440,6 +440,62 @@
                 height: 48px;
             }
         }
+    
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+    
+        /* Enhanced Callout Boxes */
+        .key-lesson {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.08), rgba(0, 78, 137, 0.08));
+            border-left: 5px solid var(--accent);
+            padding: 1.8rem;
+            margin: 2rem 0;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .key-lesson:hover {
+            border-left-color: var(--rail-blue);
+            box-shadow: 0 6px 20px rgba(0, 78, 137, 0.15);
+            transform: translateX(5px);
+        }
+
+        .key-lesson strong {
+            color: var(--rail-blue);
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
