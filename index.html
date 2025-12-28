@@ -37,6 +37,11 @@
     <meta name="revisit-after" content="7 days">
     
     <title>Break the Block - Lessons from Bengaluru's Rail Battle</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="break-the-block-logo.svg">
+    
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -82,7 +87,19 @@
         }
 
         .nav-logo a {
-            font-family: 'Space Mono', monospace;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-logo a:hover img {
+            transform: scale(1.05);
         }
 
         /* Hamburger Button */
@@ -1481,6 +1498,10 @@
                 display: flex;
             }
 
+            .nav-logo img {
+                height: 40px;
+            }
+
             nav {
                 padding: 1rem 5%;
             }
@@ -1749,7 +1770,9 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-logo">
-            <a href="#" style="color: var(--secondary); font-weight: 700; font-size: 1.2rem;">Break the Block</a>
+            <a href="#" aria-label="Break the Block Home">
+                <img src="break-the-block-logo.svg" alt="Break the Block" style="height: 50px; width: auto;">
+            </a>
         </div>
         
         <!-- Hamburger Menu Button -->
