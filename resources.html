@@ -26,121 +26,59 @@
             background: var(--light);
             color: var(--primary);
             line-height: 1.6;
-            padding-top: 80px;
         }
 
-        /* Navigation */
-        nav {
+        /* Reading Progress Bar */
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Top Navigation */
+        .top-nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(26, 26, 26, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1.5rem 5%;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .nav-logo {
-            z-index: 1001;
-        }
-
-        .nav-logo a {
-            display: flex;
-            align-items: center;
+        .back-link {
+            color: var(--accent);
             text-decoration: none;
-        }
-
-        .nav-logo img {
-            height: 50px;
-            width: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .nav-logo a:hover img {
-            transform: scale(1.05);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 1001;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--light);
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
             font-family: 'Space Mono', monospace;
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-        }
-
-        nav a {
-            color: var(--light);
-            text-decoration: none;
             transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        nav li:nth-child(5) a {
-            background: var(--secondary);
-            padding: 0.6rem 1.5rem;
-            border-radius: 4px;
-            font-weight: 700;
-            border: 2px solid var(--secondary);
-        }
-
-        nav li:nth-child(5) a:hover {
-            background: transparent;
+        .back-link:hover {
             color: var(--secondary);
-            border-color: var(--secondary);
         }
 
-        .nav-share-buttons {
+        .back-link::before {
+            content: '← ';
+        }
+
+        .share-buttons {
             display: flex;
             gap: 0.5rem;
         }
 
-        .nav-share-btn {
+        .share-btn {
             width: 36px;
             height: 36px;
             border-radius: 50%;
@@ -153,7 +91,7 @@
             font-size: 0.9rem;
         }
 
-        .nav-share-btn:hover {
+        .share-btn:hover {
             transform: translateY(-2px);
         }
 
@@ -167,7 +105,7 @@
         .resources-hero {
             background: linear-gradient(135deg, var(--primary) 0%, #2d2d2d 100%);
             color: white;
-            padding: 6rem 5% 5rem;
+            padding: 7rem 5% 5rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -221,7 +159,7 @@
         /* Year Navigation */
         .year-nav {
             position: sticky;
-            top: 80px;
+            top: 60px;
             background: rgba(245, 245, 240, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem 5%;
@@ -512,48 +450,26 @@
 
         /* Mobile Styles */
         @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
+            .top-nav {
+                padding: 1rem;
             }
 
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 80px;
-                flex-direction: column;
-                background-color: rgba(26, 26, 26, 0.98);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                padding: 2rem 0;
-                gap: 0;
-                max-height: calc(100vh - 80px);
-                overflow-y: auto;
+            .back-link {
+                font-size: 0.8rem;
             }
 
-            .nav-menu.active {
-                left: 0;
+            .share-buttons {
+                gap: 0.3rem;
             }
 
-            nav ul {
-                flex-direction: column;
-                gap: 0;
-                width: 100%;
+            .share-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
             }
 
-            nav ul li {
-                width: 100%;
-                padding: 1rem 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            nav li:nth-child(5) a {
-                display: inline-block;
-            }
-
-            .nav-share-buttons {
-                margin-top: 1.5rem;
-                justify-content: center;
+            .resources-hero {
+                padding: 6rem 5% 4rem;
             }
 
             .resources-hero h1 {
@@ -569,7 +485,7 @@
             }
 
             .year-nav {
-                top: 80px;
+                top: 60px;
                 gap: 0.5rem;
                 padding: 1rem 2%;
             }
@@ -615,50 +531,29 @@
                 transform: translateX(-5px);
             }
         }
-
-        body.menu-open {
-            overflow: hidden;
-        }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-logo">
-            <a href="index.html">
-                <img src="logo.png" alt="Break the Block">
+    <div class="reading-progress" id="progressBar"></div>
+
+    <nav class="top-nav">
+        <a href="index.html" class="back-link">Back to Book</a>
+        <div class="share-buttons">
+            <a href="#" class="share-btn share-twitter" onclick="shareOn('twitter'); return false;" title="Share on Twitter">
+                <i class="fab fa-twitter"></i>
             </a>
-        </div>
-        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div class="nav-menu">
-            <ul>
-                <li><a href="index.html" onclick="closeMenu()">Home</a></li>
-                <li><a href="read-online.html" onclick="closeMenu()">Read Online</a></li>
-                <li><a href="key-takeaways.html" onclick="closeMenu()">Key Takeaways</a></li>
-                <li><a href="resources.html" onclick="closeMenu()">Resources</a></li>
-                <li><a href="index.html#get-book" onclick="closeMenu()">Get the Book</a></li>
-            </ul>
-            <div class="nav-share-buttons">
-                <a href="#" onclick="shareOn('twitter'); return false;" class="nav-share-btn share-twitter" title="Share on Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" onclick="shareOn('facebook'); return false;" class="nav-share-btn share-facebook" title="Share on Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" onclick="shareOn('linkedin'); return false;" class="nav-share-btn share-linkedin" title="Share on LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#" onclick="shareOn('whatsapp'); return false;" class="nav-share-btn share-whatsapp" title="Share on WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="#" onclick="shareOn('email'); return false;" class="nav-share-btn share-email" title="Share via Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
+            <a href="#" class="share-btn share-facebook" onclick="shareOn('facebook'); return false;" title="Share on Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="share-btn share-linkedin" onclick="shareOn('linkedin'); return false;" title="Share on LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="share-btn share-whatsapp" onclick="shareOn('whatsapp'); return false;" title="Share on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" class="share-btn share-email" onclick="shareOn('email'); return false;" title="Share via Email">
+                <i class="fas fa-envelope"></i>
+            </a>
         </div>
     </nav>
 
@@ -829,6 +724,19 @@
                             <li>Shift from "activists" to "technical resource"</li>
                             <li>Learning to speak the language of government</li>
                         </ul>
+                        <div class="document-card">
+                            <a href="resources/railway_board_suburban_policy_2016.pdf" target="_blank">
+                                <i class="fas fa-file-pdf doc-icon"></i>
+                                <span><strong>December 6, 2016: Railway Board Draft Policy on Suburban Rail Systems</strong> - Federal government issues comprehensive policy guidelines for suburban rail implementation across India, responding to demands from multiple states including Karnataka</span>
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </a>
+                        </div>
+                        <ul>
+                            <li>Policy establishes Special Purpose Vehicle (SPV) framework</li>
+                            <li>Requires 50-50 equity participation between Railways and states</li>
+                            <li>Mandates exclusive tracks for suburban services</li>
+                            <li>Campaign's advocacy contributes to nationwide policy shift</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="timeline-dot"></div>
@@ -882,10 +790,24 @@
                 <div class="timeline-content">
                     <div class="timeline-year">2018</div>
                     <div class="timeline-title">Strategic Patience</div>
-                    <div class="timeline-subtitle">Navigating Approvals</div>
+                    <div class="timeline-subtitle">Official Feasibility Study Commissioned</div>
                     <div class="timeline-description">
                         <ul>
                             <li>Following up on Railway Minister's 2017 letter</li>
+                            <li>Government finally commissions professional feasibility study</li>
+                            <li>RITES (Railway consultancy) engaged to develop Detailed Project Report</li>
+                        </ul>
+                        <div class="document-card">
+                            <a href="resources/rites_draft_report_bangalore_suburban_2018.pdf" target="_blank">
+                                <i class="fas fa-file-pdf doc-icon"></i>
+                                <span><strong>2018: RITES Draft Report on Commuter Rail System for Bangalore</strong> - First official feasibility study commissioned as direct result of campaign pressure, proposing suburban rail corridors and infrastructure requirements</span>
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </a>
+                        </div>
+                        <ul>
+                            <li>Report represents breakthrough: government taking suburban rail seriously</li>
+                            <li>However, proposed design raises concerns among advocates</li>
+                            <li>Sets stage for detailed technical feedback from campaign team</li>
                             <li>Political changes affect timeline</li>
                             <li>Strategic decisions: when to push vs. wait</li>
                             <li>Managing hope and frustration within team</li>
@@ -900,14 +822,29 @@
                 <div class="timeline-content">
                     <div class="timeline-year">2019</div>
                     <div class="timeline-title">The Reckoning</div>
-                    <div class="timeline-subtitle">Crisis Point</div>
+                    <div class="timeline-subtitle">Crisis Point & Critical Feedback</div>
                     <div class="timeline-description">
                         <ul>
                             <li><strong>Bengaluru becomes world's most traffic-congested city</strong></li>
                             <li>243 hours/year stuck in traffic per commuter</li>
                             <li>Public pressure for solutions intensifies</li>
-                            <li>Media attention increases</li>
-                            <li>Government acknowledgment grows</li>
+                            <li>Campaign team analyzes RITES feasibility report in detail</li>
+                        </ul>
+                        <div class="document-card">
+                            <a href="resources/feedback_to_rites_report_2019.pdf" target="_blank">
+                                <i class="fas fa-file-pdf doc-icon"></i>
+                                <span><strong>January 3, 2019: Praja RAAG Feedback to RITES Feasibility Report</strong> - Detailed technical critique of government's 2018 feasibility study, highlighting issues with proposed corridors, station design, and fare collection systems</span>
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </a>
+                        </div>
+                        <ul>
+                            <li>Campaign pushes for network extension to Tumkur, Ramanagara, Bangarpet, Dodballapur, Hosur</li>
+                            <li>Advocates against automatic fare collection barriers that would segregate suburban from mainline</li>
+                            <li>Recommends reducing elevated corridors by 10-15 km to cut costs</li>
+                            <li>Calls for 15-coach platforms instead of 6-coach limitation to match existing service capacity</li>
+                            <li>Feedback demonstrates technical expertise earned over decade of study</li>
+                            <li>Media attention increases on suburban rail project</li>
+                            <li>Government acknowledgment grows despite technical disputes</li>
                         </ul>
                         <span class="milestone">Urgency Peaks</span>
                     </div>
@@ -996,44 +933,14 @@
     </footer>
 
     <script>
-        // Menu toggle functions
-        function toggleMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            const hamburger = document.querySelector('.hamburger');
-            const body = document.body;
-            
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-            body.classList.toggle('menu-open');
-        }
-
-        function closeMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            const hamburger = document.querySelector('.hamburger');
-            const body = document.body;
-            
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-            body.classList.remove('menu-open');
-        }
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const navMenu = document.querySelector('.nav-menu');
-            const hamburger = document.querySelector('.hamburger');
-            const isClickInsideMenu = navMenu.contains(event.target);
-            const isClickOnHamburger = hamburger.contains(event.target);
-            
-            if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
-                closeMenu();
-            }
-        });
-
-        // Close menu on escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeMenu();
-            }
+        // Reading progress bar
+        window.addEventListener('scroll', function() {
+            const progressBar = document.getElementById('progressBar');
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / documentHeight) * 100;
+            progressBar.style.width = progress + '%';
         });
 
         // Scroll animations with Intersection Observer
