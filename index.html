@@ -949,6 +949,21 @@
             }
         }
 
+        /* Responsive rules for specific sections */
+        @media (max-width: 1200px) {
+            /* "This Book Is For You If" section - make 2x2 grid on tablets */
+            section [style*="grid-template-columns: repeat(4, 1fr)"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* "This Book Is For You If" section - stack on mobile */
+            section [style*="grid-template-columns: repeat(4, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
         .exclusive-cta {
             display: inline-block;
             padding: 1.2rem 3rem;
@@ -2130,6 +2145,12 @@
                 <p>In 2019, Bengaluru was the <span class="highlight">world's most traffic-congested city</span>. People spent the equivalent of 215 episodes of Game of Thrones stuck in gridlock every year.</p>
                 <p style="margin-top: 1.5rem;">This is the story of how a small group of citizens—armed with little more than determination, data, and democratic ideals—fought for a decade to bring commuter rail to India's technology capital, Bengaluru.</p>
                 <p style="margin-top: 1.5rem;">It's a field guide for anyone who wants to make their city better but doesn't know where to start.</p>
+                
+                <!-- What Makes This Different -->
+                <div style="margin-top: 2.5rem; padding: 1.5rem; background: var(--light); border-left: 4px solid var(--accent); border-radius: 4px;">
+                    <h3 style="font-family: 'Space Mono', monospace; font-size: 1.1rem; margin-bottom: 0.8rem; color: var(--primary);">What Makes This Different</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.7; margin: 0;">Unlike academic policy textbooks, this is a <strong>real campaign story</strong> written by someone who lived it, not an observer. Unlike typical memoirs, it explicitly extracts <strong>90 actionable lessons</strong> you can apply to your own campaigns. It's both an engaging narrative <em>and</em> a practical field guide—showing you the "how," not just the "why."</p>
+                </div>
             </div>
             <div class="stats">
                 <div class="stat">
@@ -2158,6 +2179,84 @@
             "Never doubt that a small group of thoughtful, committed citizens can change the world; indeed, it's the only thing that ever has."
         </blockquote>
         <div class="quote-author">— Margaret Mead</div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" style="padding: 5rem 5%; background: var(--light);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center; font-family: 'Space Mono', monospace; color: var(--primary);">What Others Are Saying</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 4rem; text-align: center; color: var(--text); opacity: 0.8;">Praise for Break the Block</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem;">
+                <!-- Testimonial 1 -->
+                <div class="testimonial" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative;">
+                    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent); opacity: 0.3; position: absolute; top: 1.5rem; left: 1.5rem;"></i>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin: 2.5rem 0 1.5rem; color: var(--text); font-family: 'Crimson Pro', serif;">Most people decide too quickly that there isn't much they can do to make things better, but this book tells us otherwise—showing how much is possible with purpose and persistence.</p>
+                    <div style="border-top: 2px solid var(--accent); padding-top: 1rem; margin-top: 1rem;">
+                        <p style="font-weight: 700; margin-bottom: 0.3rem; color: var(--primary); font-family: 'Space Mono', monospace; font-size: 0.95rem;">Dr. Ashwin Mahesh</p>
+                        <p style="font-size: 0.9rem; opacity: 0.7; color: var(--text);">Urban expert; Columnist; Founder, India Together</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative;">
+                    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent); opacity: 0.3; position: absolute; top: 1.5rem; left: 1.5rem;"></i>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin: 2.5rem 0 1.5rem; color: var(--text); font-family: 'Crimson Pro', serif;">This prolonged battle offers insights for anyone interested in urban mobility, public policy, and citizen advocacy. Sathya deserves credit for not only championing the cause but documenting it.</p>
+                    <div style="border-top: 2px solid var(--accent); padding-top: 1rem; margin-top: 1rem;">
+                        <p style="font-weight: 700; margin-bottom: 0.3rem; color: var(--primary); font-family: 'Space Mono', monospace; font-size: 0.95rem;">Srinivas Alavilli</p>
+                        <p style="font-size: 0.9rem; opacity: 0.7; color: var(--text);">Civic activist; Fellow, WRI India</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative;">
+                    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent); opacity: 0.3; position: absolute; top: 1.5rem; left: 1.5rem;"></i>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin: 2.5rem 0 1.5rem; color: var(--text); font-family: 'Crimson Pro', serif;">This book showcases that ordinary citizens can bring about change through sustained, evidence-based advocacy.</p>
+                    <div style="border-top: 2px solid var(--accent); padding-top: 1rem; margin-top: 1rem;">
+                        <p style="font-weight: 700; margin-bottom: 0.3rem; color: var(--primary); font-family: 'Space Mono', monospace; font-size: 0.95rem;">V. Ravichandar</p>
+                        <p style="font-size: 0.9rem; opacity: 0.7; color: var(--text);">Civic evangelist; Co-organiser, Bangalore Literature Festival</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Book Is For -->
+    <section style="padding: 5rem 5%; background: linear-gradient(135deg, var(--rail-blue) 0%, var(--primary) 100%); color: white;">
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-family: 'Space Mono', monospace; color: white;">This Book Is For You If...</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 4rem; opacity: 0.9;">Real guidance for people who want to make change happen</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: left;">
+                <!-- Audience 1 -->
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 8px; backdrop-filter: blur(10px);">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
+                    <h3 style="font-family: 'Space Mono', monospace; font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--secondary);">Activists & Organizers</h3>
+                    <p style="font-size: 1rem; line-height: 1.7; opacity: 0.9;">You're fighting for change but hitting bureaucratic walls. You need practical tactics that actually work, not just inspiring quotes.</p>
+                </div>
+
+                <!-- Audience 2 -->
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 8px; backdrop-filter: blur(10px);">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎓</div>
+                    <h3 style="font-family: 'Space Mono', monospace; font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--secondary);">Policy Students</h3>
+                    <p style="font-size: 1rem; line-height: 1.7; opacity: 0.9;">Your textbooks teach theory, but you want to understand how change actually happens on the ground. This is your real-world case study.</p>
+                </div>
+
+                <!-- Audience 3 -->
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 8px; backdrop-filter: blur(10px);">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏙️</div>
+                    <h3 style="font-family: 'Space Mono', monospace; font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--secondary);">Engaged Citizens</h3>
+                    <p style="font-size: 1rem; line-height: 1.7; opacity: 0.9;">You want to fix something in your city but don't know where to start. You've wondered if one person (or five) can really make a difference.</p>
+                </div>
+
+                <!-- Audience 4 -->
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 8px; backdrop-filter: blur(10px);">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏛️</div>
+                    <h3 style="font-family: 'Space Mono', monospace; font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--secondary);">Public Servants</h3>
+                    <p style="font-size: 1rem; line-height: 1.7; opacity: 0.9;">You want to understand why some citizen campaigns succeed while others fail. This shows you the citizen perspective from the inside.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Chapters Preview -->
@@ -2398,7 +2497,6 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
     
     <!-- Success Metrics -->
     <section style="background: linear-gradient(135deg, #1a1a1a 0%, #004e89 100%); color: white; padding: 5rem 5%; text-align: center;">
@@ -2431,34 +2529,89 @@
         </div>
     </section>
 
-    <section class="testimonials">
-        <h2>What Readers Are Saying</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial">
-                <div class="testimonial-text">"A masterclass in citizen activism. This book should be required reading for anyone who wants to understand how change actually happens in modern India."</div>
-                <div class="testimonial-author">— Urban Policy Expert</div>
-            </div>
-            <div class="testimonial">
-                <div class="testimonial-text">"Brutally honest about the setbacks, incredibly inspiring about the possibilities. Sathya doesn't just tell you what worked—he shows you why it almost didn't."</div>
-                <div class="testimonial-author">— Fellow Activist</div>
-            </div>
-            <div class="testimonial">
-                <div class="testimonial-text">"The best book I've read on navigating governance systems as a citizen. Equal parts memoir, manual, and motivation."</div>
-                <div class="testimonial-author">— Public Policy Student</div>
+    <!-- FAQ Section -->
+    <section style="padding: 5rem 5%; background: white;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center; font-family: 'Space Mono', monospace; color: var(--primary);">Frequently Asked Questions</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 4rem; text-align: center; color: var(--text); opacity: 0.8;">Everything you need to know</p>
+            
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <!-- FAQ Item 1 -->
+                <div style="border-bottom: 2px solid var(--light); padding-bottom: 1.5rem;">
+                    <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">Who is this book for?</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">This book is for activists seeking practical tactics, policy students wanting real-world case studies, engaged citizens wondering how to change their city, and public servants seeking to understand citizen perspectives. If you've ever felt powerless against bureaucracy or wondered if ordinary people can really make a difference, this book is for you.</p>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div style="border-bottom: 2px solid var(--light); padding-bottom: 1.5rem;">
+                    <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">When will the book be available?</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">Break the Block will be published in <strong>January 2026</strong>. Pre-order information and exact release dates will be announced soon.</p>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div style="border-bottom: 2px solid var(--light); padding-bottom: 1.5rem;">
+                    <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">What makes this different from other books on activism?</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">Unlike academic policy textbooks, this is a real campaign story written by someone who lived it, not an observer. Unlike typical memoirs, it explicitly extracts 90 actionable lessons you can apply to your own campaigns. It's both an engaging narrative and a practical field guide—showing you the "how," not just the "why."</p>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div style="border-bottom: 2px solid var(--light); padding-bottom: 1.5rem;">
+                    <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">How long is the book?</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">The book contains <strong>12 chapters</strong> with <strong>90 explicit lessons</strong> distilled from a decade-long campaign. It's designed to be an accessible read—substantive enough to provide real value, but not so academic that it becomes a chore.</p>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div style="border-bottom: 2px solid var(--light); padding-bottom: 1.5rem;">
+                    <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">What formats will be available?</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">Break the Block will be available in <strong>paperback</strong> and <strong>digital formats</strong> (Kindle/eBook). Purchase options will include major retailers like Amazon, Flipkart, and direct from the publisher.</p>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div style="border-bottom: 2px solid var(--light); padding-bottom: 1.5rem;">
+                    <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">Is this only relevant to Bengaluru or Indian cities?</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">While the story takes place in Bengaluru, the lessons are universal. The tactics for navigating bureaucracy, building coalitions, using data effectively, and maintaining momentum over years apply to civic campaigns anywhere. Readers from Mumbai to Manila, Delhi to Denver will find applicable insights.</p>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div style="padding-bottom: 1.5rem;">
+                    <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">Can I read sample chapters before buying?</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">Yes! The <strong>Introduction</strong> and first <strong>two chapters</strong> are available to read online for free. Scroll up to the "Read Online" section or visit the <a href="key-takeaways.html" style="color: var(--accent); text-decoration: underline;">online exclusive lessons</a> page to see what you'll learn from each chapter.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Get the Book -->
     <section id="get-book" class="get-book">
-        <h2>Get Your Copy</h2>
-        <p style="font-size: 1.3rem; margin-bottom: 2rem;">Available in paperback and digital formats</p>
-        <div class="purchase-options">
-            <a href="#" class="purchase-btn">Amazon</a>
-            <a href="#" class="purchase-btn">Flipkart</a>
-            <a href="#" class="purchase-btn">Google Books</a>
-            <a href="#" class="purchase-btn">Publisher Direct</a>
+        <h2>Coming January 2026</h2>
+        
+        <!-- Book Specs -->
+        <div style="max-width: 800px; margin: 0 auto 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+            <div>
+                <div style="font-size: 3rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">12</div>
+                <div style="font-size: 1.1rem; font-family: 'Space Mono', monospace; opacity: 0.9;">Chapters</div>
+            </div>
+            <div>
+                <div style="font-size: 3rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">90</div>
+                <div style="font-size: 1.1rem; font-family: 'Space Mono', monospace; opacity: 0.9;">Explicit Lessons</div>
+            </div>
+            <div>
+                <div style="font-size: 3rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">10</div>
+                <div style="font-size: 1.1rem; font-family: 'Space Mono', monospace; opacity: 0.9;">Years of Campaign</div>
+            </div>
         </div>
+
+        <p style="font-size: 1.3rem; margin-bottom: 2rem;">Available in paperback and digital formats</p>
+        <p style="font-size: 1.1rem; margin-bottom: 3rem; opacity: 0.8;">Pre-order information and purchase links will be available soon</p>
+        
+        <div class="purchase-options" style="opacity: 0.6; pointer-events: none;">
+            <a href="#" class="purchase-btn" style="cursor: not-allowed;">Amazon</a>
+            <a href="#" class="purchase-btn" style="cursor: not-allowed;">Flipkart</a>
+            <a href="#" class="purchase-btn" style="cursor: not-allowed;">Google Books</a>
+            <a href="#" class="purchase-btn" style="cursor: not-allowed;">Publisher Direct</a>
+        </div>
+        
+        <p style="font-size: 0.95rem; margin-top: 2rem; opacity: 0.7; font-style: italic;">Want to be notified when the book launches? Get in touch below.</p>
     </section>
 
     <!-- Contact Form Section -->
