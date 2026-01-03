@@ -333,183 +333,6 @@
             color: var(--primary);
         }
 
-        /* Bookmark Button */
-        .bookmark-btn {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: var(--accent);
-            color: white;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        .bookmark-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
-        .bookmark-btn.bookmarked {
-            background: var(--rail-blue);
-        }
-
-
-        /* Text-to-Speech Button */
-        .tts-btn {
-            position: fixed;
-            bottom: 2rem;
-            left: 2rem;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: var(--secondary);
-            color: white;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            z-index: 999;
-        }
-
-        .tts-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
-        .tts-btn.playing {
-            background: var(--rail-blue);
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .tts-controls {
-            position: fixed;
-            bottom: 6rem;
-            left: 2rem;
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            display: none;
-            flex-direction: column;
-            gap: 0.5rem;
-            z-index: 998;
-            min-width: 200px;
-        }
-
-        .tts-controls.active {
-            display: flex;
-        }
-
-        .tts-controls label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: var(--text);
-            margin-bottom: 0.25rem;
-        }
-
-        .tts-controls input[type="range"] {
-            width: 100%;
-            cursor: pointer;
-        }
-
-        .tts-controls select {
-            padding: 0.5rem;
-            border: 2px solid var(--accent);
-            border-radius: 4px;
-            font-family: 'Crimson Pro', serif;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .tts-btn {
-                bottom: 5rem;
-                left: 1rem;
-                width: 48px;
-                height: 48px;
-            }
-
-            .tts-controls {
-                bottom: 9rem;
-                left: 1rem;
-            }
-        }
-
-        @media print {
-            .tts-btn, .tts-controls {
-                display: none;
-            }
-        }
-
-        @media print {
-            .top-nav, .share-buttons, .bookmark-btn, .cta-footer, footer {
-                display: none;
-            }
-            
-            .reading-container {
-                padding-top: 2rem;
-            }
-
-            body {
-                background: white;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .top-nav {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-            }
-
-            .reading-container {
-                padding: 5rem 1.5rem 2rem;
-            }
-
-            .chapter-body {
-                font-size: 1.1rem;
-            }
-
-            .reading-stats {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .cta-button {
-                display: block;
-                text-align: center;
-            }
-
-            .bookmark-btn {
-                bottom: 1rem;
-                right: 1rem;
-                width: 48px;
-                height: 48px;
-            }
-        }
-    
         /* Scroll Animations */
         .fade-in {
             opacity: 0;
@@ -607,108 +430,119 @@
         </div>
 
         <div class="chapter-body">
+<h2 class="section-heading">Where Ideas Meet Action</h2>
 
-            <!-- Enhanced Edition Banner -->
-            <div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border-left: 5px solid #f7931e; padding: 1.5rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                <h3 style="color: #856404; margin-bottom: 0.75rem; font-size: 1.3rem;"><i class="fas fa-star" style="color: #f7931e;"></i> Enhanced Edition Available</h3>
-                <p style="color: #856404; margin-bottom: 0.75rem; line-height: 1.6;">This chapter has been enhanced with section headings, insight boxes, character introductions, and <strong>5 explicit lessons</strong> with actionable takeaways.</p>
-                <a href="key-takeaways.html#chapter-1" style="display: inline-block; background: #f7931e; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: 600; transition: all 0.3s;">View Enhanced Lessons <i class="fas fa-arrow-right"></i></a>
-            </div>
+<p>##</p>
 
-            <p>The online-offline bridge</p>
+<p>I was still processing the headline when Zibi Jamal of Whitefield Rising, a non-profit citizens' group working to improve the liveability in the neighbourhood of Whitefield, east of Bengaluru, sent me a text in the morning. <em>"Incredible, ten years later it's approved".</em></p>
 
-            <h2 class="section-heading">ONE</h2>
+<p>The link to the article was floating around in the WhatsApp groups that were a part of the movement set off by four people from Praja ten years ago. The memories of the campaign came back to me as I was reading the article.</p>
 
-            <p>&quot;Union Cabinet approves, clears the Bengaluru Suburban Rail project&quot; screamed the headline in The Hindu on October 8, 2020. Zibi Jamal of Whitefield Rising, a non-profit citizens&#x27; group working to improve the liveability in the neighbourhood of Whitefield, east of Bengaluru, sent me a text in the morning. &quot;Incredible, ten years later it&#x27;s approved&quot;.</p>
+<p>DISCOVERING WHAT'S POSSIBLE</p>
 
-            <p>The link to the article was floating around in the WhatsApp groups that were a part of the movement set off by four people from Praja ten years ago. The memories of the campaign came back to me as I was reading the article.</p>
+<p>In 2007, my work trips took me to cities across Europe. Cities like Stockholm, Copenhagen, Zurich, Amsterdam, Helsinki. They all had one thing in common: infrastructure which respected people over vehicles. Public transport was frequent and accessible; the streets were friendly to people who walked and rode bicycles. Like many others in India, I wondered, why don't we have infrastructure like this?</p>
 
-            <p>DISCOVERING WHAT&#x27;S POSSIBLE</p>
+<p>I used to frequent the internet looking for what was happening back home in Bengaluru, where I had grown up. I spent my early years playing under the giant Gulmohar trees in Malleshwaram. I used to live right opposite the Malleshwaram railway station, that hosted a million sparrows and ran a few trains in a day. We would run up to the platform to collect pods from the large trees and wait for the train to pass by, choosing to cross the tracks rather than use the bridge. The fascination with trains would come back years later.</p>
 
-            <p>In 2007, my work trips took me to cities across Europe. Cities like Stockholm, Copenhagen, Zurich, Amsterdam, Helsinki. They all had one thing in common: infrastructure which respected people over vehicles. Public transport was frequent and accessible; the streets were friendly to people who walked and rode bicycles. Like many others in India, I wondered, why don&#x27;t we have infrastructure like this?</p>
+<p>The Internet would throw up road-building projects in Bengaluru. "Magic boxes" were the fad; the then City Commissioner, S. Subramanya, had hit upon the idea of constructing underpasses in a day. I wasn't sure if the moniker "magic" referred to their ability to solve traffic problems or create new ones. Among the many sites that provided news, one site called praja.in, particularly caught my fancy.</p>
 
-            <p>I used to frequent the internet looking for what was happening back home in Bengaluru, where I had grown up. I spent my early years playing under the giant Gulmohar trees in Malleshwaram. I used to live right opposite the Malleshwaram railway station, that hosted a million sparrows and ran a few trains in a day. We would run up to the platform to collect pods from the large trees and wait for the train to pass by, choosing to cross the tracks rather than use the bridge. The fascination with trains would come back years later.</p>
+<p>THE ONLINE PLATFORM: PRAJA.IN</p>
 
-            <p>The Internet would throw up road-building projects in Bengaluru. &quot;Magic boxes&quot; were the fad—the then City Commissioner, S. Subramanya, had hit upon the idea of constructing underpasses in a day. I wasn&#x27;t sure if the moniker &quot;magic&quot; referred to their ability to solve traffic problems or create new ones. Among the many sites that provided news, one site called praja.in, particularly caught my fancy.</p>
+<p>Praja.in was an online blogging platform and community created by three people: Pranav Jha, Narasimha Shastri, and Vadiraj Hombal. They worked in Bengaluru's booming software industry. Praja.in site members would post opinions, facts, and news about urban civic issues, and invite community dialogue. Facebook and Twitter weren't as popular as blogs back then. Blogs encouraged long-form content, suited for deeper discussion and analysis.</p>
 
-            <h2 class="section-heading">THE ONLINE PLATFORM: PRAJA.IN</h2>
+<p>I created an account under the pseudonym of idontspam; some would refer to me as IDS for short. I started commenting on threads and creating new threads of discussion. Technology enabled a level of interaction that was not possible earlier. Discussions on the platform were a productive exchange of ideas. I connected with a range of people on issues that were plaguing our urban fabric.</p>
 
-            <p>Praja.in was an online blogging platform and community created by three people: Pranav Jha, Narasimha Shastri, and Vadiraj Hombal. They worked in Bengaluru&#x27;s booming software industry. Praja.in site members would post opinions, facts, and news about urban civic issues, and invite community dialogue. Facebook and Twitter weren&#x27;t as popular as blogs back then. Blogs encouraged long-form content, suited for deeper discussion and analysis.</p>
+<p>Why this mattered: Online platforms like Praja created something impossible in the physical world---anonymous, judgment-free spaces where ideas competed on merit, not on who voiced them. This allowed experts, bureaucrats, activists, and ordinary citizens to engage as equals.</p>
 
-            <p>I created an account under the pseudonym of idontspam; some would refer to me as IDS for short. I started commenting on threads and creating new threads of discussion. Technology enabled a level of interaction that was not possible earlier. Discussions on the platform were a productive exchange of ideas. I connected with a range of people on issues that were plaguing our urban fabric.</p>
+<p>Bruhat Bengaluru Mahanagara Palike (BBMP), now called the Greater Bengaluru Authority (GBA) and split into 5 different corporations, was the City Corporation or Urban Local Body of Bengaluru. The government set it up under the Karnataka Municipal Act and Rules of 1964 and 1976 to administer the city of Bengaluru. The BBMP builds and maintains the road and drain infrastructure among many others. They also provide building sanctions as per the rules in the Act. They are the first line of basic infrastructure provisioning for the city. But they don't plan, own, or operate public transportation services.</p>
 
-            <p>Why this mattered: Online platforms like Praja created something impossible in the physical world—anonymous, judgment-free spaces where ideas competed on merit, not on who voiced them. This allowed experts, bureaucrats, activists, and ordinary citizens to engage as equals.</p>
+<p>Bengaluru was growing fast. The post-liberalisation Information Technology industry was booming. The technology companies collectively labelled as "IT industry" were adding people by the thousands. Many of the people working in and joining these companies had travelled outside the country, mostly to the United States of America. The two biggest aspirations of Indians are to be part of a film and to own a car. With the rise in the middle class and increasing prosperity, the car-based culture of transport quickly became a replicable benchmark when they came back to their homeland.</p>
 
-            <p>Bruhat Bengaluru Mahanagara Palike (BBMP), now called the Greater Bengaluru Authority (GBA) and split into 5 different corporations, was the City Corporation or Urban Local Body of Bengaluru. The government set it up under the Karnataka Municipal Act and Rules of 1964 and 1976 to administer the city of Bengaluru. The BBMP builds and maintains the road and drain infrastructure among many others. They also provide building sanctions as per the rules in the Act. They are the first line of basic infrastructure provisioning for the city. But they don&#x27;t plan, own, or operate public transportation services.</p>
+<p>The number of vehicles in Bangalore skyrocketed from just three lakhs in 1985 to forty lakhs in 2011. Traffic congestion became a hot topic on Praja.in. Many months of conversations revolved around public transportation systems across the world. The economy was booming despite the financial crisis of 2007-2008 caused by subprime lending. The repercussions were being felt across the globe. It did not, however, seem to dampen public transport infrastructure development in Bengaluru.</p>
 
-            <p>Bengaluru was growing fast. The post-liberalisation Information Technology industry was booming. The technology companies collectively labelled as &quot;IT industry&quot; were adding people by the thousands. Many of the people working in and joining these companies had travelled outside the country, mostly to the United States of America. The two biggest aspirations of Indians are to be part of a film and to own a car. With the rise in the middle class and increasing prosperity, the car-based culture of transport quickly became a replicable benchmark when they came back to their homeland.</p>
+<p>The discussions on Praja formed a perfect case study of how internet platforms can shape public discourse and civic action. The National University of Singapore later published a paper highlighting Praja's effect on the city's civic ecosystem. The online discussions were of high quality. They caught the attention of certain government officials who were following our conversations.</p>
 
-            <p>The number of vehicles in Bangalore skyrocketed from just three lakhs in 1985 to forty lakhs in 2011. Traffic congestion became a hot topic on Praja.in. Many months of conversations revolved around public transportation systems across the world. The economy was booming despite the financial crisis of 2007-2008 caused by subprime lending. The repercussions were being felt across the globe. It did not, however, seem to dampen public transport infrastructure development in Bengaluru.</p>
+<p>MOVING OFFLINE: THE FIRST TEST</p>
 
-            <p>The discussions on Praja formed a perfect case study of how internet platforms can shape public discourse and civic action. The National University of Singapore later published a paper highlighting Praja&#x27;s effect on the city&#x27;s civic ecosystem. The online discussions were of high quality. They caught the attention of certain government officials who were following our conversations.</p>
+<p>The enthusiasm soon spilled over offline. One of our first engagements with Bengaluru's public bus service company, the Bangalore Metropolitan Transportation Corporation (BMTC), happened in late 2009.</p>
 
-            <h2 class="section-heading">MOVING OFFLINE: THE FIRST TEST</h2>
+<p>Jenny Pinto had walked away from a lucrative media career in Mumbai to do something that mattered. She landed in Bengaluru looking for collaborators---people who shared her restlessness, her belief that conversations shouldn't stay in boardrooms and living rooms but needed to reach the streets.</p>
 
-            <p>The enthusiasm soon spilled over offline. One of our first engagements with Bengaluru&#x27;s public bus service company, the Bangalore Metropolitan Transportation Corporation (BMTC), happened in late 2009.</p>
+<p>She found Praja.</p>
 
-            <p>Jenny Pinto had a background in media. She left her lucrative career to change society. She moved from Mumbai to Bengaluru and was looking for an enthusiastic group of people to collaborate with on her ideas. She found Praja. She knew the value of taking conversations to the people and insisted that Praja needed to engage with the broader community. It seemed natural that we use an academic institution to anchor this move and help us step into the offline world.</p>
+<p>Jenny understood something the rest of us were still learning: online discussions don't change cities. People do. And people need to meet, argue, and build trust face-to-face. She pushed us---sometimes dragged us---toward the offline world.</p>
 
-            <p>Jenny, along with a small group of individuals from Praja—Manjari, Khader Basha Syed, Rithesh, Neha Dar et al.—crafted an event called &quot;Mobilicity&quot; to share ideas between citizens, officials, and academia.</p>
+<p>"We need an anchor," she insisted. "Something that gives us credibility beyond a website."</p>
 
-            <p>She got in touch with Prof. Dr. T. G. Sitharam. He was then the Chairperson of the Centre for Infrastructure, Sustainable Transportation, and Urban Planning (CiSTUP) at the Indian Institute of Science (IISc) in the city. He was a Senior Professor at IISc&#x27;s Department of Civil Engineering, but carried his accomplishments lightly. You couldn&#x27;t tell by the way he interacted with us that he had a mile-long list of academic credentials and awards. He was interested in collaborating with Praja on Mobilicity and always welcomed us and helped us in any way he could.</p>
+<p>That anchor turned out to be Prof. T.G. Sitharam.</p>
 
-            <p>Over two hundred people attended Mobilicity, including a couple of elected representatives, officials from various departments, and many active citizens, and spoke passionately about transportation issues. The academia saw citizen groups outside their campus in a more positive light. The bureaucrats realised that all engagements with the people and civil society need not be as a protest. It helped cement constructive debate and engagement between stakeholder groups that had often dismissed or been at odds with each other.</p>
+<p>As Chairperson of CiSTUP at the Indian Institute of Science, Prof. Sitharam had a mile-long list of credentials---Senior Professor of Civil Engineering, internationally recognised researcher, awards that would fill a wall. You'd never know it from talking to him. He treated our ragtag group of citizen-advocates with the same seriousness he'd give a visiting delegation. No condescension. No gatekeeping. Just genuine curiosity about what we were trying to build.</p>
 
-            <p>What we learned: Offline events do something online platforms can&#x27;t—they build trust. When you sit across the table from a bureaucrat or academic, ideological differences soften. Face-to-face interaction transforms adversaries into potential collaborators.</p>
+<p>Jenny, along with Manjari, Syed, Rithesh, Neha, and others from Praja, crafted an event called "Mobilicity"---a platform to bring citizens, officials, and academics into the same room.</p>
 
-            <p>One major outcome of Mobilicity 2009 was the opportunity to work with BMTC on one of the first citizen-led campaigns in the city, called &quot;Bus Day&quot;.</p>
+<p>Prof. Sitharam didn't just agree to host it. He became a partner.</p>
 
-            <h2 class="section-heading">THE BUS DAY CAMPAIGN: TESTING ONLINE-OFFLINE SYNERGY</h2>
+<p>Over two hundred people attended Mobilicity, including a couple of elected representatives, officials from various departments, and many active citizens, and spoke passionately about transportation issues. The academia saw citizen groups outside their campus in a more positive light. The bureaucrats realised that all engagements with the people and civil society need not be as a protest. It helped cement constructive debate and engagement between stakeholder groups that had often dismissed or been at odds with each other.</p>
 
-            <p>The Bus Day campaign aimed to promote the use of the Volvo bus services that BMTC was deploying. Being relatively expensive in fare, it needed a different audience and strategy. Praja used this opportunity to push public transport among the IT crowd. One of the few buses, other than the Airport route, that became a success was the 335 series, which served the IT corridor to Whitefield. IT employees could not only afford the air-conditioned bus service; they instead preferred to use alternatives like private motor vehicles that caused congestion and pollution. The tech platform brought stakeholders together to brainstorm, create materials and collateral, and execute the campaign on the ground.</p>
+<p>What we learned: Offline events do something online platforms can't---they build trust. When you sit across the table from a bureaucrat or academic, ideological differences soften. Face-to-face interaction transforms adversaries into potential collaborators.</p>
 
-            <p>The feedback from the event led BMTC to change a corporate-looking website with static information to a more citizen-friendly website. The Bus Day event still could not provide us with information to put online because BMTC was paper-based. The interactions over the months provided BMTC an opportunity to change their online presence and allowed us an insight into what it takes to change things inside government entities.</p>
+<p>One major outcome of Mobilicity 2009 was the opportunity to work with BMTC on one of the first citizen-led campaigns in the city, called <em>"Bus Day"</em>.</p>
 
-            <p>The other major outcome from Mobilicity was to cement our relationship with CiSTUP. This would come in handy with the Commuter Rail campaign the very next year.</p>
+<p>THE BUS DAY CAMPAIGN: TESTING ONLINE-OFFLINE SYNERGY</p>
 
-            <p>Though I returned to Bengaluru from my European sojourn after &quot;Bus Day&quot; had taken off, the campaign taught me the value of engaging with industry. It is a fine line to tread between fighting for your cause and being perceived as a marketing machine for a corporation. The cause needs legs, and the private sector can be a valuable partner. The lack of private sector partnerships to support public good campaigns can be a big drawback, as we saw in the commuter rail campaign. We couldn&#x27;t get a big train manufacturer to pay any attention. We would soon discover why.</p>
+<p>The Bus Day campaign aimed to promote the use of the Volvo bus services that BMTC was deploying. Being relatively expensive in fare, it needed a different audience and strategy. Praja used this opportunity to push public transport among the IT crowd. One of the few buses, other than the Airport route, that became a success was the 335 series, which served the IT corridor to Whitefield. IT employees could not only afford the air-conditioned bus service; they instead preferred to use alternatives like private motor vehicles that caused congestion and pollution. The tech platform brought stakeholders together to brainstorm, create materials and collateral, and execute the campaign on the ground.</p>
 
-            <h2 class="section-heading">THE COMMUTER RAIL SPARK</h2>
+<p>The feedback from the event led BMTC to change a corporate-looking website with static information to a more citizen-friendly website. The Bus Day event still could not provide us with information to put online because BMTC was paper-based. The interactions over the months provided BMTC an opportunity to change their online presence and allowed us an insight into what it takes to change things inside government entities.</p>
 
-            <p>With the newfound momentum from the BMTC engagements offline, the platform continued to engage users on public transport topics online. The train, tram, and bus systems in Europe were a revelation to me. We began sharing knowledge and information about the various public transport options in those countries. The metropolitan areas had a mix of suburban trains which connected satellite towns to the city&#x27;s economic engine. Within cities, metro systems offered higher frequency, shorter-distance connectivity. Trams and buses supplemented these systems.</p>
+<p>The other major outcome from Mobilicity was to cement our relationship with CiSTUP. This would come in handy with the Commuter Rail campaign the very next year.</p>
 
-            <p>These interconnected public transport systems provided a depth of coverage within and around the city that was so efficient. Sometimes you didn&#x27;t see the roads at all on your way to work. A motivated group, which understood the importance of train-based systems as an answer to Bengaluru&#x27;s congestion woes and pivotal to its future as a liveable, sustainable city, was forming on the platform.</p>
+<p>Though I returned to Bengaluru from my European sojourn after <em>"Bus Day"</em> had taken off, the campaign taught me the value of engaging with industry. It is a fine line to tread between fighting for your cause and being perceived as a marketing machine for a corporation. The cause needs legs, and the private sector can be a valuable partner. The lack of private sector partnerships to support public good campaigns can be a big drawback, as we saw in the commuter rail campaign. We couldn't get a big train manufacturer to pay any attention. We would soon discover why.</p>
 
-            <p>While researching information on commuter rail in March 2009, I made a tongue-in-cheek comment on a Praja thread, titled Commuter Rail System - For Us?:</p>
+<p>THE COMMUTER RAIL SPARK</p>
 
-            <p>&quot;Are there any technical studies or recommendations on CRS for Bangalore? The only links I get lead back to Praja!!! Are we the only people talking about it?&quot;</p>
+<p>With the newfound momentum from the BMTC engagements offline, the platform continued to engage users on public transport topics online. The train, tram, and bus systems in Europe were a revelation to me. We began sharing knowledge and information about the various public transport options in those countries. The metropolitan areas had a mix of suburban trains which connected satellite towns to the city's economic engine. Within cities, metro systems offered higher frequency, shorter-distance connectivity. Trams and buses supplemented these systems.</p>
 
-            <p>The thread had jump-started my curiosity and deeper research on commuter rail. However, Pranav had already reached out to Gaurav Gupta, who was heading the Bengaluru Metropolitan Land Transport Authority (BMLTA). The Government formed this committee to plan transportation projects and to avail funds under a central scheme. This scheme would improve public transport in cities.</p>
+<p>These interconnected public transport systems provided a depth of coverage within and around the city that was so efficient. Sometimes you didn't see the roads at all on your way to work. A motivated group, which understood the importance of train-based systems as an answer to Bengaluru's congestion woes and pivotal to its future as a liveable, sustainable city, was forming on the platform.</p>
 
-            <p>Unfortunately, in the Government, only full-fledged departments with substantial funding get full-time officers. Smaller entities must make do with junior officers. Junior officers cannot pull weight with other departments and hence struggle to execute significant projects.</p>
+<p>While researching information on commuter rail in March 2009, I made a tongue-in-cheek comment on a Praja thread, titled Commuter Rail System - For Us?:</p>
 
-            <p>Gaurav Gupta gave Pranav an appointment. That was the first time he was walking into the Vidhana Soudha. Gaurav Gupta was aware of Praja. He would read the posts and found them engaging. He wanted to inform us of the latest developments so we could share them with Praja&#x27;s online community and spark discussions. Praja&#x27;s platform, aside from newspapers, could give him a direct connection with the public. During the conversation, he mentioned in passing the various tracks and stations that already existed for a suburban rail service. Pranav could not get this thought out of his mind on his drive home. He looked up Google Maps for all the stations around the city. He and a fellow blogger stumbled on the Comprehensive Traffic and Transport Plan (CTTP).</p>
+<p><em>"Are there any technical studies or recommendations on CRS for Bangalore? The only links I get lead back to Praja!!! Are we the only people talking about it?"</em></p>
 
-            <p>Karnataka Urban Infrastructure Development and Finance Corporation (KUIDFC) commissioned the CTTP in 2007. It made recommendations on various mode shares, including the Commuter Rail System. A mode share is the percentage of travellers using a particular type of transportation. It identified ten segments of commuter railway service in the document for service rollout.</p>
+<p>The thread had jump-started my curiosity and deeper research on commuter rail. However, Pranav had already reached out to Gaurav Gupta, who was heading the Bengaluru Metropolitan Land Transport Authority (BMLTA). The Government formed this committee to plan transportation projects and to avail funds under a central scheme. This scheme would improve public transport in cities.</p>
 
-            <p>Some conversations on Praja identified this as a potential opportunity that no one in the Government was paying attention to. It would take a while for it to find its legs.</p>
+<p>Unfortunately, in the Government, only full-fledged departments with substantial funding get full-time officers. Smaller entities must make do with junior officers. Junior officers cannot pull weight with other departments and hence struggle to execute significant projects.</p>
 
-            <h2 class="section-heading">FORMALISING THE OFFLINE ENTITY</h2>
+<p>Gaurav Gupta gave Pranav an appointment. That was the first time he was walking into the Vidhana Soudha. Gaurav Gupta was aware of Praja. He would read the posts and found them engaging. He wanted to inform us of the latest developments so we could share them with Praja's online community and spark discussions. Praja's platform, aside from newspapers, could give him a direct connection with the public. During the conversation, he mentioned in passing the various tracks and stations that already existed for a suburban rail service. Pranav could not get this thought out of his mind on his drive home. He looked up Google Maps for all the stations around the city. He and a fellow blogger stumbled on the Comprehensive Traffic and Transport Plan (CTTP).</p>
 
-            <p>Seven of us from Praja set up an offline entity. The work of lobbying for projects offline was bringing new people who wanted to organise themselves better and represent themselves as a legal entity. The platform supplemented the effort of making change happen and was going to be hooked to this offline entity. It was essential to formalise the offline operations. We needed a name.</p>
+<p>Karnataka Urban Infrastructure Development and Finance Corporation (KUIDFC) commissioned the CTTP in 2007. It made recommendations on various mode shares, including the Commuter Rail System. A mode share is the percentage of travellers using a particular type of transportation. It identified ten segments of commuter railway service in the document for service rollout.</p>
 
-            <p>Brainstorming for a name, we had to understand what we stood for. The discussions in Praja had a solution angle to all problems. In fact, we used the word &quot;Solutionism&quot; in our elevator pitch for quite a while, even with bureaucrats. We just made it up to describe all the knowledge that existed on the platform.</p>
+<p>Some conversations on Praja identified this as a potential opportunity that no one in the Government was paying attention to. It would take a while for it to find its legs.</p>
 
-            <p>I suggested that we use a new name to differentiate the offline entity from the web platform. All accepted my recommendation of Research, Analysis, and Advocacy Group for a name. We set Praja RAAG up as a society.</p>
+<p>FORMALISING THE OFFLINE ENTITY</p>
 
-            <p>The bridging of the online and offline world was complete.</p>
+<p>Seven of us from Praja set up an offline entity. The work of lobbying for projects offline was bringing new people who wanted to organise themselves better and represent themselves as a legal entity. The platform supplemented the effort of making change happen and was going to be hooked to this offline entity. It was essential to formalise the offline operations. We needed a name.</p>
 
-            <p>The platform brought ideas together, sometimes anonymously. But the offline world brought people together. With all the warts and pimples in their ideologies and biases. The ability to use online and offline entities to bring out the best in us would be on trial soon.</p>
-        </div>
+<p>Brainstorming for a name, we had to understand what we stood for. The discussions in Praja had a solution angle to all problems. In fact, we used the word <em>"Solutionism"</em> in our elevator pitch for quite a while, even with bureaucrats. We just made it up to describe all the knowledge that existed on the platform.</p>
 
+<p>I suggested that we use a new name to differentiate the offline entity from the web platform. All accepted my recommendation of Research, Analysis, and Advocacy Group for a name. We set Praja RAAG up as a society.</p>
 
+<p>The bridging of the online and offline world was complete.</p>
 
-        <div class="cta-footer">
+<p>The platform brought ideas together, sometimes anonymously. But the offline world brought people together in real life; with all the warts and pimples in their ideologies and biases.</p>
+
+<p>We had a platform. We had people. We had ideas.</p>
+
+<p>What we didn't have was any understanding of what we were actually up against.</p>
+
+<p>##</p>
+
+<p>##</p>
+
+<p>CHAPTER TWO</p>
+
+<p>Trains of thought</p>
+
+        >
             <h3>Continue Reading</h3>
             <p>Chapter Two explores the fascinating history of Indian Railways and its impact on the campaign.</p>
             <div class="cta-buttons">
@@ -756,22 +590,7 @@
     </footer>
 
     <!-- Text-to-Speech Controls -->
-    <div class="tts-controls" id="ttsControls">
-        <label>Speech Rate</label>
-        <input type="range" id="ttsRate" min="0.5" max="2" step="0.1" value="1">
-        <label>Voice</label>
-        <select id="ttsVoice"></select>
-    </div>
-
-    <button class="tts-btn" id="ttsBtn" onclick="toggleTTS()" title="Listen to this chapter">
-        <i class="fas fa-play"></i>
-    </button>
-
-        <button class="bookmark-btn" id="bookmarkBtn" onclick="toggleBookmark()" title="Bookmark this page">
-        <i class="fas fa-bookmark"></i>
-    </button>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
         // Reading progress bar
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -780,8 +599,7 @@
             document.getElementById('progressBar').style.width = scrolled + '%';
         });
 
-        // Share functions
-                // Share Menu Toggle
+        // Share Menu Toggle
         function toggleShareMenu(event) {
             event.stopPropagation();
             const shareMenu = document.querySelector('.share-menu');
@@ -800,8 +618,8 @@
 
         function shareOn(platform) {
             const url = encodeURIComponent(window.location.href);
-            const title = encodeURIComponent('Chapter 1 - Break the Block');
-            const text = encodeURIComponent('Reading Chapter 1: The Online-Offline Bridge from Break the Block.');
+            const title = encodeURIComponent(document.title);
+            const text = encodeURIComponent('Check out this chapter from Break the Block');
             
             let shareUrl;
             switch(platform) {
@@ -825,190 +643,7 @@
             if (shareUrl) {
                 window.open(shareUrl, '_blank', 'width=600,height=400');
             }
-            return false;
         }
-
-
-        // Text-to-Speech functionality
-        const synth = window.speechSynthesis;
-        let currentUtterance = null;
-        let isPaused = false;
-        let isSpeaking = false;
-        let currentPosition = 0;
-
-        window.toggleTTS = function() {
-            const btn = document.getElementById('ttsBtn');
-            const icon = btn.querySelector('i');
-            const controls = document.getElementById('ttsControls');
-            
-            if (isSpeaking && !isPaused) {
-                // Pause (Safari doesn't support pause well, so we cancel)
-                synth.cancel();
-                isPaused = true;
-                isSpeaking = false;
-                icon.className = 'fas fa-play';
-                btn.classList.remove('playing');
-                btn.title = 'Start reading';
-            } else {
-                // Start or restart
-                window.startReading();
-                if (!controls.classList.contains('active')) {
-                    controls.classList.add('active');
-                }
-            }
-        }
-
-        window.startReading = function() {
-            const btn = document.getElementById('ttsBtn');
-            const icon = btn.querySelector('i');
-            
-            // Cancel any ongoing speech
-            synth.cancel();
-            
-            // Small delay for Safari
-            setTimeout(() => {
-                // Get chapter text
-                const chapterBody = document.querySelector('.chapter-body');
-                const text = chapterBody.innerText;
-                
-                // Create utterance
-                currentUtterance = new SpeechSynthesisUtterance(text);
-                
-                // Get selected voice
-                const voiceSelect = document.getElementById('ttsVoice');
-                const voices = synth.getVoices();
-                if (voiceSelect.value && voices.length > 0) {
-                    const selectedVoice = voices.find(v => v.name === voiceSelect.value);
-                    if (selectedVoice) {
-                        currentUtterance.voice = selectedVoice;
-                    }
-                }
-                
-                // Get rate
-                const rate = parseFloat(document.getElementById('ttsRate').value);
-                currentUtterance.rate = rate;
-                
-                // Set pitch and volume for better quality
-                currentUtterance.pitch = 1;
-                currentUtterance.volume = 1;
-                
-                // Set up event handlers
-                currentUtterance.onstart = () => {
-                    isSpeaking = true;
-                    isPaused = false;
-                    icon.className = 'fas fa-pause';
-                    btn.classList.add('playing');
-                    btn.title = 'Stop reading';
-                };
-                
-                currentUtterance.onend = () => {
-                    isSpeaking = false;
-                    isPaused = false;
-                    icon.className = 'fas fa-play';
-                    btn.classList.remove('playing');
-                    btn.title = 'Listen to this chapter';
-                };
-                
-                currentUtterance.onerror = (event) => {
-                    console.error('Speech error:', event);
-                    isSpeaking = false;
-                    isPaused = false;
-                    icon.className = 'fas fa-play';
-                    btn.classList.remove('playing');
-                    btn.title = 'Listen to this chapter';
-                };
-                
-                // Start speaking
-                synth.speak(currentUtterance);
-            }, 100);
-        }
-
-        // Load voices (Safari-compatible)
-        window.loadVoices = function() {
-            const voices = synth.getVoices();
-            const voiceSelect = document.getElementById('ttsVoice');
-            
-            if (!voices || voices.length === 0) {
-                // Voices not loaded yet, try again
-                setTimeout(window.loadVoices, 100);
-                return;
-            }
-            
-            // Clear existing options
-            voiceSelect.innerHTML = '';
-            
-            // Filter for English voices
-            const englishVoices = voices.filter(voice => voice.lang.startsWith('en'));
-            
-            if (englishVoices.length === 0) {
-                // No English voices, use all voices
-                voices.forEach(voice => {
-                    const option = document.createElement('option');
-                    option.value = voice.name;
-                    option.textContent = `${voice.name} (${voice.lang})`;
-                    voiceSelect.appendChild(option);
-                });
-                if (voices.length > 0) {
-                    voiceSelect.value = voices[0].name;
-                }
-            } else {
-                englishVoices.forEach(voice => {
-                    const option = document.createElement('option');
-                    option.value = voice.name;
-                    option.textContent = `${voice.name} (${voice.lang})`;
-                    voiceSelect.appendChild(option);
-                });
-                // Set default to first English voice
-                voiceSelect.value = englishVoices[0].name;
-            }
-        }
-
-        // Load voices when available (Safari needs multiple attempts)
-        if (synth.onvoiceschanged !== undefined) {
-            synth.onvoiceschanged = window.loadVoices;
-        }
-        
-        // Initial load
-        setTimeout(window.loadVoices, 100);
-        
-        // Ensure voices load on page load
-        window.addEventListener('load', () => {
-            setTimeout(window.loadVoices, 200);
-        });
-
-        // Stop speech when page unloads
-        window.addEventListener('beforeunload', () => {
-            if (isSpeaking) {
-                synth.cancel();
-            }
-        });
-        
-        // Safari: Keep speech synthesis alive
-        setInterval(() => {
-            if (synth.speaking && !synth.paused) {
-                synth.pause();
-                synth.resume();
-            }
-        }, 10000);
-
-        // Bookmark functionality
-        window.toggleBookmark = function() {
-            const btn = document.getElementById('bookmarkBtn');
-            const key = 'bookmark_' + window.location.pathname;
-            
-            if (localStorage.getItem(key)) {
-                localStorage.removeItem(key);
-                btn.classList.remove('bookmarked');
-                btn.title = 'Bookmark this page';
-            } else {
-                localStorage.setItem(key, 'true');
-                btn.classList.add('bookmarked');
-                btn.title = 'Bookmarked';
-            }
-        }
-
-        // Check if bookmarked on load
-        window.addEventListener('load', () => {
-            const key = 'bookmark_' + window.location.pathname;
-            if (localStorage.getItem(key)) {
-          
+    </script>
+</body>
+</html>

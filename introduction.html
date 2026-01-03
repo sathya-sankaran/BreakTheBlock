@@ -333,183 +333,6 @@
             color: var(--primary);
         }
 
-        /* Bookmark Button */
-        .bookmark-btn {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: var(--accent);
-            color: white;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        .bookmark-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
-        .bookmark-btn.bookmarked {
-            background: var(--rail-blue);
-        }
-
-
-        /* Text-to-Speech Button */
-        .tts-btn {
-            position: fixed;
-            bottom: 2rem;
-            left: 2rem;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: var(--secondary);
-            color: white;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            z-index: 999;
-        }
-
-        .tts-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
-        .tts-btn.playing {
-            background: var(--rail-blue);
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .tts-controls {
-            position: fixed;
-            bottom: 6rem;
-            left: 2rem;
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            display: none;
-            flex-direction: column;
-            gap: 0.5rem;
-            z-index: 998;
-            min-width: 200px;
-        }
-
-        .tts-controls.active {
-            display: flex;
-        }
-
-        .tts-controls label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: var(--text);
-            margin-bottom: 0.25rem;
-        }
-
-        .tts-controls input[type="range"] {
-            width: 100%;
-            cursor: pointer;
-        }
-
-        .tts-controls select {
-            padding: 0.5rem;
-            border: 2px solid var(--accent);
-            border-radius: 4px;
-            font-family: 'Crimson Pro', serif;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .tts-btn {
-                bottom: 5rem;
-                left: 1rem;
-                width: 48px;
-                height: 48px;
-            }
-
-            .tts-controls {
-                bottom: 9rem;
-                left: 1rem;
-            }
-        }
-
-        @media print {
-            .tts-btn, .tts-controls {
-                display: none;
-            }
-        }
-
-        @media print {
-            .top-nav, .share-buttons, .bookmark-btn, .cta-footer, footer {
-                display: none;
-            }
-            
-            .reading-container {
-                padding-top: 2rem;
-            }
-
-            body {
-                background: white;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .top-nav {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-            }
-
-            .reading-container {
-                padding: 5rem 1.5rem 2rem;
-            }
-
-            .chapter-body {
-                font-size: 1.1rem;
-            }
-
-            .reading-stats {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .cta-button {
-                display: block;
-                text-align: center;
-            }
-
-            .bookmark-btn {
-                bottom: 1rem;
-                right: 1rem;
-                width: 48px;
-                height: 48px;
-            }
-        }
-    
         /* Scroll Animations */
         .fade-in {
             opacity: 0;
@@ -607,192 +430,161 @@
         </div>
 
         <div class="chapter-body">
-            <p>Introduction</p>
+<h2 class="section-heading">Ten Years to "Yes"</h2>
 
-            <p>“Union Cabinet approves, clears the Bengaluru Suburban Rail project.”</p>
+<p>Union Cabinet approves, clears the Bengaluru Suburban Rail project."*</p>
 
-            <p>The headline screamed across The Hindu on October 8, 2020. I stared at my phone, reading it three times to make sure I wasn’t hallucinating.</p>
+<p>This was the headline in The Hindu on October 8, 2020. I stared at my phone, reading it three times to make sure I wasn't hallucinating.</p>
 
-            <p>Seven months earlier, just before the COVID-19 lockdown began, I had sent an email to my fellow campaigners—Sanjeev, Pranav, Naveen, and Syed. “After the lockdown ends,” I wrote, “we’ll regroup and push this all the way to the finish line.” I thought we’d be back at it in three or four months.</p>
+<p>Seven months earlier, just before the COVID-19 lockdown began, I had emailed my fellow campaigners; Sanjeev, Pranav, Naveen, and Syed. "After the lockdown ends," I wrote, "we'll regroup and push this all the way to the finish line." I thought we'd be back at it in three or four months.</p>
 
-            <p>We never regrouped. The campaign had gone silent. And yet, somehow, impossibly, we had won.</p>
+<p>We never regrouped. The campaign had gone silent. And yet, somehow, impossibly, we had won.</p>
 
-            <p>Ten years. Hundreds of meetings, blog posts and email correspondence. Countless rejections. And in the end, victory came when we weren’t even in the room.</p>
+<p>Ten years. Hundreds of meetings, blog posts, and emails. Countless rejections. And in the end, victory came when we weren't even in the room.</p>
 
-            <p>If you’ve ever tried to change something in your city—and hit a wall—this book is for you.</p>
+<p>THE CRISIS</p>
 
-            <h2 class="section-heading">THE CRISIS</h2>
+<p>In 2019, Bengaluru earned an unwanted distinction: the world's most traffic-congested city. Commuters spent 243 hours per year in gridlock; the equivalent of watching 215 episodes of Game of Thrones. Sixty-kilometre commutes from neighbouring towns in rickety buses were commonplace. The city was choking on its own success.</p>
 
-            <p>In 2019, Bengaluru earned an unwanted distinction: the world’s most traffic-congested city. People spent 243 hours per year sitting in gridlock—the equivalent of watching 215 episodes of Game of Thrones or 139 football matches. Sixty-kilometre commutes from neighbouring towns in rickety buses were commonplace. The city was choking on its own success.</p>
+<p>Unlike Mumbai or Chennai, Bengaluru had no commuter rail system to take the burden off the roads. The average commute speed was less than 19 kilometres per hour; slower than a bicycle. The economic engine of India's tech capital was sputtering.</p>
 
-            <p>Unlike Mumbai or Chennai, Bengaluru had no commuter rail system to take the burden off the roads. The average commute speed was less than 19 kilometres per hour—slower than a bicycle. The economic engine of India’s tech capital was sputtering, draining productivity and hope in equal measure.</p>
+<p>The government of Mysore State had formed the Bangalore Transport Service in 1956, taking over a private fleet of ninety-eight buses. The bus was the mainstay of public transportation in what was then a pensioner's paradise. But Bengaluru grew at thirty-eight percent every decade after liberalisation in 1991. The city's economy doubled every two years. Bengaluru leapfrogged the manufacturing age straight into a technology revolution. The bus couldn't keep up, and private vehicles took over.</p>
 
-            <p>The government of Mysore State had formed the Bangalore Transport Service in 1956 by taking over a company with a private fleet of ninety-eight buses operating since 1940. The bus was the mainstay of public transportation in what was then a pensioner’s paradise. But Bengaluru grew at thirty-eight percent every decade since liberalisation in 1991. The city’s economy doubled every two years. Bengaluru jumped past the manufacturing age straight into a technology revolution. The bus couldn’t keep up, and private vehicles took over the city streets.</p>
+<p>We decided to fix it.</p>
 
-            <p>We decided to fix it.</p>
+<p>This book is the story of that decade-long campaign.</p>
 
-            <p>This book is the story of that decade-long campaign.</p>
+<p>WHAT THIS BOOK IS (AND ISN'T)</p>
 
-            <h2 class="section-heading">WHAT THIS BOOK IS (AND ISN’T)</h2>
+<p>When I started working on the commuter rail campaign in 2009, I had no idea it would become a decade-long journey that would transform not just my city, but my understanding of how change happens in complex governance systems.</p>
 
-            <p>When I started working on the commuter rail campaign in 2009, I had no idea it would become a decade-long journey that would transform not just my city, but also my understanding of how change happens in complex governance systems.</p>
+<p>This book is not a manual on transportation policy. It's not a comprehensive history of Bengaluru's urban development. And it's definitely not a self-help book.</p>
 
-            <p>This book is not a manual on transportation policy. It’s not a comprehensive history of Bengaluru’s urban development. And it’s definitely not a self-help book.</p>
+<p>Rather, it's a chronicle of lessons learned---the hard way; about what it takes to move the needle on public policy when you have no formal power. An honest account of what happens when ordinary people decide the system needs to change.</p>
 
-            <p>Rather, it is a chronicle of lessons learned—the hard way—about what it takes to move the needle on public policy when you’re not in a position of formal power. It’s an honest account of what happens when people who aren’t in positions of formal authority decide the system needs to change.</p>
+<p>More importantly, this is a field guide for anyone who wants to make their city better.</p>
 
-            <p>More importantly, this is a field guide for anyone who wants to make their city better.</p>
+<p>WHO THIS BOOK IS FOR</p>
 
-            <h2 class="section-heading">WHO THIS BOOK IS FOR</h2>
+<p>This book is for you if:</p>
 
-            <p>I wrote this book for fellow citizens who want to make a difference in their communities but don’t know where to start. For activists who have hit roadblocks and wonder whether to keep going. For public servants who want to understand the citizen’s perspective. And for students of public policy who are learning that the gap between textbook theory and real-world implementation is vast indeed.</p>
+<p>You're an activist who's hit bureaucratic walls and wonder whether to keep going or give up</p>
 
-            <p>This book is for you if:</p>
+<p>You're a policy student learning that textbook theory doesn't match ground reality</p>
 
-            <p>• You’re an activist who’s hit bureaucratic walls and wonder whether to keep going or give up</p>
+<p>You're a public servant who wants to understand why some citizen campaigns succeed while others stall</p>
 
-            <p>• You’re a policy student learning that textbook theory doesn’t match ground reality</p>
+<p>You're an engaged citizen who wants to improve your city but doesn't know where to start</p>
 
-            <p>• You’re a public servant who wants to understand why some citizen campaigns succeed while others stall</p>
+<p>You care about how democracy actually works---not in theory, but in practice</p>
 
-            <p>• You’re an engaged citizen who wants to make your city better but doesn’t know where to start</p>
+<p>WHAT YOU'LL LEARN</p>
 
-            <p>• You care about how democracy actually works—not in theory, but in practice</p>
+<p>By the end of this book, you'll understand:</p>
 
-            <h2 class="section-heading">WHAT YOU’LL LEARN</h2>
+<p>How to navigate governance systems and identify leverage points; the specific places where citizen pressure can move the needle, and how to recognise them.</p>
 
-            <p>By the end of this book, you’ll understand:</p>
+<p>When persistence pays off and when strategy needs to change; because sometimes the obstacle IS the way, and sometimes it's just an obstacle. Learning to tell the difference is crucial.</p>
 
-            <p>How to navigate governance systems and identify leverage points—the specific places where citizen pressure can actually move the needle, and how to recognise them when you see them.</p>
+<p>How to build coalitions across citizens, media, and government; including people you disagree with on everything except this one issue.</p>
 
-            <p>When persistence pays off and when your strategy needs to change—because sometimes the obstacle IS the way, and sometimes it’s just an obstacle. Learning to tell the difference is crucial.</p>
+<p>Why data matters but isn't enough; and what else you need to turn awareness into action into policy. Numbers open doors, but relationships get you through them.</p>
 
-            <p>How to build coalitions across citizens, media, and government—including people you disagree with on everything except this one issue. Coalition-building is messy, but essential.</p>
+<p>What bureaucratic resistance actually looks like; not abstract "red tape" but real people with real reasons. Understanding their incentives changes your strategy.</p>
 
-            <p>Why data matters but isn’t enough—and what else you need to turn awareness into action into policy. Numbers open doors, but relationships get you through them.</p>
+<p>How to maintain momentum across years---when political leaders change, budgets shift, and your own team gets exhausted.</p>
 
-            <p>What bureaucratic resistance actually looks like—not abstract “red tape” but real people with real reasons (and real email addresses). Understanding their incentives changes your strategy.</p>
+<p>What success looks like when it finally comes; and why it often arrives differently than you expected.</p>
 
-            <p>How to maintain momentum across years—when political leaders change, budgets shift, and your own team gets exhausted. The long game requires different skills than the sprint.</p>
+<p>These aren't theoretical lessons. They're hard-won insights from a decade in the trenches.</p>
 
-            <p>What success looks like when it finally comes—and why it often arrives differently than you expected. Victory rarely looks like you imagined it would.</p>
+<p>A COLLECTIVE JOURNEY</p>
 
-            <p>These aren’t theoretical lessons. They’re hard-won insights from a decade in the trenches.</p>
+<p>The journey described in these pages was not mine alone. It was a collective effort by dozens of committed individuals who gave their time, energy, and hope to an idea that seemed impossible.</p>
 
-            <h2 class="section-heading">A COLLECTIVE JOURNEY</h2>
+<p>Pranav, Sanjeev, Naveen, and Syed weren't just collaborators; they were brothers-in-arms. When I wanted to quit, they kept going. That's how collective action works: the load shifts between us, but someone is always carrying it.</p>
 
-            <p>The journey described in these pages was not mine alone. It was a collective effort by dozens of committed individuals who gave their time, energy, and hope to an idea that seemed impossible. Their stories are woven throughout this narrative, and their perseverance is what ultimately made success possible.</p>
+<p>This book acknowledges many others; government officials who opened doors, journalists who kept the story alive, fellow activists from Citizens for Bengaluru and Whitefield Rising, and countless citizens who attended our events, signed our petitions, and believed their voices mattered. You'll meet them in these pages.</p>
 
-            <p>Pranav, Sanjeev, Naveen, and Syed weren’t just collaborators—they were brothers-in-arms in a battle that tested all of us. When I wanted to quit, they and many others from the community on Praja.in kept going. That’s how collective action works: the load shifts between us, but someone is always carrying it.</p>
+<p>There's a quote often attributed to Margaret Mead that captures our journey:</p>
 
-            <p>This book acknowledges the many others—government officials who opened doors, journalists who kept the story alive, fellow activists from organisations like Citizens for Bengaluru and Whitefield Rising, and countless citizens who attended our events, signed our petitions, and believed their voices mattered. You’ll meet many of them in these pages.</p>
+<p><em>"Never doubt that a small group of thoughtful, committed citizens can change the world; indeed, it's the only thing that ever has."</em></p>
 
-            <h2 class="section-heading">MY JOURNEY TO THIS FIGHT</h2>
+<p>I used to think this was inspirational hyperbole. After ten years, I know it's a practical description of how change actually happens.</p>
 
-            <p>Growing up in Bengaluru, I watched my city transform from a pensioner’s paradise to a garden city to a technology hub. Like many who graduated in the 1990s, I rode the IT boom, working across Asia, the US, and Europe. After decades in technology, I discovered a second calling in 2007: civic activism.</p>
+<p>MY JOURNEY TO THIS FIGHT</p>
 
-            <p>The internet had made information accessible at an unprecedented scale. Citizens were becoming less tolerant of inefficiencies in public services. Bengaluru—India’s technology capital—was at the forefront of using digital tools for civic engagement. The number of nonprofits and citizens’ groups was exploding. India had more per capita NGOs than hospital beds.</p>
+<p>Growing up in Bengaluru, I watched my city transform from a pensioner's paradise to a garden city to a technology hub. Like many who graduated in the 1990s, I rode the IT boom, working across Asia, the US, and Europe. After decades in technology, I discovered a second calling in 2007: civic activism.</p>
 
-            <p>I wanted to be part of that change.</p>
+<p>The internet had made information accessible at unprecedented scale. Citizens were becoming less tolerant of inefficiencies in public services. Bengaluru was at the forefront of using digital tools for civic engagement. The number of nonprofits and citizens' groups was exploding.</p>
 
-            <p>I never felt at home in places where I couldn’t change things. That restlessness drove me back to Bengaluru—back to a city where change seemed possible, if difficult. Where citizens still believed their voices mattered. A city I could fight for. A city worth fighting for.</p>
+<p>I wanted to be part of that change.</p>
 
-            <p>After years of campaigning, I realised I needed to understand the systems I was trying to change. At age 47, twenty-five years after my undergraduate degree, I went back to school for a Postgraduate program in Public Policy. That academic framework helps me now articulate patterns I learned through trial and error. I could relate my experiences in this campaign to well-examined theories about how complex systems resist—and eventually accept—change.</p>
+<p>I never felt at home in places where I couldn't change things. That restlessness drove me back to Bengaluru---a city where change seemed possible, if difficult. A city I could fight for.</p>
 
-            <h2 class="section-heading">WHY COMPLEX SYSTEMS RESIST CHANGE</h2>
+<p>After years of campaigning, I realised I needed to understand the systems I was trying to change. At age 47, twenty-five years after my undergraduate degree, I went back to school for a postgraduate program in public policy. That academic framework helped me articulate patterns I'd learned through trial and error---connecting my experiences to well-examined theories about how complex systems resist, and eventually accept, change.</p>
 
-            <p>Public change-making is not without its pitfalls and disappointments. Governance systems and political economy are complex systems—multiple actors with different incentives, institutional histories that shape current behaviour, path dependencies that make “obvious” solutions impossible.</p>
+<p>WHY COMPLEX SYSTEMS RESIST CHANGE</p>
 
-            <p>Not knowing why people behave the way they do creates blocks in your path. Sometimes those blocks are procedural. Sometimes they’re political. Sometimes they’re personal. Sometimes they’re all three at once. Learning to distinguish between them—and knowing which strategies work for which type of obstacle—is what this book is about.</p>
+<p>Governance systems are complex: multiple actors with different incentives, institutional histories that shape current behaviour, path dependencies that make "obvious" solutions impossible.</p>
 
-            <p>The title “Break the Block” works on three levels:</p>
+<p>Not knowing why people behave the way they do creates blocks in your path. Sometimes those blocks are procedural. Sometimes political. Sometimes personal. Often all three at once. Learning to distinguish between them, and knowing which strategies work for which, is what this book is about.</p>
 
-            <p>Breaking through bureaucratic obstacles—the procedures, hierarchies, and institutional resistance that say “no” to citizen ideas</p>
+<p>The title "Break the Block" works on three levels:</p>
 
-            <p>Breaking the mental block—the assumption that ordinary citizens can’t influence policy, that the system is too big or too broken to change</p>
+<p>Breaking through bureaucratic obstacles; the procedures, hierarchies, and institutional resistance that say "no" to citizen ideas</p>
 
-            <p>The physical blocks we broke—concrete and steel and bureaucratic inertia, transforming into actual rail infrastructure carrying actual people</p>
+<p>Breaking the mental block; the assumption that ordinary citizens can't influence policy, that the system is too big or too broken to change</p>
 
-            <h2 class="section-heading">WHAT MAKES THIS DIFFERENT</h2>
+<p>The physical blocks we broke; concrete and steel and bureaucratic inertia, transforming into actual rail infrastructure carrying actual people</p>
 
-            <p>There are many books about urban planning. Some about transportation policy. A few about civic activism in India. But there’s a gap between what those books teach and what actually happens when you try to implement change.</p>
+<p>WHAT MAKES THIS DIFFERENT</p>
 
-            <p>This book fills that gap.</p>
+<p>There are books about urban planning, transportation policy, and civic activism in India. But there's a gap between what those books teach and what actually happens when you try to implement change.</p>
 
-            <p>I’m not a theorist observing from outside. I’m a practitioner who spent ten years inside this campaign. I have the emails to prove it—including the ones where officials said no, colleagues disagreed about strategy, and we made mistakes that almost tanked the whole effort. You’ll read those emails in these pages. Some of them have never been made public before.</p>
+<p>This book fills that gap.</p>
 
-            <p>I’ll be honest about the mistakes we made, the relationships we damaged, and the opportunities we missed. I’ll share the dismissive responses from officials who thought we were naive troublemakers. I’ll introduce you to the government servants who opened doors when they could have closed them, and to the journalists who kept asking uncomfortable questions when it would have been easier to move on to the next story.</p>
+<p>I'm not a theorist observing from outside. I'm a practitioner who spent ten years inside this campaign. I have the emails to prove it; including the ones where officials said no, colleagues disagreed about strategy, and we made mistakes that almost tanked the whole effort. You'll read those emails in these pages. Some have never been made public before.</p>
 
-            <p>The lessons in this book are transferable. Whether you’re fighting for better schools, cleaner air, affordable housing, or any other civic cause, the patterns repeat. The bureaucratic dance looks similar. The political calculations follow predictable logic. The coalition-building challenges mirror each other across issues and geographies.</p>
+<p>I'll be honest about the mistakes we made, the relationships we damaged, and the opportunities we missed. I'll share dismissive responses from officials who thought we were naive troublemakers. I'll introduce you to the government servants who opened doors when they could have closed them, and to the journalists who kept asking uncomfortable questions when it would have been easier to move on.</p>
 
-            <p>This is the book I wish I’d had in 2009.</p>
+<p>The lessons in this book are transferable. Whether you're fighting for better schools, cleaner air, affordable housing, or any other civic cause, the patterns repeat. The bureaucratic dance looks similar. The political calculations follow predictable logic. The coalition-building challenges mirror each other across issues and geographies.</p>
 
-            <h2 class="section-heading">WHAT THIS STORY COVERS</h2>
+<p>This is the book I wish I'd had in 2009.</p>
 
-            <p>This book chronicles the campaign from 2009 to 2020, though the roots go back further and the impact continues today. It doesn’t include every person who contributed or every meeting we held—that would take volumes. What it does include are the moments that produced significant outcomes or taught us lessons worth sharing.</p>
+<p>It starts with a website, a handful of strangers, and a question that seemed naive at the time: <em>What if we actually did something?</em></p>
 
-            <p>You’ll read about:</p>
+<p>HOW TO USE THIS BOOK</p>
 
-            <p>• How a handful of tech-savvy citizens used online platforms to build a movement, then learned why offline organising was equally crucial</p>
+<p>Read this book for the story; the decade-long journey, the people, the setbacks, the victory.</p>
 
-            <p>• The historical context of Indian Railways—and why understanding 175 years of institutional history explained every obstacle we faced</p>
+<p>Then visit breaktheblock.in for the lessons; the principles extracted from each chapter, ready to apply to your own campaign.</p>
 
-            <p>• The trip that started it all—visiting cities across Europe and asking “why can’t we have this?”</p>
+<p>The story inspires. The website equips.</p>
 
-            <p>• How we wrote a detailed proposal with team members scattered across three continents</p>
+<p>At breaktheblock.in/key-takeaways you'll find:</p>
 
-            <p>• The flurry of action when momentum was on our side—and how to recognise that window when it opens</p>
+<p>90 lessons across 12 chapters: up to eight per chapter</p>
 
-            <p>• The blocks that appeared—including a scathing email from a top bureaucrat calling our proposal “grandiose” and our approach naive</p>
+<p>Each lesson includes: "What Happened," "Why It Matters," and "How to Apply It"</p>
 
-            <p>• The mixed messaging from government that kept us guessing whether we were winning or losing</p>
+<p>"What It Means for You": practical guidance for each chapter</p>
 
-            <p>• How corridors of power opened—and what it takes to turn a meeting into movement</p>
+<p>Web exclusives: RTI responses, photos, infographics, events, and more that didn't make it into the book</p>
 
-            <p>• The halting moves when progress stalled and we had to decide whether to pivot or persist</p>
+<p>Scan this QR code or height="1.1789698162729658in"} breaktheblock.in/key-takeaways</p>
 
-            <p>• The reckoning when we finally understood what victory would require</p>
+<p>##</p>
 
-            <p>• And the conclusion—what happened when the announcement came and we weren’t even in the room</p>
+<p>##</p>
 
-            <h2 class="section-heading">A NOTE ON THIS EDITION</h2>
+<p>##</p>
 
-            <p>I wrote this book in one intense month in 2021, while the memories were still fresh and the emotions still raw. It’s being published in 2026, but I have deliberately chosen not to update it with all the new activities around K-RIDE (Karnataka Rail Infrastructure Development Enterprise) and the suburban train delays and controversies that have emerged since.</p>
+<p>Chapter ONE</p>
 
-            <p>This is a story with a clear arc: 2009 to 2020. The struggle, the setback, the victory. What happened after—the implementation challenges, the new battles, the ongoing work—is a different story. Maybe that’s for another book.</p>
+<p>The online-offline bridge</p>
 
-            <p>What you’re about to read is a chronicle of how five people with laptops and determination brought commuter rail to a city of 12 million. The story stops where the campaign achieved its goal: government approval and the beginning of construction.</p>
-
-            <p>Everything after that is the next chapter.</p>
-
-            <h2 class="section-heading">THE CORE MESSAGE</h2>
-
-            <p>If there is one message I hope you take away from this book, it is this: change is possible, even when it seems impossible.</p>
-
-            <p>But it requires patience, persistence, and the willingness to learn from every setback. The blocks we encounter are not just obstacles—they are opportunities to understand the system better and find new pathways forward.</p>
-
-            <p>Not every campaign succeeds. Not every cause is just. Not every tactic works.</p>
-
-            <p>But when they do work—when five people with determination can bring trains to India’s most traffic-congested city—democracy stops being an abstract concept and becomes something real. Something you can touch. Something that carries people to work every morning.</p>
-
-            <p>If you’re already involved in public change-making but experiencing roadblocks, this book might help you find breakthroughs. If you care about a better quality of life in your city, this might nudge you to take up civic causes, armed with practical, tested approaches. If you’re skeptical that citizen activism can work in India’s complex governance systems, this might change your mind.</p>
-
-            <p>Not because we were special. Not because we had resources or connections or luck.</p>
-
-            <p>But because we refused to accept that “no” was the final answer.</p>
-
-            <p>Let me show you how we did it.</p>
-
-            <p>And more importantly, let me show you how you can do it too.</p>
-
-            <p>This is a story that proved the quote we held as our theme during the journey:</p>
-
-            <p>“Never doubt that a small group of thoughtful, committed citizens can change the world; indeed, it&#x27;s the only thing that ever has.” - Margaret Mead</p>
-        </div>
-
-
-
-        <div class="cta-footer">
+        >
             <h3>Continue the Journey</h3>
             <p>Discover how the campaign unfolded across 12 chapters of lessons and insights.</p>
             <div class="cta-buttons">
@@ -840,22 +632,7 @@
     </footer>
 
     <!-- Text-to-Speech Controls -->
-    <div class="tts-controls" id="ttsControls">
-        <label>Speech Rate</label>
-        <input type="range" id="ttsRate" min="0.5" max="2" step="0.1" value="1">
-        <label>Voice</label>
-        <select id="ttsVoice"></select>
-    </div>
-
-    <button class="tts-btn" id="ttsBtn" onclick="toggleTTS()" title="Listen to this chapter">
-        <i class="fas fa-play"></i>
-    </button>
-
-        <button class="bookmark-btn" id="bookmarkBtn" onclick="toggleBookmark()" title="Bookmark this page">
-        <i class="fas fa-bookmark"></i>
-    </button>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
         // Reading progress bar
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -864,8 +641,7 @@
             document.getElementById('progressBar').style.width = scrolled + '%';
         });
 
-        // Share functions
-                // Share Menu Toggle
+        // Share Menu Toggle
         function toggleShareMenu(event) {
             event.stopPropagation();
             const shareMenu = document.querySelector('.share-menu');
@@ -884,8 +660,8 @@
 
         function shareOn(platform) {
             const url = encodeURIComponent(window.location.href);
-            const title = encodeURIComponent('Introduction - Break the Block');
-            const text = encodeURIComponent('Reading the introduction to Break the Block - a decade-long citizen campaign for commuter rail.');
+            const title = encodeURIComponent(document.title);
+            const text = encodeURIComponent('Check out this chapter from Break the Block');
             
             let shareUrl;
             switch(platform) {
@@ -909,190 +685,7 @@
             if (shareUrl) {
                 window.open(shareUrl, '_blank', 'width=600,height=400');
             }
-            return false;
         }
-
-
-        // Text-to-Speech functionality
-        const synth = window.speechSynthesis;
-        let currentUtterance = null;
-        let isPaused = false;
-        let isSpeaking = false;
-        let currentPosition = 0;
-
-        window.toggleTTS = function() {
-            const btn = document.getElementById('ttsBtn');
-            const icon = btn.querySelector('i');
-            const controls = document.getElementById('ttsControls');
-            
-            if (isSpeaking && !isPaused) {
-                // Pause (Safari doesn't support pause well, so we cancel)
-                synth.cancel();
-                isPaused = true;
-                isSpeaking = false;
-                icon.className = 'fas fa-play';
-                btn.classList.remove('playing');
-                btn.title = 'Start reading';
-            } else {
-                // Start or restart
-                window.startReading();
-                if (!controls.classList.contains('active')) {
-                    controls.classList.add('active');
-                }
-            }
-        }
-
-        window.startReading = function() {
-            const btn = document.getElementById('ttsBtn');
-            const icon = btn.querySelector('i');
-            
-            // Cancel any ongoing speech
-            synth.cancel();
-            
-            // Small delay for Safari
-            setTimeout(() => {
-                // Get chapter text
-                const chapterBody = document.querySelector('.chapter-body');
-                const text = chapterBody.innerText;
-                
-                // Create utterance
-                currentUtterance = new SpeechSynthesisUtterance(text);
-                
-                // Get selected voice
-                const voiceSelect = document.getElementById('ttsVoice');
-                const voices = synth.getVoices();
-                if (voiceSelect.value && voices.length > 0) {
-                    const selectedVoice = voices.find(v => v.name === voiceSelect.value);
-                    if (selectedVoice) {
-                        currentUtterance.voice = selectedVoice;
-                    }
-                }
-                
-                // Get rate
-                const rate = parseFloat(document.getElementById('ttsRate').value);
-                currentUtterance.rate = rate;
-                
-                // Set pitch and volume for better quality
-                currentUtterance.pitch = 1;
-                currentUtterance.volume = 1;
-                
-                // Set up event handlers
-                currentUtterance.onstart = () => {
-                    isSpeaking = true;
-                    isPaused = false;
-                    icon.className = 'fas fa-pause';
-                    btn.classList.add('playing');
-                    btn.title = 'Stop reading';
-                };
-                
-                currentUtterance.onend = () => {
-                    isSpeaking = false;
-                    isPaused = false;
-                    icon.className = 'fas fa-play';
-                    btn.classList.remove('playing');
-                    btn.title = 'Listen to this chapter';
-                };
-                
-                currentUtterance.onerror = (event) => {
-                    console.error('Speech error:', event);
-                    isSpeaking = false;
-                    isPaused = false;
-                    icon.className = 'fas fa-play';
-                    btn.classList.remove('playing');
-                    btn.title = 'Listen to this chapter';
-                };
-                
-                // Start speaking
-                synth.speak(currentUtterance);
-            }, 100);
-        }
-
-        // Load voices (Safari-compatible)
-        window.loadVoices = function() {
-            const voices = synth.getVoices();
-            const voiceSelect = document.getElementById('ttsVoice');
-            
-            if (!voices || voices.length === 0) {
-                // Voices not loaded yet, try again
-                setTimeout(window.loadVoices, 100);
-                return;
-            }
-            
-            // Clear existing options
-            voiceSelect.innerHTML = '';
-            
-            // Filter for English voices
-            const englishVoices = voices.filter(voice => voice.lang.startsWith('en'));
-            
-            if (englishVoices.length === 0) {
-                // No English voices, use all voices
-                voices.forEach(voice => {
-                    const option = document.createElement('option');
-                    option.value = voice.name;
-                    option.textContent = `${voice.name} (${voice.lang})`;
-                    voiceSelect.appendChild(option);
-                });
-                if (voices.length > 0) {
-                    voiceSelect.value = voices[0].name;
-                }
-            } else {
-                englishVoices.forEach(voice => {
-                    const option = document.createElement('option');
-                    option.value = voice.name;
-                    option.textContent = `${voice.name} (${voice.lang})`;
-                    voiceSelect.appendChild(option);
-                });
-                // Set default to first English voice
-                voiceSelect.value = englishVoices[0].name;
-            }
-        }
-
-        // Load voices when available (Safari needs multiple attempts)
-        if (synth.onvoiceschanged !== undefined) {
-            synth.onvoiceschanged = window.loadVoices;
-        }
-        
-        // Initial load
-        setTimeout(window.loadVoices, 100);
-        
-        // Ensure voices load on page load
-        window.addEventListener('load', () => {
-            setTimeout(window.loadVoices, 200);
-        });
-
-        // Stop speech when page unloads
-        window.addEventListener('beforeunload', () => {
-            if (isSpeaking) {
-                synth.cancel();
-            }
-        });
-        
-        // Safari: Keep speech synthesis alive
-        setInterval(() => {
-            if (synth.speaking && !synth.paused) {
-                synth.pause();
-                synth.resume();
-            }
-        }, 10000);
-
-        // Bookmark functionality
-        window.toggleBookmark = function() {
-            const btn = document.getElementById('bookmarkBtn');
-            const key = 'bookmark_' + window.location.pathname;
-            
-            if (localStorage.getItem(key)) {
-                localStorage.removeItem(key);
-                btn.classList.remove('bookmarked');
-                btn.title = 'Bookmark this page';
-            } else {
-                localStorage.setItem(key, 'true');
-                btn.classList.add('bookmarked');
-                btn.title = 'Bookmarked';
-            }
-        }
-
-        // Check if bookmarked on load
-        window.addEventListener('load', () => {
-            const key = 'bookmark_' + window.location.pathname;
-            if (localStorage.getItem(key)) {
-          
+    </script>
+</body>
+</html>
