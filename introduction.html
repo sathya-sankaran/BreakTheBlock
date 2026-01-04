@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introduction - Break the Block</title>
-    <meta name="description" content="Read the introduction to Break the Block - how five citizens brought commuter rail to Bengaluru.">
+    <meta name="description" content="Read the introduction to Break the Block - how five citizens brought commuter rail to Bengaluru through a decade-long campaign.">
     <meta property="og:title" content="Introduction - Break the Block">
     <meta property="og:description" content="Read the introduction to Break the Block - how five citizens brought commuter rail to Bengaluru.">
     <meta property="og:image" content="https://www.breaktheblock.in/book-cover.png">
@@ -36,7 +36,6 @@
             line-height: 1.8;
         }
 
-        /* Progress Bar */
         .reading-progress {
             position: fixed;
             top: 0;
@@ -48,7 +47,6 @@
             transition: width 0.1s ease;
         }
 
-        /* Top Navigation */
         .top-nav {
             position: fixed;
             top: 0;
@@ -81,12 +79,11 @@
             content: '← ';
         }
 
-                /* Share Dropdown */
         .share-dropdown {
             position: relative;
         }
 
-                .share-toggle {
+        .share-toggle {
             background: transparent;
             border: 2px solid var(--primary);
             color: var(--primary);
@@ -100,10 +97,6 @@
             transition: all 0.3s ease;
             font-size: 0.9rem;
         }
-
-        
-
-        
 
         .share-menu {
             position: absolute;
@@ -172,13 +165,6 @@
             font-size: 1rem;
         }
 
-        .share-menu-item:nth-child(1):hover { color: #1DA1F2; }
-        .share-menu-item:nth-child(2):hover { color: #1877F2; }
-        .share-menu-item:nth-child(3):hover { color: #0A66C2; }
-        .share-menu-item:nth-child(4):hover { color: #25D366; }
-        .share-menu-item:nth-child(5):hover { color: #666; }
-
-        /* Reading Container */
         .reading-container {
             max-width: 800px;
             margin: 0 auto;
@@ -186,7 +172,6 @@
             min-height: 100vh;
         }
 
-        /* Chapter Header */
         .chapter-header {
             border-bottom: 3px solid var(--accent);
             padding-bottom: 2rem;
@@ -209,7 +194,6 @@
             line-height: 1.2;
         }
 
-        /* Reading Stats */
         .reading-stats {
             display: flex;
             gap: 2rem;
@@ -219,7 +203,6 @@
             color: #666;
         }
 
-        /* Chapter Body */
         .chapter-body {
             font-size: 1.2rem;
             line-height: 1.9;
@@ -253,29 +236,24 @@
             font-style: italic;
         }
 
-        /* Footnotes */
-        .footnotes {
-            border-top: 2px solid var(--accent);
-            padding-top: 2rem;
-            margin-top: 4rem;
-            font-size: 0.95rem;
-            opacity: 0.8;
+        .chapter-body ul {
+            margin-left: 2rem;
+            margin-bottom: 1.8rem;
         }
 
-        .footnotes h3 {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
+        .chapter-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-body a {
             color: var(--accent);
+            text-decoration: none;
         }
 
-        .footnote-item {
-            margin-bottom: 0.8rem;
+        .chapter-body a:hover {
+            text-decoration: underline;
         }
 
-        /* CTA Footer */
         .cta-footer {
             background: var(--primary);
             color: white;
@@ -332,62 +310,6 @@
             background: white;
             color: var(--primary);
         }
-
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .slide-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .scale-in {
-            opacity: 0;
-            transform: scale(0.95);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .scale-in.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-    
-        /* Enhanced Callout Boxes */
-        .key-lesson {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.08), rgba(0, 78, 137, 0.08));
-            border-left: 5px solid var(--accent);
-            padding: 1.8rem;
-            margin: 2rem 0;
-            border-radius: 6px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .key-lesson:hover {
-            border-left-color: var(--rail-blue);
-            box-shadow: 0 6px 20px rgba(0, 78, 137, 0.15);
-            transform: translateX(5px);
-        }
-
-        .key-lesson strong {
-            color: var(--rail-blue);
-            font-size: 1.1rem;
-        }
     </style>
 </head>
 <body>
@@ -395,7 +317,7 @@
 
     <nav class="top-nav">
         <a href="index.html#free-preview" class="back-link">Back to Book</a>
-                <div class="share-dropdown">
+        <div class="share-dropdown">
             <button class="share-toggle" onclick="toggleShareMenu(event)" aria-label="Share">
                 <i class="fas fa-share-alt"></i>
             </button>
@@ -422,17 +344,16 @@
     <div class="reading-container">
         <div class="chapter-header">
             <div class="chapter-number">Introduction</div>
-            <h1 class="chapter-title">Break the Block</h1>
+            <h1 class="chapter-title">Ten Years to "Yes"</h1>
             <div class="reading-stats">
-                <span><i class="fas fa-clock"></i> 9 min read</span>
-                <span><i class="fas fa-file-alt"></i> 2263 words</span>
+                <span><i class="fas fa-clock"></i> 10 min read</span>
+                <span><i class="fas fa-file-alt"></i> 2,500 words</span>
             </div>
         </div>
 
         <div class="chapter-body">
-<h2 class="section-heading">Ten Years to "Yes"</h2>
 
-<p>Union Cabinet approves, clears the Bengaluru Suburban Rail project."*</p>
+<p><em>"Union Cabinet approves, clears the Bengaluru Suburban Rail project."</em></p>
 
 <p>This was the headline in The Hindu on October 8, 2020. I stared at my phone, reading it three times to make sure I wasn't hallucinating.</p>
 
@@ -442,7 +363,7 @@
 
 <p>Ten years. Hundreds of meetings, blog posts, and emails. Countless rejections. And in the end, victory came when we weren't even in the room.</p>
 
-<p>THE CRISIS</p>
+<h2 class="section-heading">The Crisis</h2>
 
 <p>In 2019, Bengaluru earned an unwanted distinction: the world's most traffic-congested city. Commuters spent 243 hours per year in gridlock; the equivalent of watching 215 episodes of Game of Thrones. Sixty-kilometre commutes from neighbouring towns in rickety buses were commonplace. The city was choking on its own success.</p>
 
@@ -454,51 +375,45 @@
 
 <p>This book is the story of that decade-long campaign.</p>
 
-<p>WHAT THIS BOOK IS (AND ISN'T)</p>
+<h2 class="section-heading">What This Book Is (And Isn't)</h2>
 
 <p>When I started working on the commuter rail campaign in 2009, I had no idea it would become a decade-long journey that would transform not just my city, but my understanding of how change happens in complex governance systems.</p>
 
 <p>This book is not a manual on transportation policy. It's not a comprehensive history of Bengaluru's urban development. And it's definitely not a self-help book.</p>
 
-<p>Rather, it's a chronicle of lessons learned---the hard way; about what it takes to move the needle on public policy when you have no formal power. An honest account of what happens when ordinary people decide the system needs to change.</p>
+<p>Rather, it's a chronicle of lessons learned—the hard way; about what it takes to move the needle on public policy when you have no formal power. An honest account of what happens when ordinary people decide the system needs to change.</p>
 
 <p>More importantly, this is a field guide for anyone who wants to make their city better.</p>
 
-<p>WHO THIS BOOK IS FOR</p>
+<h2 class="section-heading">Who This Book Is For</h2>
 
 <p>This book is for you if:</p>
 
-<p>You're an activist who's hit bureaucratic walls and wonder whether to keep going or give up</p>
+<ul>
+<li>You're an activist who's hit bureaucratic walls and wonder whether to keep going or give up</li>
+<li>You're a policy student learning that textbook theory doesn't match ground reality</li>
+<li>You're a public servant who wants to understand why some citizen campaigns succeed while others stall</li>
+<li>You're an engaged citizen who wants to improve your city but doesn't know where to start</li>
+<li>You care about how democracy actually works—not in theory, but in practice</li>
+</ul>
 
-<p>You're a policy student learning that textbook theory doesn't match ground reality</p>
-
-<p>You're a public servant who wants to understand why some citizen campaigns succeed while others stall</p>
-
-<p>You're an engaged citizen who wants to improve your city but doesn't know where to start</p>
-
-<p>You care about how democracy actually works---not in theory, but in practice</p>
-
-<p>WHAT YOU'LL LEARN</p>
+<h2 class="section-heading">What You'll Learn</h2>
 
 <p>By the end of this book, you'll understand:</p>
 
-<p>How to navigate governance systems and identify leverage points; the specific places where citizen pressure can move the needle, and how to recognise them.</p>
-
-<p>When persistence pays off and when strategy needs to change; because sometimes the obstacle IS the way, and sometimes it's just an obstacle. Learning to tell the difference is crucial.</p>
-
-<p>How to build coalitions across citizens, media, and government; including people you disagree with on everything except this one issue.</p>
-
-<p>Why data matters but isn't enough; and what else you need to turn awareness into action into policy. Numbers open doors, but relationships get you through them.</p>
-
-<p>What bureaucratic resistance actually looks like; not abstract "red tape" but real people with real reasons. Understanding their incentives changes your strategy.</p>
-
-<p>How to maintain momentum across years---when political leaders change, budgets shift, and your own team gets exhausted.</p>
-
-<p>What success looks like when it finally comes; and why it often arrives differently than you expected.</p>
+<ul>
+<li><strong>How to navigate governance systems and identify leverage points</strong>—the specific places where citizen pressure can move the needle, and how to recognise them.</li>
+<li><strong>When persistence pays off and when strategy needs to change</strong>—because sometimes the obstacle IS the way, and sometimes it's just an obstacle. Learning to tell the difference is crucial.</li>
+<li><strong>How to build coalitions across citizens, media, and government</strong>—including people you disagree with on everything except this one issue.</li>
+<li><strong>Why data matters but isn't enough</strong>—and what else you need to turn awareness into action into policy. Numbers open doors, but relationships get you through them.</li>
+<li><strong>What bureaucratic resistance actually looks like</strong>—not abstract "red tape" but real people with real reasons. Understanding their incentives changes your strategy.</li>
+<li><strong>How to maintain momentum across years</strong>—when political leaders change, budgets shift, and your own team gets exhausted.</li>
+<li><strong>What success looks like when it finally comes</strong>—and why it often arrives differently than you expected.</li>
+</ul>
 
 <p>These aren't theoretical lessons. They're hard-won insights from a decade in the trenches.</p>
 
-<p>A COLLECTIVE JOURNEY</p>
+<h2 class="section-heading">A Collective Journey</h2>
 
 <p>The journey described in these pages was not mine alone. It was a collective effort by dozens of committed individuals who gave their time, energy, and hope to an idea that seemed impossible.</p>
 
@@ -512,7 +427,7 @@
 
 <p>I used to think this was inspirational hyperbole. After ten years, I know it's a practical description of how change actually happens.</p>
 
-<p>MY JOURNEY TO THIS FIGHT</p>
+<h2 class="section-heading">My Journey to This Fight</h2>
 
 <p>Growing up in Bengaluru, I watched my city transform from a pensioner's paradise to a garden city to a technology hub. Like many who graduated in the 1990s, I rode the IT boom, working across Asia, the US, and Europe. After decades in technology, I discovered a second calling in 2007: civic activism.</p>
 
@@ -520,11 +435,11 @@
 
 <p>I wanted to be part of that change.</p>
 
-<p>I never felt at home in places where I couldn't change things. That restlessness drove me back to Bengaluru---a city where change seemed possible, if difficult. A city I could fight for.</p>
+<p>I never felt at home in places where I couldn't change things. That restlessness drove me back to Bengaluru—a city where change seemed possible, if difficult. A city I could fight for.</p>
 
-<p>After years of campaigning, I realised I needed to understand the systems I was trying to change. At age 47, twenty-five years after my undergraduate degree, I went back to school for a postgraduate program in public policy. That academic framework helped me articulate patterns I'd learned through trial and error---connecting my experiences to well-examined theories about how complex systems resist, and eventually accept, change.</p>
+<p>After years of campaigning, I realised I needed to understand the systems I was trying to change. At age 47, twenty-five years after my undergraduate degree, I went back to school for a postgraduate program in public policy. That academic framework helped me articulate patterns I'd learned through trial and error—connecting my experiences to well-examined theories about how complex systems resist, and eventually accept, change.</p>
 
-<p>WHY COMPLEX SYSTEMS RESIST CHANGE</p>
+<h2 class="section-heading">Why Complex Systems Resist Change</h2>
 
 <p>Governance systems are complex: multiple actors with different incentives, institutional histories that shape current behaviour, path dependencies that make "obvious" solutions impossible.</p>
 
@@ -532,13 +447,13 @@
 
 <p>The title "Break the Block" works on three levels:</p>
 
-<p>Breaking through bureaucratic obstacles; the procedures, hierarchies, and institutional resistance that say "no" to citizen ideas</p>
+<ul>
+<li><strong>Breaking through bureaucratic obstacles</strong>—the procedures, hierarchies, and institutional resistance that say "no" to citizen ideas</li>
+<li><strong>Breaking the mental block</strong>—the assumption that ordinary citizens can't influence policy, that the system is too big or too broken to change</li>
+<li><strong>The physical blocks we broke</strong>—concrete and steel and bureaucratic inertia, transforming into actual rail infrastructure carrying actual people</li>
+</ul>
 
-<p>Breaking the mental block; the assumption that ordinary citizens can't influence policy, that the system is too big or too broken to change</p>
-
-<p>The physical blocks we broke; concrete and steel and bureaucratic inertia, transforming into actual rail infrastructure carrying actual people</p>
-
-<p>WHAT MAKES THIS DIFFERENT</p>
+<h2 class="section-heading">What Makes This Different</h2>
 
 <p>There are books about urban planning, transportation policy, and civic activism in India. But there's a gap between what those books teach and what actually happens when you try to implement change.</p>
 
@@ -554,37 +469,26 @@
 
 <p>It starts with a website, a handful of strangers, and a question that seemed naive at the time: <em>What if we actually did something?</em></p>
 
-<p>HOW TO USE THIS BOOK</p>
+<h2 class="section-heading">How to Use This Book</h2>
 
 <p>Read this book for the story; the decade-long journey, the people, the setbacks, the victory.</p>
 
-<p>Then visit breaktheblock.in for the lessons; the principles extracted from each chapter, ready to apply to your own campaign.</p>
+<p>Then visit <a href="https://breaktheblock.in">breaktheblock.in</a> for the lessons; the principles extracted from each chapter, ready to apply to your own campaign.</p>
 
 <p>The story inspires. The website equips.</p>
 
-<p>At breaktheblock.in/key-takeaways you'll find:</p>
+<p>At <a href="https://breaktheblock.in/key-takeaways.html">breaktheblock.in/key-takeaways</a> you'll find:</p>
 
-<p>90 lessons across 12 chapters: up to eight per chapter</p>
+<ul>
+<li><strong>46 lessons across 12 chapters</strong>: 12 Key Lessons + 34 Chapter Insights</li>
+<li>Each lesson includes: "What Happened," "Why It Matters," and "How to Apply It"</li>
+<li>"What It Means for You": practical guidance for each chapter</li>
+<li>Web exclusives: RTI responses, photos, infographics, events, and more that didn't make it into the book</li>
+</ul>
 
-<p>Each lesson includes: "What Happened," "Why It Matters," and "How to Apply It"</p>
+        </div>
 
-<p>"What It Means for You": practical guidance for each chapter</p>
-
-<p>Web exclusives: RTI responses, photos, infographics, events, and more that didn't make it into the book</p>
-
-<p>Scan this QR code or height="1.1789698162729658in"} breaktheblock.in/key-takeaways</p>
-
-<p>##</p>
-
-<p>##</p>
-
-<p>##</p>
-
-<p>Chapter ONE</p>
-
-<p>The online-offline bridge</p>
-
-        >
+        <div class="cta-footer">
             <h3>Continue the Journey</h3>
             <p>Discover how the campaign unfolded across 12 chapters of lessons and insights.</p>
             <div class="cta-buttons">
@@ -594,10 +498,8 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer style="background: #1a1a1a; color: #f5f5f0; padding: 3rem 2rem; text-align: center; margin-top: 4rem;">
         <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
-            <!-- Social Media Links -->
             <div>
                 <p style="margin-bottom: 0.8rem; font-family: 'Space Mono', monospace; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Follow the Author</p>
                 <div style="display: flex; gap: 1rem; justify-content: center;">
@@ -616,24 +518,20 @@
                 </div>
             </div>
             
-            <!-- Copyright and License -->
             <p style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; margin: 0;">
                 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; color: inherit; text-decoration: none; transition: opacity 0.3s;">
                     <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" style="height: 1.5rem; width: 1.5rem; display: inline-block; vertical-align: middle;">
                     <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" style="height: 1.5rem; width: 1.5rem; display: inline-block; vertical-align: middle;">
                     <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC" style="height: 1.5rem; width: 1.5rem; display: inline-block; vertical-align: middle;">
                     <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="SA" style="height: 1.5rem; width: 1.5rem; display: inline-block; vertical-align: middle;">
-                    <span>All content on this site is covered under CC-BY-NC-SA 4.0 license</span>
+                    <span>CC-BY-NC-SA 4.0</span>
                 </a>
-                <br>
                 <span>Break the Block: Lessons from Bengaluru's Rail Battle</span>
             </p>
         </div>
     </footer>
 
-    <!-- Text-to-Speech Controls -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
-        // Reading progress bar
+    <script>
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -641,19 +539,16 @@
             document.getElementById('progressBar').style.width = scrolled + '%';
         });
 
-        // Share Menu Toggle
         function toggleShareMenu(event) {
             event.stopPropagation();
             const shareMenu = document.querySelector('.share-menu');
             shareMenu.classList.toggle('active');
         }
 
-        // Close share menu when clicking outside
         document.addEventListener('click', function(event) {
             const shareMenu = document.querySelector('.share-menu');
             const shareToggle = document.querySelector('.share-toggle');
-            
-            if (shareMenu && !shareToggle.contains(event.target) && !shareMenu.contains(event.target)) {
+            if (shareMenu && shareToggle && !shareToggle.contains(event.target) && !shareMenu.contains(event.target)) {
                 shareMenu.classList.remove('active');
             }
         });
@@ -661,7 +556,7 @@
         function shareOn(platform) {
             const url = encodeURIComponent(window.location.href);
             const title = encodeURIComponent(document.title);
-            const text = encodeURIComponent('Check out this chapter from Break the Block');
+            const text = encodeURIComponent('Read the Introduction to Break the Block - how five citizens brought commuter rail to Bengaluru');
             
             let shareUrl;
             switch(platform) {
