@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Break the Block: Field guide for activists. 89 lessons from Bengaluru (Bangalore) citizen campaign. Learn urban activism tactics, navigating bureaucracy, grassroots organizing.">
+    <meta name="description" content="Break the Block: Field guide for activists. 12 Key Lessons + 34 Chapter Insights from Bengaluru (Bangalore) citizen campaign. Learn urban activism tactics, navigating bureaucracy, grassroots organizing.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Canonical URL -->
@@ -333,6 +333,221 @@
 
         .hero-text {
             text-align: left;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            border-radius: 2px;
+        }
+
+        .hero-hook {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .cta-button.secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Proof Strip */
+        .proof-strip {
+            background: var(--primary);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .proof-item {
+            text-align: center;
+            color: white;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .proof-item .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .proof-item .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .compare-card {
+            padding: 2.5rem;
+            border-radius: 8px;
+        }
+
+        .compare-card.other {
+            background: #f5f5f5;
+            border: 2px solid #ddd;
+        }
+
+        .compare-card.this {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--rail-blue) 100%);
+            color: white;
+            border: 2px solid var(--accent);
+        }
+
+        .compare-card h3 {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .compare-card.other h3 {
+            color: #666;
+        }
+
+        .compare-card.this h3 {
+            color: var(--secondary);
+        }
+
+        .compare-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .compare-card li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+            font-size: 1.05rem;
+        }
+
+        .compare-card li:last-child {
+            border-bottom: none;
+        }
+
+        .compare-card.other li::before {
+            content: '✗ ';
+            color: #999;
+        }
+
+        .compare-card.this li::before {
+            content: '✓ ';
+            color: var(--secondary);
+        }
+
+        /* Email Preview Section */
+        .email-preview-section {
+            padding: 5rem 5%;
+            background: var(--light);
+        }
+
+        .email-preview-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .email-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .email-header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+        }
+
+        .email-body {
+            padding: 2rem;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text);
+            border-left: 4px solid var(--accent);
+            margin: 0;
+            background: #fafafa;
+        }
+
+        .email-context {
+            padding: 1.5rem 2rem;
+            font-size: 1rem;
+            color: var(--text);
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .proof-strip {
+                gap: 1.5rem;
+                padding: 1.5rem 2%;
+            }
+
+            .proof-item .number {
+                font-size: 1.5rem;
+            }
+
+            .proof-item .label {
+                font-size: 0.7rem;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+            }
+
+            .hero-cta-group .cta-button {
+                text-align: center;
+            }
         }
 
         .hero-book-cover {
@@ -2040,7 +2255,7 @@
           "name": "What is Break the Block about?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Break the Block is a field guide documenting how five ordinary citizens brought commuter rail to Bengaluru through a decade-long campaign (2009-2020). It provides 89 actionable lessons on civic activism, navigating bureaucracy, and changing governance systems without power, money, or political connections."
+            "text": "Break the Block is a field guide documenting how five ordinary citizens brought commuter rail to Bengaluru through a decade-long campaign (2009-2020). It provides 46 actionable lessons (12 Key Lessons + 34 Chapter Insights) on civic activism, navigating bureaucracy, and changing governance systems without power, money, or political connections."
           }
         },
         {
@@ -2064,7 +2279,7 @@
           "name": "Are there free chapters available?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes! The complete Introduction and first two chapters (Chapter 1: The Online-Offline Bridge and Chapter 2: Trains of Thought) are available to read free online with no signup required. Additionally, all 89 lessons from across 12 chapters are available in the Key Takeaways section."
+            "text": "Yes! The complete Introduction and first two chapters (Chapter 1: The Online-Offline Bridge and Chapter 2: Trains of Thought) are available to read free online with no signup required. Additionally, all 12 Key Lessons + 34 Chapter Insights from across 12 chapters are available in the Key Takeaways section."
           }
         },
         {
@@ -2158,14 +2373,38 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <div class="tagline">Lessons from Bengaluru (Bangalore)'s Rail Battle</div>
+                <div class="hero-badge">The Only Field Guide of Its Kind in India</div>
                 <h1>Break the Block</h1>
-                <p class="subtitle">A decade-long citizens' campaign that proved determined people can change complex systems</p>
-                <a href="#get-book" class="cta-button">Get the Book</a>
+                <p class="hero-hook">5 citizens. 10 years. 1 impossible victory.</p>
+                <p class="subtitle">The brutally honest playbook for changing your city when you have no power, no money, and no political connections.</p>
+                <div class="hero-cta-group">
+                    <a href="#get-book" class="cta-button">Get the Playbook</a>
+                    <a href="chapters.html" class="cta-button secondary">Read Free Chapters</a>
+                </div>
             </div>
             <div class="hero-book-cover">
-                <img loading="lazy" src="book-cover.png" alt="Break the Block: Field guide for civic activism showing 89 lessons from Bengaluru (Bangalore) citizen campaign for commuter rail">
+                <img loading="lazy" src="book-cover.png" alt="Break the Block: Field guide for civic activism showing 12 Key Lessons + 34 Chapter Insights from Bengaluru (Bangalore) citizen campaign for commuter rail">
             </div>
+        </div>
+    </section>
+
+    <!-- Proof Strip -->
+    <section class="proof-strip">
+        <div class="proof-item">
+            <span class="number">12</span>
+            <span class="label">Lessons</span>
+        </div>
+        <div class="proof-item">
+            <span class="number">35</span>
+            <span class="label">Takeaways</span>
+        </div>
+        <div class="proof-item">
+            <span class="number">9</span>
+            <span class="label">Real Emails</span>
+        </div>
+        <div class="proof-item">
+            <span class="number">4</span>
+            <span class="label">CMs Outlasted</span>
         </div>
     </section>
 
@@ -2173,7 +2412,7 @@
     <section class="book-showcase">
         <div class="book-showcase-grid">
             <div class="book-showcase-cover">
-                <img loading="lazy" src="book-cover.png" alt="Break the Block: Field guide for civic activism showing 89 lessons from Bengaluru (Bangalore) citizen campaign for commuter rail">
+                <img loading="lazy" src="book-cover.png" alt="Break the Block: Field guide for civic activism showing 12 Key Lessons + 34 Chapter Insights from Bengaluru (Bangalore) citizen campaign for commuter rail">
             </div>
             <div class="book-showcase-details">
                 <h3>The Field Guide for Change-Makers</h3>
@@ -2203,47 +2442,66 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>The Story</h2>
-        <div class="about-grid">
-            <div class="about-text">
-                <p>In 2019, Bengaluru was the <span class="highlight">world's most traffic-congested city</span>. People spent the equivalent of 215 episodes of Game of Thrones stuck in gridlock every year.</p>
-                <p style="margin-top: 1.5rem;">This is the story of how a small group of citizens—armed with little more than <a href="key-takeaways.html#data">determination, data</a>, and democratic ideals—fought for a decade to bring <a href="key-takeaways.html#government">commuter rail</a> to India's technology capital, Bengaluru (Bangalore).</p>
-                <p style="margin-top: 1.5rem;">It's a field guide for anyone who wants to make their city better but doesn't know where to start.</p>
-                
-                <!-- What Makes This Different -->
-                <div style="margin-top: 2.5rem; padding: 1.5rem; background: var(--light); border-left: 4px solid var(--accent); border-radius: 4px;">
-                    <h3 style="font-family: 'Space Mono', monospace; font-size: 1.1rem; margin-bottom: 0.8rem; color: var(--primary);">What Makes This Different</h3>
-                    <p style="font-size: 0.95rem; line-height: 1.7; margin: 0;">Unlike academic policy textbooks, this is a <strong>real campaign story</strong> written by someone who lived it, not an observer. Unlike typical memoirs, it explicitly extracts <strong>89 actionable lessons</strong> you can apply to your own campaigns. It's both an engaging narrative <em>and</em> a practical field guide—showing you the "how," not just the "why."</p>
-                </div>
-            </div>
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">10</div>
-                    <div class="stat-label">Years of Campaign</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">2020</div>
-                    <div class="stat-label">Union Cabinet Approval</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">12</div>
-                    <div class="stat-label">Chapters of Lessons</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Citizen Power</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Urban Activism Guide Section -->
     <section class="urban-activism-guide" style="background: white; padding: 4rem 2rem; margin: 3rem 0;">
         <div class="container" style="max-width: 1200px; margin: 0 auto;">
             <h2 style="font-family: 'Space Mono', monospace; color: #1a1a1a; margin-bottom: 1.5rem;">A Practical Guide to Urban Activism in India</h2>
             <p style="font-size: 1.1rem; line-height: 1.8; color: #2d2d2d;">Whether you're <strong>navigating government bureaucracy</strong>, <strong>building citizen coalitions</strong>, or advocating for better infrastructure in <strong>Bangalore, Mumbai, Delhi, Hyderabad, Pune, Chennai</strong>, or any Indian city—this field guide shows you proven tactics for <strong>civic activism that actually work</strong>. Learn from real examples of <strong>successful citizen campaigns</strong>, <strong>policy advocacy strategies</strong>, and <strong>grassroots organizing</strong> that transformed urban governance.</p>
+        </div>
+    </section>
+
+    <!-- Comparison Section: What Makes This Different -->
+    <section class="comparison-section">
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <h2 style="font-family: 'Space Mono', monospace; font-size: 2rem; margin-bottom: 0.5rem; color: var(--primary);">Not Another Policy Textbook</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 3rem; color: var(--text); opacity: 0.8;">What makes Break the Block different</p>
+            
+            <div class="comparison-grid">
+                <div class="compare-card other">
+                    <h3>Other Books</h3>
+                    <ul>
+                        <li>Written by observers and academics</li>
+                        <li>Theory-heavy, examples-light</li>
+                        <li>Leave lessons implicit</li>
+                        <li>Western context, different systems</li>
+                        <li>Success stories only</li>
+                    </ul>
+                </div>
+                
+                <div class="compare-card this">
+                    <h3>Break the Block</h3>
+                    <ul>
+                        <li>Written by someone who did it</li>
+                        <li>Real emails, real meetings, real failures</li>
+                        <li>12 Key Lessons + 34 Chapter Insights</li>
+                        <li>Indian bureaucracy, Indian context</li>
+                        <li>Includes "What We'd Do Differently"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Preview Section -->
+    <section class="email-preview-section">
+        <div class="email-preview-container">
+            <h2 style="font-family: 'Space Mono', monospace; font-size: 2rem; margin-bottom: 0.5rem; color: var(--primary); text-align: center;">Real Documents. Real Resistance.</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--text); opacity: 0.8; text-align: center;">This book includes the actual emails and government responses from the campaign</p>
+            
+            <div class="email-card">
+                <div class="email-header">
+                    <span>From: Managing Director, BMRCL</span>
+                    <span>2010</span>
+                </div>
+                <blockquote class="email-body">
+                    "It expresses a grandiose, pious intention but grossly oversimplifies both the issue and the solution."
+                </blockquote>
+                <p class="email-context">This dismissive email from the head of Bangalore Metro became the turning point. Chapter 6 shows exactly how we responded, and why this rejection ultimately strengthened the campaign.</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="chapters.html#chapter-6" class="cta-button" style="background: var(--primary);">Read the Full Exchange →</a>
+            </div>
         </div>
     </section>
 
@@ -2263,30 +2521,30 @@
             <p style="font-size: 1.2rem; margin-bottom: 4rem; text-align: center; color: var(--text); opacity: 0.8;">Praise for Break the Block</p>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem;">
-                <!-- Testimonial 1 -->
+                <!-- Testimonial 1: Srinivas (most specific, uses "masterclass" and "playbook") -->
                 <div class="testimonial" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative;">
                     <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent); opacity: 0.3; position: absolute; top: 1.5rem; left: 1.5rem;"></i>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin: 2.5rem 0 1.5rem; color: var(--text); font-family: 'Crimson Pro', serif;">Most people decide too quickly that there isn't much they can do to make things better, but this book tells us otherwise—showing how much is possible with purpose and persistence.</p>
-                    <div style="border-top: 2px solid var(--accent); padding-top: 1rem; margin-top: 1rem;">
-                        <p style="font-weight: 700; margin-bottom: 0.3rem; color: var(--primary); font-family: 'Space Mono', monospace; font-size: 0.95rem;">Dr. Ashwin Mahesh</p>
-                        <p style="font-size: 0.9rem; opacity: 0.7; color: var(--text);">Urban expert; Columnist; Founder, India Together</p>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="testimonial" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative;">
-                    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent); opacity: 0.3; position: absolute; top: 1.5rem; left: 1.5rem;"></i>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin: 2.5rem 0 1.5rem; color: var(--text); font-family: 'Crimson Pro', serif;">This prolonged battle offers insights for anyone interested in urban mobility, public policy, and citizen advocacy. Sathya deserves credit for not only championing the cause but documenting it.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin: 2.5rem 0 1.5rem; color: var(--text); font-family: 'Crimson Pro', serif;">A masterclass in citizen advocacy. Sathya didn't just fight the battle: he documented the playbook.</p>
                     <div style="border-top: 2px solid var(--accent); padding-top: 1rem; margin-top: 1rem;">
                         <p style="font-weight: 700; margin-bottom: 0.3rem; color: var(--primary); font-family: 'Space Mono', monospace; font-size: 0.95rem;">Srinivas Alavilli</p>
                         <p style="font-size: 0.9rem; opacity: 0.7; color: var(--text);">Civic activist; Fellow, WRI India</p>
                     </div>
                 </div>
 
-                <!-- Testimonial 3 -->
+                <!-- Testimonial 2: Ashwin (inspirational) -->
                 <div class="testimonial" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative;">
                     <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent); opacity: 0.3; position: absolute; top: 1.5rem; left: 1.5rem;"></i>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin: 2.5rem 0 1.5rem; color: var(--text); font-family: 'Crimson Pro', serif;">This book showcases that ordinary citizens can bring about change through sustained, evidence-based advocacy.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin: 2.5rem 0 1.5rem; color: var(--text); font-family: 'Crimson Pro', serif;">Most people give up too quickly. This book proves them wrong.</p>
+                    <div style="border-top: 2px solid var(--accent); padding-top: 1rem; margin-top: 1rem;">
+                        <p style="font-weight: 700; margin-bottom: 0.3rem; color: var(--primary); font-family: 'Space Mono', monospace; font-size: 0.95rem;">Dr. Ashwin Mahesh</p>
+                        <p style="font-size: 0.9rem; opacity: 0.7; color: var(--text);">Urban expert; Founder, India Together</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3: Ravichandar (universal summary) -->
+                <div class="testimonial" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative;">
+                    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent); opacity: 0.3; position: absolute; top: 1.5rem; left: 1.5rem;"></i>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin: 2.5rem 0 1.5rem; color: var(--text); font-family: 'Crimson Pro', serif;">Proof that ordinary citizens with evidence and persistence can move the unmovable.</p>
                     <div style="border-top: 2px solid var(--accent); padding-top: 1rem; margin-top: 1rem;">
                         <p style="font-weight: 700; margin-bottom: 0.3rem; color: var(--primary); font-family: 'Space Mono', monospace; font-size: 0.95rem;">V. Ravichandar</p>
                         <p style="font-size: 0.9rem; opacity: 0.7; color: var(--text);">Civic evangelist; Co-organiser, Bangalore Literature Festival</p>
@@ -2391,80 +2649,80 @@
         </div>
     </section>
 
-    <!-- Online Exclusive Section -->
+    <!-- Learning Framework Section -->
     <section id="online-exclusive" class="online-exclusive">
         <div class="exclusive-badge">
-            <i class="fas fa-star"></i> Online Exclusive
+            <i class="fas fa-graduation-cap"></i> Learning Framework
         </div>
-        <h2>Key Takeaways: 89 Lessons from the Field</h2>
+        <h2>Three Tiers of Lessons</h2>
         
         <div class="exclusive-content">
-            <h3>The Complete Field Guide for Activists</h3>
-            <p>All 12 chapters now available online! Each lesson breaks down What Happened, Why It Matters, and How to Apply It to your own campaigns. 90 actionable insights from a decade-long citizen movement.</p>
+            <p style="font-size: 1.15rem; margin-bottom: 2rem;">From quick insights to deep-dive course materials, choose your depth of learning.</p>
             
-            <div class="lessons-grid">
-                <div class="lessons-column">
-                    <h4>Foundation (Chapters 1-4)</h4>
-                    <div class="chapter-pills">
-                        <span class="chapter-pill">Ch 1: 5 lessons</span>
-                        <span class="chapter-pill">Ch 2: 7 lessons</span>
-                        <span class="chapter-pill">Ch 3: 7 lessons</span>
-                        <span class="chapter-pill">Ch 4: 7 lessons</span>
+            <!-- Three Tiers Grid -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2.5rem;">
+                <!-- Tier 1 -->
+                <div style="background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%); border: 2px solid var(--accent); border-radius: 12px; padding: 2rem; text-align: center;">
+                    <div style="background: var(--accent); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-family: 'Space Mono', monospace; font-weight: 700;">1</div>
+                    <h3 style="font-family: 'Space Mono', monospace; color: var(--accent); font-size: 1.1rem; margin-bottom: 0.5rem;">Key Lessons</h3>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">12</div>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.8;">One per chapter. The core principle distilled.</p>
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.1);">
+                        <span style="background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Book + Website</span>
                     </div>
-                    <p class="column-desc">Building credibility, research, and initial strategy</p>
                 </div>
                 
-                <div class="lessons-column">
-                    <h4>Obstacles (Chapters 5-7)</h4>
-                    <div class="chapter-pills">
-                        <span class="chapter-pill">Ch 5: 8 lessons</span>
-                        <span class="chapter-pill">Ch 6: 8 lessons</span>
-                        <span class="chapter-pill">Ch 7: 8 lessons</span>
+                <!-- Tier 2 -->
+                <div style="background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%); border: 2px solid var(--rail-blue); border-radius: 12px; padding: 2rem; text-align: center;">
+                    <div style="background: var(--rail-blue); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-family: 'Space Mono', monospace; font-weight: 700;">2</div>
+                    <h3 style="font-family: 'Space Mono', monospace; color: var(--rail-blue); font-size: 1.1rem; margin-bottom: 0.5rem;">Chapter Insights</h3>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--rail-blue);">34</div>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.8;">Tactical wisdom embedded in each chapter.</p>
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.1);">
+                        <span style="background: var(--rail-blue); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Book + Website</span>
                     </div>
-                    <p class="column-desc">Bureaucratic resistance and navigating setbacks</p>
                 </div>
                 
-                <div class="lessons-column">
-                    <h4>Breakthrough (Chapters 8-10)</h4>
-                    <div class="chapter-pills">
-                        <span class="chapter-pill">Ch 8: 8 lessons</span>
-                        <span class="chapter-pill">Ch 9: 8 lessons</span>
-                        <span class="chapter-pill">Ch 10: 8 lessons</span>
+                <!-- Tier 3 -->
+                <div style="background: linear-gradient(135deg, var(--primary) 0%, var(--rail-blue) 100%); border: 2px solid var(--secondary); border-radius: 12px; padding: 2rem; text-align: center; color: white;">
+                    <div style="background: var(--secondary); color: var(--primary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-family: 'Space Mono', monospace; font-weight: 700;">3</div>
+                    <h3 style="font-family: 'Space Mono', monospace; color: var(--secondary); font-size: 1.1rem; margin-bottom: 0.5rem;">Extended Takeaways</h3>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--secondary);">83</div>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.9;">Deep-dive with What/Why/How format.</p>
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                        <span style="background: var(--secondary); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">Course Exclusive</span>
                     </div>
-                    <p class="column-desc">Finding champions and mass mobilization</p>
-                </div>
-                
-                <div class="lessons-column">
-                    <h4>Victory (Chapters 11-12)</h4>
-                    <div class="chapter-pills">
-                        <span class="chapter-pill">Ch 11: 8 lessons</span>
-                        <span class="chapter-pill">Ch 12: 8 lessons</span>
-                    </div>
-                    <p class="column-desc">Final reckoning and campaign reflections</p>
-                </div>
-            </div>
-
-            <div class="exclusive-features" style="margin-top: 2rem;">
-                <div class="exclusive-feature">
-                    <i class="fas fa-list-check"></i>
-                    <h4>Structured Learning</h4>
-                    <p>What/Why/How format for immediate application</p>
-                </div>
-                
-                <div class="exclusive-feature">
-                    <i class="fas fa-lightbulb"></i>
-                    <h4>Actionable Insights</h4>
-                    <p>Clear guidance you can implement immediately</p>
-                </div>
-                
-                <div class="exclusive-feature">
-                    <i class="fas fa-book-open"></i>
-                    <h4>Complete Collection</h4>
-                    <p>All 89 lessons available now</p>
                 </div>
             </div>
             
-            <a href="key-takeaways.html" class="exclusive-cta">Explore All 89 Lessons</a>
+            <!-- Sample Lessons Preview -->
+            <div style="background: var(--light); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                <h4 style="font-family: 'Space Mono', monospace; margin-bottom: 1.5rem; color: var(--primary);">Sample: Chapter 6 - The Blocks Appear</h4>
+                <div style="display: grid; gap: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="background: var(--accent); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem; white-space: nowrap;">KEY LESSON</span>
+                        <span style="font-weight: 600;">Resistance Reveals Interests</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem; white-space: nowrap;">INSIGHT</span>
+                        <span>Silence Is Information</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem; white-space: nowrap;">INSIGHT</span>
+                        <span>Systems Starve Ideas More Often Than They Reject Them</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem; opacity: 0.6;">
+                        <span style="background: var(--secondary); color: var(--primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem; white-space: nowrap;">EXTENDED</span>
+                        <span>+8 more in course (RTI as Weapon, Create Future Reality Through Language...)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Buttons -->
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="key-takeaways.html" class="exclusive-cta">Explore 46 Free Lessons</a>
+                <a href="mailto:sathya.sankaran@gmail.com?subject=Break%20the%20Block%20Course%20Interest" class="exclusive-cta" style="background: transparent; border: 2px solid var(--accent); color: var(--accent);">Get Course (83 Extended) →</a>
+            </div>
         </div>
     </section>
 
@@ -2627,13 +2885,13 @@
                 <!-- FAQ Item 3 -->
                 <div style="border-bottom: 2px solid var(--light); padding-bottom: 1.5rem;">
                     <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">What makes this different from other books on activism?</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">Unlike academic policy textbooks, this is a real campaign story written by someone who lived it, not an observer. Unlike typical memoirs, it explicitly extracts 89 actionable lessons you can apply to your own campaigns. It's both an engaging narrative and a practical field guide—showing you the "how," not just the "why."</p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">Unlike academic policy textbooks, this is a real campaign story written by someone who lived it, not an observer. Unlike typical memoirs, it explicitly extracts 46 actionable lessons (12 Key Lessons + 34 Chapter Insights) you can apply to your own campaigns. It's both an engaging narrative and a practical field guide—showing you the "how," not just the "why."</p>
                 </div>
 
                 <!-- FAQ Item 4 -->
                 <div style="border-bottom: 2px solid var(--light); padding-bottom: 1.5rem;">
                     <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">How long is the book?</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">The book contains <strong>12 chapters</strong> with <strong>89 explicit lessons</strong> distilled from a decade-long campaign. It's designed to be an accessible read—substantive enough to provide real value, but not so academic that it becomes a chore.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">The book contains <strong>12 chapters</strong> with <strong>12 Key Lessons and 34 Chapter Insights</strong> distilled from a decade-long campaign. Plus <strong>83 Extended Takeaways</strong> available in the course. It's designed to be an accessible read—substantive enough to provide real value, but not so academic that it becomes a chore.</p>
                 </div>
 
                 <!-- FAQ Item 5 -->
