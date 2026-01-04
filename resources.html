@@ -52,9 +52,24 @@
             z-index: 1000;
             padding: 1rem 2rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-logo-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-logo-center img {
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-logo-center img:hover {
+            opacity: 0.8;
         }
 
         .back-link {
@@ -78,6 +93,7 @@
         /* Share Dropdown */
         .share-dropdown {
             position: relative;
+            justify-self: end;
         }
 
                 .share-toggle {
@@ -733,6 +749,11 @@
 
     <nav class="top-nav">
         <a href="index.html" class="back-link">Back to Book</a>
+        <div class="nav-logo-center">
+            <a href="index.html" aria-label="Break the Block Home">
+                <img loading="lazy" src="break-the-block-logo.svg" alt="Break the Block" style="height: 45px; width: auto;">
+            </a>
+        </div>
         <div class="share-dropdown">
             <button class="share-toggle" onclick="toggleShareMenu(event)" aria-label="Share">
                 <i class="fas fa-share-alt"></i>

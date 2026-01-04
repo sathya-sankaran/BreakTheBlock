@@ -412,6 +412,13 @@
             background: white;
         }
 
+        h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 3rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
         .comparison-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -491,65 +498,1118 @@
         .email-card {
             background: white;
             border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             overflow: hidden;
             margin-top: 2rem;
+            border: 1px solid #e0e0e0;
         }
 
         .email-header {
-            background: var(--primary);
-            color: white;
-            padding: 1rem 1.5rem;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e0e0e0;
+            padding: 1.5rem;
+        }
+
+        .email-meta-row {
             display: flex;
-            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .email-meta-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .email-label {
+            font-weight: 600;
+            color: #666;
+            min-width: 60px;
             font-family: 'Space Mono', monospace;
-            font-size: 0.85rem;
+        }
+
+        .email-value {
+            color: #333;
+            flex: 1;
         }
 
         .email-body {
             padding: 2rem;
-            font-size: 1.3rem;
-            font-style: italic;
-            color: var(--text);
-            border-left: 4px solid var(--accent);
-            margin: 0;
-            background: #fafafa;
+            background: white;
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.8;
         }
 
         .email-context {
             padding: 1.5rem 2rem;
             font-size: 1rem;
-            color: var(--text);
-            opacity: 0.9;
+            background: #f0f7ff;
+            border-top: 1px solid #e0e0e0;
         }
 
-        @media (max-width: 768px) {
-            .proof-strip {
-                gap: 1.5rem;
-                padding: 1.5rem 2%;
-            }
+        
 
-            .proof-item .number {
-                font-size: 1.5rem;
+            
+            .speech-bubble-wrapper.featured,
+            .speech-bubble-wrapper.wide,
+            .speech-bubble-wrapper.tall {
+                grid-column: span 1 !important;
+                grid-row: span 1 !important;
             }
-
-            .proof-item .label {
-                font-size: 0.7rem;
-            }
-
-            .comparison-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-cta-group {
+            
+            .person-card {
                 flex-direction: column;
-            }
-
-            .hero-cta-group .cta-button {
                 text-align: center;
             }
         }
+        .speech-bubble-wrapper {
+            transition: transform 0.3s ease;
+        }
 
+        .speech-bubble-wrapper:hover {
+            transform: translateY(-5px);
+        }
+
+        .speech-bubble-wrapper:hover .speech-bubble {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2) !important;
+        }
+
+        .speech-bubble {
+            transition: box-shadow 0.3s ease;
+        }
+
+        .person-card img {
+            transition: transform 0.3s ease;
+        }
+
+        .speech-bubble-wrapper:hover .person-card img {
+            transform: scale(1.1);
+        }
+
+            
+            .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .speech-bubble-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .speech-bubble-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2) !important;
+        }
+
+        .speech-bubble-card img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .speech-bubble-card:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3) !important;
+        }
+
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .speech-bubble-card.featured {
+                grid-column: span 2 !important;
+                grid-row: span 1 !important;
+            }
+            
+            .speech-bubble-card.tall {
+                grid-row: span 1 !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .speech-bubble-card.featured,
+            .speech-bubble-card.tall {
+                grid-column: span 1 !important;
+                grid-row: span 1 !important;
+            }
+        }
+        }
+
+    
+        /* Free Preview Section */
+        .free-preview {
+            padding: 5rem 5%;
+            background: white;
+            text-align: center;
+        }
+
+        .free-preview h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Space Mono', monospace;
+            color: var(--primary);
+        }
+
+        .preview-intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .preview-intro p {
+            font-size: 1.2rem;
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        
+
+        /* Online Exclusive Section */
+        .online-exclusive {
+            background: linear-gradient(135deg, var(--rail-blue), var(--primary));
+            color: white;
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .online-exclusive h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Space Mono', monospace;
+            color: var(--primary);
+        }
+
+        .exclusive-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .exclusive-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .online-exclusive h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .exclusive-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .exclusive-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .exclusive-badge i {
+            margin-right: 0.5rem;
+        }
+
+
+
+    
+        /* Author Section */
+        .author {
+            padding: 5rem 5%;
+            background: var(--light);
+        }
+
+        .author h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-family: 'Space Mono', monospace;
+            color: var(--primary);
+        }
+
+        .author-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .author-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .author-bio h3 {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .author-website {
+            margin: 0.5rem 0 1rem 0;
+        }
+
+        .website-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            background: transparent;
+        }
+
+        .website-link:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .website-link i {
+            font-size: 1rem;
+        }
+
+        /* Podcast Section */
+        .podcast-section {
+            background: linear-gradient(135deg, rgba(30, 215, 96, 0.1), rgba(29, 185, 84, 0.1));
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #1DB954;
+        }
+
+        .podcast-section h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .podcast-section h4 i {
+            color: #1DB954;
+            margin-right: 0.5rem;
+        }
+
+        .podcast-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .podcast-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: 2px solid;
+        }
+
+        .podcast-link.spotify {
+            background: #1DB954;
+            color: white;
+            border-color: #1DB954;
+        }
+
+        .podcast-link.spotify:hover {
+            background: #1ed760;
+            transform: translateY(-2px);
+        }
+
+        .podcast-link.apple {
+            background: #A64EFF;
+            color: white;
+            border-color: #A64EFF;
+        }
+
+        .podcast-link.apple:hover {
+            background: #b66bff;
+            transform: translateY(-2px);
+        }
+
+        .podcast-link.youtube {
+            background: #FF0000;
+            color: white;
+            border-color: #FF0000;
+        }
+
+        .podcast-link.youtube:hover {
+            background: #ff1a1a;
+            transform: translateY(-2px);
+        }
+
+        .podcast-link.website {
+            background: white;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .podcast-link.website:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .author-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .author-image img {
+                max-width: 300px;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+
+        /* FAQ Section */
+        .faq-accordion {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 2px solid var(--light);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 1.5rem;
+            background: white;
+            border: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 1.1rem;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--light);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* Get Book / Coming Soon Section */
+        .get-book {
+            background: var(--accent);
+            color: white;
+            text-align: center;
+        }
+
+        .get-book h2 {
+            color: white;
+        }
+
+        .book-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: 'Space Mono', monospace;
+            color: var(--secondary);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .book-formats {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .book-formats p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .retailer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .retailer-link {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-family: 'Space Mono', monospace;
+            transition: background 0.3s ease;
+        }
+
+        .retailer-link:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .book-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .retailer-links {
+                flex-direction: column;
+            }
+        }
+
+        /* Contact Form Section */
+        .contact-form {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .contact-form h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-family: 'Space Mono', monospace;
+            color: var(--primary);
+        }
+
+        .contact-form > p {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 3rem;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-family: 'Space Mono', monospace;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--light);
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Space Mono', monospace;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: var(--rail-blue);
+        }
+
+        /* Comments Section */
+        .comments-section {
+            padding: 5rem 5%;
+            background: var(--light);
+        }
+
+        .comments-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-family: 'Space Mono', monospace;
+            color: var(--primary);
+        }
+
+        .comments-section > p {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 3rem;
+        }
+
+
+    
+        /* Three Tiers Responsive */
+        @media (max-width: 768px) {
+            #online-exclusive .exclusive-content > div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #online-exclusive .exclusive-content > div[style*="grid-template-columns"] > div {
+                padding: 1.5rem !important;
+            }
+        }
+
+        /* Exclusive CTA Button */
+        .exclusive-cta {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .exclusive-cta:hover {
+            background: var(--rail-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+
+    
+        /* Free Chapters Section */
+        .free-chapters {
+            background: white;
+        }
+
+        .free-chapters-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .free-chapters-intro h2 {
+            margin-bottom: 1rem;
+        }
+
+        .free-chapters-intro p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        .chapters-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .chapter-preview-card {
+            background: var(--light);
+            padding: 2.5rem;
+            border-left: 6px solid var(--accent);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .chapter-preview-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .chapter-preview-card h3 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-preview-card h4 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-preview-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .chapter-preview-card .read-btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+        }
+
+        .chapter-preview-card .read-btn:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        /* Chapter Modal */
+        .chapter-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .chapter-modal.active {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .chapter-modal-content {
+            background: white;
+            max-width: 800px;
+            width: 100%;
+            padding: 3rem;
+            margin: 2rem auto;
+            position: relative;
+            border-radius: 4px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chapter-modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--text);
+            transition: all 0.3s;
+        }
+
+        .chapter-modal-close:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: rotate(90deg);
+        }
+
+        .chapter-modal-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-modal-content .chapter-meta {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        .chapter-modal-content .chapter-text {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            white-space: pre-wrap;
+        }
+
+        .chapter-modal-content .chapter-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .chapter-cta {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--light);
+            border-radius: 4px;
+            margin-top: 3rem;
+        }
+
+        .chapter-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Exclusive Features for Online Exclusive Section */
+        .exclusive-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .exclusive-feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .exclusive-feature i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .exclusive-feature h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .exclusive-feature p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive for Free Chapters Grid */
+        @media (max-width: 768px) {
+            .chapters-preview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+    
+        /* Author Contact */
+        .author-contact {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        /* Contact Form Section */
+        .contact-form-section {
+            background: white;
+            padding: 5rem 5%;
+        }
+
+        .contact-form-section h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            font-family: 'Space Mono', monospace;
+            color: var(--primary);
+        }
+
+        .contact-form-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            opacity: 0.8;
+        }
+
+        .form-submit {
+            padding: 1.2rem 3rem;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 3px solid var(--secondary);
+        }
+
+        .form-submit:hover {
+            background: transparent;
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        footer a {
+            transition: opacity 0.3s;
+        }
+
+        footer a:hover {
+            opacity: 1;
+        }
+
+                /* Footer Social Links */
+        .footer-social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .footer-social-link:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            opacity: 1;
+            color: white !important;
+        }
+
+        footer img {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* Purchase Options */
+        .purchase-options {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .purchase-btn {
+            padding: 1.5rem 3rem;
+            background: white;
+            color: var(--accent);
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: 3px solid white;
+        }
+
+        .purchase-btn:hover {
+            background: transparent;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Comments Section Intro */
+        .comments-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            opacity: 0.8;
+        }
+
+        .giscus-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+
+    
+        /* Hero Typography */
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .hero .tagline {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+            font-family: 'Space Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        /* Hero Book Cover */
         .hero-book-cover {
             display: flex;
             justify-content: center;
@@ -569,6 +1629,122 @@
 
         .hero-book-cover img:hover {
             transform: scale(1.05) rotate(-2deg);
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        .about-text .highlight {
+            background: linear-gradient(120deg, rgba(255, 107, 53, 0.2) 0%, rgba(255, 107, 53, 0.2) 100%);
+            padding: 0.2rem 0.4rem;
+            font-weight: 600;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat {
+            background: var(--light);
+            padding: 2rem;
+            text-align: center;
+            border-left: 4px solid var(--accent);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: 'Space Mono', monospace;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Space Mono', monospace;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        blockquote {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-style: italic;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+        }
+
+        .quote-author {
+            font-family: 'Space Mono', monospace;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--secondary);
+        }
+
+        /* Chapters Section */
+        .chapters {
+            background: var(--light);
+        }
+
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .chapter-card {
+            background: white;
+            padding: 2rem;
+            border-left: 4px solid var(--rail-blue);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .chapter-card:hover {
+            transform: translateX(10px);
+            border-color: var(--accent);
+        }
+
+        .chapter-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-desc {
+            font-size: 1.1rem;
+            opacity: 0.8;
         }
 
         /* Book Showcase */
@@ -653,6 +1829,7 @@
         /* Events Section */
         .events {
             background: var(--light);
+            padding: 5rem 5%;
         }
 
         .events-intro {
@@ -847,273 +2024,6 @@
             transform: translateY(-2px);
         }
 
-        /* Free Chapters Section */
-        .free-chapters {
-            background: white;
-        }
-
-        .free-chapters-intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-        }
-
-        .free-chapters-intro h2 {
-            margin-bottom: 1rem;
-        }
-
-        .free-chapters-intro p {
-            font-size: 1.3rem;
-            line-height: 1.8;
-        }
-
-        .chapters-preview-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .chapter-preview-card {
-            background: var(--light);
-            padding: 2.5rem;
-            border-left: 6px solid var(--accent);
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .chapter-preview-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .chapter-preview-card h3 {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .chapter-preview-card h4 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .chapter-preview-card p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
-
-        .chapter-preview-card .read-btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            border: 2px solid var(--primary);
-        }
-
-        .chapter-preview-card .read-btn:hover {
-            background: transparent;
-            color: var(--primary);
-        }
-
-        /* Chapter Modal */
-        .chapter-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 10000;
-            overflow-y: auto;
-            padding: 2rem;
-        }
-
-        .chapter-modal.active {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-        }
-
-        .chapter-modal-content {
-            background: white;
-            max-width: 800px;
-            width: 100%;
-            padding: 3rem;
-            margin: 2rem auto;
-            position: relative;
-            border-radius: 4px;
-            animation: slideIn 0.3s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .chapter-modal-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            font-size: 2rem;
-            cursor: pointer;
-            color: var(--text);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid var(--text);
-            transition: all 0.3s;
-        }
-
-        .chapter-modal-close:hover {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-            transform: rotate(90deg);
-        }
-
-        .chapter-modal-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .chapter-modal-content .chapter-meta {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent);
-            margin-bottom: 2rem;
-        }
-
-        .chapter-modal-content .chapter-text {
-            font-size: 1.2rem;
-            line-height: 1.9;
-            white-space: pre-wrap;
-        }
-
-        .chapter-modal-content .chapter-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .chapter-cta {
-            text-align: center;
-            padding: 3rem 2rem;
-            background: var(--light);
-            border-radius: 4px;
-            margin-top: 3rem;
-        }
-
-        .chapter-cta h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .chapter-cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        /* Free Preview Section */
-        /* Online Exclusive Section */
-        .online-exclusive {
-            background: linear-gradient(135deg, var(--rail-blue), var(--primary));
-            color: white;
-        }
-
-        .exclusive-badge {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-        }
-
-        .exclusive-badge i {
-            margin-right: 0.5rem;
-        }
-
-        .online-exclusive h2 {
-            color: white;
-        }
-
-        .exclusive-content {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem;
-            border-radius: 8px;
-            margin-top: 2rem;
-        }
-
-        .exclusive-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-
-        .exclusive-content p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.95;
-        }
-
-        .exclusive-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .exclusive-feature {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 6px;
-            border-left: 4px solid var(--secondary);
-        }
-
-        .exclusive-feature i {
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        .exclusive-feature h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: white;
-        }
-
-        .exclusive-feature p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
         /* Lessons Grid */
         .lessons-grid {
             display: grid;
@@ -1160,59 +2070,10 @@
             font-style: italic;
         }
 
-        @media (max-width: 768px) {
-            .lessons-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .podcast-links {
-                flex-direction: column;
-            }
-
-            .podcast-link {
-                justify-content: center;
-                width: 100%;
-            }
-        }
-
-        /* Responsive rules for specific sections */
-        @media (max-width: 1200px) {
-            /* "This Book Is For You If" section - make 2x2 grid on tablets */
-            section [style*="grid-template-columns: repeat(4, 1fr)"] {
-                grid-template-columns: repeat(2, 1fr) !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            /* "This Book Is For You If" section - stack on mobile */
-            section [style*="grid-template-columns: repeat(4, 1fr)"] {
-                grid-template-columns: 1fr !important;
-            }
-        }
-
-        .exclusive-cta {
-            display: inline-block;
-            padding: 1.2rem 3rem;
-            background: var(--secondary);
-            color: white;
-            text-decoration: none;
-            font-family: 'Space Mono', monospace;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            border: 3px solid var(--secondary);
-            margin-top: 1rem;
-        }
-
-        .exclusive-cta:hover {
-            background: transparent;
-            color: var(--secondary);
-            transform: translateY(-2px);
-        }
-
+        /* Free Preview and Chapter Display */
         .free-preview {
             background: white;
+            padding: 5rem 5%;
         }
 
         .preview-intro {
@@ -1337,6 +2198,7 @@
             background: var(--accent);
         }
 
+        /* Additional Responsive Rules */
         @media (max-width: 968px) {
             .book-showcase-grid {
                 grid-template-columns: 1fr;
@@ -1376,32 +2238,6 @@
             }
         }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 7vw, 6rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -2px;
-            line-height: 1.1;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .hero .tagline {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            font-weight: 300;
-            margin-bottom: 0.5rem;
-            color: var(--secondary);
-            font-family: 'Space Mono', monospace;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .hero .subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.4rem);
-            margin-bottom: 3rem;
-            opacity: 0.9;
-        }
-
         .cta-button {
             display: inline-block;
             padding: 1.2rem 3rem;
@@ -1423,706 +2259,35 @@
             transform: translateY(-2px);
         }
 
-        /* Section Base */
-        section {
-            padding: 6rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
+        /* Responsive rules for specific sections */
+        @media (max-width: 1200px) {
+            /* "This Book Is For You If" section - make 2x2 grid on tablets */
+            section [style*="grid-template-columns: repeat(4, 1fr)"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
         }
 
-        h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 3rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
-
-        /* About Section */
-        .about {
-            background: white;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .about-text {
-            font-size: 1.3rem;
-            line-height: 1.8;
-        }
-
-        .about-text .highlight {
-            background: linear-gradient(120deg, rgba(255, 107, 53, 0.2) 0%, rgba(255, 107, 53, 0.2) 100%);
-            padding: 0.2rem 0.4rem;
-            font-weight: 600;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .stat {
-            background: var(--light);
-            padding: 2rem;
-            text-align: center;
-            border-left: 4px solid var(--accent);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--accent);
-            font-family: 'Space Mono', monospace;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-family: 'Space Mono', monospace;
-        }
-
-        /* Quote Section */
-        .quote-section {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-        }
-
-        blockquote {
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-            font-style: italic;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto 2rem;
-        }
-
-        .quote-author {
-            font-family: 'Space Mono', monospace;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--secondary);
-        }
-
-        /* Chapters Preview */
-        .chapters {
-            background: var(--light);
-        }
-
-        .chapter-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .chapter-card {
-            background: white;
-            padding: 2rem;
-            border-left: 4px solid var(--rail-blue);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .chapter-card:hover {
-            transform: translateX(10px);
-            border-color: var(--accent);
-        }
-
-        .chapter-number {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.9rem;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-        }
-
-        .chapter-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .chapter-desc {
-            font-size: 1.1rem;
-            opacity: 0.8;
-        }
-
-        /* Author Section */
-        .author {
-            background: white;
-        }
-
-        .author-grid {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .author-image {
-            width: 100%;
-            aspect-ratio: 1;
-            background: transparent;
-            border-radius: 2px;
-            overflow: visible;
-        }
-
-        .author-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .author-bio {
-            font-size: 1.2rem;
-            line-height: 1.8;
-        }
-
-        .author-bio h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .author-website {
-            margin: 0.5rem 0 1rem 0;
-        }
-
-        .website-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--accent);
-            text-decoration: none;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.95rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border: 2px solid var(--accent);
-            border-radius: 8px;
-            background: transparent;
-        }
-
-        .website-link:hover {
-            background: var(--accent);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .website-link i {
-            font-size: 1rem;
-        }
-
-
-        /* Podcast Section */
-        .podcast-section {
-            background: linear-gradient(135deg, rgba(30, 215, 96, 0.1), rgba(29, 185, 84, 0.1));
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            border-left: 4px solid #1DB954;
-        }
-
-        .podcast-section h4 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .podcast-section h4 i {
-            color: #1DB954;
-            margin-right: 0.5rem;
-        }
-
-        .podcast-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .podcast-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            border: 2px solid;
-        }
-
-        .podcast-link.spotify {
-            background: #1DB954;
-            color: white;
-            border-color: #1DB954;
-        }
-
-        .podcast-link.spotify:hover {
-            background: #1ed760;
-            transform: translateY(-2px);
-        }
-
-        .podcast-link.apple {
-            background: #A64EFF;
-            color: white;
-            border-color: #A64EFF;
-        }
-
-        .podcast-link.apple:hover {
-            background: #b66bff;
-            transform: translateY(-2px);
-        }
-
-        .podcast-link.youtube {
-            background: #FF0000;
-            color: white;
-            border-color: #FF0000;
-        }
-
-        .podcast-link.youtube:hover {
-            background: #ff1a1a;
-            transform: translateY(-2px);
-        }
-
-        .podcast-link.website {
-            background: white;
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .podcast-link.website:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Author Contact */
-        .author-contact {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 2px solid #e0e0e0;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background: var(--rail-blue);
-            color: white;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-        }
-
-        .testimonial {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2.5rem;
-            border-radius: 2px;
-        }
-
-        .testimonial-text {
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .testimonial-author {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--secondary);
-        }
-
-        /* Get the Book */
-        .get-book {
-            background: var(--accent);
-            color: white;
-            text-align: center;
-        }
-
-        .get-book h2 {
-            color: white;
-        }
-
-        .purchase-options {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 3rem;
-        }
-
-        .purchase-btn {
-            padding: 1.5rem 3rem;
-            background: white;
-            color: var(--accent);
-            text-decoration: none;
-            font-family: 'Space Mono', monospace;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            border: 3px solid white;
-        }
-
-        .purchase-btn:hover {
-            background: transparent;
-            color: white;
-            transform: scale(1.05);
-        }
-
-        /* Contact Form */
-        .contact-form-section {
-            background: white;
-        }
-
-        .contact-form-section h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .contact-form-intro {
-            text-align: center;
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            opacity: 0.8;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .form-group label {
-            font-family: 'Space Mono', monospace;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 1rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 4px;
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--secondary);
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .form-submit {
-            padding: 1.2rem 3rem;
-            background: var(--secondary);
-            color: white;
-            border: none;
-            font-family: 'Space Mono', monospace;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: 3px solid var(--secondary);
-        }
-
-        .form-submit:hover {
-            background: transparent;
-            color: var(--secondary);
-            transform: translateY(-2px);
-        }
-
-        /* Comments Section */
-        .comments-section {
-            background: var(--light);
-        }
-
-        .comments-section h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .comments-intro {
-            text-align: center;
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            opacity: 0.8;
-        }
-
-        .giscus-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 3rem 5%;
-            text-align: center;
-        }
-
-        footer p {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.9rem;
-            opacity: 0.7;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        footer a {
-            transition: opacity 0.3s;
-        }
-
-        footer a:hover {
-            opacity: 1;
-        }
-
-        .footer-social-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: white !important;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-        }
-
-        .footer-social-link:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
-            opacity: 1;
-            color: white !important;
-        }
-
-        footer img {
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            /* Hamburger Menu Mobile Styles */
-            .hamburger {
-                display: flex;
+            /* "This Book Is For You If" section - stack on mobile */
+            section [style*="grid-template-columns: repeat(4, 1fr)"] {
+                grid-template-columns: 1fr !important;
             }
 
-            .nav-logo img {
-                height: 40px;
+            .lessons-grid {
+                grid-template-columns: 1fr;
             }
 
-            nav {
-                padding: 1rem 5%;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 400px;
-                height: 100vh;
-                background: rgba(26, 26, 26, 0.98);
-                backdrop-filter: blur(20px);
+            .podcast-links {
                 flex-direction: column;
-                justify-content: flex-start;
-                padding: 80px 2rem 2rem;
-                transition: right 0.3s ease;
-                overflow-y: auto;
             }
 
-            .nav-menu.active {
-                right: 0;
-                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 0;
-                width: 100%;
-                align-items: flex-start;
-            }
-
-            nav ul li {
-                width: 100%;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            nav ul li a {
-                display: block;
-                padding: 1.2rem 0;
-                font-size: 1rem;
-            }
-
-            /* Share dropdown in mobile */
-            .share-dropdown {
-                position: relative;
+            .podcast-link {
+                justify-content: center;
                 width: 100%;
             }
-
-            .share-toggle {
-                width: 100%;
-                height: auto;
-                border-radius: 0;
-                justify-content: flex-start;
-                padding: 1.2rem 0;
-                border: none;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                gap: 0.8rem;
-            }
-
-            .share-toggle::before {
-                content: 'Share';
-                font-family: 'Space Mono', monospace;
-                font-size: 1rem;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-            }
-
-            .share-menu {
-                position: static;
-                box-shadow: none;
-                background: rgba(255, 255, 255, 0.05);
-                margin-top: 0;
-                border-radius: 0;
-                transform: none;
-            }
-
-            .share-menu.active {
-                transform: none;
-            }
-
-            .share-menu::before {
-                display: none;
-            }
-
-            .share-menu-item {
-                color: var(--light);
-                border-color: rgba(255, 255, 255, 0.1);
-                padding: 1rem 1.5rem;
-            }
-
-            .share-menu-item:hover {
-                background: rgba(255, 255, 255, 0.1);
-                color: var(--accent);
-            }
-
-            /* Close menu when clicking outside */
-            body.menu-open::before {
-                content: '';
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 999;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .hero-text {
-                text-align: center;
-            }
-
-            .hero-book-cover img {
-                max-height: 400px;
-            }
-
-            .about-grid,
-            .author-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 4rem 5%;
-            }
-        }
-    
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
 
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .slide-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .scale-in {
-            opacity: 0;
-            transform: scale(0.95);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .scale-in.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
     </style>
     
     <!-- Structured Data (JSON-LD) -->
@@ -2338,6 +2503,7 @@
             <ul>
                 <li><a href="#free-preview" onclick="closeMenu()">Read Free</a></li>
                 <li><a href="key-takeaways.html">Lessons</a></li>
+                <li><a href="resources.html">Resources</a></li>
                 <li><a href="#author" onclick="closeMenu()">Author</a></li>
                 <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
                 <li><a href="#get-book" onclick="closeMenu()">Get the Book</a></li>
@@ -2377,7 +2543,7 @@
                 <p class="subtitle">The brutally honest playbook for changing your city when you have no power, no money, and no political connections.</p>
                 <div class="hero-cta-group">
                     <a href="#get-book" class="cta-button">Get the Playbook</a>
-                    <a href="chapters.html" class="cta-button secondary">Read Free Chapters</a>
+                    <a href="#free-preview" class="cta-button secondary">Read Free Chapters</a>
                 </div>
             </div>
             <div class="hero-book-cover">
@@ -2447,137 +2613,44 @@
             <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--text); opacity: 0.8; text-align: center;">This book includes the actual emails and government responses from the campaign</p>
             
             <div class="email-card">
+                <!-- Email Header (like Gmail/Outlook) -->
                 <div class="email-header">
-                    <span>From: Managing Director, BMRCL</span>
-                    <span>2010</span>
+                    <div class="email-meta">
+                        <div class="email-meta-row">
+                            <span class="email-label">From:</span>
+                            <span class="email-value">Managing Director, Bangalore Metro Rail Corporation Ltd (BMRCL)</span>
+                        </div>
+                        <div class="email-meta-row">
+                            <span class="email-label">To:</span>
+                            <span class="email-value">Sathya Sankaran & Team</span>
+                        </div>
+                        <div class="email-meta-row">
+                            <span class="email-label">Date:</span>
+                            <span class="email-value">June 2010</span>
+                        </div>
+                        <div class="email-meta-row">
+                            <span class="email-label">Subject:</span>
+                            <span class="email-value"><strong>Re: Suburban Rail Proposal for Bengaluru</strong></span>
+                        </div>
+                    </div>
                 </div>
-                <blockquote class="email-body">
-                    "It expresses a grandiose, pious intention but grossly oversimplifies both the issue and the solution."
-                </blockquote>
-                <p class="email-context">This dismissive email from the head of Bangalore Metro became the turning point. Chapter 6 shows exactly how we responded, and why this rejection ultimately strengthened the campaign.</p>
+                
+                <!-- Email Body -->
+                <div class="email-body">
+                    <p style="margin: 0 0 1.5rem 0; color: #666; font-style: italic;">[...previous discussion...]</p>
+                    <blockquote style="margin: 0; padding: 1.5rem; background: #fff9e6; border-left: 4px solid #ff6b35; font-size: 1.2rem; line-height: 1.6; color: #333;">
+                        "It expresses a grandiose, pious intention but grossly oversimplifies both the issue and the solution."
+                    </blockquote>
+                    <p style="margin: 1.5rem 0 0 0; color: #666; font-style: italic;">[...end of email...]</p>
+                </div>
+                
+                <!-- Context Footer -->
+                <div class="email-context">
+                    <p style="margin: 0;"><strong style="color: var(--primary);">📌 The Turning Point:</strong> This dismissive email from the head of Bangalore Metro became a catalyst. Chapter 6 reveals exactly how the team responded—and why this rejection ultimately strengthened the campaign.</p>
+                </div>
             </div>
             
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="chapters.html#chapter-6" class="cta-button" style="background: var(--primary);">Read the Full Exchange →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials" style="padding: 5rem 5%; background: var(--light);">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center; font-family: 'Space Mono', monospace; color: var(--primary);">What Others Are Saying</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 4rem; text-align: center; color: var(--text); opacity: 0.8;">Praise for Break the Block</p>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem;">
-                <!-- Testimonial 1: Prof. Rajeev Gowda -->
-                <div class="testimonial" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative;">
-                    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent); opacity: 0.3; position: absolute; top: 1.5rem; left: 1.5rem;"></i>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin: 2.5rem 0 1.5rem; color: var(--text); font-family: 'Crimson Pro', serif;">Shows how positive change requires remarkable vision, passion, and persistence. An inspiring read!</p>
-                    <div style="border-top: 2px solid var(--accent); padding-top: 1rem; margin-top: 1rem;">
-                        <p style="font-weight: 700; margin-bottom: 0.3rem; color: var(--primary); font-family: 'Space Mono', monospace; font-size: 0.95rem;">Prof. M.V. Rajeev Gowda</p>
-                        <p style="font-size: 0.9rem; opacity: 0.7; color: var(--text);">Ex-MP, Rajya Sabha</p>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2: V Manjula -->
-                <div class="testimonial" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative;">
-                    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent); opacity: 0.3; position: absolute; top: 1.5rem; left: 1.5rem;"></i>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin: 2.5rem 0 1.5rem; color: var(--text); font-family: 'Crimson Pro', serif;">A lived account of how dialogue, persistence, and citizen-government partnership brought suburban rail to Bengaluru.</p>
-                    <div style="border-top: 2px solid var(--accent); padding-top: 1rem; margin-top: 1rem;">
-                        <p style="font-weight: 700; margin-bottom: 0.3rem; color: var(--primary); font-family: 'Space Mono', monospace; font-size: 0.95rem;">V. Manjula</p>
-                        <p style="font-size: 0.9rem; opacity: 0.7; color: var(--text);">Additional Chief Secretary (Retd.)</p>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3: Srinivas -->
-                <div class="testimonial" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative;">
-                    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent); opacity: 0.3; position: absolute; top: 1.5rem; left: 1.5rem;"></i>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin: 2.5rem 0 1.5rem; color: var(--text); font-family: 'Crimson Pro', serif;">A masterclass in citizen advocacy. Sathya didn't just fight the battle: he documented the playbook.</p>
-                    <div style="border-top: 2px solid var(--accent); padding-top: 1rem; margin-top: 1rem;">
-                        <p style="font-weight: 700; margin-bottom: 0.3rem; color: var(--primary); font-family: 'Space Mono', monospace; font-size: 0.95rem;">Srinivas Alavilli</p>
-                        <p style="font-size: 0.9rem; opacity: 0.7; color: var(--text);">Civic activist; Fellow, WRI India</p>
-                    </div>
-                </div>
-
-                <!-- Testimonial 4: Ashwin -->
-                <div class="testimonial" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative;">
-                    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent); opacity: 0.3; position: absolute; top: 1.5rem; left: 1.5rem;"></i>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin: 2.5rem 0 1.5rem; color: var(--text); font-family: 'Crimson Pro', serif;">Most people give up too quickly. This book proves them wrong.</p>
-                    <div style="border-top: 2px solid var(--accent); padding-top: 1rem; margin-top: 1rem;">
-                        <p style="font-weight: 700; margin-bottom: 0.3rem; color: var(--primary); font-family: 'Space Mono', monospace; font-size: 0.95rem;">Dr. Ashwin Mahesh</p>
-                        <p style="font-size: 0.9rem; opacity: 0.7; color: var(--text);">Urban expert; Founder, India Together</p>
-                    </div>
-                </div>
-
-                <!-- Testimonial 5: Ravichandar -->
-                <div class="testimonial" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative;">
-                    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent); opacity: 0.3; position: absolute; top: 1.5rem; left: 1.5rem;"></i>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin: 2.5rem 0 1.5rem; color: var(--text); font-family: 'Crimson Pro', serif;">Proof that ordinary citizens with evidence and persistence can move the unmovable.</p>
-                    <div style="border-top: 2px solid var(--accent); padding-top: 1rem; margin-top: 1rem;">
-                        <p style="font-weight: 700; margin-bottom: 0.3rem; color: var(--primary); font-family: 'Space Mono', monospace; font-size: 0.95rem;">V. Ravichandar</p>
-                        <p style="font-size: 0.9rem; opacity: 0.7; color: var(--text);">Civic evangelist; Co-organiser, Bangalore Literature Festival</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Who This Book Is For -->
-    <section style="padding: 5rem 5%; background: linear-gradient(135deg, var(--rail-blue) 0%, var(--primary) 100%); color: white;">
-        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-family: 'Space Mono', monospace; color: white;">This Book Is For You If...</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 4rem; opacity: 0.9;">Real guidance for people who want to make change happen</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: left;">
-                <!-- Audience 1 -->
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 8px; backdrop-filter: blur(10px);">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
-                    <h3 style="font-family: 'Space Mono', monospace; font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--secondary);">Activists & Organizers</h3>
-                    <p style="font-size: 1rem; line-height: 1.7; opacity: 0.9;">You're fighting for urban change but hitting bureaucratic walls. You need practical <strong>civic advocacy tactics</strong> and <strong>citizen organizing strategies</strong> that actually work, not just inspiring quotes.</p>
-                </div>
-
-                <!-- Audience 2 -->
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 8px; backdrop-filter: blur(10px);">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎓</div>
-                    <h3 style="font-family: 'Space Mono', monospace; font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--secondary);">Policy Students</h3>
-                    <p style="font-size: 1rem; line-height: 1.7; opacity: 0.9;">Your textbooks teach policy theory, but you want to understand how <strong>urban governance change</strong> and <strong>citizen-led policy reform</strong> actually happen on the ground in Indian cities. This is your real-world case study in <strong>grassroots activism</strong>.</p>
-                </div>
-
-                <!-- Audience 3 -->
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 8px; backdrop-filter: blur(10px);">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏙️</div>
-                    <h3 style="font-family: 'Space Mono', monospace; font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--secondary);">Engaged Citizens</h3>
-                    <p style="font-size: 1rem; line-height: 1.7; opacity: 0.9;">You want to fix something in your city but don't know where to start. You've wondered if one person (or five) can really make a difference.</p>
-                </div>
-
-                <!-- Audience 4 -->
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 8px; backdrop-filter: blur(10px);">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏛️</div>
-                    <h3 style="font-family: 'Space Mono', monospace; font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--secondary);">Public Servants</h3>
-                    <p style="font-size: 1rem; line-height: 1.7; opacity: 0.9;">You want to understand why some citizen campaigns succeed while others fail. This shows you the citizen perspective from the inside.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Free Preview Section -->
-    <section id="free-preview" class="free-preview">
-        <h2>Read Free Chapters</h2>
-        <div class="preview-intro">
-            <p>Experience the book firsthand. Read the complete Introduction and first two chapters absolutely free—no signup required.</p>
-        </div>
-
-        <div class="preview-cta">
-            <p style="font-size: 1.3rem; margin-bottom: 2.5rem;"><strong>Start reading now:</strong></p>
-            <div class="chapter-preview-buttons">
-                <a href="introduction.html" class="chapter-btn" target="_blank">Introduction</a>
-                <a href="chapter1.html" class="chapter-btn" target="_blank">Chapter 1: The Online-Offline Bridge</a>
-                <a href="chapter2.html" class="chapter-btn" target="_blank">Chapter 2: Trains of Thought</a>
-            </div>
-            <p style="margin-top: 2rem; font-size: 1rem; color: #666;">
-                <a href="chapters.html" style="color: var(--accent);">View all 12 chapters →</a>
-            </p>
         </div>
     </section>
 
@@ -2633,19 +2706,19 @@
                 <div style="display: grid; gap: 1rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
                         <span style="background: var(--accent); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem; white-space: nowrap;">KEY LESSON</span>
-                        <span style="font-weight: 600;">Resistance Reveals Interests</span>
+                        <span style="font-weight: 600; color: var(--primary);">Resistance Reveals Interests</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 1rem;">
                         <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem; white-space: nowrap;">INSIGHT</span>
-                        <span>Silence Is Information</span>
+                        <span style="color: var(--primary);">Silence Is Information</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 1rem;">
                         <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem; white-space: nowrap;">INSIGHT</span>
-                        <span>Systems Starve Ideas More Often Than They Reject Them</span>
+                        <span style="color: var(--primary);">Systems Starve Ideas More Often Than They Reject Them</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 1rem; opacity: 0.6;">
                         <span style="background: var(--secondary); color: var(--primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem; white-space: nowrap;">EXTENDED</span>
-                        <span>+8 more in course (RTI as Weapon, Create Future Reality Through Language...)</span>
+                        <span style="color: var(--primary);">+8 more in course (RTI as Weapon, Create Future Reality Through Language...)</span>
                     </div>
                 </div>
             </div>
@@ -2653,7 +2726,7 @@
             <!-- CTA Buttons -->
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                 <a href="key-takeaways.html" class="exclusive-cta">Explore 46 Free Lessons</a>
-                <a href="/cdn-cgi/l/email-protection#b8cbd9ccd0c1d996cbd9d6d3d9cad9d6f8dfd5d9d1d496dbd7d587cbcddad2dddbcc85facaddd9d39d8a88ccd0dd9d8a88fad4d7dbd39d8a88fbd7cdcacbdd9d8a88f1d6ccddcaddcbcc" class="exclusive-cta" style="background: transparent; border: 2px solid var(--accent); color: var(--accent);">Get Course (83 Extended) →</a>
+                <a href="/cdn-cgi/l/email-protection#661507120e1f07481507080d0714070826010b070f0a4805090b591513040c0305125b2f081203140315124354560f08435456241403070d435456120e03435456240a09050d435456231e12030802030243545625091314150343545643545e5e554354562a03151509081543545f400409021f5b2e0f4354563507120e1f074354254356274356272f4354510b4354560f0812031403151203024354560f084354560a030714080f08014354560b0914034354560704091312435456120e03435456231e120308020302435456250913141503435456110f120e4354565e55435456020312070f0a030243545612070d030711071f154354560014090b435456241403070d435456120e03435456240a09050d48435627435627360a03071503435456150308024354560b034354560f080009140b07120f090843545607040913124355274356274b4354562509131415034354560705050315154354560708024354560009140b07124356274b43545636140f050f08014354560708024354560710070f0a07040f0a0f121f4356274b435456310e0712435451154354560f08050a130203024354560f08435456120e03435456231e12030802030243545632070d030711071f15435627435627320e07080d4354561f0913435457" class="exclusive-cta" style="background: transparent; border: 2px solid var(--accent); color: var(--accent);">Get Course (83 Extended) →</a>
             </div>
         </div>
     </section>
@@ -2816,7 +2889,7 @@
         <p class="comments-intro">Share your thoughts on civic activism, ask questions about the book, or discuss lessons learned from the campaign. GitHub account required to comment.</p>
         
         <div class="giscus-container">
-            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://giscus.app/client.js"
+            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://giscus.app/client.js"
                     data-repo="sathya-sankaran/BreakTheBlock"
                     data-repo-id="R_kgDOQu0ydQ"
                     data-category="Announcements"
@@ -2977,20 +3050,4 @@
             const isClickInsideMenu = navMenu.contains(event.target);
             const isClickOnHamburger = hamburger.contains(event.target);
             const isClickOnShareToggle = shareToggle && shareToggle.contains(event.target);
-            
-            // Close hamburger menu
-            if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
-                closeMenu();
-            }
-            
-            // Close share menu
-            if (shareMenu && !isClickOnShareToggle && !shareMenu.contains(event.target)) {
-                shareMenu.classList.remove('active');
-            }
-        });
-
-        // Close menus on escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeMenu();
-                const shareMenu = 
+       
