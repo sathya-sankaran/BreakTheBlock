@@ -2288,6 +2288,74 @@
         }
 
 
+
+        /* Hamburger Menu Responsive */
+        @media (max-width: 968px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 400px;
+                height: 100vh;
+                background: var(--primary);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 6rem 2rem 2rem;
+                gap: 0;
+                transition: right 0.3s ease;
+                z-index: 1000;
+                overflow-y: auto;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu ul {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 1.2rem 0;
+                color: var(--light);
+                width: 100%;
+            }
+
+            .nav-menu a:hover {
+                background: rgba(255, 255, 255, 0.1);
+                padding-left: 1rem;
+            }
+
+            /* Hide share menu in mobile nav */
+            .nav-menu .share-container {
+                margin-top: 2rem;
+                width: 100%;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+        }
+
     </style>
     
     <!-- Structured Data (JSON-LD) -->
@@ -2481,6 +2549,97 @@
         ]
     }
     </script>
+
+    <!-- Navigation JavaScript - Event Listeners -->
+    <script>
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hamburger menu toggle
+            const hamburger = document.getElementById('hamburger-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            const body = document.body;
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    if (navMenu) {
+                        navMenu.classList.toggle('active');
+                        hamburger.classList.toggle('active');
+                        body.classList.toggle('menu-open');
+                    }
+                });
+            }
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (navMenu && hamburger) {
+                    if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                        navMenu.classList.remove('active');
+                        hamburger.classList.remove('active');
+                        body.classList.remove('menu-open');
+                    }
+                }
+            });
+            
+            // Share menu toggle
+            const shareToggle = document.getElementById('share-toggle-btn');
+            const shareMenu = document.querySelector('.share-menu');
+            
+            if (shareToggle && shareMenu) {
+                shareToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    shareMenu.classList.toggle('active');
+                });
+                
+                // Close share menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!shareMenu.contains(e.target) && !shareToggle.contains(e.target)) {
+                        shareMenu.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Share button functionality
+            const shareButtons = document.querySelectorAll('[data-share]');
+            shareButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const platform = this.getAttribute('data-share');
+                    shareOn(platform);
+                });
+            });
+        });
+        
+        // Share functionality (needs to be global for data-share attributes)
+        function shareOn(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            const text = encodeURIComponent('Check out this book: Break the Block');
+            
+            let shareUrl;
+            switch(platform) {
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+                    break;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+                    break;
+                case 'whatsapp':
+                    shareUrl = `https://wa.me/?text=${text}%20${url}`;
+                    break;
+                case 'email':
+                    shareUrl = `mailto:?subject=${title}&body=${text}%20${url}`;
+                    break;
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            }
+        }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -2492,7 +2651,7 @@
         </div>
         
         <!-- Hamburger Menu Button -->
-        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
             <span></span>
             <span></span>
             <span></span>
@@ -2501,30 +2660,30 @@
         <!-- Nav Menu -->
         <div class="nav-menu">
             <ul>
-                <li><a href="#free-preview" onclick="closeMenu()">Read Free</a></li>
+                <li><a href="#free-preview">Read Free</a></li>
                 <li><a href="key-takeaways.html">Lessons</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="#author" onclick="closeMenu()">Author</a></li>
-                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-                <li><a href="#get-book" onclick="closeMenu()">Get the Book</a></li>
+                <li><a href="#author">Author</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#get-book">Get the Book</a></li>
                 <li class="share-dropdown">
-                    <button class="share-toggle" onclick="toggleShareMenu(event)" aria-label="Share">
+                    <button class="share-toggle" id="share-toggle-btn" aria-label="Share">
                         <i class="fas fa-share-alt"></i>
                     </button>
                     <div class="share-menu">
-                        <a href="#" onclick="shareOn('twitter'); return false;" class="share-menu-item">
+                        <a href="#" data-share="twitter" class="share-menu-item">
                             <i class="fab fa-twitter"></i> Twitter
                         </a>
-                        <a href="#" onclick="shareOn('facebook'); return false;" class="share-menu-item">
+                        <a href="#" data-share="facebook" class="share-menu-item">
                             <i class="fab fa-facebook-f"></i> Facebook
                         </a>
-                        <a href="#" onclick="shareOn('linkedin'); return false;" class="share-menu-item">
+                        <a href="#" data-share="linkedin" class="share-menu-item">
                             <i class="fab fa-linkedin-in"></i> LinkedIn
                         </a>
-                        <a href="#" onclick="shareOn('whatsapp'); return false;" class="share-menu-item">
+                        <a href="#" data-share="whatsapp" class="share-menu-item">
                             <i class="fab fa-whatsapp"></i> WhatsApp
                         </a>
-                        <a href="#" onclick="shareOn('email'); return false;" class="share-menu-item">
+                        <a href="#" data-share="email" class="share-menu-item">
                             <i class="fas fa-envelope"></i> Email
                         </a>
                     </div>
@@ -2651,6 +2810,65 @@
             </div>
             
             
+        </div>
+    </section>
+
+    <!-- Chapters Preview -->
+    <section id="chapters" class="chapters">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 5rem 5%;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center; font-family: 'Space Mono', monospace; color: var(--primary);">What You'll Learn</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 4rem; text-align: center; color: var(--text); opacity: 0.8;">Six key chapters from the decade-long campaign</p>
+            
+            <div class="chapter-grid">
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter One</div>
+                    <div class="chapter-title">The Online-Offline Bridge</div>
+                    <div class="chapter-desc">How digital platforms transformed into real-world action</div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter Two</div>
+                    <div class="chapter-title">Trains of Thought</div>
+                    <div class="chapter-desc">The historical context of India's railway systems</div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter Six</div>
+                    <div class="chapter-title">The Blocks Appear</div>
+                    <div class="chapter-desc">When bureaucracy pushes back—and how to respond</div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter Nine</div>
+                    <div class="chapter-title">Halting Moves</div>
+                    <div class="chapter-desc">Winning battles while fighting the war</div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter Ten</div>
+                    <div class="chapter-title">The Pivot</div>
+                    <div class="chapter-desc">When elite strategy meets mass mobilisation</div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter Twelve</div>
+                    <div class="chapter-title">The Reckoning</div>
+                    <div class="chapter-desc">Victory and the lessons learned along the way</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Preview Section -->
+    <section id="free-preview" class="free-preview">
+        <h2>Read Free Chapters</h2>
+        <div class="preview-intro">
+            <p>Experience the book firsthand. Read the complete Introduction and first two chapters absolutely free—no signup required.</p>
+        </div>
+
+        <div class="preview-cta">
+            <p style="font-size: 1.3rem; margin-bottom: 2.5rem;"><strong>Choose a chapter to start reading:</strong></p>
+            <div class="chapter-preview-buttons">
+                <a href="introduction.html" class="chapter-btn">Introduction</a>
+                <a href="chapter1.html" class="chapter-btn">Chapter 1: The Online-Offline Bridge</a>
+                <a href="chapter2.html" class="chapter-btn">Chapter 2: Trains of Thought</a>
+            </div>
+
         </div>
     </section>
 
@@ -2946,16 +3164,38 @@
     </footer>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Note: Critical onclick functions now defined in <head> for immediate availability
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                
+                // Skip if it's just "#" or empty
+                if (!href || href === '#') {
+                    return;
+                }
+                
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                
+                // Close mobile menu if it's open
+                if (window.innerWidth <= 968) {
+                    const navMenu = document.querySelector('.nav-menu');
+                    if (navMenu && navMenu.classList.contains('active')) {
+                        window.closeMenu();
+                    }
+                }
+                
+                // Smooth scroll to target
+                const target = document.querySelector(href);
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    // Small delay to allow menu to close first on mobile
+                    setTimeout(() => {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, window.innerWidth <= 968 ? 300 : 0);
                 }
             });
         });
@@ -2984,62 +3224,11 @@
         });
 
         // Share functions
-        function shareOn(platform) {
-            const url = encodeURIComponent(window.location.href);
-            const title = encodeURIComponent('Break the Block - Lessons from Bengaluru\'s Rail Battle');
-            const text = encodeURIComponent('Check out Break the Block - the story of how citizens brought commuter rail to Bengaluru');
-            
-            let shareUrl;
-            switch(platform) {
-                case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
-                    break;
-                case 'facebook':
-                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-                    break;
-                case 'linkedin':
-                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-                    break;
-                case 'whatsapp':
-                    shareUrl = `https://wa.me/?text=${text}%20${url}`;
-                    break;
-                case 'email':
-                    shareUrl = `mailto:?subject=${title}&body=${text}%20${url}`;
-                    break;
-            }
-            
-            if (shareUrl) {
-                window.open(shareUrl, '_blank', 'width=600,height=400');
-            }
-        }
+        // shareOn function defined at top of script
 
-        // Hamburger Menu Functions
-        function toggleMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            const hamburger = document.querySelector('.hamburger');
-            const body = document.body;
-            
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-            body.classList.toggle('menu-open');
-        }
+        // Hamburger menu functions defined at top of script
 
-        function closeMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            const hamburger = document.querySelector('.hamburger');
-            const body = document.body;
-            
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-            body.classList.remove('menu-open');
-        }
-
-        // Share Menu Toggle
-        function toggleShareMenu(event) {
-            event.stopPropagation();
-            const shareMenu = document.querySelector('.share-menu');
-            shareMenu.classList.toggle('active');
-        }
+        // Share menu function defined at top of script
 
         // Close menus when clicking outside
         document.addEventListener('click', function(event) {
