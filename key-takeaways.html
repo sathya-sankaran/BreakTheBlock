@@ -842,23 +842,23 @@
     <nav class="top-nav">
         <a href="index.html#online-exclusive" class="back-link">Back to Book Website</a>
                 <div class="share-dropdown">
-            <button class="share-toggle" onclick="toggleShareMenu(event)" aria-label="Share">
+            <button class="share-toggle" id="share-toggle-btn" aria-label="Share">
                 <i class="fas fa-share-alt"></i>
             </button>
             <div class="share-menu">
-                <a href="#" onclick="shareOn('twitter'); return false;" class="share-menu-item">
+                <a href="#" data-share="twitter" class="share-menu-item">
                     <i class="fab fa-twitter"></i> Twitter
                 </a>
-                <a href="#" onclick="shareOn('facebook'); return false;" class="share-menu-item">
+                <a href="#" data-share="facebook" class="share-menu-item">
                     <i class="fab fa-facebook-f"></i> Facebook
                 </a>
-                <a href="#" onclick="shareOn('linkedin'); return false;" class="share-menu-item">
+                <a href="#" data-share="linkedin" class="share-menu-item">
                     <i class="fab fa-linkedin-in"></i> LinkedIn
                 </a>
-                <a href="#" onclick="shareOn('whatsapp'); return false;" class="share-menu-item">
+                <a href="#" data-share="whatsapp" class="share-menu-item">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
-                <a href="#" onclick="shareOn('email'); return false;" class="share-menu-item">
+                <a href="#" data-share="email" class="share-menu-item">
                     <i class="fas fa-envelope"></i> Email
                 </a>
             </div>
@@ -897,7 +897,7 @@
             <h2>Table of Contents</h2>
 
         <section id="chapter-1" class="chapter-section">
-            <div class="chapter-header" onclick="toggleChapter('chapter-1')">
+            <div class="chapter-header" data-chapter="chapter-1">
                 <div class="chapter-header-content">
                     <h2>Chapter 1: The Online-Offline Bridge</h2>
                     <p class="chapter-subtitle">How Online Platforms and Offline Organizing Combined to Launch a Movement</p>
@@ -958,7 +958,7 @@
         </section>
 
         <section id="chapter-2" class="chapter-section">
-            <div class="chapter-header" onclick="toggleChapter('chapter-2')">
+            <div class="chapter-header" data-chapter="chapter-2">
                 <div class="chapter-header-content">
                     <h2>Chapter 2: Trains of Thought</h2>
                     <p class="chapter-subtitle">Understanding Indian Railways and Why Suburban Rail Matters</p>
@@ -1029,7 +1029,7 @@
         </section>
 
         <section id="chapter-3" class="chapter-section">
-            <div class="chapter-header" onclick="toggleChapter('chapter-3')">
+            <div class="chapter-header" data-chapter="chapter-3">
                 <div class="chapter-header-content">
                     <h2>Chapter 3: The Trip That Started It All</h2>
                     <p class="chapter-subtitle">Experiencing the Problem Firsthand</p>
@@ -1090,7 +1090,7 @@
         </section>
 
         <section id="chapter-4" class="chapter-section">
-            <div class="chapter-header" onclick="toggleChapter('chapter-4')">
+            <div class="chapter-header" data-chapter="chapter-4">
                 <div class="chapter-header-content">
                     <h2>Chapter 4: The Report from Across the Seas</h2>
                     <p class="chapter-subtitle">Creating the Proposal That Would Define the Campaign</p>
@@ -1171,7 +1171,7 @@
         </section>
 
         <section id="chapter-5" class="chapter-section">
-            <div class="chapter-header" onclick="toggleChapter('chapter-5')">
+            <div class="chapter-header" data-chapter="chapter-5">
                 <div class="chapter-header-content">
                     <h2>Chapter 5: A Flurry of Action</h2>
                     <p class="chapter-subtitle">Building Coalitions and Momentum</p>
@@ -1232,7 +1232,7 @@
         </section>
 
         <section id="chapter-6" class="chapter-section">
-            <div class="chapter-header" onclick="toggleChapter('chapter-6')">
+            <div class="chapter-header" data-chapter="chapter-6">
                 <div class="chapter-header-content">
                     <h2>Chapter 6: The Blocks Appear</h2>
                     <p class="chapter-subtitle">Facing Institutional Resistance</p>
@@ -1283,7 +1283,7 @@
         </section>
 
         <section id="chapter-7" class="chapter-section">
-            <div class="chapter-header" onclick="toggleChapter('chapter-7')">
+            <div class="chapter-header" data-chapter="chapter-7">
                 <div class="chapter-header-content">
                     <h2>Chapter 7: Contradicting Signals</h2>
                     <p class="chapter-subtitle">Navigating Government Mixed Messages</p>
@@ -1334,7 +1334,7 @@
         </section>
 
         <section id="chapter-8" class="chapter-section">
-            <div class="chapter-header" onclick="toggleChapter('chapter-8')">
+            <div class="chapter-header" data-chapter="chapter-8">
                 <div class="chapter-header-content">
                     <h2>Chapter 8: The Doors Open</h2>
                     <p class="chapter-subtitle">Finding Champions Inside the System</p>
@@ -1385,7 +1385,7 @@
         </section>
 
         <section id="chapter-9" class="chapter-section">
-            <div class="chapter-header" onclick="toggleChapter('chapter-9')">
+            <div class="chapter-header" data-chapter="chapter-9">
                 <div class="chapter-header-content">
                     <h2>Chapter 9: Halting Moves</h2>
                     <p class="chapter-subtitle">The Long Slog Through Bureaucracy</p>
@@ -1446,7 +1446,7 @@
         </section>
 
         <section id="chapter-10" class="chapter-section">
-            <div class="chapter-header" onclick="toggleChapter('chapter-10')">
+            <div class="chapter-header" data-chapter="chapter-10">
                 <div class="chapter-header-content">
                     <h2>Chapter 10: The Pivot</h2>
                     <p class="chapter-subtitle">From Elite Advocacy to Mass Movement</p>
@@ -1517,7 +1517,7 @@
         </section>
 
         <section id="chapter-11" class="chapter-section">
-            <div class="chapter-header" onclick="toggleChapter('chapter-11')">
+            <div class="chapter-header" data-chapter="chapter-11">
                 <div class="chapter-header-content">
                     <h2>Chapter 11: The Reckoning</h2>
                     <p class="chapter-subtitle">Assessing What Worked and What Didn't</p>
@@ -1568,7 +1568,7 @@
         </section>
 
         <section id="chapter-12" class="chapter-section">
-            <div class="chapter-header" onclick="toggleChapter('chapter-12')">
+            <div class="chapter-header" data-chapter="chapter-12">
                 <div class="chapter-header-content">
                     <h2>Chapter 12: Conclusion</h2>
                     <p class="chapter-subtitle">Lessons for Future Campaigns</p>
@@ -1684,25 +1684,99 @@
 
         // Chapter toggle
         function toggleChapter(chapterId) {
-            const content = document.getElementById('content-' + chapterId);
-            const icon = document.getElementById('toggle-' + chapterId);
+            console.log('=== toggleChapter called ===');
+            console.log('  Chapter ID:', chapterId);
             
-            content.classList.toggle('expanded');
-            icon.classList.toggle('collapsed');
-        }
-
-        // Share menu
-        function toggleShare() {
-            document.getElementById('shareMenu').classList.toggle('active');
-        }
-
-        document.addEventListener('click', function(event) {
-            const shareDropdown = document.querySelector('.share-dropdown');
-            const shareMenu = document.getElementById('shareMenu');
-            if (shareDropdown && shareMenu && !shareDropdown.contains(event.target)) {
-                shareMenu.classList.remove('active');
+            const contentId = 'content-' + chapterId;
+            const iconId = 'toggle-' + chapterId;
+            
+            console.log('  Looking for content ID:', contentId);
+            console.log('  Looking for icon ID:', iconId);
+            
+            const content = document.getElementById(contentId);
+            const icon = document.getElementById(iconId);
+            
+            console.log('  Content element found:', !!content);
+            console.log('  Icon element found:', !!icon);
+            
+            if (content) {
+                const hadExpanded = content.classList.contains('expanded');
+                content.classList.toggle('expanded');
+                const hasExpanded = content.classList.contains('expanded');
+                
+                console.log('  Content expanded: was', hadExpanded, '-> now', hasExpanded);
+                console.log('  Content computed max-height:', window.getComputedStyle(content).maxHeight);
+            } else {
+                console.error('  ERROR: Content element not found!');
             }
+            
+            if (icon) {
+                icon.classList.toggle('collapsed');
+                console.log('  Icon toggled');
+            } else {
+                console.error('  ERROR: Icon element not found!');
+            }
+        }
+        
+        // Initialize chapter toggle event listeners on DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('=== DOMContentLoaded fired ===');
+            
+            // Chapter toggle
+            const headers = document.querySelectorAll('.chapter-header[data-chapter]');
+            console.log('Found chapter headers:', headers.length);
+            
+            if (headers.length === 0) {
+                console.error('ERROR: No chapter headers found! Check if .chapter-header[data-chapter] exists');
+            }
+            
+            headers.forEach((header, index) => {
+                const chapterId = header.getAttribute('data-chapter');
+                console.log(`  [${index}] Adding listener to:`, chapterId);
+                
+                header.addEventListener('click', function(e) {
+                    console.log('=== CLICK EVENT ===');
+                    console.log('  Clicked element:', e.target);
+                    console.log('  Chapter ID:', chapterId);
+                    console.log('  Current target:', e.currentTarget);
+                    toggleChapter(chapterId);
+                });
+                
+                // Also log if the header is visible
+                const rect = header.getBoundingClientRect();
+                console.log(`  [${index}] Visible:`, rect.height > 0);
+            });
+            
+            // Share menu toggle
+            const shareToggle = document.getElementById('share-toggle-btn');
+            const shareMenu = document.getElementById('shareMenu');
+            
+            if (shareToggle && shareMenu) {
+                shareToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    shareMenu.classList.toggle('active');
+                });
+                
+                // Close share menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!shareMenu.contains(event.target) && !shareToggle.contains(event.target)) {
+                        shareMenu.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Share button click handlers
+            document.querySelectorAll('[data-share]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const platform = this.getAttribute('data-share');
+                    shareOn(platform);
+                });
+            });
         });
+
+        // Share menu event listeners added in DOMContentLoaded above
 
         function shareOn(platform) {
             const url = encodeURIComponent(window.location.href);
@@ -1780,4 +1854,9 @@
 
         document.querySelectorAll('.chapter-section').forEach(section => {
             section.style.opacity = '0';
-            sect
+            section.style.transform = 'translateY(20px)';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
