@@ -1,0 +1,16 @@
+# robots.txt for breaktheblock.in
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow any temporary or admin directories (if they exist in future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+
+# Sitemap location
+Sitemap: https://www.breaktheblock.in/sitemap.xml
+
+# Crawl delay (optional, can help manage server load)
+# Crawl-delay: 1
