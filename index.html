@@ -458,6 +458,139 @@
             opacity: 0.9;
         }
 
+        /* Media Strip - As Covered By */
+        .media-strip {
+            background: var(--light);
+            padding: 2.5rem 5%;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .media-strip-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text);
+            opacity: 0.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .media-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .media-logo-item {
+            text-decoration: none;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .media-logo-item:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .media-logo-item span {
+            display: block;
+        }
+
+        /* Individual publication styles */
+        .logo-hindu span {
+            font-family: 'Times New Roman', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #1a1a1a;
+        }
+        .logo-hindu:hover span { color: #0066b3; }
+
+        .logo-deccan span {
+            font-family: 'Georgia', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            font-style: italic;
+            color: #1a1a1a;
+        }
+        .logo-deccan:hover span { color: #c41e3a; }
+
+        .logo-tnie span {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #1a1a1a;
+        }
+        .logo-tnie:hover span { color: #e31837; }
+
+        .logo-ndtv span {
+            font-family: 'Arial Black', 'Helvetica', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: #1a1a1a;
+        }
+        .logo-ndtv:hover span { color: #e21b22; }
+
+        .logo-toi span {
+            font-family: 'Times New Roman', Georgia, serif;
+            font-size: 1rem;
+            font-weight: 700;
+            font-style: italic;
+            color: #1a1a1a;
+        }
+        .logo-toi:hover span { color: #e03a3e; }
+
+        .logo-ie span {
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .logo-ie:hover span { color: #d71920; }
+
+        .logo-et span {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .logo-et:hover span { color: #005b9a; }
+
+        .logo-mint span {
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: lowercase;
+            color: #1a1a1a;
+        }
+        .logo-mint:hover span { color: #f15a22; }
+
+        .media-strip-link {
+            display: inline-block;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-decoration: none;
+            margin-top: 0.5rem;
+            transition: color 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .media-strip-link:hover {
+            color: var(--rail-blue);
+        }
+
         /* Comparison Section */
         .comparison-section {
             padding: 5rem 5%;
@@ -2475,6 +2608,53 @@
 
 
 
+        /* Media Strip Responsive */
+        @media (max-width: 768px) {
+            .media-strip {
+                padding: 2rem 5%;
+            }
+
+            .media-logos {
+                gap: 1.5rem 2rem;
+            }
+
+            .logo-hindu span,
+            .logo-deccan span,
+            .logo-tnie span,
+            .logo-ndtv span,
+            .logo-toi span,
+            .logo-ie span,
+            .logo-et span,
+            .logo-mint span {
+                font-size: 0.9rem !important;
+            }
+
+            .logo-tnie span {
+                font-size: 0.75rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .media-logos {
+                gap: 1rem 1.5rem;
+            }
+
+            .logo-hindu span,
+            .logo-deccan span,
+            .logo-tnie span,
+            .logo-ndtv span,
+            .logo-toi span,
+            .logo-ie span,
+            .logo-et span,
+            .logo-mint span {
+                font-size: 0.8rem !important;
+            }
+
+            .logo-tnie span {
+                font-size: 0.65rem !important;
+            }
+        }
+
         /* Hamburger Menu Responsive */
         @media (max-width: 968px) {
             .hamburger {
@@ -2905,15 +3085,133 @@
         </div>
         <div class="proof-item">
             <span class="number">4</span>
-            <span class="label">CMs Outlasted</span>
+            <span class="label">CM's Outlasted</span>
         </div>
         <div class="proof-item">
             <span class="number">39</span>
             <span class="label">Organizations</span>
         </div>
         <div class="proof-item">
+            <span class="number">50+</span>
+            <span class="label">Media Stories</span>
+        </div>
+        <div class="proof-item">
             <span class="number">9</span>
             <span class="label">Real Emails</span>
+        </div>
+    </section>
+
+    <!-- As Covered By - Media Strip -->
+    <section class="media-strip">
+        <p class="media-strip-label">As Covered By</p>
+        <div class="media-logos">
+            <a href="resources.html#media-coverage" class="media-logo-item logo-hindu" title="The Hindu">
+                <span>THE HINDU</span>
+            </a>
+            <a href="resources.html#media-coverage" class="media-logo-item logo-deccan" title="Deccan Herald">
+                <span>Deccan Herald</span>
+            </a>
+            <a href="resources.html#media-coverage" class="media-logo-item logo-tnie" title="The New Indian Express">
+                <span>The New Indian Express</span>
+            </a>
+            <a href="resources.html#media-coverage" class="media-logo-item logo-ndtv" title="NDTV">
+                <span>NDTV</span>
+            </a>
+            <a href="resources.html#media-coverage" class="media-logo-item logo-toi" title="Times of India">
+                <span>Times of India</span>
+            </a>
+            <a href="resources.html#media-coverage" class="media-logo-item logo-ie" title="Indian Express">
+                <span>Indian Express</span>
+            </a>
+            <a href="resources.html#media-coverage" class="media-logo-item logo-et" title="Economic Times">
+                <span>Economic Times</span>
+            </a>
+            <a href="resources.html#media-coverage" class="media-logo-item logo-mint" title="Livemint">
+                <span>mint</span>
+            </a>
+        </div>
+        <a href="resources.html#media-coverage" class="media-strip-link">View All Coverage →</a>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <h2 style="font-family: 'Space Mono', monospace; font-size: 2rem; margin-bottom: 0.5rem; color: var(--primary); text-align: center;">What Civic Leaders Say</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 3rem; color: var(--text); opacity: 0.8; text-align: center;">Testimonials from those who know the terrain</p>
+            
+            <div class="testimonials-grid">
+                <!-- Featured Testimonial (Wider) -->
+                <div class="testimonial-card featured">
+                    <div class="testimonial-avatar">
+                        <div class="avatar-circle" style="background: linear-gradient(135deg, var(--accent), var(--secondary));">MR</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-quote">"Shows how positive change requires remarkable vision, passion, and persistence. An inspiring read!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-name">Prof. M.V. Rajeev Gowda</div>
+                            <div class="author-title">Ex-MP, Rajya Sabha</div>
+                        </div>
+                    </div>
+                    <div class="speech-bubble-tail"></div>
+                </div>
+
+                <!-- Regular Testimonials -->
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <div class="avatar-circle" style="background: linear-gradient(135deg, var(--rail-blue), #006ba6);">VM</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-quote">"A lived account of how dialogue, persistence, and citizen-government partnership brought suburban rail to Bengaluru."</p>
+                        <div class="testimonial-author">
+                            <div class="author-name">V. Manjula</div>
+                            <div class="author-title">Additional Chief Secretary (Retd.)</div>
+                        </div>
+                    </div>
+                    <div class="speech-bubble-tail"></div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <div class="avatar-circle" style="background: linear-gradient(135deg, #e63946, #f77f00);">SA</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-quote">"A masterclass in citizen advocacy. Sathya didn't just fight the battle—he documented the playbook."</p>
+                        <div class="testimonial-author">
+                            <div class="author-name">Srinivas Alavilli</div>
+                            <div class="author-title">Civic activist; Fellow, WRI India</div>
+                        </div>
+                    </div>
+                    <div class="speech-bubble-tail"></div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <div class="avatar-circle" style="background: linear-gradient(135deg, #2a9d8f, #06d6a0);">AM</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-quote">"Most people give up too quickly. This book proves them wrong."</p>
+                        <div class="testimonial-author">
+                            <div class="author-name">Dr. Ashwin Mahesh</div>
+                            <div class="author-title">Urban expert; Founder, India Together</div>
+                        </div>
+                    </div>
+                    <div class="speech-bubble-tail"></div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <div class="avatar-circle" style="background: linear-gradient(135deg, #8338ec, #a05195);">VR</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-quote">"Proof that ordinary citizens with evidence and persistence can move the unmovable."</p>
+                        <div class="testimonial-author">
+                            <div class="author-name">V. Ravichandar</div>
+                            <div class="author-title">Civic evangelist; Co-organiser, Bangalore Literature Festival</div>
+                        </div>
+                    </div>
+                    <div class="speech-bubble-tail"></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -2996,88 +3294,6 @@
             </div>
             
             
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-        <div class="testimonials-container">
-            <h2 style="font-family: 'Space Mono', monospace; font-size: 2rem; margin-bottom: 0.5rem; color: var(--primary); text-align: center;">What Civic Leaders Say</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 3rem; color: var(--text); opacity: 0.8; text-align: center;">Testimonials from those who know the terrain</p>
-            
-            <div class="testimonials-grid">
-                <!-- Featured Testimonial (Wider) -->
-                <div class="testimonial-card featured">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-circle" style="background: linear-gradient(135deg, var(--accent), var(--secondary));">MR</div>
-                    </div>
-                    <div class="testimonial-content">
-                        <p class="testimonial-quote">"Shows how positive change requires remarkable vision, passion, and persistence. An inspiring read!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-name">Prof. M.V. Rajeev Gowda</div>
-                            <div class="author-title">Ex-MP, Rajya Sabha</div>
-                        </div>
-                    </div>
-                    <div class="speech-bubble-tail"></div>
-                </div>
-
-                <!-- Regular Testimonials -->
-                <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-circle" style="background: linear-gradient(135deg, var(--rail-blue), #006ba6);">VM</div>
-                    </div>
-                    <div class="testimonial-content">
-                        <p class="testimonial-quote">"A lived account of how dialogue, persistence, and citizen-government partnership brought suburban rail to Bengaluru."</p>
-                        <div class="testimonial-author">
-                            <div class="author-name">V. Manjula</div>
-                            <div class="author-title">Additional Chief Secretary (Retd.)</div>
-                        </div>
-                    </div>
-                    <div class="speech-bubble-tail"></div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-circle" style="background: linear-gradient(135deg, #e63946, #f77f00);">SA</div>
-                    </div>
-                    <div class="testimonial-content">
-                        <p class="testimonial-quote">"A masterclass in citizen advocacy. Sathya didn't just fight the battle—he documented the playbook."</p>
-                        <div class="testimonial-author">
-                            <div class="author-name">Srinivas Alavilli</div>
-                            <div class="author-title">Civic activist; Fellow, WRI India</div>
-                        </div>
-                    </div>
-                    <div class="speech-bubble-tail"></div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-circle" style="background: linear-gradient(135deg, #2a9d8f, #06d6a0);">AM</div>
-                    </div>
-                    <div class="testimonial-content">
-                        <p class="testimonial-quote">"Most people give up too quickly. This book proves them wrong."</p>
-                        <div class="testimonial-author">
-                            <div class="author-name">Dr. Ashwin Mahesh</div>
-                            <div class="author-title">Urban expert; Founder, India Together</div>
-                        </div>
-                    </div>
-                    <div class="speech-bubble-tail"></div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-circle" style="background: linear-gradient(135deg, #8338ec, #a05195);">VR</div>
-                    </div>
-                    <div class="testimonial-content">
-                        <p class="testimonial-quote">"Proof that ordinary citizens with evidence and persistence can move the unmovable."</p>
-                        <div class="testimonial-author">
-                            <div class="author-name">V. Ravichandar</div>
-                            <div class="author-title">Civic evangelist; Co-organiser, Bangalore Literature Festival</div>
-                        </div>
-                    </div>
-                    <div class="speech-bubble-tail"></div>
-                </div>
-            </div>
         </div>
     </section>
 
