@@ -258,7 +258,40 @@
       ]
     }
     </script>
-    
+
+    <!-- Event Schema: Campaign Timeline -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Namma Railu: Bengaluru Commuter Rail Campaign",
+      "description": "A decade-long citizen-led campaign (2009-2020) that successfully brought suburban commuter rail to Bengaluru, India's most traffic-congested city. Led by five ordinary citizens who navigated bureaucracy, built coalitions, and achieved policy change.",
+      "startDate": "2009",
+      "endDate": "2020",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Bengaluru",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "addressCountry": "IN"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Namma Railu",
+        "description": "Citizen-led coalition of 39 organizations advocating for suburban commuter rail in Bengaluru"
+      },
+      "subjectOf": {
+        "@type": "Book",
+        "@id": "https://www.breaktheblock.in/#book"
+      }
+    }
+    </script>
+
     <!-- FAQ Structured Data -->
     <script type="application/ld+json">
     {
@@ -758,8 +791,11 @@
     </script>
 </head>
 <body>
+    <!-- Skip to main content link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div class="nav-logo">
             <a href="#" aria-label="Break the Block Home">
                 <img loading="lazy" src="break-the-block-logo.svg" alt="Break the Block" style="height: 50px; width: auto;">
@@ -767,10 +803,10 @@
         </div>
         
         <!-- Hamburger Menu Button -->
-        <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
         </button>
         
         <!-- Nav Menu -->
@@ -783,23 +819,23 @@
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#get-book">Get the Book</a></li>
                 <li class="share-dropdown">
-                    <button class="share-toggle" id="share-toggle-btn" aria-label="Share">
-                        <i class="fas fa-share-alt"></i>
+                    <button class="share-toggle" id="share-toggle-btn" aria-label="Share this page" aria-expanded="false">
+                        <i class="fas fa-share-alt" aria-hidden="true"></i>
                     </button>
-                    <div class="share-menu">
-                        <a href="#" data-share="twitter" class="share-menu-item">
-                            <i class="fab fa-twitter"></i> Twitter
+                    <div class="share-menu" role="menu" aria-label="Share options">
+                        <a href="#" data-share="twitter" class="share-menu-item" role="menuitem" aria-label="Share on Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i> Twitter
                         </a>
-                        <a href="#" data-share="facebook" class="share-menu-item">
-                            <i class="fab fa-facebook-f"></i> Facebook
+                        <a href="#" data-share="facebook" class="share-menu-item" role="menuitem" aria-label="Share on Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook
                         </a>
-                        <a href="#" data-share="linkedin" class="share-menu-item">
-                            <i class="fab fa-linkedin-in"></i> LinkedIn
+                        <a href="#" data-share="linkedin" class="share-menu-item" role="menuitem" aria-label="Share on LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i> LinkedIn
                         </a>
-                        <a href="#" data-share="whatsapp" class="share-menu-item">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        <a href="#" data-share="whatsapp" class="share-menu-item" role="menuitem" aria-label="Share on WhatsApp">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
                         </a>
-                        <a href="#" data-share="email" class="share-menu-item">
+                        <a href="#" data-share="email" class="share-menu-item" role="menuitem" aria-label="Share via Email">
                             <i class="fas fa-envelope"></i> Email
                         </a>
                     </div>
@@ -809,6 +845,7 @@
     </nav>
 
     <!-- Hero Section -->
+    <main id="main-content">
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
@@ -1408,23 +1445,25 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    </main>
+
+    <footer role="contentinfo">
         <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
             <!-- Social Media Links -->
             <div class="footer-social">
                 <p style="margin-bottom: 0.8rem; font-family: 'Space Mono', monospace; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Follow the Author</p>
                 <div style="display: flex; gap: 1rem; justify-content: center;">
-                    <a href="https://www.sathyasankaran.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Website">
-                        <i class="fas fa-globe"></i>
+                    <a href="https://www.sathyasankaran.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Website" aria-label="Visit author's website">
+                        <i class="fas fa-globe" aria-hidden="true"></i>
                     </a>
-                    <a href="https://x.com/tweetenator" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="X (Twitter)">
-                        <i class="fab fa-twitter"></i>
+                    <a href="https://x.com/tweetenator" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="X (Twitter)" aria-label="Follow on X (Twitter)">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
                     </a>
-                    <a href="https://www.instagram.com/picanator/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram">
-                        <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/picanator/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram" aria-label="Follow on Instagram">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/sathyasankaran/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
+                    <a href="https://www.linkedin.com/in/sathyasankaran/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn" aria-label="Connect on LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -1432,10 +1471,10 @@
             <!-- Copyright and License -->
             <p style="text-align: center;">
                 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; color: inherit; text-decoration: none;">
-                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" style="height: 1.5rem; width: 1.5rem;">
-                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" style="height: 1.5rem; width: 1.5rem;">
-                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC" style="height: 1.5rem; width: 1.5rem;">
-                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="SA" style="height: 1.5rem; width: 1.5rem;">
+                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons" style="height: 1.5rem; width: 1.5rem;">
+                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Attribution" style="height: 1.5rem; width: 1.5rem;">
+                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="Non-Commercial" style="height: 1.5rem; width: 1.5rem;">
+                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="Share-Alike" style="height: 1.5rem; width: 1.5rem;">
                     <span>All content on this site is covered under CC-BY-NC-SA 4.0 license</span>
                 </a>
                 <br>

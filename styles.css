@@ -4,6 +4,28 @@
             box-sizing: border-box;
         }
 
+        /* Skip to content link for keyboard accessibility */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            z-index: 10000;
+            border-radius: 0 0 4px 4px;
+            transition: top 0.2s ease;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
         :root {
             --primary: #1a1a1a;
             --accent: #ff6b35;
