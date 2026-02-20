@@ -1358,15 +1358,15 @@
 
 
 
-        /* Three Tiers Responsive */
+        /* Three Tiers Responsive (migrated from inline style selectors) */
         @media (max-width: 768px) {
-            #online-exclusive .exclusive-content > div[style*="grid-template-columns"] {
+            .tier-grid {
                 grid-template-columns: 1fr !important;
             }
         }
 
         @media (max-width: 480px) {
-            #online-exclusive .exclusive-content > div[style*="grid-template-columns"] > div {
+            .tier-grid .tier-card {
                 padding: 1.5rem !important;
             }
         }
@@ -2872,3 +2872,558 @@
                 max-width: 400px;
             }
         }
+
+/* =====================================================
+   Migrated Inline Styles
+   ===================================================== */
+
+/* Campaign Impact Section */
+.campaign-impact-section {
+    padding: 2.5rem 5%;
+    background: linear-gradient(135deg, #f5f5f0 0%, #ffffff 100%);
+    border-top: 3px solid var(--accent);
+    border-bottom: 3px solid var(--accent);
+}
+
+.campaign-impact-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.campaign-impact-heading {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.impact-label-before {
+    color: var(--accent);
+}
+
+.impact-label-after {
+    color: var(--rail-blue);
+}
+
+.campaign-impact-caption {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-top: 1.5rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Testimonials Section Headings */
+.testimonials-heading {
+    font-family: 'Space Mono', monospace;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    text-align: center;
+}
+
+.testimonials-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: var(--text);
+    opacity: 0.8;
+    text-align: center;
+}
+
+/* Avatar Circle Gradient Backgrounds */
+.avatar-mr {
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+}
+
+.avatar-vm {
+    background: linear-gradient(135deg, var(--rail-blue), #006ba6);
+}
+
+.avatar-sa {
+    background: linear-gradient(135deg, #e63946, #f77f00);
+}
+
+.avatar-am {
+    background: linear-gradient(135deg, #2a9d8f, #06d6a0);
+}
+
+.avatar-vr {
+    background: linear-gradient(135deg, #8338ec, #a05195);
+}
+
+/* Comparison Section */
+.comparison-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.comparison-heading {
+    font-family: 'Space Mono', monospace;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.comparison-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+/* Email Preview Section Headings */
+.email-preview-heading {
+    font-family: 'Space Mono', monospace;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    text-align: center;
+}
+
+.email-preview-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+    opacity: 0.8;
+    text-align: center;
+}
+
+.email-body-ellipsis {
+    margin: 0 0 1.5rem 0;
+    color: #666;
+    font-style: italic;
+}
+
+.email-body-ellipsis-end {
+    margin: 1.5rem 0 0 0;
+    color: #666;
+    font-style: italic;
+}
+
+.email-body-blockquote {
+    margin: 0;
+    padding: 1.5rem;
+    background: #fff9e6;
+    border-left: 4px solid #ff6b35;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.email-context-text {
+    margin: 0;
+}
+
+.email-context-label {
+    color: var(--primary);
+}
+
+/* Chapters Section */
+.chapters-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 5%;
+}
+
+.chapters-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    color: var(--primary);
+}
+
+.chapters-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+/* Free Preview - Choose Chapter Text */
+.choose-chapter-text {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Learning Framework Section */
+.tier-intro {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+}
+
+.tier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.tier-card {
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.tier-card-1 {
+    background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%);
+    border: 2px solid var(--accent);
+}
+
+.tier-card-2 {
+    background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
+    border: 2px solid var(--rail-blue);
+}
+
+.tier-card-3 {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--rail-blue) 100%);
+    border: 2px solid var(--secondary);
+    color: white;
+}
+
+.tier-number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    color: white;
+}
+
+.tier-card-1 .tier-number {
+    background: var(--accent);
+}
+
+.tier-card-2 .tier-number {
+    background: var(--rail-blue);
+}
+
+.tier-card-3 .tier-number {
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+.tier-heading {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.tier-card-1 .tier-heading {
+    color: var(--accent);
+}
+
+.tier-card-2 .tier-heading {
+    color: var(--rail-blue);
+}
+
+.tier-card-3 .tier-heading {
+    color: var(--secondary);
+}
+
+.tier-count {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.tier-card-1 .tier-count {
+    color: var(--accent);
+}
+
+.tier-card-2 .tier-count {
+    color: var(--rail-blue);
+}
+
+.tier-card-3 .tier-count {
+    color: var(--secondary);
+}
+
+.tier-desc {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+.tier-card-3 .tier-desc {
+    opacity: 0.9;
+}
+
+.tier-badge-container {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.tier-card-3 .tier-badge-container {
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.tier-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.tier-card-1 .tier-badge {
+    background: var(--accent);
+}
+
+.tier-card-2 .tier-badge {
+    background: var(--rail-blue);
+}
+
+.tier-card-3 .tier-badge {
+    background: var(--secondary);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Sample Lessons Preview */
+.sample-lessons-preview {
+    background: var(--light);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.sample-lessons-heading {
+    font-family: 'Space Mono', monospace;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.sample-lessons-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.sample-lesson-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sample-lesson-row-faded {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0.6;
+}
+
+.lesson-tag-key {
+    background: var(--accent);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.lesson-tag-insight {
+    background: var(--rail-blue);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.lesson-tag-extended {
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.lesson-name-bold {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.lesson-name {
+    color: var(--primary);
+}
+
+/* CTA Buttons Container */
+.tier-cta-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.exclusive-cta-outline {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 5rem 5%;
+    background: white;
+}
+
+.faq-section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    color: var(--primary);
+}
+
+.faq-section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.faq-entry {
+    border-bottom: 2px solid var(--light);
+    padding-bottom: 1.5rem;
+}
+
+.faq-entry:last-child {
+    border-bottom: none;
+}
+
+.faq-entry-title {
+    font-family: 'Space Mono', monospace;
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.faq-entry-answer {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+.faq-entry-answer a {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* Get Book Stats */
+.get-book-stats {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.get-book-stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.get-book-stat-label {
+    font-size: 1.1rem;
+    font-family: 'Space Mono', monospace;
+    opacity: 0.9;
+}
+
+.get-book-price {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.footer-social-heading {
+    margin-bottom: 0.8rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.footer-license {
+    text-align: center;
+}
+
+.footer-license a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-license img {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+/* Responsive for tier grid */
+@media (max-width: 768px) {
+    .tier-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .tier-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .hero::before {
+        animation: none;
+    }
+}

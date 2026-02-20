@@ -798,19 +798,19 @@
     <nav role="navigation" aria-label="Main navigation">
         <div class="nav-logo">
             <a href="#" aria-label="Break the Block Home">
-                <img loading="lazy" src="break-the-block-logo.svg" alt="Break the Block" style="height: 50px; width: auto;">
+                <img loading="lazy" src="break-the-block-logo.svg" alt="Break the Block" width="50" height="50" style="height: 50px; width: auto;">
             </a>
         </div>
         
         <!-- Hamburger Menu Button -->
-        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
         </button>
         
         <!-- Nav Menu -->
-        <div class="nav-menu">
+        <div class="nav-menu" id="nav-menu">
             <ul>
                 <li><a href="#free-preview">Read Free</a></li>
                 <li><a href="key-takeaways.html">Lessons</a></li>
@@ -819,10 +819,10 @@
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#get-book">Get the Book</a></li>
                 <li class="share-dropdown">
-                    <button class="share-toggle" id="share-toggle-btn" aria-label="Share this page" aria-expanded="false">
+                    <button class="share-toggle" id="share-toggle-btn" aria-label="Share this page" aria-expanded="false" aria-controls="share-menu">
                         <i class="fas fa-share-alt" aria-hidden="true"></i>
                     </button>
-                    <div class="share-menu" role="menu" aria-label="Share options">
+                    <div class="share-menu" id="share-menu" role="menu" aria-label="Share options">
                         <a href="#" data-share="twitter" class="share-menu-item" role="menuitem" aria-label="Share on Twitter">
                             <i class="fab fa-twitter" aria-hidden="true"></i> Twitter
                         </a>
@@ -859,7 +859,7 @@
                 </div>
             </div>
             <div class="hero-book-cover">
-                <img loading="lazy" src="book-cover.png" alt="Break the Block: Field guide for civic activism showing 12 Key Lessons + 34 Chapter Insights from Bengaluru (Bangalore) citizen campaign for commuter rail">
+                <img loading="lazy" src="book-cover.png" alt="Break the Block: Field guide for civic activism showing 12 Key Lessons + 34 Chapter Insights from Bengaluru (Bangalore) citizen campaign for commuter rail" width="800" height="986">
             </div>
         </div>
     </section>
@@ -921,27 +921,27 @@
     </section>
 
     <!-- Campaign Impact: Compact Before/After -->
-    <section style="padding: 2.5rem 5%; background: linear-gradient(135deg, #f5f5f0 0%, #ffffff 100%); border-top: 3px solid var(--accent); border-bottom: 3px solid var(--accent);">
-        <div style="max-width: 900px; margin: 0 auto;">
-            <h2 style="font-family: 'Space Mono', monospace; font-size: 1.5rem; text-align: center; color: var(--primary); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px;">Campaign Impact</h2>
+    <section class="campaign-impact-section">
+        <div class="campaign-impact-inner">
+            <h2 class="campaign-impact-heading">Campaign Impact</h2>
 
             <div class="impact-row">
                 <div class="impact-before">
-                    <div class="impact-label" style="color: var(--accent);">2009</div>
+                    <div class="impact-label impact-label-before">2009</div>
                     <div class="impact-stat">0 <span>stations</span></div>
                     <div class="impact-stat">0 <span>budget</span></div>
                     <div class="impact-stat">0 <span>commitment</span></div>
                 </div>
                 <div class="impact-arrow">→<br><span>10 yrs</span></div>
                 <div class="impact-after">
-                    <div class="impact-label" style="color: var(--rail-blue);">2020</div>
+                    <div class="impact-label impact-label-after">2020</div>
                     <div class="impact-stat">57 <span>stations</span></div>
                     <div class="impact-stat">148 km <span>network</span></div>
                     <div class="impact-stat">₹15,767 cr <span>sanctioned</span></div>
                 </div>
             </div>
 
-            <p style="text-align: center; font-size: 0.95rem; color: var(--text); margin-top: 1.5rem; font-style: italic; opacity: 0.8;">
+            <p class="campaign-impact-caption">
                 What happens when 5 citizens outlast 4 Chief Ministers and refuse to accept "no" for a decade.
             </p>
         </div>
@@ -950,14 +950,14 @@
     <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="testimonials-container">
-            <h2 style="font-family: 'Space Mono', monospace; font-size: 2rem; margin-bottom: 0.5rem; color: var(--primary); text-align: center;">What Civic Leaders Say</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 3rem; color: var(--text); opacity: 0.8; text-align: center;">Testimonials from those who know the terrain</p>
+            <h2 class="testimonials-heading">What Civic Leaders Say</h2>
+            <p class="testimonials-subtitle">Testimonials from those who know the terrain</p>
             
             <div class="testimonials-grid">
                 <!-- Featured Testimonial (Wider) -->
                 <div class="testimonial-card featured">
                     <div class="testimonial-avatar">
-                        <div class="avatar-circle" style="background: linear-gradient(135deg, var(--accent), var(--secondary));">MR</div>
+                        <div class="avatar-circle avatar-mr">MR</div>
                     </div>
                     <div class="testimonial-content">
                         <p class="testimonial-quote">"Shows how positive change requires remarkable vision, passion, and persistence. An inspiring read!"</p>
@@ -972,7 +972,7 @@
                 <!-- Regular Testimonials -->
                 <div class="testimonial-card">
                     <div class="testimonial-avatar">
-                        <div class="avatar-circle" style="background: linear-gradient(135deg, var(--rail-blue), #006ba6);">VM</div>
+                        <div class="avatar-circle avatar-vm">VM</div>
                     </div>
                     <div class="testimonial-content">
                         <p class="testimonial-quote">"A lived account of how dialogue, persistence, and citizen-government partnership brought suburban rail to Bengaluru."</p>
@@ -986,7 +986,7 @@
 
                 <div class="testimonial-card">
                     <div class="testimonial-avatar">
-                        <div class="avatar-circle" style="background: linear-gradient(135deg, #e63946, #f77f00);">SA</div>
+                        <div class="avatar-circle avatar-sa">SA</div>
                     </div>
                     <div class="testimonial-content">
                         <p class="testimonial-quote">"A masterclass in citizen advocacy. Sathya didn't just fight the battle—he documented the playbook."</p>
@@ -1000,7 +1000,7 @@
 
                 <div class="testimonial-card">
                     <div class="testimonial-avatar">
-                        <div class="avatar-circle" style="background: linear-gradient(135deg, #2a9d8f, #06d6a0);">AM</div>
+                        <div class="avatar-circle avatar-am">AM</div>
                     </div>
                     <div class="testimonial-content">
                         <p class="testimonial-quote">"Most people give up too quickly. This book proves them wrong."</p>
@@ -1014,7 +1014,7 @@
 
                 <div class="testimonial-card">
                     <div class="testimonial-avatar">
-                        <div class="avatar-circle" style="background: linear-gradient(135deg, #8338ec, #a05195);">VR</div>
+                        <div class="avatar-circle avatar-vr">VR</div>
                     </div>
                     <div class="testimonial-content">
                         <p class="testimonial-quote">"Proof that ordinary citizens with evidence and persistence can move the unmovable."</p>
@@ -1033,9 +1033,9 @@
 
     <!-- Comparison Section: What Makes This Different -->
     <section class="comparison-section">
-        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
-            <h2 style="font-family: 'Space Mono', monospace; font-size: 2rem; margin-bottom: 0.5rem; color: var(--primary);">Not Another Policy Textbook</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 3rem; color: var(--text); opacity: 0.8;">What makes Break the Block different</p>
+        <div class="comparison-inner">
+            <h2 class="comparison-heading">Not Another Policy Textbook</h2>
+            <p class="comparison-subtitle">What makes Break the Block different</p>
             
             <div class="comparison-grid">
                 <div class="compare-card other">
@@ -1066,8 +1066,8 @@
     <!-- Email Preview Section -->
     <section class="email-preview-section">
         <div class="email-preview-container">
-            <h2 style="font-family: 'Space Mono', monospace; font-size: 2rem; margin-bottom: 0.5rem; color: var(--primary); text-align: center;">Real Documents. Real Resistance.</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--text); opacity: 0.8; text-align: center;">This book includes the actual emails and government responses from the campaign</p>
+            <h2 class="email-preview-heading">Real Documents. Real Resistance.</h2>
+            <p class="email-preview-subtitle">This book includes the actual emails and government responses from the campaign</p>
             
             <div class="email-card">
                 <!-- Email Header (like Gmail/Outlook) -->
@@ -1094,16 +1094,16 @@
                 
                 <!-- Email Body -->
                 <div class="email-body">
-                    <p style="margin: 0 0 1.5rem 0; color: #666; font-style: italic;">[...previous discussion...]</p>
-                    <blockquote style="margin: 0; padding: 1.5rem; background: #fff9e6; border-left: 4px solid #ff6b35; font-size: 1.2rem; line-height: 1.6; color: #333;">
+                    <p class="email-body-ellipsis">[...previous discussion...]</p>
+                    <blockquote class="email-body-blockquote">
                         "It expresses a grandiose, pious intention but grossly oversimplifies both the issue and the solution."
                     </blockquote>
-                    <p style="margin: 1.5rem 0 0 0; color: #666; font-style: italic;">[...end of email...]</p>
+                    <p class="email-body-ellipsis-end">[...end of email...]</p>
                 </div>
                 
                 <!-- Context Footer -->
                 <div class="email-context">
-                    <p style="margin: 0;"><strong style="color: var(--primary);">📌 The Turning Point:</strong> This dismissive email from the head of Bangalore Metro became a catalyst. Chapter 6 reveals exactly how the team responded—and why this rejection ultimately strengthened the campaign.</p>
+                    <p class="email-context-text"><strong class="email-context-label">📌 The Turning Point:</strong> This dismissive email from the head of Bangalore Metro became a catalyst. Chapter 6 reveals exactly how the team responded—and why this rejection ultimately strengthened the campaign.</p>
                 </div>
             </div>
             
@@ -1113,9 +1113,9 @@
 
     <!-- Chapters Preview -->
     <section id="chapters" class="chapters">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 5rem 5%;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center; font-family: 'Space Mono', monospace; color: var(--primary);">What You'll Learn</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 4rem; text-align: center; color: var(--text); opacity: 0.8;">Seven key chapters from the decade-long campaign</p>
+        <div class="chapters-inner">
+            <h2 class="chapters-heading">What You'll Learn</h2>
+            <p class="chapters-subtitle">Seven key chapters from the decade-long campaign</p>
             
             <div class="chapter-grid">
                 <div class="chapter-card">
@@ -1165,7 +1165,7 @@
         </div>
 
         <div class="preview-cta">
-            <p style="font-size: 1.3rem; margin-bottom: 2.5rem;"><strong>Choose a chapter to start reading:</strong></p>
+            <p class="choose-chapter-text"><strong>Choose a chapter to start reading:</strong></p>
             <div class="chapter-preview-buttons">
                 <a href="introduction.html" class="chapter-btn">Introduction</a>
                 <a href="chapter1.html" class="chapter-btn">Chapter 1: The Online-Offline Bridge</a>
@@ -1183,71 +1183,71 @@
         <h2>Three Tiers of Lessons</h2>
         
         <div class="exclusive-content">
-            <p style="font-size: 1.15rem; margin-bottom: 2rem;">From quick insights to deep-dive course materials, choose your depth of learning.</p>
-            
+            <p class="tier-intro">From quick insights to deep-dive course materials, choose your depth of learning.</p>
+
             <!-- Three Tiers Grid -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2.5rem;">
+            <div class="tier-grid">
                 <!-- Tier 1 -->
-                <div style="background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%); border: 2px solid var(--accent); border-radius: 12px; padding: 2rem; text-align: center;">
-                    <div style="background: var(--accent); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-family: 'Space Mono', monospace; font-weight: 700;">1</div>
-                    <h3 style="font-family: 'Space Mono', monospace; color: var(--accent); font-size: 1.1rem; margin-bottom: 0.5rem;">Key Lessons</h3>
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">12</div>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.8;">One per chapter. The core principle distilled.</p>
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.1);">
-                        <span style="background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Book + Website</span>
+                <div class="tier-card tier-card-1">
+                    <div class="tier-number">1</div>
+                    <h3 class="tier-heading">Key Lessons</h3>
+                    <div class="tier-count">12</div>
+                    <p class="tier-desc">One per chapter. The core principle distilled.</p>
+                    <div class="tier-badge-container">
+                        <span class="tier-badge">Book + Website</span>
                     </div>
                 </div>
-                
+
                 <!-- Tier 2 -->
-                <div style="background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%); border: 2px solid var(--rail-blue); border-radius: 12px; padding: 2rem; text-align: center;">
-                    <div style="background: var(--rail-blue); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-family: 'Space Mono', monospace; font-weight: 700;">2</div>
-                    <h3 style="font-family: 'Space Mono', monospace; color: var(--rail-blue); font-size: 1.1rem; margin-bottom: 0.5rem;">Chapter Insights</h3>
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--rail-blue);">34</div>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.8;">Tactical wisdom embedded in each chapter.</p>
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.1);">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Book + Website</span>
+                <div class="tier-card tier-card-2">
+                    <div class="tier-number">2</div>
+                    <h3 class="tier-heading">Chapter Insights</h3>
+                    <div class="tier-count">34</div>
+                    <p class="tier-desc">Tactical wisdom embedded in each chapter.</p>
+                    <div class="tier-badge-container">
+                        <span class="tier-badge">Book + Website</span>
                     </div>
                 </div>
-                
+
                 <!-- Tier 3 -->
-                <div style="background: linear-gradient(135deg, var(--primary) 0%, var(--rail-blue) 100%); border: 2px solid var(--secondary); border-radius: 12px; padding: 2rem; text-align: center; color: white;">
-                    <div style="background: var(--secondary); color: var(--primary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-family: 'Space Mono', monospace; font-weight: 700;">3</div>
-                    <h3 style="font-family: 'Space Mono', monospace; color: var(--secondary); font-size: 1.1rem; margin-bottom: 0.5rem;">Extended Takeaways</h3>
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--secondary);">83</div>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.9;">Deep-dive with What/Why/How format.</p>
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
-                        <span style="background: var(--secondary); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">Course Exclusive</span>
+                <div class="tier-card tier-card-3">
+                    <div class="tier-number">3</div>
+                    <h3 class="tier-heading">Extended Takeaways</h3>
+                    <div class="tier-count">83</div>
+                    <p class="tier-desc">Deep-dive with What/Why/How format.</p>
+                    <div class="tier-badge-container">
+                        <span class="tier-badge">Course Exclusive</span>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Sample Lessons Preview -->
-            <div style="background: var(--light); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
-                <h4 style="font-family: 'Space Mono', monospace; margin-bottom: 1.5rem; color: var(--primary);">Sample: Chapter 6 - The Blocks Appear</h4>
-                <div style="display: grid; gap: 1rem;">
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <span style="background: var(--accent); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem; white-space: nowrap;">KEY LESSON</span>
-                        <span style="font-weight: 600; color: var(--primary);">Resistance Reveals Interests</span>
+            <div class="sample-lessons-preview">
+                <h4 class="sample-lessons-heading">Sample: Chapter 6 - The Blocks Appear</h4>
+                <div class="sample-lessons-grid">
+                    <div class="sample-lesson-row">
+                        <span class="lesson-tag-key">KEY LESSON</span>
+                        <span class="lesson-name-bold">Resistance Reveals Interests</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem; white-space: nowrap;">INSIGHT</span>
-                        <span style="color: var(--primary);">Silence Is Information</span>
+                    <div class="sample-lesson-row">
+                        <span class="lesson-tag-insight">INSIGHT</span>
+                        <span class="lesson-name">Silence Is Information</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem; white-space: nowrap;">INSIGHT</span>
-                        <span style="color: var(--primary);">Systems Starve Ideas More Often Than They Reject Them</span>
+                    <div class="sample-lesson-row">
+                        <span class="lesson-tag-insight">INSIGHT</span>
+                        <span class="lesson-name">Systems Starve Ideas More Often Than They Reject Them</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 1rem; opacity: 0.6;">
-                        <span style="background: var(--secondary); color: var(--primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem; white-space: nowrap;">EXTENDED</span>
-                        <span style="color: var(--primary);">+8 more in course (RTI as Weapon, Create Future Reality Through Language...)</span>
+                    <div class="sample-lesson-row-faded">
+                        <span class="lesson-tag-extended">EXTENDED</span>
+                        <span class="lesson-name">+8 more in course (RTI as Weapon, Create Future Reality Through Language...)</span>
                     </div>
                 </div>
             </div>
-            
+
             <!-- CTA Buttons -->
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <div class="tier-cta-container">
                 <a href="key-takeaways.html" class="exclusive-cta">Explore 46 Free Lessons</a>
-                <a href="/cdn-cgi/l/email-protection#661507120e1f07481507080d0714070826010b070f0a4805090b591513040c0305125b2f081203140315124354560f08435456241403070d435456120e03435456240a09050d435456231e12030802030243545625091314150343545643545e5e554354562a03151509081543545f400409021f5b2e0f4354563507120e1f074354254356274356272f4354510b4354560f0812031403151203024354560f084354560a030714080f08014354560b0914034354560704091312435456120e03435456231e120308020302435456250913141503435456110f120e4354565e55435456020312070f0a030243545612070d030711071f154354560014090b435456241403070d435456120e03435456240a09050d48435627435627360a03071503435456150308024354560b034354560f080009140b07120f090843545607040913124355274356274b4354562509131415034354560705050315154354560708024354560009140b07124356274b43545636140f050f08014354560708024354560710070f0a07040f0a0f121f4356274b435456310e0712435451154354560f08050a130203024354560f08435456120e03435456231e12030802030243545632070d030711071f15435627435627320e07080d4354561f0913435457" class="exclusive-cta" style="background: transparent; border: 2px solid var(--accent); color: var(--accent);">Get Course (83 Extended) →</a>
+                <a href="/cdn-cgi/l/email-protection#661507120e1f07481507080d0714070826010b070f0a4805090b591513040c0305125b2f081203140315124354560f08435456241403070d435456120e03435456240a09050d435456231e12030802030243545625091314150343545643545e5e554354562a03151509081543545f400409021f5b2e0f4354563507120e1f074354254356274356272f4354510b4354560f0812031403151203024354560f084354560a030714080f08014354560b0914034354560704091312435456120e03435456231e120308020302435456250913141503435456110f120e4354565e55435456020312070f0a030243545612070d030711071f154354560014090b435456241403070d435456120e03435456240a09050d48435627435627360a03071503435456150308024354560b034354560f080009140b07120f090843545607040913124355274356274b4354562509131415034354560705050315154354560708024354560009140b07124356274b43545636140f050f08014354560708024354560710070f0a07040f0a0f121f4356274b435456310e0712435451154354560f08050a130203024354560f08435456120e03435456231e12030802030243545632070d030711071f15435627435627320e07080d4354561f0913435457" class="exclusive-cta exclusive-cta-outline">Get Course (83 Extended) →</a>
             </div>
         </div>
     </section>
@@ -1257,7 +1257,7 @@
         <h2>About the Author</h2>
         <div class="author-grid">
             <div class="author-image">
-                <img loading="lazy" src="sathya.jpg" alt="Sathya Sankaran, urban technologist and civic activist, founder of Namma Railu campaign in Bengaluru, host of OoruLabs urban affairs podcast India">
+                <img loading="lazy" src="sathya.jpg" alt="Sathya Sankaran, urban technologist and civic activist, founder of Namma Railu campaign in Bengaluru, host of OoruLabs urban affairs podcast India" width="600" height="619">
             </div>
             <div class="author-bio">
                 <h3>Sathya Sankaran</h3>
@@ -1292,52 +1292,52 @@
     </section>
 
     <!-- FAQ Section -->
-    <section style="padding: 5rem 5%; background: white;">
-        <div style="max-width: 900px; margin: 0 auto;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center; font-family: 'Space Mono', monospace; color: var(--primary);">Frequently Asked Questions</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 4rem; text-align: center; color: var(--text); opacity: 0.8;">Everything you need to know</p>
-            
-            <div style="display: flex; flex-direction: column; gap: 2rem;">
+    <section class="faq-section">
+        <div class="faq-section-inner">
+            <h2 class="faq-section-heading">Frequently Asked Questions</h2>
+            <p class="faq-section-subtitle">Everything you need to know</p>
+
+            <div class="faq-list">
                 <!-- FAQ Item 1 -->
-                <div style="border-bottom: 2px solid var(--light); padding-bottom: 1.5rem;">
-                    <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">Who is this book for?</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">This book is for activists seeking practical tactics, policy students wanting real-world case studies, engaged citizens wondering how to change their city, and public servants seeking to understand citizen perspectives. If you've ever felt powerless against bureaucracy or wondered if ordinary people can really make a difference, this book is for you.</p>
+                <div class="faq-entry">
+                    <h3 class="faq-entry-title">Who is this book for?</h3>
+                    <p class="faq-entry-answer">This book is for activists seeking practical tactics, policy students wanting real-world case studies, engaged citizens wondering how to change their city, and public servants seeking to understand citizen perspectives. If you've ever felt powerless against bureaucracy or wondered if ordinary people can really make a difference, this book is for you.</p>
                 </div>
 
                 <!-- FAQ Item 2 -->
-                <div style="border-bottom: 2px solid var(--light); padding-bottom: 1.5rem;">
-                    <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">Where can I buy the book?</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">Break the Block is available now in hardcover on <a href="https://notionpress.com/in/read/break-the-block-hardcover/hardcover" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 600;">Notionpress</a>. It will also be available on Amazon and Flipkart soon.</p>
+                <div class="faq-entry">
+                    <h3 class="faq-entry-title">Where can I buy the book?</h3>
+                    <p class="faq-entry-answer">Break the Block is available now in hardcover on <a href="https://notionpress.com/in/read/break-the-block-hardcover/hardcover" target="_blank" rel="noopener noreferrer">Notionpress</a>. It will also be available on Amazon and Flipkart soon.</p>
                 </div>
 
                 <!-- FAQ Item 3 -->
-                <div style="border-bottom: 2px solid var(--light); padding-bottom: 1.5rem;">
-                    <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">What makes this different from other books on activism?</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">Unlike academic policy textbooks, this is a real campaign story written by someone who lived it, not an observer. Unlike typical memoirs, it explicitly extracts 46 actionable lessons (12 Key Lessons + 34 Chapter Insights) you can apply to your own campaigns. It's both an engaging narrative and a practical field guide—showing you the "how," not just the "why."</p>
+                <div class="faq-entry">
+                    <h3 class="faq-entry-title">What makes this different from other books on activism?</h3>
+                    <p class="faq-entry-answer">Unlike academic policy textbooks, this is a real campaign story written by someone who lived it, not an observer. Unlike typical memoirs, it explicitly extracts 46 actionable lessons (12 Key Lessons + 34 Chapter Insights) you can apply to your own campaigns. It's both an engaging narrative and a practical field guide—showing you the "how," not just the "why."</p>
                 </div>
 
                 <!-- FAQ Item 4 -->
-                <div style="border-bottom: 2px solid var(--light); padding-bottom: 1.5rem;">
-                    <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">How long is the book?</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">The book contains <strong>12 chapters</strong> with <strong>12 Key Lessons and 34 Chapter Insights</strong> distilled from a decade-long campaign. Plus <strong>83 Extended Takeaways</strong> available in the course. It's designed to be an accessible read—substantive enough to provide real value, but not so academic that it becomes a chore.</p>
+                <div class="faq-entry">
+                    <h3 class="faq-entry-title">How long is the book?</h3>
+                    <p class="faq-entry-answer">The book contains <strong>12 chapters</strong> with <strong>12 Key Lessons and 34 Chapter Insights</strong> distilled from a decade-long campaign. Plus <strong>83 Extended Takeaways</strong> available in the course. It's designed to be an accessible read—substantive enough to provide real value, but not so academic that it becomes a chore.</p>
                 </div>
 
                 <!-- FAQ Item 5 -->
-                <div style="border-bottom: 2px solid var(--light); padding-bottom: 1.5rem;">
-                    <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">What formats will be available?</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">Break the Block is available in <strong>hardcover</strong> (₹599) and <strong>paperback</strong> (₹349) on Notionpress now, with Amazon.in, Flipkart, Amazon.com, and Amazon.co.uk listings arriving by late February. <strong>eBook</strong> editions (Kindle, Kobo, Google Play) will be available by mid-March.</p>
+                <div class="faq-entry">
+                    <h3 class="faq-entry-title">What formats will be available?</h3>
+                    <p class="faq-entry-answer">Break the Block is available in <strong>hardcover</strong> (₹599) and <strong>paperback</strong> (₹349) on Notionpress now, with Amazon.in, Flipkart, Amazon.com, and Amazon.co.uk listings arriving by late February. <strong>eBook</strong> editions (Kindle, Kobo, Google Play) will be available by mid-March.</p>
                 </div>
 
                 <!-- FAQ Item 6 -->
-                <div style="border-bottom: 2px solid var(--light); padding-bottom: 1.5rem;">
-                    <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">Is this only relevant to Bengaluru or Indian cities?</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">While the story takes place in Bengaluru, the lessons are universal. The tactics for navigating bureaucracy, building coalitions, using data effectively, and maintaining momentum over years apply to civic campaigns anywhere. Readers from Mumbai to Manila, Delhi to Denver will find applicable insights.</p>
+                <div class="faq-entry">
+                    <h3 class="faq-entry-title">Is this only relevant to Bengaluru or Indian cities?</h3>
+                    <p class="faq-entry-answer">While the story takes place in Bengaluru, the lessons are universal. The tactics for navigating bureaucracy, building coalitions, using data effectively, and maintaining momentum over years apply to civic campaigns anywhere. Readers from Mumbai to Manila, Delhi to Denver will find applicable insights.</p>
                 </div>
 
                 <!-- FAQ Item 7 -->
-                <div style="padding-bottom: 1.5rem;">
-                    <h3 style="font-family: 'Space Mono', monospace; color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">Can I read sample chapters before buying?</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">Yes! The <strong>Introduction</strong> and first <strong>two chapters</strong> are available to read online for free. Scroll up to the "Read Online" section or visit the <a href="key-takeaways.html" style="color: var(--accent); text-decoration: underline;">online exclusive lessons</a> page to see what you'll learn from each chapter.</p>
+                <div class="faq-entry">
+                    <h3 class="faq-entry-title">Can I read sample chapters before buying?</h3>
+                    <p class="faq-entry-answer">Yes! The <strong>Introduction</strong> and first <strong>two chapters</strong> are available to read online for free. Scroll up to the "Read Online" section or visit the <a href="key-takeaways.html">online exclusive lessons</a> page to see what you'll learn from each chapter.</p>
                 </div>
             </div>
         </div>
@@ -1348,22 +1348,22 @@
         <h2>Available Now</h2>
 
         <!-- Book Specs -->
-        <div style="max-width: 800px; margin: 0 auto 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+        <div class="get-book-stats">
             <div>
-                <div style="font-size: 3rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">12</div>
-                <div style="font-size: 1.1rem; font-family: 'Space Mono', monospace; opacity: 0.9;">Chapters</div>
+                <div class="get-book-stat-number">12</div>
+                <div class="get-book-stat-label">Chapters</div>
             </div>
             <div>
-                <div style="font-size: 3rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">46</div>
-                <div style="font-size: 1.1rem; font-family: 'Space Mono', monospace; opacity: 0.9;">Lessons</div>
+                <div class="get-book-stat-number">46</div>
+                <div class="get-book-stat-label">Lessons</div>
             </div>
             <div>
-                <div style="font-size: 3rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">226</div>
-                <div style="font-size: 1.1rem; font-family: 'Space Mono', monospace; opacity: 0.9;">Pages</div>
+                <div class="get-book-stat-number">226</div>
+                <div class="get-book-stat-label">Pages</div>
             </div>
         </div>
 
-        <p style="font-size: 1.3rem; margin-bottom: 0.5rem;">Hardcover ₹599 · Paperback ₹349</p>
+        <p class="get-book-price">Hardcover ₹599 · Paperback ₹349</p>
 
         <div class="purchase-grid">
             <div class="purchase-card active">
@@ -1448,11 +1448,11 @@
     </main>
 
     <footer role="contentinfo">
-        <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
+        <div class="footer-container">
             <!-- Social Media Links -->
             <div class="footer-social">
-                <p style="margin-bottom: 0.8rem; font-family: 'Space Mono', monospace; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Follow the Author</p>
-                <div style="display: flex; gap: 1rem; justify-content: center;">
+                <p class="footer-social-heading">Follow the Author</p>
+                <div class="footer-social-icons">
                     <a href="https://www.sathyasankaran.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Website" aria-label="Visit author's website">
                         <i class="fas fa-globe" aria-hidden="true"></i>
                     </a>
@@ -1467,14 +1467,14 @@
                     </a>
                 </div>
             </div>
-            
+
             <!-- Copyright and License -->
-            <p style="text-align: center;">
-                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; color: inherit; text-decoration: none;">
-                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons" style="height: 1.5rem; width: 1.5rem;">
-                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Attribution" style="height: 1.5rem; width: 1.5rem;">
-                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="Non-Commercial" style="height: 1.5rem; width: 1.5rem;">
-                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="Share-Alike" style="height: 1.5rem; width: 1.5rem;">
+            <p class="footer-license">
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener noreferrer">
+                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons" width="24" height="24">
+                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Attribution" width="24" height="24">
+                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="Non-Commercial" width="24" height="24">
+                    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="Share-Alike" width="24" height="24">
                     <span>All content on this site is covered under CC-BY-NC-SA 4.0 license</span>
                 </a>
                 <br>
