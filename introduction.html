@@ -71,7 +71,7 @@
     <meta name="twitter:description" content="How five citizens brought commuter rail to Bengaluru through a decade-long campaign.">
     <meta name="twitter:image" content="https://www.breaktheblock.in/book-cover.png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -91,7 +91,7 @@
         }
 
         body {
-            font-family: 'Crimson Pro', serif;
+            font-family: 'EB Garamond', serif;
             color: var(--text);
             background: var(--light);
             line-height: 1.8;
@@ -215,7 +215,7 @@
             color: var(--text);
             text-decoration: none;
             transition: all 0.3s ease;
-            font-family: 'Crimson Pro', serif;
+            font-family: 'EB Garamond', serif;
             font-size: 0.95rem;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
@@ -243,10 +243,13 @@
         }
 
         .reading-container {
-            max-width: 800px;
+            max-width: 860px;
             margin: 0 auto;
-            padding: 6rem 2rem 3rem;
+            padding: 6rem 3rem 3rem;
             min-height: 100vh;
+            background: #faf6f0;
+            box-shadow: 0 0 40px rgba(0,0,0,0.08);
+            border-radius: 2px;
         }
 
         .chapter-header {
@@ -283,6 +286,7 @@
         .chapter-body {
             font-size: 1.2rem;
             line-height: 1.9;
+            text-align: justify;
         }
 
         .chapter-body p {
@@ -290,7 +294,8 @@
         }
 
         .chapter-body p:first-of-type::first-letter {
-            font-size: 4rem;
+            font-size: 3.5rem;
+            font-family: 'EB Garamond', serif;
             font-weight: 700;
             float: left;
             line-height: 0.8;
@@ -299,10 +304,13 @@
         }
 
         .chapter-body .section-heading {
-            font-size: 1.8rem;
-            margin: 3rem 0 1.5rem;
+            font-family: 'EB Garamond', serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem;
             color: var(--primary);
-            font-weight: 600;
         }
 
         .chapter-body strong {
@@ -314,12 +322,26 @@
         }
 
         .chapter-body ul {
-            margin-left: 2rem;
+            list-style: none;
+            margin-left: 0;
             margin-bottom: 1.8rem;
         }
 
         .chapter-body li {
-            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-body li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.8rem;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
         }
 
         .chapter-body a {
@@ -329,6 +351,16 @@
 
         .chapter-body a:hover {
             text-decoration: underline;
+        }
+
+        .book-page-footer {
+            text-align: right;
+            padding-top: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            font-size: 0.85rem;
+            color: #999;
+            font-style: italic;
         }
 
         .cta-footer {
@@ -568,6 +600,10 @@
 <li>Web exclusives: RTI responses, photos, infographics, events, and more that didn't make it into the book</li>
 </ul>
 
+        </div>
+
+        <div class="book-page-footer">
+            <span class="page-label"><em>Introduction</em></span>
         </div>
 
         <div class="cta-footer">

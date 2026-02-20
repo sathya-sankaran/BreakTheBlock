@@ -70,12 +70,12 @@
     </script>
 
     <title>Chapter 1: The Online-Offline Bridge | Break the Block</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         :root{--primary:#1a1a1a;--accent:#ff6b35;--secondary:#f7931e;--light:#f5f5f0;--text:#2d2d2d;--rail-blue:#004e89}
-        body{font-family:'Crimson Pro',serif;color:var(--text);background:var(--light);line-height:1.8}
+        body{font-family:'EB Garamond',serif;color:var(--text);background:var(--light);line-height:1.8}
         .reading-progress{position:fixed;top:0;left:0;width:0%;height:4px;background:linear-gradient(90deg,var(--accent),var(--secondary));z-index:9999}
         .top-nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:1000;padding:1rem 2rem;box-shadow:0 2px 10px rgba(0,0,0,0.1);display:flex;justify-content:space-between;align-items:center}
         .back-link{color:var(--accent);text-decoration:none;font-family:'Space Mono',monospace;font-size:0.9rem;text-transform:uppercase;letter-spacing:1px}
@@ -86,21 +86,21 @@
         .share-menu.active{opacity:1;visibility:visible;transform:translateY(0)}
         .share-menu-item{display:flex;align-items:center;gap:0.8rem;padding:0.8rem 1.2rem;color:var(--text);text-decoration:none;border-bottom:1px solid rgba(0,0,0,0.05)}
         .share-menu-item:hover{background:var(--light)}
-        .reading-container{max-width:800px;margin:0 auto;padding:6rem 2rem 3rem;min-height:100vh}
+        .reading-container{max-width:860px;margin:0 auto;padding:6rem 3rem 3rem;min-height:100vh;background:#faf6f0;box-shadow:0 0 40px rgba(0,0,0,0.08);border-radius:2px}
         .chapter-header{border-bottom:3px solid var(--accent);padding-bottom:2rem;margin-bottom:3rem}
         .chapter-number{font-family:'Space Mono',monospace;font-size:0.9rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:1rem}
         .chapter-title{font-size:clamp(2.5rem,5vw,3.5rem);font-weight:700;color:var(--primary);line-height:1.2}
         .chapter-subtitle{font-size:1.3rem;color:var(--rail-blue);margin-top:0.5rem;font-style:italic}
         .reading-stats{display:flex;gap:2rem;margin-top:1rem;font-family:'Space Mono',monospace;font-size:0.85rem;color:#666}
-        .chapter-body{font-size:1.2rem;line-height:1.9}
+        .chapter-body{font-size:1.2rem;line-height:1.9;text-align:justify}
         .chapter-body p{margin-bottom:1.8rem}
-        .chapter-body p:first-of-type::first-letter{font-size:4rem;font-weight:700;float:left;line-height:0.8;margin:0.1rem 0.1rem 0 0;color:var(--accent)}
-        .section-heading{font-size:1.8rem;margin:3rem 0 1.5rem;color:var(--primary);font-weight:600}
-        .chapter-insight{background:linear-gradient(135deg,rgba(0,78,137,0.08),rgba(255,107,53,0.05));border-left:4px solid var(--rail-blue);padding:1.5rem;margin:2rem 0;border-radius:0 8px 8px 0}
-        .chapter-insight strong{color:var(--rail-blue);display:block;margin-bottom:0.5rem;font-family:'Space Mono',monospace;font-size:0.95rem}
-        .key-lesson{background:linear-gradient(135deg,rgba(255,107,53,0.1),rgba(247,147,30,0.08));border:2px solid var(--accent);padding:2rem;margin:3rem 0;border-radius:8px;text-align:center}
-        .key-lesson-label{font-family:'Space Mono',monospace;font-size:0.85rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:0.5rem}
-        .key-lesson-title{font-size:1.5rem;font-weight:700;color:var(--primary);margin-bottom:1rem}
+        .chapter-body p:first-of-type::first-letter{font-size:3.5rem;font-family:'EB Garamond',serif;font-weight:700;float:left;line-height:0.8;margin:0.1rem 0.1rem 0 0;color:var(--accent)}
+        .section-heading{font-family:'EB Garamond',serif;font-size:1.25rem;margin:2.5rem 0 1rem;color:var(--primary);font-weight:700;text-transform:uppercase;letter-spacing:1px}
+        .chapter-insight{background:transparent;border:1px solid #333;padding:1.5rem 1.8rem;margin:2rem 0;border-radius:0}
+        .chapter-insight strong{color:var(--primary);display:block;margin-bottom:0.5rem;font-family:'EB Garamond',serif;font-size:1rem;font-weight:700}
+        .key-lesson{background:transparent;border:none;border-top:2px solid #333;padding:2rem 0 0;margin:3rem 0;border-radius:0;text-align:left}
+        .key-lesson-label{display:none}
+        .key-lesson-title{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--primary);margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px}
         .cta-footer{background:var(--primary);color:white;padding:3rem;margin-top:4rem;border-radius:4px;text-align:center}
         .cta-footer h3{font-size:2rem;margin-bottom:1rem}
         .cta-footer p{font-size:1.2rem;margin-bottom:2rem;opacity:0.9}
@@ -112,6 +112,7 @@
         footer{background:#1a1a1a;color:#f5f5f0;padding:3rem 2rem;text-align:center;margin-top:4rem}
         .social-links{display:flex;gap:1rem;justify-content:center}
         .social-links a{display:inline-flex;align-items:center;justify-content:center;width:45px;height:45px;border-radius:50%;background:rgba(255,255,255,0.1);color:white!important;text-decoration:none}
+        .book-page-footer{text-align:right;padding-top:2rem;margin-top:3rem;border-top:1px solid rgba(0,0,0,0.1);font-size:0.85rem;color:#999;font-style:italic}
     </style>
 </head>
 <body>
@@ -214,29 +215,41 @@ Use digital platforms to refine ideas and identify who is willing to engage seri
 
 <p>The Bus Day campaign aimed to promote the use of the Volvo bus services that BMTC was deploying. Being relatively expensive in fare, it needed a different audience and strategy. Praja used this opportunity to push public transport among the IT crowd. One of the few buses, other than the Airport route, that became a success was the 335 series, which served the IT corridor to Whitefield.</p>
 
+<p>IT employees could not only afford the air-conditioned bus service; they instead preferred to use alternatives like private motor vehicles that caused congestion and pollution. The tech platform brought stakeholders together to brainstorm, create materials and collateral, and execute the campaign on the ground.</p>
+
 <p>The Bus Day campaign taught us something unexpected: government agencies don't change because you ask them to. They change when they see the benefit.</p>
 
 <p>BMTC's website had been a static, corporate affair: timetables buried in PDFs, no route planning, no real-time information. Through months of collaboration, we nudged them toward something more citizen-friendly. It wasn't dramatic. It wasn't fast. But it happened. We learned that change inside government entities comes slowly, through relationship-building rather than confrontation.</p>
 
+<p>We also learned our limits. BMTC was still paper-based. We couldn't get the data we needed to build the online tools we'd imagined. Some walls don't fall the first time you push.</p>
+
 <p>But Mobilicity gave us something more valuable than a better bus website: it cemented our relationship with CiSTUP and Prof. Sitharam. That connection would prove essential the very next year, when we turned our attention to trains.</p>
+
+<p>Though I returned to Bengaluru from my European sojourn after "Bus Day" had taken off, the campaign taught me the value of engaging with industry. It is a fine line to tread between fighting for your cause and being perceived as a marketing machine for a corporation. The cause needs legs, and the private sector partnerships to support public good campaigns can be a big drawback, as we saw in the commuter rail campaign. We couldn't get a big train manufacturer to pay any attention. We would soon discover why.</p>
 
 <h2 class="section-heading">The Commuter Rail Spark</h2>
 
 <p>With the newfound momentum from the BMTC engagements offline, the platform continued to engage users on public transport topics online. The train, tram, and bus systems in Europe were a revelation to me. We began sharing knowledge and information about the various public transport options in those countries.</p>
 
+<p>The metropolitan areas had a mix of suburban trains which connected satellite towns to the city's economic engine. Within cities, metro systems offered higher frequency, shorter-distance connectivity. Trams and buses supplemented these systems.</p>
+
+<p>These interconnected public transport systems provided a depth of coverage within and around the city that was so efficient. Sometimes you didn't see the roads at all on your way to work. A motivated group, which understood the importance of train-based systems as an answer to Bengaluru's congestion woes and pivotal to its future as a liveable, sustainable city, was forming on the platform.</p>
+
 <p>While researching information on commuter rail in March 2009, I made a tongue-in-cheek comment on a Praja thread, titled Commuter Rail System - For Us?:</p>
 
 <p><em>"Are there any technical studies or recommendations on CRS for Bangalore? The only links I get lead back to Praja!!! Are we the only people talking about it?"</em></p>
 
-<p>The thread had jump-started my curiosity and deeper research on commuter rail. However, Pranav had already reached out to Gaurav Gupta, who was heading the Bengaluru Metropolitan Land Transport Authority (BMLTA). During the conversation, he mentioned in passing the various tracks and stations that already existed for a suburban rail service. Pranav could not get this thought out of his mind on his drive home. He looked up Google Maps for all the stations around the city. He and a fellow blogger stumbled on the Comprehensive Traffic and Transport Plan (CTTP).</p>
+<p>The thread had jump-started my curiosity and deeper research on commuter rail. However, Pranav had already reached out to Gaurav Gupta, who was commissioner of the Directorate of Urban Land Transport (DULT) and Member Secretary to the committee called Bengaluru Metropolitan Land Transport Authority (BMLTA). The Government formed this committee to plan transportation projects and to avail funds under a central scheme. This scheme would improve public transport in cities.</p>
 
-<p>Karnataka Urban Infrastructure Development and Finance Corporation (KUIDFC) commissioned the CTTP in 2007. It made recommendations on various mode shares, including the Commuter Rail System. It identified ten segments of commuter railway service in the document for service rollout.</p>
+<p>Gaurav Gupta gave Pranav an appointment. That was the first time he was walking into the Vidhana Soudha. Gaurav Gupta was aware of Praja. He would read the posts and found them engaging. He wanted to inform us of the latest developments so we could share them with Praja's online community and spark discussions. Praja's platform, aside from newspapers, could give him a direct connection with the public. During the conversation, he mentioned in passing the various tracks and stations that already existed for a suburban rail service. Pranav could not get this thought out of his mind on his drive home. He looked up Google Maps for all the stations around the city. He and a fellow blogger stumbled on the Comprehensive Traffic and Transport Plan (CTTP).</p>
+
+<p>Karnataka Urban Infrastructure Development and Finance Corporation (KUIDFC) commissioned the CTTP in 2007. It made recommendations on various mode shares, including the Commuter Rail System. A mode share is the percentage of travellers using a particular type of transportation. It identified ten segments of commuter railway service in the document for service rollout.</p>
 
 <p>Some conversations on Praja identified this as a potential opportunity that no one in the Government was paying attention to. It would take a while for it to find its legs.</p>
 
 <h2 class="section-heading">Formalising the Offline Entity</h2>
 
-<p>Seven of us from Praja set up an offline entity. The work of lobbying for projects offline was bringing new people who wanted to organise themselves better and represent themselves as a legal entity.</p>
+<p>Seven of us from Praja set up an offline entity. The work of lobbying for projects offline was bringing new people who wanted to organise themselves better and represent themselves as a legal entity. The platform supplemented the effort of making change happen and was going to be hooked to this offline entity. It was essential to formalise the offline operations. We needed a name.</p>
 
 <p>Brainstorming for a name, we had to understand what we stood for. The discussions in Praja had a solution angle to all problems. In fact, we used the word <em>"Solutionism"</em> in our elevator pitch for quite a while, even with bureaucrats. We just made it up to describe all the knowledge that existed on the platform.</p>
 
@@ -254,6 +267,9 @@ Use digital platforms to refine ideas and identify who is willing to engage seri
 <div class="key-lesson-label">Key Lesson</div>
 <div class="key-lesson-title">Legitimacy Precedes Influence</div>
 <p>The system decides who belongs in the conversation before it evaluates what is being proposed. Build credibility through presence, professional output, and relationships before expecting your ideas to move anything. Permission to influence is earned, not assumed.</p>
+</div>
+<div class="book-page-footer">
+    <span><em>The Online-Offline Bridge</em></span>
 </div>
         </div>
 
