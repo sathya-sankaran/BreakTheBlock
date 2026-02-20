@@ -107,7 +107,15 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="break-the-block-logo.svg">
-    
+
+    <!-- Preconnect to external origins for faster resource loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload hero book cover (critical above-fold image) -->
+    <link rel="preload" as="image" href="book-cover.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -127,7 +135,7 @@
             "@id": "https://www.breaktheblock.in/#author",
             "name": "Sathya Sankaran",
             "url": "https://www.breaktheblock.in/#author",
-            "image": "https://www.breaktheblock.in/sathya.jpg",
+            "image": "https://www.breaktheblock.in/sathya.png",
             "jobTitle": "Civic Activist, Urban Mobility Advocate, Podcast Host",
             "description": "Civic activist, technology professional, urban mobility advocate, and podcast host based in Bengaluru. Founding member of the Namma Railu campaign and host of The OoruLabs Podcast.",
             "sameAs": [
@@ -406,7 +414,7 @@
       "jobTitle": "Urban Technologist, Civic Activist, Policy Advocate",
       "description": "Founding member of Namma Railu campaign, Bengaluru's first Bicycle Mayor (2018-2020), host of The OoruLabs Podcast. Successfully led decade-long citizen campaign that brought suburban rail to Bengaluru.",
       "url": "https://www.sathyasankaran.com",
-      "image": "https://www.breaktheblock.in/sathya.jpg",
+      "image": "https://www.breaktheblock.in/sathya.png",
       "sameAs": [
         "https://twitter.com/tweetenator",
         "https://www.linkedin.com/in/sathyasankaran/",
@@ -708,41 +716,89 @@
             const navMenu = document.querySelector('.nav-menu');
             const body = document.body;
             
+            // Helper: close hamburger menu
+            function closeHamburgerMenu() {
+                if (navMenu && hamburger) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    body.classList.remove('menu-open');
+                }
+            }
+
             if (hamburger) {
                 hamburger.addEventListener('click', function() {
                     if (navMenu) {
                         navMenu.classList.toggle('active');
                         hamburger.classList.toggle('active');
                         body.classList.toggle('menu-open');
+                        const expanded = navMenu.classList.contains('active');
+                        hamburger.setAttribute('aria-expanded', String(expanded));
                     }
                 });
             }
-            
+
             // Close menu when clicking outside
             document.addEventListener('click', function(e) {
                 if (navMenu && hamburger) {
                     if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-                        navMenu.classList.remove('active');
-                        hamburger.classList.remove('active');
-                        body.classList.remove('menu-open');
+                        closeHamburgerMenu();
                     }
                 }
             });
-            
+
             // Share menu toggle
             const shareToggle = document.getElementById('share-toggle-btn');
             const shareMenu = document.querySelector('.share-menu');
-            
+
+            // Helper: close share menu
+            function closeShareMenu() {
+                if (shareMenu && shareToggle) {
+                    shareMenu.classList.remove('active');
+                    shareToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+
+            // Helper: open share menu
+            function openShareMenu() {
+                if (shareMenu && shareToggle) {
+                    shareMenu.classList.add('active');
+                    shareToggle.setAttribute('aria-expanded', 'true');
+                    // Focus first menu item
+                    var firstItem = shareMenu.querySelector('.share-menu-item');
+                    if (firstItem) firstItem.focus();
+                }
+            }
+
             if (shareToggle && shareMenu) {
                 shareToggle.addEventListener('click', function(e) {
                     e.stopPropagation();
-                    shareMenu.classList.toggle('active');
+                    var isOpen = shareMenu.classList.contains('active');
+                    if (isOpen) {
+                        closeShareMenu();
+                    } else {
+                        openShareMenu();
+                    }
                 });
-                
+
                 // Close share menu when clicking outside
                 document.addEventListener('click', function(e) {
                     if (!shareMenu.contains(e.target) && !shareToggle.contains(e.target)) {
-                        shareMenu.classList.remove('active');
+                        closeShareMenu();
+                    }
+                });
+
+                // Escape key closes share menu and hamburger menu
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        if (shareMenu.classList.contains('active')) {
+                            closeShareMenu();
+                            shareToggle.focus();
+                        }
+                        if (navMenu && navMenu.classList.contains('active')) {
+                            closeHamburgerMenu();
+                            hamburger.focus();
+                        }
                     }
                 });
             }
@@ -854,12 +910,13 @@
                 <p class="hero-hook">5 citizens. 10 years. 1 impossible victory.</p>
                 <p class="subtitle">The brutally honest playbook for changing your city when you have no power, no money, and no political connections.</p>
                 <div class="hero-cta-group">
-                    <a href="#get-book" class="cta-button">Get the Playbook</a>
-                    <a href="#free-preview" class="cta-button secondary">Read Free Chapters</a>
+                    <a href="#get-book" class="cta-button hero-cta-primary">Get the Playbook <span class="hero-price-tag">₹349 Paperback · ₹599 Hardcover</span></a>
                 </div>
+                <p class="hero-free-link">Already curious? <a href="#free-preview">Read 3 free chapters</a> — no signup needed</p>
+                <p class="hero-trust-signal">"A masterclass in citizen advocacy." — Srinivas Alavilli, WRI India</p>
             </div>
             <div class="hero-book-cover">
-                <img loading="lazy" src="book-cover.png" alt="Break the Block: Field guide for civic activism showing 12 Key Lessons + 34 Chapter Insights from Bengaluru (Bangalore) citizen campaign for commuter rail" width="800" height="986">
+                <img src="book-cover.png" alt="Break the Block: Field guide for civic activism showing 12 Key Lessons + 34 Chapter Insights from Bengaluru (Bangalore) citizen campaign for commuter rail" width="800" height="986">
             </div>
         </div>
     </section>
@@ -888,34 +945,49 @@
         </div>
     </section>
 
+    <!-- Social Proof Strip -->
+    <section class="above-fold-proof">
+        <div class="above-fold-proof-inner">
+            <div class="star-rating" aria-label="Rated 5 out of 5 stars">
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="rating-text">5.0 from early readers</span>
+            </div>
+            <blockquote class="featured-quote">
+                <p>"Shows how positive change requires remarkable vision, passion, and persistence. An inspiring read!"</p>
+                <cite>— Prof. M.V. Rajeev Gowda, Ex-MP, Rajya Sabha</cite>
+            </blockquote>
+        </div>
+    </section>
+
     <!-- Buy the Book Section -->
     <section class="buy-section">
         <h2>Get Your Copy</h2>
         <p class="buy-subtitle">Available now — the story of Bengaluru's decade-long fight for suburban rail</p>
-        <div class="retailer-grid">
-            <div class="retailer-card">
+        <div class="retailer-grid retailer-grid-launch">
+            <div class="retailer-card retailer-card-featured">
+                <div class="retailer-live-badge">Available Now</div>
                 <div class="retailer-name">Notionpress</div>
                 <div class="retailer-price">Hardcover ₹599 · Paperback ₹349</div>
-                <div class="retailer-delivery">Delivery: ~7–10 days</div>
+                <div class="retailer-delivery">Ships in 7–10 days</div>
                 <a href="https://notionpress.com/in/read/break-the-block-hardcover/hardcover" target="_blank" rel="noopener" class="retailer-cta">Order Now</a>
             </div>
             <div class="retailer-card coming-soon">
                 <div class="retailer-name">Amazon</div>
-                <div class="retailer-price">Amazon.in — Feb 24</div>
-                <div class="retailer-delivery">Amazon.com / .co.uk — Feb 27</div>
-                <span class="coming-soon-badge">2–5 Days</span>
+                <div class="retailer-price">Amazon.in — by Feb 24</div>
+                <div class="retailer-delivery">.com / .co.uk — by Feb 27</div>
+                <span class="coming-soon-badge">Listing Soon</span>
             </div>
             <div class="retailer-card coming-soon">
                 <div class="retailer-name">Flipkart</div>
                 <div class="retailer-price">Hardcover · Paperback</div>
-                <div class="retailer-delivery">Available Feb 25</div>
-                <span class="coming-soon-badge">3 Days</span>
+                <div class="retailer-delivery">Available by Feb 25</div>
+                <span class="coming-soon-badge">Listing Soon</span>
             </div>
             <div class="retailer-card coming-soon">
                 <div class="retailer-name">eBook</div>
                 <div class="retailer-price">Kindle · Kobo · Google Play</div>
-                <div class="retailer-delivery">Available ~Mar 10</div>
-                <span class="coming-soon-badge">12 Business Days</span>
+                <div class="retailer-delivery">Available by ~Mar 10</div>
+                <span class="coming-soon-badge">Coming Soon</span>
             </div>
         </div>
     </section>
@@ -956,74 +1028,84 @@
             <div class="testimonials-grid">
                 <!-- Featured Testimonial (Wider) -->
                 <div class="testimonial-card featured">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-circle avatar-mr">MR</div>
-                    </div>
                     <div class="testimonial-content">
                         <p class="testimonial-quote">"Shows how positive change requires remarkable vision, passion, and persistence. An inspiring read!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-name">Prof. M.V. Rajeev Gowda</div>
-                            <div class="author-title">Ex-MP, Rajya Sabha</div>
+                        <div class="testimonial-footer">
+                            <div class="testimonial-avatar">
+                                <img src="headshots/rajeev-gowda.jpg" alt="Prof. M.V. Rajeev Gowda" width="56" height="56" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                                <div class="avatar-circle avatar-mr" style="display:none" aria-hidden="true">MR</div>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-name">Prof. M.V. Rajeev Gowda</div>
+                                <div class="author-title">Ex-MP, Rajya Sabha</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="speech-bubble-tail"></div>
                 </div>
 
                 <!-- Regular Testimonials -->
                 <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-circle avatar-vm">VM</div>
-                    </div>
                     <div class="testimonial-content">
                         <p class="testimonial-quote">"A lived account of how dialogue, persistence, and citizen-government partnership brought suburban rail to Bengaluru."</p>
-                        <div class="testimonial-author">
-                            <div class="author-name">V. Manjula</div>
-                            <div class="author-title">Additional Chief Secretary (Retd.)</div>
+                        <div class="testimonial-footer">
+                            <div class="testimonial-avatar">
+                                <img src="headshots/v-manjula.jpg" alt="V. Manjula" width="56" height="56" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                                <div class="avatar-circle avatar-vm" style="display:none" aria-hidden="true">VM</div>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-name">V. Manjula</div>
+                                <div class="author-title">Additional Chief Secretary (Retd.)</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="speech-bubble-tail"></div>
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-circle avatar-sa">SA</div>
-                    </div>
                     <div class="testimonial-content">
                         <p class="testimonial-quote">"A masterclass in citizen advocacy. Sathya didn't just fight the battle—he documented the playbook."</p>
-                        <div class="testimonial-author">
-                            <div class="author-name">Srinivas Alavilli</div>
-                            <div class="author-title">Civic activist; Fellow, WRI India</div>
+                        <div class="testimonial-footer">
+                            <div class="testimonial-avatar">
+                                <img src="headshots/srinivas-alavilli.jpg" alt="Srinivas Alavilli" width="56" height="56" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                                <div class="avatar-circle avatar-sa" style="display:none" aria-hidden="true">SA</div>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-name">Srinivas Alavilli</div>
+                                <div class="author-title">Civic activist; Fellow, WRI India</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="speech-bubble-tail"></div>
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-circle avatar-am">AM</div>
-                    </div>
                     <div class="testimonial-content">
                         <p class="testimonial-quote">"Most people give up too quickly. This book proves them wrong."</p>
-                        <div class="testimonial-author">
-                            <div class="author-name">Dr. Ashwin Mahesh</div>
-                            <div class="author-title">Urban expert; Founder, India Together</div>
+                        <div class="testimonial-footer">
+                            <div class="testimonial-avatar">
+                                <img src="headshots/ashwin-mahesh.jpg" alt="Dr. Ashwin Mahesh" width="56" height="56" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                                <div class="avatar-circle avatar-am" style="display:none" aria-hidden="true">AM</div>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-name">Dr. Ashwin Mahesh</div>
+                                <div class="author-title">Urban expert; Founder, India Together</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="speech-bubble-tail"></div>
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-circle avatar-vr">VR</div>
-                    </div>
                     <div class="testimonial-content">
                         <p class="testimonial-quote">"Proof that ordinary citizens with evidence and persistence can move the unmovable."</p>
-                        <div class="testimonial-author">
-                            <div class="author-name">V. Ravichandar</div>
-                            <div class="author-title">Civic evangelist; Co-organiser, Bangalore Literature Festival</div>
+                        <div class="testimonial-footer">
+                            <div class="testimonial-avatar">
+                                <img src="headshots/v-ravichandar.jpg" alt="V. Ravichandar" width="56" height="56" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                                <div class="avatar-circle avatar-vr" style="display:none" aria-hidden="true">VR</div>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-name">V. Ravichandar</div>
+                                <div class="author-title">Civic evangelist; Co-organiser, Bangalore Literature Festival</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="speech-bubble-tail"></div>
                 </div>
             </div>
         </div>
@@ -1066,9 +1148,12 @@
     <!-- Email Preview Section -->
     <section class="email-preview-section">
         <div class="email-preview-container">
-            <h2 class="email-preview-heading">Real Documents. Real Resistance.</h2>
-            <p class="email-preview-subtitle">This book includes the actual emails and government responses from the campaign</p>
-            
+            <div class="email-preview-text">
+                <h2 class="email-preview-heading">Real Documents.<br>Real Resistance.</h2>
+                <p class="email-preview-subtitle">This book includes the actual emails and government responses from the campaign — the raw, unfiltered exchanges between citizens and bureaucracy.</p>
+                <p class="email-preview-cta-hint">9 real emails reproduced in full &rarr;</p>
+            </div>
+
             <div class="email-card">
                 <!-- Email Header (like Gmail/Outlook) -->
                 <div class="email-header">
@@ -1175,6 +1260,24 @@
         </div>
     </section>
 
+    <!-- Email Capture / Notify Section -->
+    <section class="email-capture-section">
+        <div class="email-capture-inner">
+            <div class="email-capture-icon"><i class="fas fa-bell" aria-hidden="true"></i></div>
+            <h3 class="email-capture-heading">Get Notified When eBook Launches</h3>
+            <p class="email-capture-desc">Kindle, Kobo, and Google Play editions drop in March. Be first to know — plus get a bonus lesson not in the book.</p>
+            <p class="email-capture-privacy">No spam. Just one email when the eBook goes live.</p>
+            <form class="email-capture-form" id="email-capture-form" action="https://formspree.io/f/xregkdql" method="POST">
+                <input type="hidden" name="_subject" value="eBook launch notification signup">
+                <div class="email-capture-input-group">
+                    <input type="email" name="email" required aria-required="true" placeholder="your@email.com" class="email-capture-input" aria-label="Email address for eBook launch notification">
+                    <button type="submit" class="email-capture-submit" id="email-capture-submit">Notify Me</button>
+                </div>
+                <div class="form-status form-status-light" id="email-form-status" role="status" aria-live="polite"></div>
+            </form>
+        </div>
+    </section>
+
     <!-- Learning Framework Section -->
     <section id="online-exclusive" class="online-exclusive">
         <div class="exclusive-badge">
@@ -1257,7 +1360,7 @@
         <h2>About the Author</h2>
         <div class="author-grid">
             <div class="author-image">
-                <img loading="lazy" src="sathya.jpg" alt="Sathya Sankaran, urban technologist and civic activist, founder of Namma Railu campaign in Bengaluru, host of OoruLabs urban affairs podcast India" width="600" height="619">
+                <img loading="lazy" src="sathya.png" alt="Sathya Sankaran, urban technologist and civic activist, founder of Namma Railu campaign in Bengaluru, host of OoruLabs urban affairs podcast India" width="600" height="619">
             </div>
             <div class="author-bio">
                 <h3>Sathya Sankaran</h3>
@@ -1266,7 +1369,24 @@
                 <p style="margin-top: 1rem;">In 2007, Sathya discovered a second calling: advocating for better urban infrastructure and sustainable transportation in his beloved hometown. As a founding member of the Namma Railu campaign, he worked for over a decade to bring commuter rail to Bengaluru — a campaign that succeeded in 2020 when the Union Cabinet approved the Bengaluru Suburban Rail Project. As architect of AltMo, a gamified mobility intelligence platform, his data-driven work enabled a 342% increase in cycling and walking infrastructure allocation in Bengaluru's Comprehensive Master Plan.</p>
                 <p style="margin-top: 1rem;">As Bengaluru's first Bicycle Mayor (appointed 2018), Sathya helped launch Cycle Day, India's longest-running community-led open streets event, in partnership with the Government of Karnataka.</p>
                 <p style="margin-top: 1rem;">During the COVID-19 lockdown, his Relief Riders initiative delivered groceries and medicines to those in need. The grassroots movement spread across 12 cities with 725 volunteer riders, earning the UN World Bicycle Day Award and receiving Nobel Peace Prize nominations.</p>
-                
+
+                <div class="author-awards">
+                    <div class="author-award">
+                        <i class="fas fa-award" aria-hidden="true"></i>
+                        <div>
+                            <strong>UN World Bicycle Day Award</strong>
+                            <span>2020</span>
+                        </div>
+                    </div>
+                    <div class="author-award">
+                        <i class="fas fa-medal" aria-hidden="true"></i>
+                        <div>
+                            <strong>Nobel Peace Prize Nomination</strong>
+                            <span>Relief Riders, 2020</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="podcast-section">
                     <h4><i class="fas fa-podcast"></i> Host of The OoruLabs Podcast</h4>
                     <p>Sathya hosts <strong>The OoruLabs Podcast</strong>, India's premier urban affairs show with 123 episodes and over 90 guests exploring cities, governance, and civic engagement.</p>
@@ -1297,47 +1417,75 @@
             <h2 class="faq-section-heading">Frequently Asked Questions</h2>
             <p class="faq-section-subtitle">Everything you need to know</p>
 
-            <div class="faq-list">
-                <!-- FAQ Item 1 -->
-                <div class="faq-entry">
-                    <h3 class="faq-entry-title">Who is this book for?</h3>
-                    <p class="faq-entry-answer">This book is for activists seeking practical tactics, policy students wanting real-world case studies, engaged citizens wondering how to change their city, and public servants seeking to understand citizen perspectives. If you've ever felt powerless against bureaucracy or wondered if ordinary people can really make a difference, this book is for you.</p>
+            <div class="faq-accordion" role="list">
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                        Who is this book for?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-1" role="region">
+                        <p>This book is for activists seeking practical tactics, policy students wanting real-world case studies, engaged citizens wondering how to change their city, and public servants seeking to understand citizen perspectives. If you've ever felt powerless against bureaucracy or wondered if ordinary people can really make a difference, this book is for you.</p>
+                    </div>
                 </div>
 
-                <!-- FAQ Item 2 -->
-                <div class="faq-entry">
-                    <h3 class="faq-entry-title">Where can I buy the book?</h3>
-                    <p class="faq-entry-answer">Break the Block is available now in hardcover on <a href="https://notionpress.com/in/read/break-the-block-hardcover/hardcover" target="_blank" rel="noopener noreferrer">Notionpress</a>. It will also be available on Amazon and Flipkart soon.</p>
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                        Where can I buy the book?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-2" role="region">
+                        <p>Break the Block is available now in hardcover on <a href="https://notionpress.com/in/read/break-the-block-hardcover/hardcover" target="_blank" rel="noopener noreferrer">Notionpress</a>. It will also be available on Amazon and Flipkart soon.</p>
+                    </div>
                 </div>
 
-                <!-- FAQ Item 3 -->
-                <div class="faq-entry">
-                    <h3 class="faq-entry-title">What makes this different from other books on activism?</h3>
-                    <p class="faq-entry-answer">Unlike academic policy textbooks, this is a real campaign story written by someone who lived it, not an observer. Unlike typical memoirs, it explicitly extracts 46 actionable lessons (12 Key Lessons + 34 Chapter Insights) you can apply to your own campaigns. It's both an engaging narrative and a practical field guide—showing you the "how," not just the "why."</p>
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                        What makes this different from other books on activism?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-3" role="region">
+                        <p>Unlike academic policy textbooks, this is a real campaign story written by someone who lived it, not an observer. Unlike typical memoirs, it explicitly extracts 46 actionable lessons (12 Key Lessons + 34 Chapter Insights) you can apply to your own campaigns. It's both an engaging narrative and a practical field guide—showing you the "how," not just the "why."</p>
+                    </div>
                 </div>
 
-                <!-- FAQ Item 4 -->
-                <div class="faq-entry">
-                    <h3 class="faq-entry-title">How long is the book?</h3>
-                    <p class="faq-entry-answer">The book contains <strong>12 chapters</strong> with <strong>12 Key Lessons and 34 Chapter Insights</strong> distilled from a decade-long campaign. Plus <strong>83 Extended Takeaways</strong> available in the course. It's designed to be an accessible read—substantive enough to provide real value, but not so academic that it becomes a chore.</p>
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+                        How long is the book?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-4" role="region">
+                        <p>The book contains <strong>12 chapters</strong> with <strong>12 Key Lessons and 34 Chapter Insights</strong> distilled from a decade-long campaign. Plus <strong>83 Extended Takeaways</strong> available in the course. It's designed to be an accessible read—substantive enough to provide real value, but not so academic that it becomes a chore.</p>
+                    </div>
                 </div>
 
-                <!-- FAQ Item 5 -->
-                <div class="faq-entry">
-                    <h3 class="faq-entry-title">What formats will be available?</h3>
-                    <p class="faq-entry-answer">Break the Block is available in <strong>hardcover</strong> (₹599) and <strong>paperback</strong> (₹349) on Notionpress now, with Amazon.in, Flipkart, Amazon.com, and Amazon.co.uk listings arriving by late February. <strong>eBook</strong> editions (Kindle, Kobo, Google Play) will be available by mid-March.</p>
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+                        What formats will be available?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-5" role="region">
+                        <p>Break the Block is available in <strong>hardcover</strong> (₹599) and <strong>paperback</strong> (₹349) on Notionpress now, with Amazon.in, Flipkart, Amazon.com, and Amazon.co.uk listings arriving by late February. <strong>eBook</strong> editions (Kindle, Kobo, Google Play) will be available by mid-March.</p>
+                    </div>
                 </div>
 
-                <!-- FAQ Item 6 -->
-                <div class="faq-entry">
-                    <h3 class="faq-entry-title">Is this only relevant to Bengaluru or Indian cities?</h3>
-                    <p class="faq-entry-answer">While the story takes place in Bengaluru, the lessons are universal. The tactics for navigating bureaucracy, building coalitions, using data effectively, and maintaining momentum over years apply to civic campaigns anywhere. Readers from Mumbai to Manila, Delhi to Denver will find applicable insights.</p>
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+                        Is this only relevant to Bengaluru or Indian cities?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-6" role="region">
+                        <p>While the story takes place in Bengaluru, the lessons are universal. The tactics for navigating bureaucracy, building coalitions, using data effectively, and maintaining momentum over years apply to civic campaigns anywhere. Readers from Mumbai to Manila, Delhi to Denver will find applicable insights.</p>
+                    </div>
                 </div>
 
-                <!-- FAQ Item 7 -->
-                <div class="faq-entry">
-                    <h3 class="faq-entry-title">Can I read sample chapters before buying?</h3>
-                    <p class="faq-entry-answer">Yes! The <strong>Introduction</strong> and first <strong>two chapters</strong> are available to read online for free. Scroll up to the "Read Online" section or visit the <a href="key-takeaways.html">online exclusive lessons</a> page to see what you'll learn from each chapter.</p>
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-7">
+                        Can I read sample chapters before buying?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-7" role="region">
+                        <p>Yes! The <strong>Introduction</strong> and first <strong>two chapters</strong> are available to read online for free. Scroll up to the "Read Online" section or visit the <a href="key-takeaways.html">online exclusive lessons</a> page to see what you'll learn from each chapter.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1373,17 +1521,17 @@
             </div>
             <div class="purchase-card">
                 <div class="store-name">Amazon</div>
-                <div class="store-detail">Amazon.in — Feb 24<br>.com / .co.uk — Feb 27</div>
-                <span class="store-badge">Coming Soon</span>
+                <div class="store-detail">Amazon.in — by Feb 24<br>.com / .co.uk — by Feb 27</div>
+                <span class="store-badge">Listing Soon</span>
             </div>
             <div class="purchase-card">
                 <div class="store-name">Flipkart</div>
-                <div class="store-detail">Hardcover & Paperback<br>Available Feb 25</div>
-                <span class="store-badge">Coming Soon</span>
+                <div class="store-detail">Hardcover & Paperback<br>Available by Feb 25</div>
+                <span class="store-badge">Listing Soon</span>
             </div>
             <div class="purchase-card">
                 <div class="store-name">eBook</div>
-                <div class="store-detail">Kindle · Kobo · Google Play<br>Available ~Mar 10</div>
+                <div class="store-detail">Kindle · Kobo · Google Play<br>Available by ~Mar 10</div>
                 <span class="store-badge">Coming Soon</span>
             </div>
         </div>
@@ -1394,28 +1542,29 @@
         <h2>Get in Touch</h2>
         <p class="contact-form-intro">Have questions about the book, want to invite Sathya to speak, or share your own civic activism story? Send a message below.</p>
         
-        <form class="contact-form" action="https://formspree.io/f/xregkdql" method="POST">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xregkdql" method="POST">
             <div class="form-group">
-                <label for="name">Your Name *</label>
-                <input type="text" id="name" name="name" required>
+                <label for="name">Your Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" required aria-required="true">
             </div>
-            
+
             <div class="form-group">
-                <label for="email">Your Email *</label>
-                <input type="email" id="email" name="email" required>
+                <label for="email">Your Email <span aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" required aria-required="true">
             </div>
-            
+
             <div class="form-group">
                 <label for="subject">Subject</label>
                 <input type="text" id="subject" name="subject" placeholder="e.g., Book talk invitation, Question about Chapter 5">
             </div>
-            
+
             <div class="form-group">
-                <label for="message">Message *</label>
-                <textarea id="message" name="message" required placeholder="Share your thoughts, questions, or stories..."></textarea>
+                <label for="message">Message <span aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" required aria-required="true" placeholder="Share your thoughts, questions, or stories..."></textarea>
             </div>
-            
-            <button type="submit" class="form-submit">Send Message</button>
+
+            <button type="submit" class="form-submit" id="contact-submit">Send Message</button>
+            <div class="form-status" id="contact-form-status" role="status" aria-live="polite"></div>
         </form>
     </section>
 
@@ -1483,6 +1632,17 @@
         </div>
     </footer>
 
+    <!-- Sticky Mobile Purchase Bar -->
+    <div class="mobile-purchase-bar" id="mobile-purchase-bar" aria-label="Purchase book">
+        <div class="mobile-purchase-bar-inner">
+            <div class="mobile-purchase-info">
+                <span class="mobile-purchase-title">Break the Block</span>
+                <span class="mobile-purchase-price">from ₹349</span>
+            </div>
+            <a href="https://notionpress.com/in/read/break-the-block-hardcover/hardcover" target="_blank" rel="noopener" class="mobile-purchase-cta">Buy Now</a>
+        </div>
+    </div>
+
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Note: Critical onclick functions now defined in <head> for immediate availability
 
@@ -1506,16 +1666,22 @@
                     }
                 }
                 
-                // Smooth scroll to target
+                // Smooth scroll to target with focus management
                 const target = document.querySelector(href);
                 if (target) {
                     // Small delay to allow menu to close first on mobile
+                    var delay = window.innerWidth <= 968 ? 300 : 0;
                     setTimeout(() => {
                         target.scrollIntoView({
                             behavior: 'smooth',
                             block: 'start'
                         });
-                    }, window.innerWidth <= 968 ? 300 : 0);
+                        // Set focus on target for screen readers
+                        if (!target.getAttribute('tabindex')) {
+                            target.setAttribute('tabindex', '-1');
+                        }
+                        target.focus({ preventScroll: true });
+                    }, delay);
                 }
             });
         });
@@ -1543,6 +1709,22 @@
             observer.observe(el);
         });
 
+        // Sticky mobile purchase bar - show after scrolling past hero
+        const mobilePurchaseBar = document.getElementById('mobile-purchase-bar');
+        const heroSection = document.querySelector('.hero');
+        if (mobilePurchaseBar && heroSection) {
+            const heroObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        mobilePurchaseBar.classList.remove('visible');
+                    } else {
+                        mobilePurchaseBar.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0 });
+            heroObserver.observe(heroSection);
+        }
+
         // Share functions
         // shareOn function defined at top of script
 
@@ -1550,13 +1732,93 @@
 
         // Share menu function defined at top of script
 
-        // Close menus when clicking outside
-        document.addEventListener('click', function(event) {
-            const navMenu = document.querySelector('.nav-menu');
-            const hamburger = document.querySelector('.hamburger');
-            const shareMenu = document.querySelector('.share-menu');
-            const shareToggle = document.querySelector('.share-toggle');
-            const isClickInsideMenu = navMenu.contains(event.target);
-            const isClickOnHamburger = hamburger.contains(event.target);
-            const isClickOnShareToggle = shareToggle && shareToggle.contains(event.target);
+        // Form submission feedback — Contact form
+        var contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var btn = document.getElementById('contact-submit');
+                var status = document.getElementById('contact-form-status');
+                var originalText = btn.textContent;
+                btn.textContent = 'Sending...';
+                btn.disabled = true;
+                fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' }
+                }).then(function(response) {
+                    if (response.ok) {
+                        status.textContent = 'Message sent! We\'ll be in touch soon.';
+                        status.className = 'form-status form-status-success';
+                        contactForm.reset();
+                    } else {
+                        status.textContent = 'Something went wrong. Please try again.';
+                        status.className = 'form-status form-status-error';
+                    }
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                }).catch(function() {
+                    status.textContent = 'Network error. Please check your connection.';
+                    status.className = 'form-status form-status-error';
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                });
+            });
+        }
+
+        // Form submission feedback — Email capture
+        var emailForm = document.getElementById('email-capture-form');
+        if (emailForm) {
+            emailForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var btn = document.getElementById('email-capture-submit');
+                var status = document.getElementById('email-form-status');
+                var originalText = btn.textContent;
+                btn.textContent = 'Sending...';
+                btn.disabled = true;
+                fetch(emailForm.action, {
+                    method: 'POST',
+                    body: new FormData(emailForm),
+                    headers: { 'Accept': 'application/json' }
+                }).then(function(response) {
+                    if (response.ok) {
+                        status.textContent = 'You\'re on the list! We\'ll email you when the eBook launches.';
+                        status.className = 'form-status form-status-light form-status-success';
+                        emailForm.reset();
+                    } else {
+                        status.textContent = 'Something went wrong. Please try again.';
+                        status.className = 'form-status form-status-light form-status-error';
+                    }
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                }).catch(function() {
+                    status.textContent = 'Network error. Please check your connection.';
+                    status.className = 'form-status form-status-light form-status-error';
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                });
+            });
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var expanded = this.getAttribute('aria-expanded') === 'true';
+                // Close all others
+                document.querySelectorAll('.faq-question').forEach(function(other) {
+                    other.setAttribute('aria-expanded', 'false');
+                    other.classList.remove('active');
+                    document.getElementById(other.getAttribute('aria-controls')).classList.remove('active');
+                });
+                // Toggle this one
+                if (!expanded) {
+                    this.setAttribute('aria-expanded', 'true');
+                    this.classList.add('active');
+                    document.getElementById(this.getAttribute('aria-controls')).classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
        

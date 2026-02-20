@@ -118,6 +118,20 @@
         .social-links{display:flex;gap:1rem;justify-content:center}
         .social-links a{display:inline-flex;align-items:center;justify-content:center;width:45px;height:45px;border-radius:50%;background:rgba(255,255,255,0.1);color:white!important;text-decoration:none}
         .book-page-footer{text-align:right;padding-top:2rem;margin-top:3rem;border-top:1px solid rgba(0,0,0,0.1);font-size:0.85rem;color:#999;font-style:italic}
+        .chapter-purchase-float{position:fixed;bottom:0;left:0;right:0;z-index:998;background:var(--primary);border-top:2px solid var(--accent);transform:translateY(100%);transition:transform 0.3s ease}
+        .chapter-purchase-float.visible{transform:translateY(0)}
+        .chapter-purchase-float-inner{display:flex;align-items:center;justify-content:space-between;padding:0.6rem 2rem;max-width:860px;margin:0 auto}
+        .chapter-purchase-float-text{color:rgba(255,255,255,0.8);font-family:'Space Mono',monospace;font-size:0.75rem;letter-spacing:0.5px}
+        .chapter-purchase-float-text strong{color:white}
+        .chapter-purchase-float-cta{display:inline-block;background:var(--accent);color:white;text-decoration:none;font-family:'Space Mono',monospace;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:0.55rem 1.5rem;border-radius:2px;white-space:nowrap}
+        .chapter-purchase-float-cta:hover{background:#e55a2b}
+        .chapter-progress-note{text-align:center;font-family:'Space Mono',monospace;font-size:0.75rem;color:rgba(255,255,255,0.5);margin-bottom:1.2rem;letter-spacing:0.5px}
+        .breadcrumb{max-width:860px;margin:5rem auto 0;padding:0.8rem 3rem;font-family:'Space Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.5px;color:#999}
+        .breadcrumb ol{list-style:none;display:flex;flex-wrap:wrap;gap:0.3rem;padding:0}
+        .breadcrumb li::after{content:' / ';margin-left:0.3rem;color:#ccc}
+        .breadcrumb li:last-child::after{content:''}
+        .breadcrumb a{color:var(--accent);text-decoration:none}
+        .breadcrumb a:hover{text-decoration:underline}
     </style>
 </head>
 <body>
@@ -139,6 +153,13 @@
         </div>
     </nav>
 
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#free-preview">Free Chapters</a></li>
+            <li aria-current="page">Chapter 1</li>
+        </ol>
+    </nav>
     <div class="reading-container">
         <div class="chapter-header">
             <div class="chapter-number">Chapter One</div>
@@ -279,12 +300,21 @@ Use digital platforms to refine ideas and identify who is willing to engage seri
         </div>
 
         <div class="cta-footer">
+            <p class="chapter-progress-note">You've read 2 of 3 free chapters</p>
             <h3>Continue Reading</h3>
-            <p>Chapter Two explores the fascinating history of Indian Railways and its impact on the campaign.</p>
+            <p>Next up: <strong>Chapter 2 — Trains of Thought</strong>. The 175-year bureaucracy you're fighting.</p>
             <div class="cta-buttons">
                 <a href="chapter2.html" class="cta-button">Read Chapter Two</a>
-                <a href="index.html#get-book" class="cta-button secondary">Get the Full Book</a>
+                <a href="index.html#get-book" class="cta-button secondary">Get All 12 Chapters — ₹349</a>
             </div>
+        </div>
+    </div>
+
+    <!-- Floating purchase banner -->
+    <div class="chapter-purchase-float" id="chapter-purchase-float">
+        <div class="chapter-purchase-float-inner">
+            <span class="chapter-purchase-float-text"><strong>Enjoying this?</strong> Get all 12 chapters</span>
+            <a href="https://notionpress.com/in/read/break-the-block-hardcover/hardcover" target="_blank" rel="noopener" class="chapter-purchase-float-cta">Buy — ₹349</a>
         </div>
     </div>
 
@@ -325,7 +355,7 @@ Use digital platforms to refine ideas and identify who is willing to engage seri
     </footer>
 
     <script>
-        window.addEventListener('scroll',()=>{const e=document.body.scrollTop||document.documentElement.scrollTop,t=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('progressBar').style.width=e/t*100+'%'});
+        window.addEventListener('scroll',()=>{const e=document.body.scrollTop||document.documentElement.scrollTop,t=document.documentElement.scrollHeight-document.documentElement.clientHeight,p=e/t*100;document.getElementById('progressBar').style.width=p+'%';const f=document.getElementById('chapter-purchase-float');if(f){if(p>30&&p<90){f.classList.add('visible')}else{f.classList.remove('visible')}}});
         function toggleShareMenu(e){e.stopPropagation();document.querySelector('.share-menu').classList.toggle('active')}
         document.addEventListener('click',e=>{const t=document.querySelector('.share-menu'),n=document.querySelector('.share-toggle');t&&n&&!n.contains(e.target)&&!t.contains(e.target)&&t.classList.remove('active')});
         function shareOn(e){const t=encodeURIComponent(window.location.href),n=encodeURIComponent('Read Chapter 1 of Break the Block');let o;switch(e){case'twitter':o=`https://twitter.com/intent/tweet?url=${t}&text=${n}`;break;case'linkedin':o=`https://www.linkedin.com/sharing/share-offsite/?url=${t}`;break;case'whatsapp':o=`https://wa.me/?text=${n}%20${t}`;break}o&&window.open(o,'_blank','width=600,height=400')}

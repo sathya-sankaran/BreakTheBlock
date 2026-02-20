@@ -424,6 +424,93 @@
             background: white;
             color: var(--primary);
         }
+
+        /* Floating purchase banner */
+        .chapter-purchase-float {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 998;
+            background: var(--primary);
+            border-top: 2px solid var(--accent);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .chapter-purchase-float.visible { transform: translateY(0); }
+        .chapter-purchase-float-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.6rem 2rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .chapter-purchase-float-text {
+            color: rgba(255,255,255,0.8);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+        .chapter-purchase-float-text strong {
+            color: white;
+        }
+        .chapter-purchase-float-cta {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.55rem 1.5rem;
+            border-radius: 2px;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+        .chapter-purchase-float-cta:hover { background: #e55a2b; }
+
+        /* Breadcrumb navigation */
+        .breadcrumb {
+            max-width: 860px;
+            margin: 5rem auto 0;
+            padding: 0.8rem 3rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #999;
+        }
+        .breadcrumb ol {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+            padding: 0;
+        }
+        .breadcrumb li::after {
+            content: ' / ';
+            margin-left: 0.3rem;
+            color: #ccc;
+        }
+        .breadcrumb li:last-child::after { content: ''; }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        /* Reading progress counter */
+        .chapter-progress-note {
+            text-align: center;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.5px;
+        }
     </style>
 </head>
 <body>
@@ -460,6 +547,13 @@
         </div>
     </nav>
 
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#free-preview">Free Chapters</a></li>
+            <li aria-current="page">Introduction</li>
+        </ol>
+    </nav>
     <div class="reading-container">
         <div class="chapter-header">
             <div class="chapter-number">Introduction</div>
@@ -612,12 +706,21 @@
         </div>
 
         <div class="cta-footer">
+            <p class="chapter-progress-note">You've read 1 of 3 free chapters</p>
             <h3>Continue the Journey</h3>
-            <p>Discover how the campaign unfolded across 12 chapters of lessons and insights.</p>
+            <p>Next up: <strong>Chapter 1 — The Online-Offline Bridge</strong>. How digital platforms transformed into real-world action.</p>
             <div class="cta-buttons">
                 <a href="chapter1.html" class="cta-button">Read Chapter One</a>
-                <a href="index.html#get-book" class="cta-button secondary">Get the Full Book</a>
+                <a href="index.html#get-book" class="cta-button secondary">Get All 12 Chapters — ₹349</a>
             </div>
+        </div>
+    </div>
+
+    <!-- Floating purchase banner -->
+    <div class="chapter-purchase-float" id="chapter-purchase-float">
+        <div class="chapter-purchase-float-inner">
+            <span class="chapter-purchase-float-text"><strong>Enjoying this?</strong> Get all 12 chapters</span>
+            <a href="https://notionpress.com/in/read/break-the-block-hardcover/hardcover" target="_blank" rel="noopener" class="chapter-purchase-float-cta">Buy — ₹349</a>
         </div>
     </div>
 
@@ -663,6 +766,16 @@
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
             document.getElementById('progressBar').style.width = scrolled + '%';
+
+            // Show floating purchase banner after 30% scroll
+            const floatBar = document.getElementById('chapter-purchase-float');
+            if (floatBar) {
+                if (scrolled > 30 && scrolled < 90) {
+                    floatBar.classList.add('visible');
+                } else {
+                    floatBar.classList.remove('visible');
+                }
+            }
         });
 
         function toggleShareMenu(event) {
