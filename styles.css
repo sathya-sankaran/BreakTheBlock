@@ -1058,6 +1058,121 @@
 
 
 
+        /* Dedication Section */
+        .dedication-section {
+            padding: 4rem 5%;
+            background: var(--primary);
+            color: #e8e4df;
+        }
+
+        .dedication-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .dedication-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .dedication-text {
+            border-left: 3px solid var(--accent);
+            padding-left: 1.5rem;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .dedication-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #d4d0cb;
+        }
+
+        .dedication-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .dedication-closing {
+            font-style: italic;
+            font-weight: 600;
+            color: #e8e4df !important;
+        }
+
+        .dedication-author {
+            display: block;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .dedication-author-intro {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .dedication-author-intro img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+        }
+
+        .dedication-author-intro h3 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #e8e4df;
+            margin-bottom: 0.3rem;
+        }
+
+        .dedication-author-intro p {
+            font-size: 0.95rem;
+            color: #999;
+            line-height: 1.5;
+            margin-bottom: 0.3rem;
+        }
+
+        .dedication-read-more {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .dedication-read-more:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .dedication-section {
+                padding: 3rem 5%;
+            }
+
+            .dedication-text p {
+                font-size: 1rem;
+            }
+
+            .dedication-author-intro img {
+                width: 64px;
+                height: 64px;
+            }
+        }
+
         /* Author Section */
         .author {
             padding: 5rem 5%;
