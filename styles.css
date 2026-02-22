@@ -2389,6 +2389,15 @@
             align-items: baseline;
             gap: 0.8rem;
             break-inside: avoid;
+            flex-wrap: wrap;
+        }
+
+        .chapter-subtitle {
+            display: block;
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--text-light);
+            width: 100%;
         }
 
         .chapters-compact-ol li::before {
