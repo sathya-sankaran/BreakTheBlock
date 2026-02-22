@@ -2155,11 +2155,8 @@
             max-width: 100%;
             height: auto;
             max-height: 600px;
-            box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.5),
-                0 0 80px rgba(255, 107, 53, 0.2);
-            border-radius: 4px;
             transition: transform 0.5s ease;
+            filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 80px rgba(255, 107, 53, 0.2));
         }
 
         .hero-book-cover img:hover {
