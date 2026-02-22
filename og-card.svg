@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&amp;family=Playfair+Display:ital,wght@0,400;1,400&amp;display=swap');
+    </style>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#2a2a2a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff6b35"/>
+      <stop offset="100%" stop-color="#e85d2c"/>
+    </linearGradient>
+    <clipPath id="cover-clip">
+      <rect x="60" y="65" width="320" height="500" rx="8"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.03">
+    <line x1="0" y1="0" x2="1200" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="400" y1="0" x2="1200" y2="530" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="200" x2="1000" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="200" y1="0" x2="1200" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="100" x2="1200" y2="530" stroke="#fff" stroke-width="1"/>
+  </g>
+
+  <!-- Orange accent bar - left edge -->
+  <rect x="0" y="0" width="6" height="630" fill="url(#accent)"/>
+
+  <!-- Book cover placeholder area -->
+  <rect x="60" y="65" width="320" height="500" rx="8" fill="#252525" stroke="#ff6b35" stroke-width="2"/>
+
+  <!-- Book cover content (placeholder text) -->
+  <text x="220" y="200" text-anchor="middle" font-family="'Space Mono', monospace" font-weight="700" font-size="28" fill="#ff6b35" letter-spacing="3">BREAK</text>
+  <text x="220" y="240" text-anchor="middle" font-family="'Space Mono', monospace" font-weight="700" font-size="28" fill="#ff6b35" letter-spacing="3">THE</text>
+  <text x="220" y="280" text-anchor="middle" font-family="'Space Mono', monospace" font-weight="700" font-size="28" fill="#ff6b35" letter-spacing="3">BLOCK</text>
+
+  <!-- Decorative lines on cover -->
+  <line x1="120" y1="310" x2="320" y2="310" stroke="#ff6b35" stroke-width="1" opacity="0.4"/>
+  <text x="220" y="350" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="13" fill="#999" letter-spacing="1">Twelve Lessons for</text>
+  <text x="220" y="370" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="13" fill="#999" letter-spacing="1">Citizen-Led Change</text>
+  <line x1="120" y1="390" x2="320" y2="390" stroke="#ff6b35" stroke-width="1" opacity="0.4"/>
+
+  <text x="220" y="480" text-anchor="middle" font-family="'Space Mono', monospace" font-size="14" fill="#ccc" letter-spacing="2">SATHYA SANKARAN</text>
+
+  <!-- Replace placeholder: swap this group with an <image> tag referencing book-cover.png if needed -->
+  <!-- <image x="60" y="65" width="320" height="500" href="book-cover.png" clip-path="url(#cover-clip)"/> -->
+
+  <!-- Right side content -->
+
+  <!-- Orange decorative element -->
+  <rect x="460" y="140" width="60" height="4" fill="#ff6b35" rx="2"/>
+
+  <!-- Title -->
+  <text x="460" y="195" font-family="'Space Mono', monospace" font-weight="700" font-size="52" fill="#ffffff" letter-spacing="4">BREAK</text>
+  <text x="460" y="255" font-family="'Space Mono', monospace" font-weight="700" font-size="52" fill="#ffffff" letter-spacing="4">THE BLOCK</text>
+
+  <!-- Orange underline -->
+  <rect x="460" y="275" width="120" height="4" fill="#ff6b35" rx="2"/>
+
+  <!-- Tagline -->
+  <text x="460" y="330" font-family="'Playfair Display', Georgia, serif" font-style="italic" font-size="26" fill="#cccccc">5 citizens. 10 years.</text>
+  <text x="460" y="365" font-family="'Playfair Display', Georgia, serif" font-style="italic" font-size="26" fill="#cccccc">1 impossible victory.</text>
+
+  <!-- Divider -->
+  <line x1="460" y1="400" x2="560" y2="400" stroke="#555" stroke-width="1"/>
+
+  <!-- Author -->
+  <text x="460" y="440" font-family="'Space Mono', monospace" font-size="16" fill="#ff6b35" letter-spacing="3">SATHYA SANKARAN</text>
+
+  <!-- Subtitle -->
+  <text x="460" y="475" font-family="'Playfair Display', Georgia, serif" font-size="15" fill="#888">Lessons for Citizen-Led Change from</text>
+  <text x="460" y="498" font-family="'Playfair Display', Georgia, serif" font-size="15" fill="#888">Bengaluru's Rail Campaign</text>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="620" width="1200" height="10" fill="url(#accent)"/>
+
+  <!-- Website URL -->
+  <text x="1140" y="600" text-anchor="end" font-family="'Space Mono', monospace" font-size="14" fill="#555" letter-spacing="1">breaktheblock.in</text>
+</svg>
