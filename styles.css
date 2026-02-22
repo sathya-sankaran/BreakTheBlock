@@ -2209,6 +2209,30 @@
             transform: scale(1.05) rotate(-2deg);
         }
 
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-cta-group {
+                justify-content: center;
+            }
+
+            .hero-book-cover {
+                order: 2;
+            }
+
+            .hero-book-cover img {
+                max-height: 400px;
+            }
+        }
+
         /* About Section */
         .about {
             background: white;
@@ -2323,6 +2347,110 @@
         .chapter-desc {
             font-size: 1.1rem;
             opacity: 0.8;
+        }
+
+        /* Compact Chapters + Free Preview */
+        .chapters-compact {
+            background: var(--light);
+            padding: 4rem 5%;
+        }
+
+        .chapters-compact-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .chapters-compact-heading {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .chapters-compact-grid {
+            margin-bottom: 2rem;
+        }
+
+        .chapters-compact-ol {
+            list-style: none;
+            counter-reset: chapter;
+            padding: 0;
+            margin: 0;
+            columns: 2;
+            column-gap: 3rem;
+        }
+
+        .chapters-compact-ol li {
+            counter-increment: chapter;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            font-size: 1.05rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.8rem;
+            break-inside: avoid;
+        }
+
+        .chapters-compact-ol li::before {
+            content: counter(chapter, decimal-leading-zero);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 700;
+            min-width: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .chapters-compact-preview {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .chapters-compact-preview p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .chapters-compact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .chapter-btn-compact {
+            padding: 0.7rem 1.5rem;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .chapter-btn-compact:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            .chapters-compact-ol {
+                columns: 1;
+            }
+
+            .chapters-compact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         /* Book Showcase */
