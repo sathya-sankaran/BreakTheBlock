@@ -370,6 +370,52 @@
             opacity: 0.9;
         }
 
+        .proof-quote {
+            width: 100%;
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 0.5rem;
+        }
+
+        .proof-quote .star-rating {
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .proof-quote .stars {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        .proof-quote .star-rating .rating-text {
+            color: rgba(255, 255, 255, 0.9);
+            opacity: 1;
+        }
+
+        .proof-quote .featured-quote {
+            margin: 0 auto;
+            max-width: 700px;
+        }
+
+        .proof-quote .featured-quote p {
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .proof-quote .featured-quote cite {
+            color: rgba(255, 255, 255, 0.6);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            font-style: normal;
+        }
+
         /* Media Strip - As Covered By */
         .media-strip {
             background: var(--light);
@@ -3654,31 +3700,29 @@
 }
 
 /* Get Book Stats */
-.get-book-stats {
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    text-align: center;
-}
-
-.get-book-stat-number {
-    font-size: 3rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 0.5rem;
-}
-
-.get-book-stat-label {
-    font-size: 1.1rem;
-    font-family: 'Space Mono', monospace;
-    opacity: 0.9;
-}
-
 .get-book-price {
     font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.get-book-final-cta {
+    display: inline-block;
+    background: white;
+    color: var(--accent);
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.get-book-final-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */
