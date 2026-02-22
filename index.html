@@ -818,28 +818,26 @@
         // Share functionality (needs to be global for data-share attributes)
         function shareOn(platform) {
             const url = encodeURIComponent(window.location.href);
-            const title = encodeURIComponent(document.title);
-            const text = encodeURIComponent('Just read about how ordinary Bengaluru citizens fought the system and actually got suburban rail approved. If you care about how cities work (or don\'t), this is worth your time:');
-            
+
             let shareUrl;
             switch(platform) {
                 case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${encodeURIComponent('Bengaluru citizens vs 175 years of railway bureaucracy. They won. This book is the playbook:')}`;
                     break;
                 case 'facebook':
-                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${encodeURIComponent('Just read about how ordinary Bengaluru citizens fought the system and actually got suburban rail approved. If you care about how cities work (or don\'t), this is worth your time:')}`;
                     break;
                 case 'linkedin':
                     shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
                     break;
                 case 'whatsapp':
-                    shareUrl = `https://wa.me/?text=${text}%20${url}`;
+                    shareUrl = `https://wa.me/?text=${encodeURIComponent('Hey, thought you\'d find this interesting — a bunch of Bengaluru citizens actually got suburban rail approved by taking on the system themselves. The whole story is in this book:')}%20${url}`;
                     break;
                 case 'email':
-                    shareUrl = `mailto:?subject=${title}&body=${text}%20${url}`;
+                    shareUrl = `mailto:?subject=${encodeURIComponent('This book about Bengaluru\'s rail fight is worth your time')}&body=${encodeURIComponent('Came across this and thought of you — it\'s about how ordinary citizens in Bengaluru took on the railway bureaucracy and won. If you\'re into how cities actually change, give it a look:')}%20${url}`;
                     break;
             }
-            
+
             if (shareUrl) {
                 window.open(shareUrl, '_blank', 'width=600,height=400');
             }
