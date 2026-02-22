@@ -1937,25 +1937,26 @@
 
         function shareOn(platform) {
             const url = encodeURIComponent(window.location.href);
-            const title = encodeURIComponent('Key Takeaways - Break the Block');
-            const text = encodeURIComponent('12 Key Lessons + 34 Chapter Insights from Bengaluru\'s rail battle');
-            
+
             let shareUrl;
             switch(platform) {
                 case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${encodeURIComponent('90 lessons from a decade of citizen activism. Hard-won, not theoretical:')}`;
                     break;
                 case 'facebook':
-                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${encodeURIComponent('These takeaways from Bengaluru\'s suburban rail fight are practical gold for anyone trying to change how their city works:')}`;
                     break;
                 case 'linkedin':
                     shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
                     break;
                 case 'whatsapp':
-                    shareUrl = `https://wa.me/?text=${text}%20${url}`;
+                    shareUrl = `https://wa.me/?text=${encodeURIComponent('Some really practical lessons here from the Bengaluru rail campaign — useful if you\'ve ever tried to get anything done with the government:')}%20${url}`;
+                    break;
+                case 'email':
+                    shareUrl = `mailto:?subject=${encodeURIComponent('90 lessons from Bengaluru\'s rail campaign — worth bookmarking')}&body=${encodeURIComponent('This page has the key takeaways from Break the Block — 12 big lessons and 34 chapter insights on civic activism, coalition-building, and navigating bureaucracy. Practical stuff:')}%20${url}`;
                     break;
             }
-            
+
             if (shareUrl) {
                 window.open(shareUrl, '_blank', 'width=600,height=400');
             }

@@ -1458,25 +1458,23 @@
 
         function shareOn(platform) {
             const url = encodeURIComponent(window.location.href);
-            const title = encodeURIComponent('Break the Block - Campaign Timeline');
-            const text = encodeURIComponent('Check out the timeline of the decade-long campaign to bring suburban rail to Bengaluru');
 
             let shareUrl;
             switch(platform) {
                 case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${encodeURIComponent('A decade of citizen activism mapped out — every milestone in Bengaluru\'s suburban rail fight:')}`;
                     break;
                 case 'facebook':
-                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${encodeURIComponent('This timeline of Bengaluru\'s suburban rail campaign is fascinating — ten years of citizen effort, setbacks, and breakthroughs all laid out:')}`;
                     break;
                 case 'linkedin':
                     shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
                     break;
                 case 'whatsapp':
-                    shareUrl = `https://wa.me/?text=${text}%20${url}`;
+                    shareUrl = `https://wa.me/?text=${encodeURIComponent('Check this out — the entire timeline of how Bengaluru\'s suburban rail went from citizen petition to reality. Wild ride:')}%20${url}`;
                     break;
                 case 'email':
-                    shareUrl = `mailto:?subject=${title}&body=${text}%20${url}`;
+                    shareUrl = `mailto:?subject=${encodeURIComponent('The full timeline of Bengaluru\'s rail campaign')}&body=${encodeURIComponent('Found this detailed timeline of the decade-long fight to bring suburban rail to Bengaluru — RTIs, coalitions, political blocks, and eventual wins. Interesting if you follow urban policy:')}%20${url}`;
                     break;
             }
 

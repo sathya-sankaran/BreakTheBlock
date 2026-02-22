@@ -794,28 +794,26 @@
 
         function shareOn(platform) {
             const url = encodeURIComponent(window.location.href);
-            const title = encodeURIComponent(document.title);
-            const text = encodeURIComponent('Read the Introduction to Break the Block - how five citizens brought commuter rail to Bengaluru');
-            
+
             let shareUrl;
             switch(platform) {
                 case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${encodeURIComponent('Five citizens. One impossible goal. This is how Bengaluru\'s suburban rail fight began:')}`;
                     break;
                 case 'facebook':
-                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${encodeURIComponent('Reading the introduction to Break the Block — the story of how ordinary citizens took on the system to bring rail to Bengaluru. You can read it free:')}`;
                     break;
                 case 'linkedin':
                     shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
                     break;
                 case 'whatsapp':
-                    shareUrl = `https://wa.me/?text=${text}%20${url}`;
+                    shareUrl = `https://wa.me/?text=${encodeURIComponent('Hey, you can read this for free — it\'s the intro to a book about how Bengaluru citizens fought for suburban rail. Pretty gripping:')}%20${url}`;
                     break;
                 case 'email':
-                    shareUrl = `mailto:?subject=${title}&body=${text}%20${url}`;
+                    shareUrl = `mailto:?subject=${encodeURIComponent('Free chapter — how Bengaluru\'s rail fight started')}&body=${encodeURIComponent('Found this free introduction to Break the Block. It\'s about how five citizens took on 175 years of bureaucracy to get suburban rail approved. Worth a read:')}%20${url}`;
                     break;
             }
-            
+
             if (shareUrl) {
                 window.open(shareUrl, '_blank', 'width=600,height=400');
             }
