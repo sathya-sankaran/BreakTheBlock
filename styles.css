@@ -569,6 +569,12 @@
             margin: 0 auto;
         }
 
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .compare-card {
             padding: 2.5rem;
             border-radius: 8px;
@@ -1569,7 +1575,7 @@
         }
 
         .contact-form h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
             margin-bottom: 1rem;
             text-align: center;
             font-family: 'Space Mono', monospace;
@@ -1646,7 +1652,7 @@
         }
 
         .comments-section h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
             margin-bottom: 1rem;
             text-align: center;
             font-family: 'Space Mono', monospace;
@@ -2243,6 +2249,13 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
 
         .about-text {
@@ -3359,7 +3372,7 @@
 /* Testimonials Section Headings */
 .testimonials-heading {
     font-family: 'Space Mono', monospace;
-    font-size: 2rem;
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
     margin-bottom: 0.5rem;
     color: var(--primary);
     text-align: center;
@@ -3480,7 +3493,7 @@
 }
 
 .chapters-heading {
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     margin-bottom: 1rem;
     text-align: center;
     font-family: 'Space Mono', monospace;
@@ -3735,7 +3748,7 @@
 }
 
 .faq-section-heading {
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     margin-bottom: 1rem;
     text-align: center;
     font-family: 'Space Mono', monospace;
@@ -4298,5 +4311,100 @@ a[target="_blank"]::after {
 
     .hero-cta-primary {
         animation: none;
+    }
+}
+
+/* =====================================================
+   Mobile Responsiveness Fixes
+   ===================================================== */
+
+/* Fix 5: Reduce proof-strip gap on small screens */
+@media (max-width: 480px) {
+    .proof-strip {
+        gap: 1.5rem;
+    }
+}
+
+/* Fix 6: Reduce section padding on mobile */
+@media (max-width: 768px) {
+    .faq-section,
+    .contact-form,
+    .comments-section {
+        padding: 3rem 5%;
+    }
+
+    .faq-section-subtitle,
+    .chapters-subtitle {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Fix 7: Scale down email "DISMISSED" stamp on mobile */
+@media (max-width: 768px) {
+    .email-card::after {
+        font-size: 1.5rem;
+        padding: 0.2rem 1rem;
+    }
+}
+
+/* Fix 8: Constrain book showcase image on mobile */
+@media (max-width: 968px) {
+    .book-showcase-cover img {
+        max-width: 280px;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+/* Fix 9: Only apply hover transforms on pointer devices */
+@media (hover: hover) {
+    .compare-card:hover,
+    .testimonial-card:hover,
+    .speech-bubble-card:hover,
+    .chapter-card:hover,
+    .event-card:hover,
+    .purchase-card.active:hover,
+    .retailer-card:hover,
+    .lesson-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .hero-book-cover img:hover {
+        transform: scale(1.05) rotate(-2deg);
+    }
+}
+
+/* Disable hover transforms on touch devices */
+@media (hover: none) {
+    .compare-card:hover,
+    .testimonial-card:hover,
+    .speech-bubble-card:hover,
+    .chapter-card:hover,
+    .event-card:hover,
+    .purchase-card.active:hover,
+    .retailer-card:hover,
+    .lesson-card:hover {
+        transform: none;
+    }
+
+    .hero-book-cover img:hover {
+        transform: none;
+    }
+}
+
+/* Fix 3: key-takeaways inline 3-col stat grid */
+.course-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .course-stat-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }
