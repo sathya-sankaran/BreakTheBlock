@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>12 Key Lessons + 34 Chapter Insights: Urban Activism Field Guide | Break the Block</title>
-    
+    <title>46 Free Lessons from Break the Block | Urban Activism Field Guide</title>
+
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
@@ -143,7 +143,7 @@
     }
     </script>
 
-    <meta name="description" content="12 Key Lessons and 34 Chapter Insights on urban activism from a decade-long citizen campaign. Plus 83 Extended Takeaways available in the course. Filter by 12 themes.">
+    <meta name="description" content="46 free lessons on urban activism from Break the Block by Sathya Sankaran. 12 Key Lessons and 34 Chapter Insights from a decade-long citizen campaign for Bengaluru's commuter rail.">
     <meta name="keywords" content="civic activism lessons, urban activism insights, citizen campaign takeaways, grassroots organizing guide, Bengaluru rail campaign lessons, Break the Block key takeaways">
 
     <!-- Canonical URL -->
@@ -156,28 +156,28 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.breaktheblock.in/key-takeaways.html">
-    <meta property="og:title" content="12 Key Lessons + 34 Chapter Insights | Break the Block">
-    <meta property="og:description" content="12 Key Lessons, 34 Chapter Insights, and 83 Course-Exclusive Extended Takeaways. The complete field guide to citizen-led urban change.">
+    <meta property="og:title" content="46 Free Lessons | Break the Block by Sathya Sankaran">
+    <meta property="og:description" content="12 Key Lessons and 34 Chapter Insights from a decade-long citizen campaign. The field guide to citizen-led urban change.">
     <meta property="og:image" content="https://www.breaktheblock.in/og-card.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Break the Block">
     <meta property="article:author" content="Sathya Sankaran">
     <meta property="article:published_time" content="2026-02-20">
-    <meta property="article:modified_time" content="2026-02-20">
+    <meta property="article:modified_time" content="2026-02-26">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.breaktheblock.in/key-takeaways.html">
-    <meta name="twitter:title" content="12 Key Lessons + 34 Chapter Insights | Break the Block">
-    <meta name="twitter:description" content="12 Key Lessons, 34 Chapter Insights, and 83 Course-Exclusive Extended Takeaways. The complete field guide to citizen-led urban change.">
+    <meta name="twitter:title" content="46 Free Lessons | Break the Block by Sathya Sankaran">
+    <meta name="twitter:description" content="12 Key Lessons and 34 Chapter Insights from a decade-long citizen campaign. The field guide to citizen-led urban change.">
     <meta name="twitter:image" content="https://www.breaktheblock.in/og-card.jpg">
     <meta name="twitter:image:alt" content="Book cover of Break the Block by Sathya Sankaran">
     <meta property="og:image:alt" content="Book cover of Break the Block by Sathya Sankaran">
 
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <style>
         * {
             margin: 0;
@@ -243,15 +243,15 @@
         }
 
         .back-link::before {
-            content: '← ';
+            content: '\2190 ';
         }
 
-                /* Share Dropdown */
+        /* Share Dropdown */
         .share-dropdown {
             position: relative;
         }
 
-                .share-toggle {
+        .share-toggle {
             background: transparent;
             border: 2px solid var(--primary);
             color: var(--primary);
@@ -265,10 +265,6 @@
             transition: all 0.3s ease;
             font-size: 0.9rem;
         }
-
-        
-
-        
 
         .share-menu {
             position: absolute;
@@ -315,17 +311,9 @@
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
-        .share-menu-item:last-child {
-            border-bottom: none;
-        }
-
-        .share-menu-item:first-child {
-            border-radius: 8px 8px 0 0;
-        }
-
-        .share-menu-item:last-child {
-            border-radius: 0 0 8px 8px;
-        }
+        .share-menu-item:last-child { border-bottom: none; }
+        .share-menu-item:first-child { border-radius: 8px 8px 0 0; }
+        .share-menu-item:last-child { border-radius: 0 0 8px 8px; }
 
         .share-menu-item:hover {
             background: var(--light);
@@ -343,257 +331,461 @@
         .share-menu-item:nth-child(4):hover { color: #25D366; }
         .share-menu-item:nth-child(5):hover { color: #666; }
 
-        /* Main Container */
-        .container {
-            max-width: 900px;
+        /* ========== WELCOME BANNER ========== */
+        .welcome-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--rail-blue) 100%);
+            color: white;
+            padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 5vw, 5%);
+            margin-top: 72px; /* clear fixed nav */
+        }
+
+        .welcome-banner-inner {
+            max-width: 960px;
             margin: 0 auto;
-            padding: 6rem 2rem 3rem;
-            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            gap: clamp(1.5rem, 3vw, 2.5rem);
         }
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 3rem 0 4rem;
-            border-bottom: 3px solid var(--accent);
-            margin-bottom: 4rem;
+        .welcome-banner-cover {
+            flex-shrink: 0;
         }
 
-        .exclusive-badge {
+        .welcome-banner-cover img {
+            width: clamp(80px, 12vw, 120px);
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .welcome-banner-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .welcome-banner-text h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: white;
+        }
+
+        .welcome-banner-hook {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .welcome-banner-author {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .welcome-banner-proof {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            opacity: 0.85;
+            margin-bottom: 1rem;
+        }
+
+        .welcome-banner-proof span {
+            white-space: nowrap;
+        }
+
+        .welcome-banner-cta {
             display: inline-block;
             background: var(--accent);
             color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
+            padding: 0.7rem 1.5rem;
+            text-decoration: none;
             font-family: 'Space Mono', monospace;
+            font-weight: 700;
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 1.5rem;
+            border: 2px solid var(--accent);
+            transition: all 0.3s;
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
         }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1rem;
+        .welcome-banner-cta:hover {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 2rem 3rem;
+            min-height: 100vh;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero h2 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            margin-bottom: 0.75rem;
             font-weight: 700;
             color: var(--primary);
         }
 
-        .hero p {
-            font-size: 1.3rem;
+        .hero .subtitle {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(0.85rem, 1.5vw, 1rem);
+            color: var(--rail-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .hero p.description {
+            font-size: 1.2rem;
             color: #666;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        /* Table of Contents */
-        .toc {
+        /* ========== PROGRESS INDICATOR ========== */
+        .progress-tracker {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1rem 1.5rem;
             background: white;
-            padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
         }
 
-        .toc h2 {
+        .progress-tracker-label {
             font-family: 'Space Mono', monospace;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-
-        .toc-list {
-            list-style: none;
-        }
-
-        .toc-item {
-            margin-bottom: 1rem;
-        }
-
-        .toc-link {
+            font-size: 0.85rem;
             color: var(--text);
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .toc-link:hover {
-            color: var(--accent);
-        }
-
-        .toc-link .chapter-num {
-            font-family: 'Space Mono', monospace;
-            color: var(--accent);
-            font-weight: 700;
-            min-width: 30px;
-        }
-
-        .toc-link.coming-soon {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        /* Chapter Section */
-        .chapter-section {
-            margin-bottom: 3rem;
-            scroll-margin-top: 100px;
-        }
-
-        .chapter-header {
-            background: linear-gradient(135deg, var(--rail-blue), var(--primary));
-            color: white;
-            padding: 2rem;
-            border-radius: 8px 8px 0 0;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chapter-header:hover {
-            background: linear-gradient(135deg, #005a9e, #2d2d2d);
-        }
-
-        .chapter-header-content h2 {
-            font-size: 2rem;
             margin-bottom: 0.5rem;
-            color: white;
         }
 
-        .chapter-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            color: white;
+        .progress-bar-track {
+            width: 100%;
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            overflow: hidden;
         }
 
-        .toggle-icon {
-            font-size: 1.5rem;
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 3px;
+            transition: width 0.4s ease;
+            width: 0%;
+        }
+
+        /* ========== CHAPTER GRID ========== */
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .chapter-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .chapter-card:hover {
+            box-shadow: 0 6px 24px rgba(0,0,0,0.14);
+            transform: translateY(-3px);
+        }
+
+        .chapter-card.expanded {
+            grid-column: 1 / -1;
+        }
+
+        .chapter-card-header {
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .chapter-number {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            flex-shrink: 0;
+            min-width: 48px;
+        }
+
+        .chapter-card-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .chapter-card-info h3 {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+            line-height: 1.3;
+        }
+
+        .chapter-card-subtitle {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 0.4rem;
+        }
+
+        .chapter-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .chapter-card-count {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--rail-blue);
+        }
+
+        .chapter-free-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--accent);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .chapter-free-link:hover {
+            text-decoration: underline;
+        }
+
+        .chapter-card-toggle {
+            flex-shrink: 0;
+            color: var(--accent);
+            font-size: 1rem;
             transition: transform 0.3s;
-            color: white;
+            align-self: center;
         }
 
-        .toggle-icon.collapsed {
+        .chapter-card-toggle.collapsed {
             transform: rotate(-90deg);
         }
 
-        .lesson-count {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            font-family: 'Space Mono', monospace;
-            margin-top: 0.5rem;
-            color: white;
-        }
-
-        .chapter-content {
-            background: white;
-            padding: 0;
-            border-radius: 0 0 8px 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        /* ========== CHAPTER EXPANDED CONTENT ========== */
+        .chapter-card-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-out, padding 0.3s ease-out;
+            padding: 0 1.5rem;
         }
 
-        .chapter-content.expanded {
+        .chapter-card-content.expanded {
             max-height: 10000px;
-            padding: 2.5rem;
+            padding: 0 1.5rem 2rem;
             transition: max-height 1s ease-in, padding 0.3s ease-in;
         }
 
-        /* Lesson Boxes */
-        .lesson {
-            margin-bottom: 3rem;
-            border-left: 4px solid var(--accent);
-            padding-left: 1.5rem;
+        /* Key Lesson Card */
+        .key-lesson-card {
+            background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%);
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+            position: relative;
         }
 
-        .lesson:last-child {
-            margin-bottom: 0;
+        .key-lesson-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
         }
 
-        .lesson-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .lesson-section {
-            margin-bottom: 1.5rem;
-        }
-
-        .lesson-section h4 {
+        .key-lesson-badge {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-family: 'Space Mono', monospace;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .key-lesson-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .key-lesson-card h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
             color: var(--accent);
             margin-bottom: 0.5rem;
         }
 
-        .lesson-section p {
-            margin-bottom: 0.8rem;
+        .key-lesson-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text);
         }
 
-        .lesson-section ul {
-            margin-left: 1.5rem;
-            margin-bottom: 0.8rem;
+        /* Insight Cards */
+        .insight-card {
+            border-left: 4px solid var(--rail-blue);
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+            background: white;
+            border-radius: 0 8px 8px 0;
         }
 
-        .lesson-section li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Expand/Collapse All Button */
-        .expand-collapse-all {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .expand-collapse-btn {
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 30px;
+        .insight-label {
             font-family: 'Space Mono', monospace;
-            font-size: 0.9rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s;
+            color: var(--rail-blue);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
         }
 
-        .expand-collapse-btn:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
+        .insight-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
         }
 
-        /* CTA Section */
-        .cta-section {
-            background: var(--primary);
+        .insight-card p {
+            font-size: 0.95rem;
+            color: var(--text);
+            opacity: 0.85;
+        }
+
+        /* ========== MID-PAGE CTA ========== */
+        .mid-cta {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--rail-blue) 100%);
             color: white;
-            padding: 3rem;
-            border-radius: 8px;
+            padding: 2rem;
+            border-radius: 12px;
             text-align: center;
-            margin-top: 5rem;
+        }
+
+        .mid-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .mid-cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--accent);
+            transition: all 0.3s;
+            min-height: 48px;
+        }
+
+        .mid-cta-btn:hover {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        /* ========== BOTTOM CTA ========== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--rail-blue) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
         }
 
         .cta-section h3 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 3vw, 2rem);
             margin-bottom: 1rem;
+            color: white;
         }
 
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+        .cta-section > p {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
             opacity: 0.9;
+        }
+
+        .course-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .course-stat {
+            background: rgba(255,255,255,0.1);
+            padding: 1.25rem;
+            border-radius: 8px;
+        }
+
+        .course-stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .course-stat-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        .course-stat-note {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 0.3rem;
+        }
+
+        .course-stat.highlight {
+            background: rgba(255,255,255,0.15);
+            border: 2px solid var(--secondary);
         }
 
         .cta-buttons {
@@ -604,8 +796,9 @@
         }
 
         .cta-button {
-            display: inline-block;
-            padding: 1.2rem 2.5rem;
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
             background: var(--accent);
             color: white;
             text-decoration: none;
@@ -613,8 +806,10 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-size: 0.9rem;
             transition: all 0.3s;
             border: 3px solid var(--accent);
+            min-height: 48px;
         }
 
         .cta-button:hover {
@@ -633,7 +828,7 @@
             color: var(--primary);
         }
 
-        /* Footer */
+        /* ========== FOOTER ========== */
         footer {
             background: var(--primary);
             color: white;
@@ -680,43 +875,70 @@
             opacity: 1;
         }
 
-        /* Responsive */
+        /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
             .top-nav {
+                padding: 0.75rem 1rem;
+            }
+
+            .welcome-banner {
+                margin-top: 60px;
+            }
+
+            .welcome-banner-inner {
                 flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
+                text-align: center;
+            }
+
+            .welcome-banner-proof {
+                justify-content: center;
             }
 
             .container {
-                padding: 5rem 1.5rem 2rem;
+                padding: 0 1.25rem 2rem;
             }
 
-            .chapter-content.expanded {
-                padding: 1.5rem;
+            .chapter-grid {
+                grid-template-columns: 1fr;
             }
 
-            .lesson {
-                padding-left: 1rem;
+            .chapter-card-content.expanded {
+                padding: 0 1.25rem 1.5rem;
+            }
+
+            .course-stat-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+            }
+
+            .course-stat {
+                padding: 1rem 0.5rem;
             }
 
             .cta-buttons {
                 flex-direction: column;
+                align-items: stretch;
             }
 
-            .chapter-header {
+            .cta-button {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-nav {
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
+                gap: 0.5rem;
+                padding: 0.5rem 1rem;
             }
 
-            .toggle-icon {
-                align-self: flex-end;
+            .welcome-banner {
+                margin-top: 90px;
             }
         }
 
         @media print {
-            .top-nav, .share-buttons, .cta-section, footer, .expand-collapse-all, .toggle-icon {
+            .top-nav, .share-dropdown, .cta-section, footer, .progress-tracker, .mid-cta, .welcome-banner-cta {
                 display: none;
             }
 
@@ -724,237 +946,24 @@
                 background: white;
             }
 
-            .container {
-                padding-top: 2rem;
+            .welcome-banner {
+                margin-top: 0;
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
 
-            .chapter-content {
+            .chapter-card-content {
                 max-height: none !important;
-                padding: 2.5rem !important;
+                padding: 0 1.5rem 2rem !important;
             }
-        }
-    
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .slide-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .scale-in {
-            opacity: 0;
-            transform: scale(0.95);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .scale-in.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-    
-        /* Enhanced Lesson Cards */
-        .lesson-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .lesson-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(0, 78, 137, 0.05));
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .lesson-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            border-left-color: var(--rail-blue);
-        }
-
-        .lesson-card:hover::before {
-            opacity: 1;
-        }
-    
-        
-        /* NEW: Theme Filter Navigation */
-        .theme-filter-section {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 3rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        .theme-filter-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .theme-filter-header h3 {
-            font-family: 'Space Mono', monospace;
-            font-size: 1.1rem;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .clear-filters {
-            background: transparent;
-            border: 2px solid var(--accent);
-            color: var(--accent);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.85rem;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-        }
-
-        .clear-filters:hover {
-            background: var(--accent);
-            color: white;
-        }
-
-        .theme-filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .theme-filter {
-            padding: 0.7rem 1.2rem;
-            border: 2px solid #ddd;
-            background: white;
-            border-radius: 20px;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--text);
-        }
-
-        .theme-filter:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        .theme-filter.active {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: white;
-        }
-
-        .theme-filter .count {
-            opacity: 0.7;
-            font-size: 0.8em;
-            margin-left: 0.4rem;
-        }
-
-        .active-filters-display {
-            margin-top: 1rem;
-            padding: 1rem;
-            background: var(--light);
-            border-radius: 8px;
-            display: none;
-        }
-
-        .active-filters-display.show {
-            display: block;
-        }
-
-        .active-filters-display p {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.9rem;
-            color: var(--text);
-        }
-
-        /* Theme Badges on Lessons */
-        .lesson-themes {
-            margin: 1rem 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .theme-badge {
-            display: inline-block;
-            padding: 0.4rem 0.9rem;
-            border-radius: 12px;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .theme-badge.theme-government { background: #004e89; }
-        .theme-badge.theme-champions { background: #ff6b35; }
-        .theme-badge.theme-public { background: #2d5016; }
-        .theme-badge.theme-documentation { background: #6c3082; }
-        .theme-badge.theme-data { background: #008080; }
-        .theme-badge.theme-timing { background: #f7931e; }
-        .theme-badge.theme-media { background: #c41e3a; }
-        .theme-badge.theme-strategy { background: #1a1a2e; }
-        .theme-badge.theme-coalition { background: #8b4513; }
-        .theme-badge.theme-credibility { background: #daa520; }
-        .theme-badge.theme-communication { background: #ff69b4; }
-        .theme-badge.theme-persistence { background: #696969; }
-
-        /* Hidden state for filtered lessons */
-        .chapter-section.filtered-out {
-            display: none;
-        }
-
-        .lessons-count-display {
-            text-align: center;
-            margin: 2rem 0;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-            font-family: 'Space Mono', monospace;
-            color: var(--accent);
-            font-weight: 600;
         }
     </style>
-<script type="application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "12 Key Lessons + 34 Chapter Insights - Break the Block",
+        "name": "46 Free Lessons - Break the Block",
         "description": "Complete learning framework with 12 Key Lessons, 34 Chapter Insights, and 83 Course-Exclusive Extended Takeaways on urban activism from Bengaluru campaign",
         "url": "https://www.breaktheblock.in/key-takeaways.html",
         "breadcrumb": {
@@ -999,12 +1008,12 @@
     <div class="reading-progress" id="progressBar"></div>
 
     <nav class="top-nav">
-        <a href="index.html#online-exclusive" class="back-link">Back to Book Website</a>
-                <div class="share-dropdown">
+        <a href="index.html" class="back-link">Break the Block</a>
+        <div class="share-dropdown">
             <button class="share-toggle" id="share-toggle-btn" aria-label="Share">
                 <i class="fas fa-share-alt"></i>
             </button>
-            <div class="share-menu">
+            <div class="share-menu" id="shareMenu">
                 <a href="#" data-share="twitter" class="share-menu-item">
                     <i class="fab fa-twitter"></i> Twitter
                 </a>
@@ -1024,778 +1033,582 @@
         </div>
     </nav>
 
+    <!-- ========== WELCOME BANNER ========== -->
+    <section class="welcome-banner">
+        <div class="welcome-banner-inner">
+            <a href="index.html" class="welcome-banner-cover">
+                <img src="book-cover.png" alt="Break the Block book cover" width="120" height="auto">
+            </a>
+            <div class="welcome-banner-text">
+                <h1>Break the Block</h1>
+                <p class="welcome-banner-hook">5 citizens. 10 years. 1 impossible victory.</p>
+                <p class="welcome-banner-author">By Sathya Sankaran</p>
+                <div class="welcome-banner-proof">
+                    <span><i class="fas fa-calendar-alt"></i> 10 Years</span>
+                    <span><i class="fas fa-train"></i> 57 Stations</span>
+                    <span><i class="fas fa-star"></i> 5-Star Rating</span>
+                </div>
+                <a href="index.html#get-book" class="welcome-banner-cta">Get the Book</a>
+            </div>
+        </div>
+    </section>
+
     <div class="container">
-        
-        <!-- Hero Section -->
+
+        <!-- ========== HERO ========== -->
         <div class="hero">
-            <span class="exclusive-badge">Book + Course Materials</span>
-            <h1>Key Lessons & Chapter Insights</h1>
-            <p class="subtitle">From Citizen to Change-Maker</p>
-            <p class="stats">12 Key Lessons • 34 Chapter Insights • 83 Course-Exclusive Extended Takeaways</p>
-            <p>The complete learning framework for <strong>urban activists</strong>, <strong>policy students</strong>, and <strong>public servants</strong>. Explicit, actionable insights on <strong>grassroots organizing</strong>, <strong>navigating bureaucracy</strong>, and <strong>citizen advocacy</strong>.</p>
-            <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 8px; font-size: 0.95rem;">
-                <strong>Three Tiers:</strong> Tier 1 (Key Lessons) + Tier 2 (Chapter Insights) shown below. <a href="#course-cta" style="color: var(--secondary);">Tier 3 (83 Extended Takeaways) available in the course →</a>
+            <h2>46 Free Lessons from the Book</h2>
+            <p class="subtitle">12 Key Lessons + 34 Chapter Insights</p>
+            <p class="description">From citizen to change-maker: real-world lessons on grassroots organizing, navigating bureaucracy, and building coalitions that win.</p>
+        </div>
+
+        <!-- ========== PROGRESS TRACKER ========== -->
+        <div class="progress-tracker">
+            <p class="progress-tracker-label" id="progressLabel">You've explored 0 of 12 chapters</p>
+            <div class="progress-bar-track">
+                <div class="progress-bar-fill" id="progressFill"></div>
             </div>
         </div>
 
-        <!-- Theme Notice -->
-        <div style="background: #f0f4f8; padding: 1.5rem 2rem; border-radius: 8px; margin: 1rem 0; text-align: center;">
-            <p style="font-family: 'Space Mono', monospace; font-size: 0.9rem; color: var(--rail-blue); margin: 0;">
-                <i class="fas fa-filter" style="margin-right: 0.5rem;"></i>
-                <strong>Theme-based filtering</strong> available in the full course with 83 Extended Takeaways. 
-                <a href="#course-cta" style="color: var(--accent);">Learn more →</a>
-            </p>
-        </div>
+        <!-- ========== CHAPTER GRID ========== -->
+        <div class="chapter-grid" id="chapterGrid">
 
-        <div class="lessons-count-display" id="lessonsCountDisplay">
-            Showing all 46 lessons (12 Key Lessons + 34 Chapter Insights)
-        </div>
-
-        <!-- Table of Contents -->
-        <nav class="toc">
-            <h2>Table of Contents</h2>
-
-        <section id="chapter-1" class="chapter-section">
-            <div class="chapter-header" data-chapter="chapter-1">
-                <div class="chapter-header-content">
-                    <h2>Chapter 1: The Online-Offline Bridge</h2>
-                    <p class="chapter-subtitle">Where Ideas Meet Action</p>
-                    <p class="lesson-count"><i class="fas fa-key"></i> 1 Key Lesson + 3 Chapter Insights</p>
-                    <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 0.3rem; font-family: 'Space Mono', monospace;">
-                        <i class="fas fa-graduation-cap"></i> +5 Extended Takeaways in Course
-                    </p>
-                </div>
-                <div class="toggle-icon collapsed" id="toggle-chapter-1">
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-            </div>
-            <div class="chapter-content" id="content-chapter-1">
-                
-                <!-- KEY LESSON (Tier 1) -->
-                <div class="lesson key-lesson" style="border-left: 4px solid var(--accent); background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <span style="background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700;">KEY LESSON</span>
-                        <span style="color: var(--accent); font-family: 'Space Mono', monospace; font-size: 0.85rem;">Tier 1</span>
+            <!-- Chapter 1 -->
+            <div class="chapter-card" id="card-chapter-1" data-chapter="chapter-1">
+                <div class="chapter-card-header">
+                    <span class="chapter-number">01</span>
+                    <div class="chapter-card-info">
+                        <h3>The Online-Offline Bridge</h3>
+                        <p class="chapter-card-subtitle">Where Ideas Meet Action</p>
+                        <div class="chapter-card-meta">
+                            <span class="chapter-card-count">1 Key Lesson + 3 Insights</span>
+                            <a href="chapter1.html" class="chapter-free-link" onclick="event.stopPropagation();">Read free &rarr;</a>
+                        </div>
                     </div>
-                    <h3 class="lesson-title" style="color: var(--accent);">Lesson 1: Legitimacy Precedes Influence</h3>
-                    <div class="lesson-section">
+                    <div class="chapter-card-toggle collapsed" id="toggle-chapter-1">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="chapter-card-content" id="content-chapter-1">
+                    <div class="key-lesson-card">
+                        <div class="key-lesson-header">
+                            <span class="key-lesson-badge">1</span>
+                            <span class="key-lesson-label">Key Lesson</span>
+                        </div>
+                        <h4>Legitimacy Precedes Influence</h4>
                         <p>You can't demand a seat at the table. Earn it through consistent, quality engagement. Officials were watching Praja.in before we knew it.</p>
                     </div>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Start Where Hierarchy Is Temporarily Suspended</h4>
+                        <p>Online platforms like Praja.in enabled anonymous idea-sharing across social barriers.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Start Where Hierarchy Is Temporarily Suspended</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Online platforms like Praja.in enabled anonymous idea-sharing across social barriers.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Ideas Don't Move Systems, Legitimacy Does</h4>
+                        <p>The quality of discussions, not the brilliance of ideas, opened doors.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Ideas Don't Move Systems, Legitimacy Does</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">The quality of discussions, not the brilliance of ideas, opened doors.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Online Spaces Prepare Action, They Do Not Create It</h4>
+                        <p>Bus Day and Mobilicity required face-to-face trust-building.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Online Spaces Prepare Action, They Do Not Create It</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Bus Day and Mobilicity required face-to-face trust-building.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="chapter-2" class="chapter-section">
-            <div class="chapter-header" data-chapter="chapter-2">
-                <div class="chapter-header-content">
-                    <h2>Chapter 2: Trains of Thought</h2>
-                    <p class="chapter-subtitle">The 175-Year Bureaucracy You're Fighting</p>
-                    <p class="lesson-count"><i class="fas fa-key"></i> 1 Key Lesson + 4 Chapter Insights</p>
-                    <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 0.3rem; font-family: 'Space Mono', monospace;">
-                        <i class="fas fa-graduation-cap"></i> +7 Extended Takeaways in Course
-                    </p>
-                </div>
-                <div class="toggle-icon collapsed" id="toggle-chapter-2">
-                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
-            <div class="chapter-content" id="content-chapter-2">
-                
-                <!-- KEY LESSON (Tier 1) -->
-                <div class="lesson key-lesson" style="border-left: 4px solid var(--accent); background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <span style="background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700;">KEY LESSON</span>
-                        <span style="color: var(--accent); font-family: 'Space Mono', monospace; font-size: 0.85rem;">Tier 1</span>
+
+            <!-- Chapter 2 -->
+            <div class="chapter-card" id="card-chapter-2" data-chapter="chapter-2">
+                <div class="chapter-card-header">
+                    <span class="chapter-number">02</span>
+                    <div class="chapter-card-info">
+                        <h3>Trains of Thought</h3>
+                        <p class="chapter-card-subtitle">The 175-Year Bureaucracy You're Fighting</p>
+                        <div class="chapter-card-meta">
+                            <span class="chapter-card-count">1 Key Lesson + 4 Insights</span>
+                            <a href="chapter2.html" class="chapter-free-link" onclick="event.stopPropagation();">Read free &rarr;</a>
+                        </div>
                     </div>
-                    <h3 class="lesson-title" style="color: var(--accent);">Lesson 2: Understand the System You're Fighting</h3>
-                    <div class="lesson-section">
+                    <div class="chapter-card-toggle collapsed" id="toggle-chapter-2">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="chapter-card-content" id="content-chapter-2">
+                    <div class="key-lesson-card">
+                        <div class="key-lesson-header">
+                            <span class="key-lesson-badge">2</span>
+                            <span class="key-lesson-label">Key Lesson</span>
+                        </div>
+                        <h4>Understand the System You're Fighting</h4>
                         <p>Indian Railways evolved from 40+ private companies into one monolith. Understanding this history explains why introducing ANY new service requires battling 175 years of institutional inertia.</p>
                     </div>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Every System Is Working as Designed</h4>
+                        <p>Railways optimizes for long-distance, not urban commuters.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Every System Is Working as Designed</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Railways optimizes for long-distance, not urban commuters.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Institutions Optimize for Risk Avoidance</h4>
+                        <p>New services threaten existing revenue and operations.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Institutions Optimize for Risk Avoidance</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">New services threaten existing revenue and operations.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Know What You're Actually Asking For</h4>
+                        <p>Suburban rail vs. commuter rail vs. Metro - precision matters.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Know What You're Actually Asking For</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Suburban rail vs. commuter rail vs. Metro - precision matters.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Turf Drives Behavior More Than Logic</h4>
+                        <p>Inter-agency rivalries shape responses more than policy logic.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Turf Drives Behavior More Than Logic</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Inter-agency rivalries shape responses more than policy logic.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="chapter-3" class="chapter-section">
-            <div class="chapter-header" data-chapter="chapter-3">
-                <div class="chapter-header-content">
-                    <h2>Chapter 3: The Trip That Started It All</h2>
-                    <p class="chapter-subtitle">Seeing Is Believing</p>
-                    <p class="lesson-count"><i class="fas fa-key"></i> 1 Key Lesson + 3 Chapter Insights</p>
-                    <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 0.3rem; font-family: 'Space Mono', monospace;">
-                        <i class="fas fa-graduation-cap"></i> +7 Extended Takeaways in Course
-                    </p>
-                </div>
-                <div class="toggle-icon collapsed" id="toggle-chapter-3">
-                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
-            <div class="chapter-content" id="content-chapter-3">
-                
-                <!-- KEY LESSON (Tier 1) -->
-                <div class="lesson key-lesson" style="border-left: 4px solid var(--accent); background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <span style="background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700;">KEY LESSON</span>
-                        <span style="color: var(--accent); font-family: 'Space Mono', monospace; font-size: 0.85rem;">Tier 1</span>
+
+            <!-- Chapter 3 -->
+            <div class="chapter-card" id="card-chapter-3" data-chapter="chapter-3">
+                <div class="chapter-card-header">
+                    <span class="chapter-number">03</span>
+                    <div class="chapter-card-info">
+                        <h3>The Trip That Started It All</h3>
+                        <p class="chapter-card-subtitle">Seeing Is Believing</p>
+                        <div class="chapter-card-meta">
+                            <span class="chapter-card-count">1 Key Lesson + 3 Insights</span>
+                        </div>
                     </div>
-                    <h3 class="lesson-title" style="color: var(--accent);">Lesson 3: See Before You Advocate</h3>
-                    <div class="lesson-section">
+                    <div class="chapter-card-toggle collapsed" id="toggle-chapter-3">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="chapter-card-content" id="content-chapter-3">
+                    <div class="key-lesson-card">
+                        <div class="key-lesson-header">
+                            <span class="key-lesson-badge">3</span>
+                            <span class="key-lesson-label">Key Lesson</span>
+                        </div>
+                        <h4>See Before You Advocate</h4>
                         <p>The train journey from Bengaluru to Whitefield revealed both the problem and the potential. Real experience beats theoretical analysis.</p>
                     </div>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>You Cannot Advocate Credibly Without Seeing the Ground</h4>
+                        <p>The trip exposed infrastructure gaps no report could convey.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">You Cannot Advocate Credibly Without Seeing the Ground</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">The trip exposed infrastructure gaps no report could convey.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Systems Fail at the Edges</h4>
+                        <p>Station access, last-mile connectivity - where policy meets reality.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Systems Fail at the Edges</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Station access, last-mile connectivity - where policy meets reality.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>One Real User Can Reframe the Debate</h4>
+                        <p>A commuter's story carries more weight than ridership projections.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">One Real User Can Reframe the Debate</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">A commuter's story carries more weight than ridership projections.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="chapter-4" class="chapter-section">
-            <div class="chapter-header" data-chapter="chapter-4">
-                <div class="chapter-header-content">
-                    <h2>Chapter 4: The Report from Across the Seas</h2>
-                    <p class="chapter-subtitle">Four People, Three Continents, Two Weeks</p>
-                    <p class="lesson-count"><i class="fas fa-key"></i> 1 Key Lesson + 5 Chapter Insights</p>
-                    <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 0.3rem; font-family: 'Space Mono', monospace;">
-                        <i class="fas fa-graduation-cap"></i> +7 Extended Takeaways in Course
-                    </p>
-                </div>
-                <div class="toggle-icon collapsed" id="toggle-chapter-4">
-                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
-            <div class="chapter-content" id="content-chapter-4">
-                
-                <!-- KEY LESSON (Tier 1) -->
-                <div class="lesson key-lesson" style="border-left: 4px solid var(--accent); background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <span style="background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700;">KEY LESSON</span>
-                        <span style="color: var(--accent); font-family: 'Space Mono', monospace; font-size: 0.85rem;">Tier 1</span>
+
+            <!-- Chapter 4 -->
+            <div class="chapter-card" id="card-chapter-4" data-chapter="chapter-4">
+                <div class="chapter-card-header">
+                    <span class="chapter-number">04</span>
+                    <div class="chapter-card-info">
+                        <h3>The Report from Across the Seas</h3>
+                        <p class="chapter-card-subtitle">Four People, Three Continents, Two Weeks</p>
+                        <div class="chapter-card-meta">
+                            <span class="chapter-card-count">1 Key Lesson + 5 Insights</span>
+                        </div>
                     </div>
-                    <h3 class="lesson-title" style="color: var(--accent);">Lesson 4: Produce What the System Respects</h3>
-                    <div class="lesson-section">
+                    <div class="chapter-card-toggle collapsed" id="toggle-chapter-4">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="chapter-card-content" id="content-chapter-4">
+                    <div class="key-lesson-card">
+                        <div class="key-lesson-header">
+                            <span class="key-lesson-badge">4</span>
+                            <span class="key-lesson-label">Key Lesson</span>
+                        </div>
+                        <h4>Produce What the System Respects</h4>
                         <p>When an official says 'bring me a report,' it's a test. Deliver professional-grade work faster than expected, and you've proven you're worth taking seriously.</p>
                     </div>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>"Bring a Report" Is a Sorting Mechanism</h4>
+                        <p>Most complainants disappear. Those who deliver get meetings.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">"Bring a Report" Is a Sorting Mechanism</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Most complainants disappear. Those who deliver get meetings.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Evidence Carries More Weight When It Comes from the System</h4>
+                        <p>Using Railways' own data made our case harder to dismiss.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Evidence Carries More Weight When It Comes from the System</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Using Railways' own data made our case harder to dismiss.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Speed Signals Capability</h4>
+                        <p>Delivering in weeks what bureaucracies take years to produce.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Speed Signals Capability</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Delivering in weeks what bureaucracies take years to produce.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Documentation Is the Memory of a Long Campaign</h4>
+                        <p>Every email, every meeting note - institutional memory outlasts personnel changes.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Documentation Is the Memory of a Long Campaign</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Every email, every meeting note - institutional memory outlasts personnel changes.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Professionalism Creates Leverage</h4>
+                        <p>Presentation quality signals you're worth engaging with.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Professionalism Creates Leverage</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Presentation quality signals you're worth engaging with.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="chapter-5" class="chapter-section">
-            <div class="chapter-header" data-chapter="chapter-5">
-                <div class="chapter-header-content">
-                    <h2>Chapter 5: A Flurry of Action</h2>
-                    <p class="chapter-subtitle">Roundtables and Allies</p>
-                    <p class="lesson-count"><i class="fas fa-key"></i> 1 Key Lesson + 3 Chapter Insights</p>
-                    <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 0.3rem; font-family: 'Space Mono', monospace;">
-                        <i class="fas fa-graduation-cap"></i> +8 Extended Takeaways in Course
-                    </p>
-                </div>
-                <div class="toggle-icon collapsed" id="toggle-chapter-5">
-                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
-            <div class="chapter-content" id="content-chapter-5">
-                
-                <!-- KEY LESSON (Tier 1) -->
-                <div class="lesson key-lesson" style="border-left: 4px solid var(--accent); background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <span style="background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700;">KEY LESSON</span>
-                        <span style="color: var(--accent); font-family: 'Space Mono', monospace; font-size: 0.85rem;">Tier 1</span>
+
+            <!-- Chapter 5 -->
+            <div class="chapter-card" id="card-chapter-5" data-chapter="chapter-5">
+                <div class="chapter-card-header">
+                    <span class="chapter-number">05</span>
+                    <div class="chapter-card-info">
+                        <h3>A Flurry of Action</h3>
+                        <p class="chapter-card-subtitle">Roundtables and Allies</p>
+                        <div class="chapter-card-meta">
+                            <span class="chapter-card-count">1 Key Lesson + 3 Insights</span>
+                        </div>
                     </div>
-                    <h3 class="lesson-title" style="color: var(--accent);">Lesson 5: Coalitions Multiply Reach</h3>
-                    <div class="lesson-section">
+                    <div class="chapter-card-toggle collapsed" id="toggle-chapter-5">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="chapter-card-content" id="content-chapter-5">
+                    <div class="key-lesson-card">
+                        <div class="key-lesson-header">
+                            <span class="key-lesson-badge">5</span>
+                            <span class="key-lesson-label">Key Lesson</span>
+                        </div>
+                        <h4>Coalitions Multiply Reach</h4>
                         <p>No single organization could sustain this fight. CiSTUP, industry associations, citizen groups - each brought different resources and legitimacy.</p>
                     </div>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Third-Party Validation Reduces Political Risk</h4>
+                        <p>Academic endorsement let officials engage without appearing captured.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Third-Party Validation Reduces Political Risk</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Academic endorsement let officials engage without appearing captured.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Coalitions Form Around Outcomes</h4>
+                        <p>Different motivations, shared destination. IT companies wanted employee transport; we wanted public transit.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Coalitions Form Around Outcomes</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Different motivations, shared destination. IT companies wanted employee transport; we wanted public transit.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Endurance Requires Distributed Ownership</h4>
+                        <p>When key people moved on, others stepped up. No single point of failure.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Endurance Requires Distributed Ownership</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">When key people moved on, others stepped up. No single point of failure.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="chapter-6" class="chapter-section">
-            <div class="chapter-header" data-chapter="chapter-6">
-                <div class="chapter-header-content">
-                    <h2>Chapter 6: The Blocks Appear</h2>
-                    <p class="chapter-subtitle">When They Push Back</p>
-                    <p class="lesson-count"><i class="fas fa-key"></i> 1 Key Lesson + 2 Chapter Insights</p>
-                    <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 0.3rem; font-family: 'Space Mono', monospace;">
-                        <i class="fas fa-graduation-cap"></i> +8 Extended Takeaways in Course
-                    </p>
-                </div>
-                <div class="toggle-icon collapsed" id="toggle-chapter-6">
-                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
-            <div class="chapter-content" id="content-chapter-6">
-                
-                <!-- KEY LESSON (Tier 1) -->
-                <div class="lesson key-lesson" style="border-left: 4px solid var(--accent); background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <span style="background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700;">KEY LESSON</span>
-                        <span style="color: var(--accent); font-family: 'Space Mono', monospace; font-size: 0.85rem;">Tier 1</span>
+
+            <!-- Chapter 6 -->
+            <div class="chapter-card" id="card-chapter-6" data-chapter="chapter-6">
+                <div class="chapter-card-header">
+                    <span class="chapter-number">06</span>
+                    <div class="chapter-card-info">
+                        <h3>The Blocks Appear</h3>
+                        <p class="chapter-card-subtitle">When They Push Back</p>
+                        <div class="chapter-card-meta">
+                            <span class="chapter-card-count">1 Key Lesson + 2 Insights</span>
+                        </div>
                     </div>
-                    <h3 class="lesson-title" style="color: var(--accent);">Lesson 6: Resistance Reveals Interests</h3>
-                    <div class="lesson-section">
+                    <div class="chapter-card-toggle collapsed" id="toggle-chapter-6">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="chapter-card-content" id="content-chapter-6">
+                    <div class="key-lesson-card">
+                        <div class="key-lesson-header">
+                            <span class="key-lesson-badge">6</span>
+                            <span class="key-lesson-label">Key Lesson</span>
+                        </div>
+                        <h4>Resistance Reveals Interests</h4>
                         <p>BMRCL's dismissive 'grandiose, pious intention' email revealed turf protection, not technical objection. Opposition tells you what's really at stake.</p>
                     </div>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Silence Is Information</h4>
+                        <p>No response for months? Someone's decided to wait you out.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Silence Is Information</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">No response for months? Someone's decided to wait you out.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Systems Starve Ideas More Often Than They Reject Them</h4>
+                        <p>Death by delay, not denial. Endless 'further study' requests.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Systems Starve Ideas More Often Than They Reject Them</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Death by delay, not denial. Endless 'further study' requests.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="chapter-7" class="chapter-section">
-            <div class="chapter-header" data-chapter="chapter-7">
-                <div class="chapter-header-content">
-                    <h2>Chapter 7: Contradicting Signals</h2>
-                    <p class="chapter-subtitle">Yes, No, Maybe, Wait</p>
-                    <p class="lesson-count"><i class="fas fa-key"></i> 1 Key Lesson + 2 Chapter Insights</p>
-                    <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 0.3rem; font-family: 'Space Mono', monospace;">
-                        <i class="fas fa-graduation-cap"></i> +8 Extended Takeaways in Course
-                    </p>
-                </div>
-                <div class="toggle-icon collapsed" id="toggle-chapter-7">
-                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
-            <div class="chapter-content" id="content-chapter-7">
-                
-                <!-- KEY LESSON (Tier 1) -->
-                <div class="lesson key-lesson" style="border-left: 4px solid var(--accent); background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <span style="background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700;">KEY LESSON</span>
-                        <span style="color: var(--accent); font-family: 'Space Mono', monospace; font-size: 0.85rem;">Tier 1</span>
+
+            <!-- ========== MID-PAGE CTA (after chapter 6) ========== -->
+            <div class="mid-cta">
+                <p>Enjoying the lessons? Get the full book with all 12 chapters.</p>
+                <a href="index.html#get-book" class="mid-cta-btn">Get the Book</a>
+            </div>
+
+            <!-- Chapter 7 -->
+            <div class="chapter-card" id="card-chapter-7" data-chapter="chapter-7">
+                <div class="chapter-card-header">
+                    <span class="chapter-number">07</span>
+                    <div class="chapter-card-info">
+                        <h3>Contradicting Signals</h3>
+                        <p class="chapter-card-subtitle">Yes, No, Maybe, Wait</p>
+                        <div class="chapter-card-meta">
+                            <span class="chapter-card-count">1 Key Lesson + 2 Insights</span>
+                        </div>
                     </div>
-                    <h3 class="lesson-title" style="color: var(--accent);">Lesson 7: Outlast the Contradictions</h3>
-                    <div class="lesson-section">
+                    <div class="chapter-card-toggle collapsed" id="toggle-chapter-7">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="chapter-card-content" id="content-chapter-7">
+                    <div class="key-lesson-card">
+                        <div class="key-lesson-header">
+                            <span class="key-lesson-badge">7</span>
+                            <span class="key-lesson-label">Key Lesson</span>
+                        </div>
+                        <h4>Outlast the Contradictions</h4>
                         <p>Same government, opposite signals in the same week. One minister announces support; another agency kills the timeline. Consistency beats contradiction over time.</p>
                     </div>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Time Changes the Field of Play</h4>
+                        <p>Personnel rotate. Political priorities shift. Patient campaigns outlast resistant individuals.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Time Changes the Field of Play</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Personnel rotate. Political priorities shift. Patient campaigns outlast resistant individuals.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Reframe Victory as Baseline</h4>
+                        <p>Each small win becomes the new floor for negotiation.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Reframe Victory as Baseline</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Each small win becomes the new floor for negotiation.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="chapter-8" class="chapter-section">
-            <div class="chapter-header" data-chapter="chapter-8">
-                <div class="chapter-header-content">
-                    <h2>Chapter 8: The Doors Open</h2>
-                    <p class="chapter-subtitle">The Power of Connectors</p>
-                    <p class="lesson-count"><i class="fas fa-key"></i> 1 Key Lesson + 2 Chapter Insights</p>
-                    <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 0.3rem; font-family: 'Space Mono', monospace;">
-                        <i class="fas fa-graduation-cap"></i> +8 Extended Takeaways in Course
-                    </p>
-                </div>
-                <div class="toggle-icon collapsed" id="toggle-chapter-8">
-                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
-            <div class="chapter-content" id="content-chapter-8">
-                
-                <!-- KEY LESSON (Tier 1) -->
-                <div class="lesson key-lesson" style="border-left: 4px solid var(--accent); background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <span style="background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700;">KEY LESSON</span>
-                        <span style="color: var(--accent); font-family: 'Space Mono', monospace; font-size: 0.85rem;">Tier 1</span>
+
+            <!-- Chapter 8 -->
+            <div class="chapter-card" id="card-chapter-8" data-chapter="chapter-8">
+                <div class="chapter-card-header">
+                    <span class="chapter-number">08</span>
+                    <div class="chapter-card-info">
+                        <h3>The Doors Open</h3>
+                        <p class="chapter-card-subtitle">The Power of Connectors</p>
+                        <div class="chapter-card-meta">
+                            <span class="chapter-card-count">1 Key Lesson + 2 Insights</span>
+                        </div>
                     </div>
-                    <h3 class="lesson-title" style="color: var(--accent);">Lesson 8: Find Champions Inside</h3>
-                    <div class="lesson-section">
+                    <div class="chapter-card-toggle collapsed" id="toggle-chapter-8">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="chapter-card-content" id="content-chapter-8">
+                    <div class="key-lesson-card">
+                        <div class="key-lesson-header">
+                            <span class="key-lesson-badge">8</span>
+                            <span class="key-lesson-label">Key Lesson</span>
+                        </div>
+                        <h4>Find Champions Inside</h4>
                         <p>Gaurav Gupta, Jenny Pinto, sympathetic officials - insiders convert access into action. Champions need ammunition; provide it.</p>
                     </div>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Flexibility Preserves Purpose</h4>
+                        <p>Adapt tactics, maintain goals. We pivoted from suburban rail to commuter rail framing.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Flexibility Preserves Purpose</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Adapt tactics, maintain goals. We pivoted from suburban rail to commuter rail framing.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Champions Convert Access into Action</h4>
+                        <p>Inside advocates need external pressure to justify internal advocacy.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Champions Convert Access into Action</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Inside advocates need external pressure to justify internal advocacy.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="chapter-9" class="chapter-section">
-            <div class="chapter-header" data-chapter="chapter-9">
-                <div class="chapter-header-content">
-                    <h2>Chapter 9: Halting Moves</h2>
-                    <p class="chapter-subtitle">Winning the Battles, for the War</p>
-                    <p class="lesson-count"><i class="fas fa-key"></i> 1 Key Lesson + 3 Chapter Insights</p>
-                    <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 0.3rem; font-family: 'Space Mono', monospace;">
-                        <i class="fas fa-graduation-cap"></i> +7 Extended Takeaways in Course
-                    </p>
-                </div>
-                <div class="toggle-icon collapsed" id="toggle-chapter-9">
-                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
-            <div class="chapter-content" id="content-chapter-9">
-                
-                <!-- KEY LESSON (Tier 1) -->
-                <div class="lesson key-lesson" style="border-left: 4px solid var(--accent); background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <span style="background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700;">KEY LESSON</span>
-                        <span style="color: var(--accent); font-family: 'Space Mono', monospace; font-size: 0.85rem;">Tier 1</span>
+
+            <!-- Chapter 9 -->
+            <div class="chapter-card" id="card-chapter-9" data-chapter="chapter-9">
+                <div class="chapter-card-header">
+                    <span class="chapter-number">09</span>
+                    <div class="chapter-card-info">
+                        <h3>Halting Moves</h3>
+                        <p class="chapter-card-subtitle">Winning the Battles, for the War</p>
+                        <div class="chapter-card-meta">
+                            <span class="chapter-card-count">1 Key Lesson + 3 Insights</span>
+                        </div>
                     </div>
-                    <h3 class="lesson-title" style="color: var(--accent);">Lesson 9: Accumulate Small Wins</h3>
-                    <div class="lesson-section">
+                    <div class="chapter-card-toggle collapsed" id="toggle-chapter-9">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="chapter-card-content" id="content-chapter-9">
+                    <div class="key-lesson-card">
+                        <div class="key-lesson-header">
+                            <span class="key-lesson-badge">9</span>
+                            <span class="key-lesson-label">Key Lesson</span>
+                        </div>
+                        <h4>Accumulate Small Wins</h4>
                         <p>Major victory didn't come from one breakthrough. It came from hundreds of small wins: meetings secured, mentions in media, references in government documents.</p>
                     </div>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Partial Wins Shift Power</h4>
+                        <p>Each acknowledgment makes the next harder to deny.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Partial Wins Shift Power</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Each acknowledgment makes the next harder to deny.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Approval Is Only the Beginning</h4>
+                        <p>Getting a project sanctioned is 10% of the battle. Implementation is the other 90%.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Approval Is Only the Beginning</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Getting a project sanctioned is 10% of the battle. Implementation is the other 90%.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Awareness Is Not Mobilisation</h4>
+                        <p>People knowing about suburban rail isn't the same as them demanding it.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Awareness Is Not Mobilisation</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">People knowing about suburban rail isn't the same as them demanding it.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="chapter-10" class="chapter-section">
-            <div class="chapter-header" data-chapter="chapter-10">
-                <div class="chapter-header-content">
-                    <h2>Chapter 10: The Pivot</h2>
-                    <p class="chapter-subtitle">Capitalising Steely Resolve</p>
-                    <p class="lesson-count"><i class="fas fa-key"></i> 1 Key Lesson + 4 Chapter Insights</p>
-                    <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 0.3rem; font-family: 'Space Mono', monospace;">
-                        <i class="fas fa-graduation-cap"></i> +8 Extended Takeaways in Course
-                    </p>
-                </div>
-                <div class="toggle-icon collapsed" id="toggle-chapter-10">
-                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
-            <div class="chapter-content" id="content-chapter-10">
-                
-                <!-- KEY LESSON (Tier 1) -->
-                <div class="lesson key-lesson" style="border-left: 4px solid var(--accent); background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <span style="background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700;">KEY LESSON</span>
-                        <span style="color: var(--accent); font-family: 'Space Mono', monospace; font-size: 0.85rem;">Tier 1</span>
+
+            <!-- Chapter 10 -->
+            <div class="chapter-card" id="card-chapter-10" data-chapter="chapter-10">
+                <div class="chapter-card-header">
+                    <span class="chapter-number">10</span>
+                    <div class="chapter-card-info">
+                        <h3>The Pivot</h3>
+                        <p class="chapter-card-subtitle">Capitalising Steely Resolve</p>
+                        <div class="chapter-card-meta">
+                            <span class="chapter-card-count">1 Key Lesson + 4 Insights</span>
+                        </div>
                     </div>
-                    <h3 class="lesson-title" style="color: var(--accent);">Lesson 10: Mass Visibility Changes Dynamics</h3>
-                    <div class="lesson-section">
+                    <div class="chapter-card-toggle collapsed" id="toggle-chapter-10">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="chapter-card-content" id="content-chapter-10">
+                    <div class="key-lesson-card">
+                        <div class="key-lesson-header">
+                            <span class="key-lesson-badge">10</span>
+                            <span class="key-lesson-label">Key Lesson</span>
+                        </div>
+                        <h4>Mass Visibility Changes Dynamics</h4>
                         <p>Citizens for Bengaluru's ground campaigns - Cycle Day, Steel Flyover protests - created visibility that elite meetings never could. Politicians respond to demonstrated constituency.</p>
                     </div>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Make Ideas Easy to Repeat</h4>
+                        <p>'Namma Railu' became shorthand. Simple framing spreads.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Make Ideas Easy to Repeat</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">'Namma Railu' became shorthand. Simple framing spreads.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Affirmative Campaigns Require More Than Opposition</h4>
+                        <p>Stopping bad projects is easier than building good ones.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Affirmative Campaigns Require More Than Opposition</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Stopping bad projects is easier than building good ones.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Measure Reach by Uninstructed Behavior</h4>
+                        <p>When people start using your language without prompting, you've won mindshare.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Measure Reach by Uninstructed Behavior</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">When people start using your language without prompting, you've won mindshare.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Success Often Arrives Quietly</h4>
+                        <p>The announcement came when we'd stopped pushing. A decade of work, then sudden approval.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Success Often Arrives Quietly</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">The announcement came when we'd stopped pushing. A decade of work, then sudden approval.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="chapter-11" class="chapter-section">
-            <div class="chapter-header" data-chapter="chapter-11">
-                <div class="chapter-header-content">
-                    <h2>Chapter 11: The Reckoning</h2>
-                    <p class="chapter-subtitle">The Price of Victory</p>
-                    <p class="lesson-count"><i class="fas fa-key"></i> 1 Key Lesson + 2 Chapter Insights</p>
-                    <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 0.3rem; font-family: 'Space Mono', monospace;">
-                        <i class="fas fa-graduation-cap"></i> +8 Extended Takeaways in Course
-                    </p>
-                </div>
-                <div class="toggle-icon collapsed" id="toggle-chapter-11">
-                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
-            <div class="chapter-content" id="content-chapter-11">
-                
-                <!-- KEY LESSON (Tier 1) -->
-                <div class="lesson key-lesson" style="border-left: 4px solid var(--accent); background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <span style="background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700;">KEY LESSON</span>
-                        <span style="color: var(--accent); font-family: 'Space Mono', monospace; font-size: 0.85rem;">Tier 1</span>
+
+            <!-- Chapter 11 -->
+            <div class="chapter-card" id="card-chapter-11" data-chapter="chapter-11">
+                <div class="chapter-card-header">
+                    <span class="chapter-number">11</span>
+                    <div class="chapter-card-info">
+                        <h3>The Reckoning</h3>
+                        <p class="chapter-card-subtitle">The Price of Victory</p>
+                        <div class="chapter-card-meta">
+                            <span class="chapter-card-count">1 Key Lesson + 2 Insights</span>
+                        </div>
                     </div>
-                    <h3 class="lesson-title" style="color: var(--accent);">Lesson 11: Victory Is Not the End</h3>
-                    <div class="lesson-section">
+                    <div class="chapter-card-toggle collapsed" id="toggle-chapter-11">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="chapter-card-content" id="content-chapter-11">
+                    <div class="key-lesson-card">
+                        <div class="key-lesson-header">
+                            <span class="key-lesson-badge">11</span>
+                            <span class="key-lesson-label">Key Lesson</span>
+                        </div>
+                        <h4>Victory Is Not the End</h4>
                         <p>Union Cabinet approval in 2020 was just the beginning. Implementation, pricing, operations - the real fight continues. Declaring victory too early cedes the field.</p>
                     </div>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Change Extracts Personal Cost</h4>
+                        <p>A decade of evenings, weekends, emotional investment. Count the cost.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Change Extracts Personal Cost</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">A decade of evenings, weekends, emotional investment. Count the cost.</p>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Let Results Speak</h4>
+                        <p>Don't relitigate every battle. Document, move on, let outcomes vindicate.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Let Results Speak</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Don't relitigate every battle. Document, move on, let outcomes vindicate.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="chapter-12" class="chapter-section">
-            <div class="chapter-header" data-chapter="chapter-12">
-                <div class="chapter-header-content">
-                    <h2>Chapter 12: Conclusion</h2>
-                    <p class="chapter-subtitle">Success on Its Own Terms</p>
-                    <p class="lesson-count"><i class="fas fa-key"></i> 1 Key Lesson + 1 Chapter Insights</p>
-                    <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 0.3rem; font-family: 'Space Mono', monospace;">
-                        <i class="fas fa-graduation-cap"></i> +8 Extended Takeaways in Course
-                    </p>
-                </div>
-                <div class="toggle-icon collapsed" id="toggle-chapter-12">
-                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
-            <div class="chapter-content" id="content-chapter-12">
-                
-                <!-- KEY LESSON (Tier 1) -->
-                <div class="lesson key-lesson" style="border-left: 4px solid var(--accent); background: linear-gradient(135deg, #fff8f5 0%, #ffffff 100%);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <span style="background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700;">KEY LESSON</span>
-                        <span style="color: var(--accent); font-family: 'Space Mono', monospace; font-size: 0.85rem;">Tier 1</span>
+
+            <!-- Chapter 12 -->
+            <div class="chapter-card" id="card-chapter-12" data-chapter="chapter-12">
+                <div class="chapter-card-header">
+                    <span class="chapter-number">12</span>
+                    <div class="chapter-card-info">
+                        <h3>Conclusion</h3>
+                        <p class="chapter-card-subtitle">Success on Its Own Terms</p>
+                        <div class="chapter-card-meta">
+                            <span class="chapter-card-count">1 Key Lesson + 1 Insight</span>
+                        </div>
                     </div>
-                    <h3 class="lesson-title" style="color: var(--accent);">Lesson 12: Document Everything</h3>
-                    <div class="lesson-section">
+                    <div class="chapter-card-toggle collapsed" id="toggle-chapter-12">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="chapter-card-content" id="content-chapter-12">
+                    <div class="key-lesson-card">
+                        <div class="key-lesson-header">
+                            <span class="key-lesson-badge">12</span>
+                            <span class="key-lesson-label">Key Lesson</span>
+                        </div>
+                        <h4>Document Everything</h4>
                         <p>This book exists because we documented. Emails, meeting notes, media clips - institutional memory enables learning. Future campaigns will build on what we recorded.</p>
                     </div>
-                </div>
-
-                <!-- CHAPTER INSIGHT (Tier 2) -->
-                <div class="lesson chapter-insight" style="border-left: 4px solid var(--rail-blue);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <span style="background: var(--rail-blue); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.75rem;">INSIGHT</span>
-                        <span style="color: var(--rail-blue); font-family: 'Space Mono', monospace; font-size: 0.8rem;">Tier 2</span>
+                    <div class="insight-card">
+                        <p class="insight-label">Insight</p>
+                        <h4>Geographic Barrier Is Real</h4>
+                        <p>Distance from power centers (Delhi, state capital) is a structural disadvantage. Plan accordingly.</p>
                     </div>
-                    <h3 class="lesson-title" style="font-size: 1.15rem;">Geographic Barrier Is Real</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text); opacity: 0.9;">Distance from power centers (Delhi, state capital) is a structural disadvantage. Plan accordingly.</p>
                 </div>
-
             </div>
-        </section>
 
-        <!-- Course CTA Section -->
-        <section id="course-cta" style="background: linear-gradient(135deg, var(--primary) 0%, var(--rail-blue) 100%); padding: 4rem 2rem; margin: 3rem 0; border-radius: 12px; color: white; text-align: center;">
-            <h2 style="font-family: \'Space Mono\', monospace; font-size: 2rem; margin-bottom: 1rem; color: white;">Want All 129 Lessons?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 1.5rem; opacity: 0.9;">The complete course includes <strong>83 Extended Takeaways</strong> with detailed "What Happened," "Why It Matters," and "How to Apply It" sections for each.</p>
-            
+        </div><!-- /chapter-grid -->
+
+        <!-- ========== BOTTOM CTA ========== -->
+        <section id="course-cta" class="cta-section">
+            <h3>Want All 129 Lessons?</h3>
+            <p>The complete course includes <strong>83 Extended Takeaways</strong> with detailed "What Happened," "Why It Matters," and "How to Apply It" sections for each.</p>
+
             <div class="course-stat-grid">
-                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px;">
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--secondary);">12</div>
-                    <div style="font-family: 'Space Mono', monospace; font-size: 0.9rem;">Key Lessons</div>
-                    <div style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.5rem;">✓ Included above</div>
+                <div class="course-stat">
+                    <div class="course-stat-number">12</div>
+                    <div class="course-stat-label">Key Lessons</div>
+                    <div class="course-stat-note">Included above</div>
                 </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px;">
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--secondary);">34</div>
-                    <div style="font-family: 'Space Mono', monospace; font-size: 0.9rem;">Chapter Insights</div>
-                    <div style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.5rem;">✓ Included above</div>
+                <div class="course-stat">
+                    <div class="course-stat-number">34</div>
+                    <div class="course-stat-label">Chapter Insights</div>
+                    <div class="course-stat-note">Included above</div>
                 </div>
-                <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 8px; border: 2px solid var(--secondary);">
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--secondary);">83</div>
-                    <div style="font-family: 'Space Mono', monospace; font-size: 0.9rem;">Extended Takeaways</div>
-                    <div style="font-size: 0.8rem; color: var(--secondary); margin-top: 0.5rem;">Course Exclusive</div>
+                <div class="course-stat highlight">
+                    <div class="course-stat-number">83</div>
+                    <div class="course-stat-label">Extended Takeaways</div>
+                    <div class="course-stat-note" style="color: var(--secondary);">Course Exclusive</div>
                 </div>
             </div>
-            
-            <p style="font-size: 1rem; margin: 2rem 0; opacity: 0.8;">Perfect for workshops, classrooms, and self-study. Includes theme-based filtering and practical application guides.</p>
-            
-            <a href="/cdn-cgi/l/email-protection#fa899b8e92839bd4899b94919b889b94ba9d979b9396d4999597c5898f98909f998ec7b8889f9b91dfc8ca8e929fdfc8cab896959991dfc8cab9958f88899fdfc8cab3948e9f889f898e" style="display: inline-block; background: var(--secondary); color: var(--primary); padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 1.1rem;">Express Interest in the Course →</a>
+
+            <div class="cta-buttons">
+                <a href="index.html#get-book" class="cta-button">Get the Book</a>
+                <a href="mailto:sathya@breaktheblock.in?subject=Course%20Interest&body=I'm%20interested%20in%20the%20Break%20the%20Block%20course%20with%20all%20129%20lessons." class="cta-button secondary">Express Interest in Course</a>
+            </div>
         </section>
-        </div>
-        <footer>
+
+    </div><!-- /container -->
+
+    <footer>
         <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
             <!-- Social Media Links -->
             <div class="footer-social">
@@ -1815,7 +1628,7 @@
                     </a>
                 </div>
             </div>
-            
+
             <!-- Copyright and License -->
             <p style="text-align: center;">
                 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; color: inherit; text-decoration: none;">
@@ -1830,132 +1643,105 @@
             </p>
         </div>
     </footer>
-    </div>
 
     <script>
+        // Track which chapters have been opened
+        const openedChapters = new Set();
+
+        function updateProgress() {
+            const label = document.getElementById('progressLabel');
+            const fill = document.getElementById('progressFill');
+            const count = openedChapters.size;
+            label.textContent = 'You\u2019ve explored ' + count + ' of 12 chapters';
+            fill.style.width = ((count / 12) * 100) + '%';
+        }
+
+        function toggleChapter(chapterId) {
+            const card = document.getElementById('card-' + chapterId);
+            const content = document.getElementById('content-' + chapterId);
+            const icon = document.getElementById('toggle-' + chapterId);
+
+            if (!content || !icon || !card) return;
+
+            const isExpanding = !content.classList.contains('expanded');
+
+            content.classList.toggle('expanded');
+            icon.classList.toggle('collapsed');
+            card.classList.toggle('expanded');
+
+            if (isExpanding) {
+                openedChapters.add(chapterId);
+                updateProgress();
+            }
+        }
+
         // Reading progress bar
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
+        window.addEventListener('scroll', function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
             document.querySelector('.reading-progress').style.width = scrolled + '%';
         });
 
-        // Chapter toggle
-        function toggleChapter(chapterId) {
-            console.log('=== toggleChapter called ===');
-            console.log('  Chapter ID:', chapterId);
-            
-            const contentId = 'content-' + chapterId;
-            const iconId = 'toggle-' + chapterId;
-            
-            console.log('  Looking for content ID:', contentId);
-            console.log('  Looking for icon ID:', iconId);
-            
-            const content = document.getElementById(contentId);
-            const icon = document.getElementById(iconId);
-            
-            console.log('  Content element found:', !!content);
-            console.log('  Icon element found:', !!icon);
-            
-            if (content) {
-                const hadExpanded = content.classList.contains('expanded');
-                content.classList.toggle('expanded');
-                const hasExpanded = content.classList.contains('expanded');
-                
-                console.log('  Content expanded: was', hadExpanded, '-> now', hasExpanded);
-                console.log('  Content computed max-height:', window.getComputedStyle(content).maxHeight);
-            } else {
-                console.error('  ERROR: Content element not found!');
-            }
-            
-            if (icon) {
-                icon.classList.toggle('collapsed');
-                console.log('  Icon toggled');
-            } else {
-                console.error('  ERROR: Icon element not found!');
-            }
-        }
-        
-        // Initialize chapter toggle event listeners on DOMContentLoaded
+        // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('=== DOMContentLoaded fired ===');
-            
-            // Chapter toggle
-            const headers = document.querySelectorAll('.chapter-header[data-chapter]');
-            console.log('Found chapter headers:', headers.length);
-            
-            if (headers.length === 0) {
-                console.error('ERROR: No chapter headers found! Check if .chapter-header[data-chapter] exists');
-            }
-            
-            headers.forEach((header, index) => {
-                const chapterId = header.getAttribute('data-chapter');
-                console.log(`  [${index}] Adding listener to:`, chapterId);
-                
-                header.addEventListener('click', function(e) {
-                    console.log('=== CLICK EVENT ===');
-                    console.log('  Clicked element:', e.target);
-                    console.log('  Chapter ID:', chapterId);
-                    console.log('  Current target:', e.currentTarget);
+            // Chapter card click handlers
+            document.querySelectorAll('.chapter-card[data-chapter]').forEach(function(card) {
+                var chapterId = card.getAttribute('data-chapter');
+                card.querySelector('.chapter-card-header').addEventListener('click', function() {
                     toggleChapter(chapterId);
                 });
-                
-                // Also log if the header is visible
-                const rect = header.getBoundingClientRect();
-                console.log(`  [${index}] Visible:`, rect.height > 0);
             });
-            
+
+            // Expand Chapter 1 by default
+            toggleChapter('chapter-1');
+
             // Share menu toggle
-            const shareToggle = document.getElementById('share-toggle-btn');
-            const shareMenu = document.getElementById('shareMenu');
-            
+            var shareToggle = document.getElementById('share-toggle-btn');
+            var shareMenu = document.getElementById('shareMenu');
+
             if (shareToggle && shareMenu) {
                 shareToggle.addEventListener('click', function(e) {
                     e.stopPropagation();
                     shareMenu.classList.toggle('active');
                 });
-                
-                // Close share menu when clicking outside
+
                 document.addEventListener('click', function(event) {
                     if (!shareMenu.contains(event.target) && !shareToggle.contains(event.target)) {
                         shareMenu.classList.remove('active');
                     }
                 });
             }
-            
+
             // Share button click handlers
-            document.querySelectorAll('[data-share]').forEach(link => {
+            document.querySelectorAll('[data-share]').forEach(function(link) {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    const platform = this.getAttribute('data-share');
-                    shareOn(platform);
+                    shareOn(this.getAttribute('data-share'));
                 });
             });
         });
 
-        // Share menu event listeners added in DOMContentLoaded above
-
         function shareOn(platform) {
-            const url = encodeURIComponent(window.location.href);
+            var url = encodeURIComponent(window.location.href);
+            var shareUrl;
 
-            let shareUrl;
             switch(platform) {
                 case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${encodeURIComponent('90 lessons from a decade of citizen activism. Hard-won, not theoretical:')}`;
+                    shareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + encodeURIComponent('46 free lessons from a decade of citizen activism. Hard-won, not theoretical:');
                     break;
                 case 'facebook':
-                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${encodeURIComponent('These takeaways from Bengaluru\'s suburban rail fight are practical gold for anyone trying to change how their city works:')}`;
+                    shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
                     break;
                 case 'linkedin':
-                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+                    shareUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
                     break;
                 case 'whatsapp':
-                    shareUrl = `https://wa.me/?text=${encodeURIComponent('Some really practical lessons here from the Bengaluru rail campaign — useful if you\'ve ever tried to get anything done with the government:')}%20${url}`;
+                    shareUrl = 'https://wa.me/?text=' + encodeURIComponent('Some really practical lessons here from the Bengaluru rail campaign:') + '%20' + url;
                     break;
                 case 'email':
-                    shareUrl = `mailto:?subject=${encodeURIComponent('90 lessons from Bengaluru\'s rail campaign — worth bookmarking')}&body=${encodeURIComponent('This page has the key takeaways from Break the Block — 12 big lessons and 34 chapter insights on civic activism, coalition-building, and navigating bureaucracy. Practical stuff:')}%20${url}`;
+                    shareUrl = 'mailto:?subject=' + encodeURIComponent('46 lessons from Bengaluru\'s rail campaign') + '&body=' + encodeURIComponent('This page has 46 free lessons from Break the Block \u2014 12 big lessons and 34 chapter insights on civic activism:') + '%20' + url;
                     break;
             }
 
@@ -1964,59 +1750,6 @@
             }
             document.getElementById('shareMenu').classList.remove('active');
         }
-
-        function copyLink() {
-            navigator.clipboard.writeText(window.location.href).then(() => {
-                alert('Link copied to clipboard!');
-                document.getElementById('shareMenu').classList.remove('active');
-            });
-        }
-
-        // Theme filtering - simplified since theme filters removed
-        let activeThemes = new Set();
-
-        function toggleThemeFilter(theme) {
-            // Theme filtering moved to course - this function kept for compatibility
-            console.log('Theme filtering available in course materials');
-        }
-
-        function clearAllFilters() {
-            // Theme filtering moved to course - this function kept for compatibility
-            activeThemes.clear();
-        }
-
-        function applyFilters() {
-            // Theme filtering moved to course - simplified
-            const countDisplay = document.getElementById('lessonsCountDisplay');
-            if (countDisplay) {
-                countDisplay.textContent = 'Showing all 46 lessons (12 Key + 34 Insights)';
-            }
-        }
-
-        function updateActiveFiltersDisplay() {
-            // Theme filtering moved to course - this function kept for compatibility
-        }
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.chapter-section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            observer.observe(section);
-        });
     </script>
 </body>
 </html>
