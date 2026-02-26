@@ -175,6 +175,9 @@
     <meta name="twitter:image:alt" content="Book cover of Break the Block by Sathya Sankaran">
     <meta property="og:image:alt" content="Book cover of Break the Block by Sathya Sankaran">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -199,6 +202,7 @@
             color: var(--text);
             background: var(--light);
             line-height: 1.8;
+            overflow-wrap: break-word;
         }
 
         /* Reading Progress Bar */
@@ -236,6 +240,10 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            padding: 0.5rem 0.75rem;
         }
 
         .back-link:hover {
@@ -255,8 +263,8 @@
             background: transparent;
             border: 2px solid var(--primary);
             color: var(--primary);
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
@@ -302,7 +310,7 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            padding: 0.8rem 1.2rem;
+            padding: 1rem 1.2rem;
             color: var(--text);
             text-decoration: none;
             transition: all 0.3s ease;
@@ -564,21 +572,29 @@
 
         .chapter-card-count {
             font-family: 'Space Mono', monospace;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             color: var(--rail-blue);
         }
 
         .chapter-free-link {
             font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             color: var(--accent);
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            padding: 0.35rem 0.75rem;
+            border: 1.5px solid var(--accent);
+            border-radius: 4px;
+            transition: all 0.3s;
         }
 
         .chapter-free-link:hover {
-            text-decoration: underline;
+            background: var(--accent);
+            color: white;
         }
 
         .chapter-card-toggle {
@@ -641,7 +657,7 @@
 
         .key-lesson-label {
             font-family: 'Space Mono', monospace;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--accent);
@@ -672,7 +688,7 @@
 
         .insight-label {
             font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--rail-blue);
@@ -778,7 +794,7 @@
         }
 
         .course-stat-note {
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             opacity: 0.7;
             margin-top: 0.3rem;
         }
@@ -927,13 +943,7 @@
 
         @media (max-width: 480px) {
             .top-nav {
-                flex-direction: column;
-                gap: 0.5rem;
                 padding: 0.5rem 1rem;
-            }
-
-            .welcome-banner {
-                margin-top: 90px;
             }
         }
 
@@ -1037,7 +1047,7 @@
     <section class="welcome-banner">
         <div class="welcome-banner-inner">
             <a href="index.html" class="welcome-banner-cover">
-                <img src="book-cover.png" alt="Break the Block book cover" width="120" height="auto">
+                <img src="book-cover.png" alt="Break the Block book cover" width="120" height="170">
             </a>
             <div class="welcome-banner-text">
                 <h1>Break the Block</h1>
