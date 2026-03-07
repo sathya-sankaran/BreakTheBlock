@@ -3407,6 +3407,24 @@
     background: linear-gradient(135deg, #8338ec, #a05195);
 }
 
+/* Reader Voices section */
+.reader-voices-section {
+    padding: 5rem 5%;
+    background: var(--light);
+}
+
+.avatar-sm {
+    background: linear-gradient(135deg, #0077b5, #00a0dc);
+}
+
+.avatar-pj {
+    background: linear-gradient(135deg, #d4526e, #f0a500);
+}
+
+.avatar-zj {
+    background: linear-gradient(135deg, #3a86a8, #48bfe3);
+}
+
 /* Comparison Section */
 .comparison-inner {
     max-width: 1000px;
