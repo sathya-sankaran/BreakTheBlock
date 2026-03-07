@@ -33,6 +33,10 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 Disallow: /.git/
+Disallow: /cdn-cgi/
+
+# Prevent indexing of raw PDF files (they lack proper SEO metadata)
+Disallow: /resources/*.pdf
 
 # Sitemap location
 Sitemap: https://www.breaktheblock.in/sitemap.xml
