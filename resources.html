@@ -662,6 +662,35 @@
             }
 
         }
+
+        /* Timeline CTA styles */
+        .timeline-preview-link {
+            color: var(--rail-blue);
+            font-weight: 600;
+        }
+
+        .timeline-cta-wrapper {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .timeline-cta-button {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-cta-button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -669,7 +698,7 @@
         <a href="index.html" class="back-link">Back to Book</a>
         <div class="nav-logo-center">
             <a href="index.html" aria-label="Break the Block Home">
-                <img loading="lazy" src="break-the-block-logo.svg" alt="Break the Block" style="height: 45px; width: auto;">
+                <img loading="lazy" src="break-the-block-logo.svg" alt="Break the Block">
             </a>
         </div>
         <div class="share-dropdown">
@@ -1293,11 +1322,11 @@
                             <li>90 actionable lessons for activists, students, and policymakers</li>
                             <li>Primary source documents (letters, RTIs, reports) referenced throughout</li>
                             <li>Original documents available exclusively online at breaktheblock.in</li>
-                            <li><a href="key-takeaways.html" style="color: var(--rail-blue); font-weight: 600;">Preview key lessons online</a> before getting the book</li>
+                            <li><a href="key-takeaways.html" class="timeline-preview-link">Preview key lessons online</a> before getting the book</li>
                         </ul>
                         <span class="milestone victory">Published</span>
-                        <div style="margin-top: 1.5rem; text-align: center;">
-                            <a href="index.html#get-book" style="display: inline-block; background: var(--secondary); color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 4px; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease;">Get the Book →</a>
+                        <div class="timeline-cta-wrapper">
+                            <a href="index.html#get-book" class="timeline-cta-button">Get the Book →</a>
                         </div>
                     </div>
                 </div>
@@ -1308,11 +1337,11 @@
 
     <!-- Footer -->
     <footer>
-        <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
+        <div class="footer-container">
             <!-- Social Media Links -->
             <div class="footer-social">
-                <p style="margin-bottom: 0.8rem; font-family: 'Space Mono', monospace; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Follow the Author</p>
-                <div style="display: flex; gap: 1rem; justify-content: center;">
+                <p class="footer-social-heading">Follow the Author</p>
+                <div class="footer-social-icons">
                     <a href="https://www.sathyasankaran.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Website">
                         <i class="fas fa-globe"></i>
                     </a>
@@ -1329,7 +1358,7 @@
             </div>
             
             <!-- Copyright and License -->
-            <p style="text-align: center;">
+            <p class="footer-license">
                 &copy; Sathya Sankaran, 2026 (LD-9355/2026-CO). <em>Break the Block: Twelve Lessons for Citizen-Led Change from Bengaluru's Rail Campaign.</em>
             </p>
         </div>

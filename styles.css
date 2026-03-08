@@ -69,6 +69,8 @@
         }
 
         .nav-logo-center img {
+            height: 45px;
+            width: auto;
             transition: opacity 0.3s ease;
         }
 
@@ -4258,6 +4260,19 @@
 .footer-license img {
     height: 1.5rem;
     width: 1.5rem;
+}
+
+/* Author Bio - paragraph spacing */
+.author-bio p + p {
+    margin-top: 1rem;
+}
+
+/* Get Book - ISBN line */
+.get-book-isbn {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
 }
 
 /* Responsive for tier grid */

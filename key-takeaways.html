@@ -769,6 +769,10 @@
             margin-top: 0.3rem;
         }
 
+        .course-stat-note-exclusive {
+            color: var(--secondary);
+        }
+
         .course-stat.highlight {
             background: rgba(255,255,255,0.15);
             border: 2px solid var(--secondary);
@@ -1566,7 +1570,7 @@
                 <div class="course-stat highlight">
                     <div class="course-stat-number">83</div>
                     <div class="course-stat-label">Extended Takeaways</div>
-                    <div class="course-stat-note" style="color: var(--secondary);">Course Exclusive</div>
+                    <div class="course-stat-note course-stat-note-exclusive">Course Exclusive</div>
                 </div>
             </div>
 
@@ -1579,11 +1583,11 @@
     </div><!-- /container -->
 
     <footer>
-        <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
+        <div class="footer-container">
             <!-- Social Media Links -->
             <div class="footer-social">
-                <p style="margin-bottom: 0.8rem; font-family: 'Space Mono', monospace; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Follow the Author</p>
-                <div style="display: flex; gap: 1rem; justify-content: center;">
+                <p class="footer-social-heading">Follow the Author</p>
+                <div class="footer-social-icons">
                     <a href="https://www.sathyasankaran.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Website">
                         <i class="fas fa-globe"></i>
                     </a>
@@ -1600,7 +1604,7 @@
             </div>
 
             <!-- Copyright and License -->
-            <p style="text-align: center;">
+            <p class="footer-license">
                 &copy; Sathya Sankaran, 2026 (LD-9355/2026-CO). <em>Break the Block: Twelve Lessons for Citizen-Led Change from Bengaluru's Rail Campaign.</em>
             </p>
         </div>
