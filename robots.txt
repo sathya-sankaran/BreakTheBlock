@@ -3,6 +3,13 @@
 # Allow all search engines to crawl the site
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /cdn-cgi/
+
+# Block PDF files (they lack proper SEO metadata)
+Disallow: /*.pdf$
 
 # Explicitly allow AI crawlers
 User-agent: GPTBot
@@ -28,15 +35,6 @@ Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
-
-# Disallow any temporary or admin directories (if they exist in future)
-Disallow: /admin/
-Disallow: /private/
-Disallow: /.git/
-Disallow: /cdn-cgi/
-
-# Prevent indexing of raw PDF files (they lack proper SEO metadata)
-Disallow: /resources/*.pdf
 
 # Sitemap location
 Sitemap: https://www.breaktheblock.in/sitemap.xml
