@@ -3407,10 +3407,154 @@
     background: linear-gradient(135deg, #8338ec, #a05195);
 }
 
-/* Reader Voices section */
+/* Reader Voices carousel */
 .reader-voices-section {
     padding: 5rem 5%;
     background: var(--light);
+}
+
+.voices-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.voices-carousel-wrapper {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.voices-carousel {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0.5rem 0 1rem;
+}
+
+.voices-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.voice-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    background: white;
+    border-radius: 4px;
+    padding: 2rem 2rem 1.5rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border: 2px solid var(--light);
+    border-left: 4px solid var(--rail-blue);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.voice-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    border-left-color: var(--accent);
+}
+
+/* Arrows */
+.voices-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--rail-blue);
+    background: white;
+    color: var(--rail-blue);
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.voices-arrow:hover {
+    background: var(--rail-blue);
+    color: white;
+}
+
+.voices-arrow-left {
+    left: -22px;
+}
+
+.voices-arrow-right {
+    right: -22px;
+}
+
+/* Dots */
+.voices-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.voices-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--rail-blue);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.voices-dot.active {
+    background: var(--rail-blue);
+    transform: scale(1.2);
+}
+
+/* Desktop: 3 cards visible at a time */
+@media (min-width: 769px) {
+    .voice-card {
+        flex: 0 0 calc(33.333% - 1.34rem);
+    }
+
+    /* Hide nav when all cards fit (no overflow) — toggled by JS */
+    .voices-carousel-wrapper.no-overflow .voices-arrow {
+        display: none;
+    }
+
+    .voices-carousel-wrapper.no-overflow + .voices-dots {
+        display: none;
+    }
+}
+
+/* Tablet: two cards */
+@media (min-width: 481px) and (max-width: 768px) {
+    .voice-card {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+/* Mobile: arrows inside */
+@media (max-width: 768px) {
+    .voices-arrow-left {
+        left: 8px;
+    }
+
+    .voices-arrow-right {
+        right: 8px;
+    }
+
+    .voices-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
+        background: rgba(255, 255, 255, 0.9);
+    }
 }
 
 .avatar-sm {

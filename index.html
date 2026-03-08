@@ -1145,59 +1145,68 @@
 
     <!-- Reader Voices Section -->
     <section class="reader-voices-section">
-        <div class="testimonials-container">
+        <div class="voices-container">
             <h2 class="testimonials-heading">Reader Voices</h2>
             <p class="testimonials-subtitle">What readers are saying about the book</p>
 
-            <div class="testimonials-grid">
-                <!-- Featured Voice (Zibi - longest/strongest quote) -->
-                <div class="testimonial-card featured reader-voice">
-                    <div class="testimonial-content">
-                        <p class="testimonial-quote">"I met Sathya through the campaign for suburban rail. It's been a journey of decades. A must read for those who want to come together and make things happen! I still have the ₹10 ticket from the first ride flagged off from Hoodi Station — proof for the years of persistence, advocacy, and hope."</p>
-                        <div class="testimonial-footer">
-                            <div class="testimonial-avatar">
-                                <div class="avatar-circle avatar-zj" aria-hidden="true">ZJ</div>
+            <div class="voices-carousel-wrapper">
+                <button class="voices-arrow voices-arrow-left" aria-label="Previous voice" type="button">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="voices-carousel">
+                    <div class="voice-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">"I met Sathya through the campaign for suburban rail. It's been a journey of decades. A must read for those who want to come together and make things happen! I still have the ₹10 ticket from the first ride flagged off from Hoodi Station — proof for the years of persistence, advocacy, and hope."</p>
+                            <div class="testimonial-footer">
+                                <div class="testimonial-avatar">
+                                    <div class="avatar-circle avatar-zj" aria-hidden="true">ZJ</div>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-name">Zibi Jamal</div>
+                                    <div class="author-title">via LinkedIn</div>
+                                </div>
                             </div>
-                            <div class="testimonial-author">
-                                <div class="author-name">Zibi Jamal</div>
-                                <div class="author-title">via LinkedIn</div>
+                        </div>
+                    </div>
+
+                    <div class="voice-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">"What is inspiring is that you did this while having a day job! From coining phrases like Chiku Buku Beku to building technical proposals and being steadfast for over a decade — quite the haul. This book showcases how we can make our cities more livable by bringing about change ourselves."</p>
+                            <div class="testimonial-footer">
+                                <div class="testimonial-avatar">
+                                    <div class="avatar-circle avatar-sm" aria-hidden="true">SM</div>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-name">Sandilya MV</div>
+                                    <div class="author-title">via LinkedIn</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="voice-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">"Remember the ride so well. Some of us joined from Belandur Road station. And of course, the many meetings — IDD, UDD, KUIDFC, DULT, state ministers, central ministers, our MPs, several CMs. Thanks Sathya for the effort to record all this."</p>
+                            <div class="testimonial-footer">
+                                <div class="testimonial-avatar">
+                                    <div class="avatar-circle avatar-pj" aria-hidden="true">PJ</div>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-name">Pranav Jha</div>
+                                    <div class="author-title">via LinkedIn</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Voice 2 -->
-                <div class="testimonial-card reader-voice">
-                    <div class="testimonial-content">
-                        <p class="testimonial-quote">"What is inspiring is that you did this while having a day job! From coining phrases like Chiku Buku Beku to building technical proposals and being steadfast for over a decade — quite the haul. This book showcases how we can make our cities more livable by bringing about change ourselves."</p>
-                        <div class="testimonial-footer">
-                            <div class="testimonial-avatar">
-                                <div class="avatar-circle avatar-sm" aria-hidden="true">SM</div>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-name">Sandilya MV</div>
-                                <div class="author-title">via LinkedIn</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Voice 3 -->
-                <div class="testimonial-card reader-voice">
-                    <div class="testimonial-content">
-                        <p class="testimonial-quote">"Remember the ride so well. Some of us joined from Belandur Road station. And of course, the many meetings — IDD, UDD, KUIDFC, DULT, state ministers, central ministers, our MPs, several CMs. Thanks Sathya for the effort to record all this."</p>
-                        <div class="testimonial-footer">
-                            <div class="testimonial-avatar">
-                                <div class="avatar-circle avatar-pj" aria-hidden="true">PJ</div>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-name">Pranav Jha</div>
-                                <div class="author-title">via LinkedIn</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <button class="voices-arrow voices-arrow-right" aria-label="Next voice" type="button">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
+
+            <div class="voices-dots" role="tablist" aria-label="Voice navigation"></div>
         </div>
     </section>
 
@@ -1759,6 +1768,83 @@
                 }
             });
         });
+
+        // Reader Voices carousel
+        (function() {
+            var carousel = document.querySelector('.voices-carousel');
+            if (!carousel) return;
+
+            var wrapper = document.querySelector('.voices-carousel-wrapper');
+            var cards = carousel.querySelectorAll('.voice-card');
+            var dotsContainer = document.querySelector('.voices-dots');
+            var leftArrow = document.querySelector('.voices-arrow-left');
+            var rightArrow = document.querySelector('.voices-arrow-right');
+            var current = 0;
+            var autoplayTimer;
+
+            // Check if carousel overflows (all cards fit = no nav needed)
+            function checkOverflow() {
+                var hasOverflow = carousel.scrollWidth > carousel.clientWidth + 2;
+                wrapper.classList.toggle('no-overflow', !hasOverflow);
+                if (!hasOverflow) {
+                    clearInterval(autoplayTimer);
+                }
+            }
+            checkOverflow();
+            window.addEventListener('resize', checkOverflow);
+
+            // Build dots
+            cards.forEach(function(_, i) {
+                var dot = document.createElement('button');
+                dot.className = 'voices-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('role', 'tab');
+                dot.setAttribute('aria-label', 'Voice ' + (i + 1));
+                dot.addEventListener('click', function() { goTo(i); });
+                dotsContainer.appendChild(dot);
+            });
+
+            var dots = dotsContainer.querySelectorAll('.voices-dot');
+
+            function goTo(index) {
+                current = ((index % cards.length) + cards.length) % cards.length;
+                carousel.scrollTo({ left: cards[current].offsetLeft - carousel.offsetLeft, behavior: 'smooth' });
+                dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+                resetAutoplay();
+            }
+
+            leftArrow.addEventListener('click', function() { goTo(current - 1); });
+            rightArrow.addEventListener('click', function() { goTo(current + 1); });
+
+            // Sync dots on manual scroll/swipe
+            var scrollTimeout;
+            carousel.addEventListener('scroll', function() {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(function() {
+                    var scrollLeft = carousel.scrollLeft;
+                    var closest = 0;
+                    var minDist = Infinity;
+                    cards.forEach(function(card, i) {
+                        var dist = Math.abs(card.offsetLeft - carousel.offsetLeft - scrollLeft);
+                        if (dist < minDist) { minDist = dist; closest = i; }
+                    });
+                    current = closest;
+                    dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+                }, 100);
+            });
+
+            // Autoplay (only when overflowing)
+            function resetAutoplay() {
+                clearInterval(autoplayTimer);
+                if (carousel.scrollWidth > carousel.clientWidth + 2) {
+                    autoplayTimer = setInterval(function() { goTo(current + 1); }, 5000);
+                }
+            }
+            resetAutoplay();
+
+            // Pause on hover/focus
+            carousel.addEventListener('mouseenter', function() { clearInterval(autoplayTimer); });
+            carousel.addEventListener('mouseleave', resetAutoplay);
+        })();
     </script>
 <script data-goatcounter="https://breaktheblock.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
