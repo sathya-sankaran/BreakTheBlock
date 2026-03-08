@@ -41,3 +41,4 @@
 - Hosted on GitHub Pages at breaktheblock.in
 - GoatCounter analytics on all pages
 - Always commit with descriptive messages; push only when asked
+- `supporting-docs/` is in `.gitignore` — never commit files from this folder (manuscripts, drafts, marketing plans). Use `git add -f` only if the user explicitly asks to override this.
