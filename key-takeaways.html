@@ -765,11 +765,16 @@
 
         /* Insight Cards */
         .insight-card {
-            border-left: 4px solid var(--rail-blue);
+            border: 2px solid var(--border-blue);
             padding: 1rem 1.25rem;
             margin-bottom: 0.75rem;
             background: white;
-            border-radius: 0 8px 8px 0;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+
+        .insight-card:hover {
+            border-color: var(--accent);
         }
 
         .insight-label {

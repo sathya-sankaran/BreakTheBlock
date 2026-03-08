@@ -33,6 +33,9 @@
             --light: #f5f5f0;
             --text: #2d2d2d;
             --rail-blue: #004e89;
+            --border-blue: var(--border-blue);
+            --border-accent: var(--border-accent);
+            --text-muted: #555;
         }
 
         body {
@@ -808,11 +811,10 @@
         .testimonial-card {
             position: relative;
             background: white;
-            border-radius: 4px;
+            border-radius: 8px;
             padding: 2rem 2rem 1.5rem;
             box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            border: 2px solid var(--light);
-            border-left: 4px solid var(--rail-blue);
+            border: 2px solid var(--border-blue);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
@@ -820,14 +822,14 @@
 
         .testimonial-card.featured {
             grid-column: span 2;
-            border-left-color: var(--accent);
+            border-color: rgba(255, 107, 53, 0.3);
             background: linear-gradient(135deg, rgba(255, 107, 53, 0.03), rgba(0, 78, 137, 0.03));
         }
 
         .testimonial-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 32px rgba(0,0,0,0.12);
-            border-left-color: var(--accent);
+            border-color: var(--accent);
         }
 
         .testimonial-content {
@@ -1733,13 +1735,15 @@
         .chapter-preview-card {
             background: var(--light);
             padding: 2.5rem;
-            border-left: 6px solid var(--accent);
+            border: 2px solid var(--border-accent);
+            border-radius: 8px;
             transition: all 0.3s;
             cursor: pointer;
         }
 
         .chapter-preview-card:hover {
-            transform: translateX(10px);
+            border-color: var(--accent);
+            transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
@@ -2279,7 +2283,8 @@
             background: var(--light);
             padding: 2rem;
             text-align: center;
-            border-left: 4px solid var(--accent);
+            border: 2px solid var(--border-accent);
+            border-radius: 8px;
         }
 
         .stat-number {
@@ -2333,13 +2338,15 @@
         .chapter-card {
             background: white;
             padding: 2rem;
-            border-left: 4px solid var(--rail-blue);
+            border: 2px solid var(--border-blue);
+            border-radius: 8px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .chapter-card:hover {
-            transform: translateX(10px);
+            transform: translateY(-3px);
             border-color: var(--accent);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
         }
 
         .chapter-number {
@@ -2576,11 +2583,18 @@
 
         .event-card {
             background: white;
-            border-left: 5px solid var(--accent);
+            border: 2px solid var(--border-accent);
+            border-radius: 8px;
             padding: 2.5rem;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+        }
+
+        .event-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
         .event-card::before {
@@ -2593,11 +2607,6 @@
             background: linear-gradient(135deg, transparent 0%, rgba(255, 107, 53, 0.05) 100%);
             opacity: 0;
             transition: opacity 0.3s;
-        }
-
-        .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
         .event-card:hover::before {
@@ -2815,7 +2824,8 @@
             padding: 2rem;
             text-align: center;
             margin-bottom: 3rem;
-            border-left: 4px solid var(--accent);
+            border: 2px solid var(--border-accent);
+            border-radius: 8px;
         }
 
         .preview-cta p {
@@ -3253,9 +3263,15 @@
 
         .retailer-card {
             background: white;
-            border-radius: 4px;
+            border-radius: 8px;
             padding: 2rem 1.5rem;
             text-align: center;
+            border: 2px solid var(--border-blue);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .retailer-card:hover {
+            border-color: var(--accent);
         }
 
         .retailer-card.coming-soon {
@@ -3429,7 +3445,6 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     padding: 0.5rem 0 1rem;
 }
@@ -3442,11 +3457,10 @@
     flex: 0 0 100%;
     scroll-snap-align: start;
     background: white;
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 2rem 2rem 1.5rem;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-    border: 2px solid var(--light);
-    border-left: 4px solid var(--rail-blue);
+    border: 2px solid var(--border-blue);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
@@ -3455,7 +3469,7 @@
 .voice-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-    border-left-color: var(--accent);
+    border-color: var(--accent);
 }
 
 /* Arrows */
@@ -4526,8 +4540,7 @@ a[target="_blank"]::after {
     .chapter-card:hover,
     .event-card:hover,
     .purchase-card.active:hover,
-    .retailer-card:hover,
-    .lesson-card:hover {
+    .retailer-card:hover {
         transform: translateY(-4px);
     }
 
@@ -4544,8 +4557,7 @@ a[target="_blank"]::after {
     .chapter-card:hover,
     .event-card:hover,
     .purchase-card.active:hover,
-    .retailer-card:hover,
-    .lesson-card:hover {
+    .retailer-card:hover {
         transform: none;
     }
 

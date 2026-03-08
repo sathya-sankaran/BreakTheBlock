@@ -119,17 +119,6 @@
             line-height: 1.6;
         }
 
-        /* Reading Progress Bar */
-        .reading-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--secondary));
-            z-index: 9999;
-            transition: width 0.1s ease;
-        }
 
         /* Top Navigation */
         .top-nav {
@@ -200,9 +189,7 @@
             font-size: 0.9rem;
         }
 
-        
 
-        
 
         .share-menu {
             position: absolute;
@@ -281,7 +268,7 @@
         .resources-hero {
             background: linear-gradient(135deg, var(--primary) 0%, #2d2d2d 100%);
             color: white;
-            padding: 7rem 5% 5rem;
+            padding: 5rem 5% 3rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -307,18 +294,18 @@
 
         .resources-hero h1 {
             font-family: 'Space Mono', monospace;
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             position: relative;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
         .resources-hero .subtitle {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--secondary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             font-weight: 600;
             position: relative;
         }
@@ -482,30 +469,26 @@
 
         /* Document Cards */
         .document-card {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.08), rgba(0, 78, 137, 0.08));
-            border-left: 4px solid var(--rail-blue);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.06), rgba(0, 78, 137, 0.06));
+            border: 2px solid var(--border-blue);
             padding: 1.2rem 1.5rem;
             margin: 1.5rem 0;
-            border-radius: 6px;
+            border-radius: 8px;
             transition: all 0.3s ease;
+            position: relative;
         }
 
         .document-card:hover {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.12), rgba(0, 78, 137, 0.12));
-            border-left-color: var(--accent);
-            transform: translateX(-5px);
-            box-shadow: 0 4px 15px rgba(0, 78, 137, 0.2);
-        }
-
-        .timeline-item:nth-child(even) .document-card:hover {
-            transform: translateX(5px);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(0, 78, 137, 0.1));
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 78, 137, 0.15);
         }
 
         .document-card a {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 0.8rem;
-            font-weight: 600;
             color: var(--rail-blue);
             text-decoration: none;
             transition: color 0.3s ease;
@@ -515,16 +498,55 @@
             color: var(--accent);
         }
 
+        .document-card .doc-title {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.25rem;
+            line-height: 1.3;
+        }
+
+        .document-card .doc-desc {
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: block;
+            line-height: 1.5;
+        }
+
         .doc-icon {
             font-size: 1.5rem;
             flex-shrink: 0;
+            margin-top: 0.15rem;
         }
 
         .external-icon {
             margin-left: auto;
             font-size: 0.9rem;
             opacity: 0.6;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
         }
+
+        /* Document type badges */
+        .doc-type-badge {
+            display: inline-block;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.55rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 0.15rem 0.45rem;
+            border-radius: 3px;
+            position: absolute;
+            top: -0.5rem;
+            left: 1rem;
+            color: white;
+        }
+
+        .doc-type-badge.pdf { background: #dc3545; }
+        .doc-type-badge.link { background: var(--rail-blue); }
+        .doc-type-badge.image { background: #28a745; }
+        .doc-type-badge.map { background: #6f42c1; }
 
         /* Timeline Dot */
         .timeline-dot {
@@ -649,7 +671,7 @@
         .news-coverage {
             margin-top: 2rem;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(0, 78, 137, 0.2);
+            border-top: 1px solid var(--border-blue);
         }
 
         .news-coverage h3.media-coverage-heading {
@@ -691,8 +713,12 @@
         }
 
         .news-links a::before {
-            content: '📰';
-            font-size: 0.9rem;
+            content: '\f1ea';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 0.75rem;
+            color: var(--rail-blue);
+            opacity: 0.6;
         }
 
         .news-links a:hover {
@@ -727,11 +753,11 @@
             }
 
             .resources-hero {
-                padding: 6rem 5% 4rem;
+                padding: 5rem 5% 2.5rem;
             }
 
             .resources-hero h1 {
-                font-size: 2rem;
+                font-size: 1.6rem;
             }
 
             .resources-hero .subtitle {
@@ -745,27 +771,38 @@
             .year-nav {
                 top: 60px;
                 gap: 0.5rem;
-                padding: 1rem 2%;
+                padding: 0.8rem 2%;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
+                mask-image: linear-gradient(to right, black 90%, transparent 100%);
+                scrollbar-width: none;
+            }
+
+            .year-nav::-webkit-scrollbar {
+                display: none;
             }
 
             .year-nav a {
                 font-size: 0.75rem;
                 padding: 0.4rem 0.8rem;
+                flex-shrink: 0;
             }
 
             .timeline::before {
-                left: 20px;
+                left: 16px;
             }
 
             .timeline-item:nth-child(odd) .timeline-content,
             .timeline-item:nth-child(even) .timeline-content {
-                width: calc(100% - 60px);
-                margin-left: 60px;
+                width: calc(100% - 48px);
+                margin-left: 48px;
                 text-align: left;
             }
 
             .timeline-dot {
-                left: 20px;
+                left: 16px;
             }
 
             .timeline-dot:hover {
@@ -785,15 +822,10 @@
                 font-size: 0.95rem;
             }
 
-            .timeline-item:nth-child(even) .document-card:hover {
-                transform: translateX(-5px);
-            }
         }
     </style>
 </head>
 <body>
-    <div class="reading-progress" id="progressBar"></div>
-
     <nav class="top-nav">
         <a href="index.html" class="back-link">Back to Book</a>
         <div class="nav-logo-center">
@@ -867,16 +899,18 @@
                             <li>First ideas about using existing railway tracks for commuter service</li>
                         </ul>
                         <div class="document-card">
+                            <span class="doc-type-badge link">LINK</span>
                             <a href="http://praja.in/en/nammarailu" target="_blank">
                                 <i class="fas fa-link doc-icon"></i>
-                                <span><strong>Praja.in NammaRailu Campaign Website</strong> - Original online advocacy platform where the movement began</span>
+                                <span><span class="doc-title">Praja.in NammaRailu Campaign Website</span><span class="doc-desc">Original online advocacy platform where the movement began</span></span>
                                 <i class="fas fa-external-link-alt external-icon"></i>
                             </a>
                         </div>
                         <div class="document-card">
+                            <span class="doc-type-badge map">MAP</span>
                             <a href="resources/crs_schematic_map_original_2009.jpg" target="_blank">
                                 <i class="fas fa-map doc-icon"></i>
-                                <span><strong>Original Bengaluru Commuter Rail Schematic Map</strong> - The first-ever imagination of the suburban rail network, hand-drawn by Sathya Sankaran for Praja. This map anchored the vision that became the Praja report and eventually the RITES feasibility study</span>
+                                <span><span class="doc-title">Original Bengaluru Commuter Rail Schematic Map</span><span class="doc-desc">First-ever suburban rail network vision, hand-drawn by Sathya Sankaran for Praja. Anchored the campaign from report to RITES feasibility study</span></span>
                                 <i class="fas fa-external-link-alt external-icon"></i>
                             </a>
                         </div>
@@ -900,16 +934,34 @@
                             <li>Detailed study of successful suburban rail systems worldwide</li>
                         </ul>
                         <div class="document-card">
+                            <span class="doc-type-badge pdf">PDF</span>
                             <a href="resources/praja_commuter_rail_report_2010.pdf" target="_blank">
                                 <i class="fas fa-file-pdf doc-icon"></i>
-                                <span><strong>June 2010: Praja Commuter Rail Report</strong> - Comprehensive proposal documenting the feasibility and benefits of suburban rail for Bengaluru</span>
+                                <span><span class="doc-title">June 2010: Praja Commuter Rail Report</span><span class="doc-desc">Comprehensive proposal documenting the feasibility and benefits of suburban rail for Bengaluru</span></span>
                                 <i class="fas fa-external-link-alt external-icon"></i>
                             </a>
                         </div>
                         <div class="document-card">
+                            <span class="doc-type-badge pdf">PDF</span>
                             <a href="resources/swr_track_utilization_rti_2010.pdf" target="_blank">
                                 <i class="fas fa-file-pdf doc-icon"></i>
-                                <span><strong>June 23, 2010: South Western Railway Track Utilization RTI Response</strong> - Critical data showing railway line capacity and utilization rates</span>
+                                <span><span class="doc-title">June 23, 2010: South Western Railway Track Utilization RTI Response</span><span class="doc-desc">Critical data showing railway line capacity and utilization rates</span></span>
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </a>
+                        </div>
+                        <div class="document-card">
+                            <span class="doc-type-badge pdf">PDF</span>
+                            <a href="resources/crs_one_pager.pdf" target="_blank">
+                                <i class="fas fa-file-pdf doc-icon"></i>
+                                <span><span class="doc-title">Bengaluru Commuter Rail Service — One Pager</span><span class="doc-desc">One-page campaign handout: SPV framework, 5 key requirements, route schematic. Used in official meetings throughout the campaign</span></span>
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </a>
+                        </div>
+                        <div class="document-card">
+                            <span class="doc-type-badge link">LINK</span>
+                            <a href="http://praja.in/en/blog/silkboard/2010/05/09/report-bangalore-local-train-ride-meet" target="_blank">
+                                <i class="fas fa-link doc-icon"></i>
+                                <span><span class="doc-title">Praja.in: CRS Bengaluru Ride and Meet (May 2010)</span><span class="doc-desc">Report from the first organized train ride that bridged online advocacy to real-world action</span></span>
                                 <i class="fas fa-external-link-alt external-icon"></i>
                             </a>
                         </div>
@@ -933,16 +985,18 @@
                             <li>Building credibility with government stakeholders</li>
                         </ul>
                         <div class="document-card">
+                            <span class="doc-type-badge pdf">PDF</span>
                             <a href="resources/terms_of_reference_cistup_praja_2011.pdf" target="_blank">
                                 <i class="fas fa-file-pdf doc-icon"></i>
-                                <span><strong>May 27, 2011: Terms of Reference - CiSTUP/Praja Study</strong> - Framework for professional academic study of suburban rail feasibility</span>
+                                <span><span class="doc-title">May 27, 2011: Terms of Reference - CiSTUP/Praja Study</span><span class="doc-desc">Framework for professional academic study of suburban rail feasibility</span></span>
                                 <i class="fas fa-external-link-alt external-icon"></i>
                             </a>
                         </div>
                         <div class="document-card">
+                            <span class="doc-type-badge pdf">PDF</span>
                             <a href="resources/railway_tracks_rti_2011.pdf" target="_blank">
                                 <i class="fas fa-file-pdf doc-icon"></i>
-                                <span><strong>October 19, 2011: Railway Tracks RTI Response</strong> - Additional infrastructure data obtained through Right to Information</span>
+                                <span><span class="doc-title">October 19, 2011: Railway Tracks RTI Response</span><span class="doc-desc">Additional infrastructure data obtained through Right to Information</span></span>
                                 <i class="fas fa-external-link-alt external-icon"></i>
                             </a>
                         </div>
@@ -965,9 +1019,18 @@
                             <li>Proposes development of suburban rail services in three phases</li>
                         </ul>
                         <div class="document-card">
+                            <span class="doc-type-badge pdf">PDF</span>
                             <a href="resources/rites_draft_report_bangalore_suburban_2012.pdf" target="_blank">
                                 <i class="fas fa-file-pdf doc-icon"></i>
-                                <span><strong>June 2012: RITES Draft Report on Commuter Rail System for Bangalore</strong> - Official feasibility study proposing suburban rail corridors and infrastructure requirements</span>
+                                <span><span class="doc-title">June 2012: RITES Draft Report on Commuter Rail System for Bangalore</span><span class="doc-desc">Official feasibility study proposing suburban rail corridors and infrastructure requirements</span></span>
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </a>
+                        </div>
+                        <div class="document-card">
+                            <span class="doc-type-badge pdf">PDF</span>
+                            <a href="resources/prajaraag_commuter_rail_2012.pdf" target="_blank">
+                                <i class="fas fa-file-pdf doc-icon"></i>
+                                <span><span class="doc-title">September 2012: Praja RAAG Commuter Rail Report</span><span class="doc-desc">Updated citizen advocacy report by Praja RAAG — evolution of the 2010 report with RITES findings and refined SPV framework</span></span>
                                 <i class="fas fa-external-link-alt external-icon"></i>
                             </a>
                         </div>
@@ -1094,9 +1157,10 @@
                         </div>
                         
                         <div class="document-card">
+                            <span class="doc-type-badge pdf">PDF</span>
                             <a href="resources/railway_board_suburban_policy_2016.pdf" target="_blank">
                                 <i class="fas fa-file-pdf doc-icon"></i>
-                                <span><strong>December 6, 2016: Railway Board Draft Policy on Suburban Rail Systems</strong> - Federal government issues comprehensive policy guidelines for suburban rail implementation across India, responding to demands from multiple states including Karnataka</span>
+                                <span><span class="doc-title">December 6, 2016: Railway Board Draft Policy on Suburban Rail Systems</span><span class="doc-desc">Federal policy guidelines for suburban rail implementation across India, responding to demands from multiple states</span></span>
                                 <i class="fas fa-external-link-alt external-icon"></i>
                             </a>
                         </div>
@@ -1106,6 +1170,14 @@
                             <li>Mandates exclusive tracks for suburban services</li>
                             <li>Campaign's advocacy contributes to nationwide policy shift</li>
                         </ul>
+                        <div class="document-card">
+                            <span class="doc-type-badge pdf">PDF</span>
+                            <a href="resources/crs_presentation_chief_secretary_2016.pdf" target="_blank">
+                                <i class="fas fa-file-pdf doc-icon"></i>
+                                <span><span class="doc-title">October 18, 2016: Presentation to Chief Secretary of Karnataka</span><span class="doc-desc">Campaign presentation delivered just two days after 8,000 citizens formed a human chain against the Steel Flyover</span></span>
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-dot"></div>
@@ -1153,9 +1225,10 @@
                             <li>Federal-state coordination begins</li>
                         </ul>
                         <div class="document-card">
+                            <span class="doc-type-badge pdf">PDF</span>
                             <a href="resources/cm_siddaramaiah_letter_2017.pdf" target="_blank">
                                 <i class="fas fa-file-pdf doc-icon"></i>
-                                <span><strong>July 29, 2017: Karnataka CM Siddaramaiah's Letter to Railway Minister</strong> - State government formally requests suburban rail implementation</span>
+                                <span><span class="doc-title">July 29, 2017: Karnataka CM Siddaramaiah's Letter to Railway Minister</span><span class="doc-desc">State government formally requests suburban rail implementation</span></span>
                                 <i class="fas fa-external-link-alt external-icon"></i>
                             </a>
                         </div>
@@ -1165,9 +1238,10 @@
                             <li>Advocates using existing infrastructure rather than creating exclusive new tracks</li>
                         </ul>
                         <div class="document-card">
+                            <span class="doc-type-badge pdf">PDF</span>
                             <a href="resources/railway_minister_letter_2017.pdf" target="_blank">
                                 <i class="fas fa-file-pdf doc-icon"></i>
-                                <span><strong>November 20, 2017: Railway Minister Piyush Goyal's Letter to CM Siddaramaiah</strong> - Federal government responds with framework for implementation</span>
+                                <span><span class="doc-title">November 20, 2017: Railway Minister Piyush Goyal's Letter to CM Siddaramaiah</span><span class="doc-desc">Federal government responds with framework for implementation</span></span>
                                 <i class="fas fa-external-link-alt external-icon"></i>
                             </a>
                         </div>
@@ -1226,9 +1300,18 @@
                             <li>Campaign team analyzes RITES feasibility report</li>
                         </ul>
                         <div class="document-card">
+                            <span class="doc-type-badge pdf">PDF</span>
                             <a href="resources/feedback_to_rites_report_2019.pdf" target="_blank">
                                 <i class="fas fa-file-pdf doc-icon"></i>
-                                <span><strong>January 3, 2019: Praja RAAG Feedback to RITES Feasibility Report</strong> - Detailed technical critique of government's 2018 feasibility study, highlighting issues with proposed corridors, station design, and fare collection systems</span>
+                                <span><span class="doc-title">January 3, 2019: Praja RAAG Feedback to RITES Feasibility Report</span><span class="doc-desc">Technical critique of the 2018 feasibility study — issues with corridors, station design, and fare collection</span></span>
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </a>
+                        </div>
+                        <div class="document-card">
+                            <span class="doc-type-badge pdf">PDF</span>
+                            <a href="resources/crs_presentation_ed_railways.pdf" target="_blank">
+                                <i class="fas fa-file-pdf doc-icon"></i>
+                                <span><span class="doc-title">Presentation to Executive Director, Indian Railways</span><span class="doc-desc">Citizens presenting directly to federal railway bureaucracy in Delhi to advance the suburban rail case</span></span>
                                 <i class="fas fa-external-link-alt external-icon"></i>
                             </a>
                         </div>
@@ -1307,13 +1390,38 @@
                             <li>Book manuscript documenting the campaign journey completed</li>
                         </ul>
                         <div class="document-card">
+                            <span class="doc-type-badge map">MAP</span>
                             <a href="https://upload.wikimedia.org/wikipedia/commons/b/b4/NammaMetroUptoPh-3withKannada.png" target="_blank">
                                 <i class="fas fa-map doc-icon"></i>
-                                <span><strong>Bengaluru Rail Network Map by Capt. Naveen Chandra</strong> - The comprehensive rail network schematic drawn by Naveen, now preserved on Wikipedia. Naveen passed away in February 2026; this book is dedicated to his memory</span>
+                                <span><span class="doc-title">Bengaluru Rail Network Map by Capt. Naveen Chandra</span><span class="doc-desc">Comprehensive rail network schematic preserved on Wikipedia. Naveen passed away in February 2026; this book is dedicated to his memory</span></span>
                                 <i class="fas fa-external-link-alt external-icon"></i>
                             </a>
                         </div>
-                        
+                        <div class="document-card">
+                            <span class="doc-type-badge image">IMG</span>
+                            <a href="resources/carmelaram_station_newspaper.jpg" target="_blank">
+                                <i class="fas fa-image doc-icon"></i>
+                                <span><span class="doc-title">Carmelaram Station 2.0 — Times of India</span><span class="doc-desc">40,000 daily footfalls at Carmelaram station near Wipro campus — proof the campaign's vision materialized</span></span>
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </a>
+                        </div>
+                        <div class="document-card">
+                            <span class="doc-type-badge link">LINK</span>
+                            <a href="https://kride.in/wp-content/uploads/2021/09/Detailed-Project-Report-BSRP.pdf" target="_blank">
+                                <i class="fas fa-link doc-icon"></i>
+                                <span><span class="doc-title">K-RIDE Detailed Project Report (DPR)</span><span class="doc-desc">The official Detailed Project Report for Bengaluru Suburban Rail — the document the entire decade-long campaign was pushing for</span></span>
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </a>
+                        </div>
+                        <div class="document-card">
+                            <span class="doc-type-badge link">LINK</span>
+                            <a href="https://www.pmindia.gov.in/en/news_updates/pm-inaugurates-and-lays-the-foundation-stone-of-multiple-rail-and-road-infrastructure-projects-worth-over-rs-27000-crore-in-bengaluru/" target="_blank">
+                                <i class="fas fa-link doc-icon"></i>
+                                <span><span class="doc-title">PM Modi Lays Foundation Stone (June 2022)</span><span class="doc-desc">Foundation stone for Bengaluru Suburban Rail project worth over ₹27,000 crore — highest-level political validation</span></span>
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </a>
+                        </div>
+
                         <div class="news-coverage">
                             <h3 class="media-coverage-heading">Media Coverage:</h3>
                             <ul class="news-links">
@@ -1389,16 +1497,6 @@
     </footer>
 
     <script>
-        // Reading progress bar
-        window.addEventListener('scroll', function() {
-            const progressBar = document.getElementById('progressBar');
-            const windowHeight = window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight - windowHeight;
-            const scrolled = window.scrollY;
-            const progress = (scrolled / documentHeight) * 100;
-            progressBar.style.width = progress + '%';
-        });
-
         // Scroll animations with Intersection Observer
         const observerOptions = {
             threshold: 0.1,
