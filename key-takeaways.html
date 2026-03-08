@@ -266,6 +266,7 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 
     <style>
         * {
@@ -302,128 +303,6 @@
             z-index: 9999;
             transition: width 0.1s ease;
         }
-
-        /* Top Navigation */
-        .top-nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .back-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-            display: inline-flex;
-            align-items: center;
-            min-height: 44px;
-            padding: 0.5rem 0.75rem;
-        }
-
-        .back-link:hover {
-            color: var(--secondary);
-        }
-
-        .back-link::before {
-            content: '\2190 ';
-        }
-
-        /* Share Dropdown */
-        .share-dropdown {
-            position: relative;
-        }
-
-        .share-toggle {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .share-menu {
-            position: absolute;
-            top: calc(100% + 10px);
-            right: 0;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            min-width: 180px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .share-menu.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .share-menu::before {
-            content: '';
-            position: absolute;
-            top: -6px;
-            right: 15px;
-            width: 12px;
-            height: 12px;
-            background: white;
-            transform: rotate(45deg);
-        }
-
-        .share-menu-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 1rem 1.2rem;
-            color: var(--text);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-family: 'Crimson Pro', serif;
-            font-size: 0.95rem;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .share-menu-item:last-child { border-bottom: none; }
-        .share-menu-item:first-child { border-radius: 8px 8px 0 0; }
-        .share-menu-item:last-child { border-radius: 0 0 8px 8px; }
-
-        .share-menu-item:hover {
-            background: var(--light);
-            padding-left: 1.5rem;
-        }
-
-        .share-menu-item i {
-            width: 20px;
-            font-size: 1rem;
-        }
-
-        .share-menu-item:nth-child(1):hover { color: #1DA1F2; }
-        .share-menu-item:nth-child(2):hover { color: #1877F2; }
-        .share-menu-item:nth-child(3):hover { color: #0A66C2; }
-        .share-menu-item:nth-child(4):hover { color: #25D366; }
-        .share-menu-item:nth-child(5):hover { color: #666; }
 
         /* ========== WELCOME BANNER ========== */
         .welcome-banner {
@@ -984,10 +863,6 @@
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
-            .top-nav {
-                padding: 0.75rem 1rem;
-            }
-
             .welcome-banner {
                 margin-top: 60px;
             }
@@ -1029,12 +904,6 @@
 
             .cta-button {
                 justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .top-nav {
-                padding: 0.5rem 1rem;
             }
         }
 
