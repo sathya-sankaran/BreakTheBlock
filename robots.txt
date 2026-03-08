@@ -8,8 +8,8 @@ Disallow: /private/
 Disallow: /.git/
 Disallow: /cdn-cgi/
 
-# Block PDF files (they lack proper SEO metadata)
-Disallow: /*.pdf$
+# Prevent indexing of raw PDF files in resources (they lack proper SEO metadata)
+Disallow: /resources/*.pdf
 
 # Explicitly allow AI crawlers
 User-agent: GPTBot
