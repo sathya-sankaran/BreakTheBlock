@@ -425,8 +425,8 @@
         .share-menu-item:nth-child(4):hover { color: #25D366; }
         .share-menu-item:nth-child(5):hover { color: #666; }
 
-        /* Hero Section */
-        .hero {
+        /* Hero Section (homepage only — scoped to <section> to avoid clashing with subpage .hero) */
+        section.hero {
             min-height: 100vh;
             background: linear-gradient(135deg, var(--primary) 0%, var(--rail-blue) 100%);
             color: white;
@@ -438,7 +438,7 @@
             padding: 2rem;
         }
 
-        .hero::before {
+        section.hero::before {
             content: '';
             position: absolute;
             width: 200%;
@@ -2345,8 +2345,8 @@
 
 
 
-        /* Hero Typography */
-        .hero h1 {
+        /* Hero Typography (homepage only) */
+        section.hero h1 {
             font-size: clamp(2.5rem, 7vw, 6rem);
             font-weight: 700;
             margin-bottom: 1rem;
@@ -2356,7 +2356,7 @@
             overflow-wrap: break-word;
         }
 
-        .hero .tagline {
+        section.hero .tagline {
             font-size: clamp(1.2rem, 3vw, 1.8rem);
             font-weight: 300;
             margin-bottom: 0.5rem;
@@ -2366,7 +2366,7 @@
             letter-spacing: 2px;
         }
 
-        .hero .subtitle {
+        section.hero .subtitle {
             font-size: clamp(1rem, 2.5vw, 1.4rem);
             margin-bottom: 3rem;
             opacity: 0.9;
@@ -4575,7 +4575,7 @@ select:focus-visible,
 /* Dark-background focus styles (nav, hero, dark sections) */
 nav a:focus-visible,
 nav button:focus-visible,
-.hero a:focus-visible,
+section.hero a:focus-visible,
 .cta-footer a:focus-visible,
 .mobile-purchase-cta:focus-visible,
 .chapter-purchase-float-cta:focus-visible {
@@ -4666,7 +4666,7 @@ a[target="_blank"]::after {
         scroll-behavior: auto !important;
     }
 
-    .hero::before {
+    section.hero::before {
         animation: none;
     }
 
