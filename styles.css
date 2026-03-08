@@ -4090,6 +4090,19 @@
     width: 1.5rem;
 }
 
+/* Author Bio - paragraph spacing */
+.author-bio p + p {
+    margin-top: 1rem;
+}
+
+/* Get Book - ISBN line */
+.get-book-isbn {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+}
+
 /* Responsive for tier grid */
 @media (max-width: 768px) {
     .tier-grid {

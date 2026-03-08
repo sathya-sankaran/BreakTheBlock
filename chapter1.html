@@ -85,6 +85,9 @@
         body{font-family:'EB Garamond',serif;color:var(--text);background:var(--light);line-height:1.8}
         .reading-progress{position:fixed;top:0;left:0;width:0%;height:4px;background:linear-gradient(90deg,var(--accent),var(--secondary));z-index:9999}
         .top-nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:1000;padding:1rem 2rem;box-shadow:0 2px 10px rgba(0,0,0,0.1);display:flex;justify-content:space-between;align-items:center}
+        .nav-logo-center{display:flex;justify-content:center;align-items:center}
+        .nav-logo-center img{height:45px;width:auto;transition:opacity 0.3s ease}
+        .nav-logo-center img:hover{opacity:0.8}
         .back-link{color:var(--accent);text-decoration:none;font-family:'Space Mono',monospace;font-size:0.9rem;text-transform:uppercase;letter-spacing:1px}
         .back-link::before{content:'← '}
         .share-dropdown{position:relative;justify-self:end}
@@ -142,7 +145,7 @@
         <a href="index.html#free-preview" class="back-link">Back to Book</a>
         <div class="nav-logo-center">
             <a href="index.html" aria-label="Break the Block Home">
-                <img loading="lazy" src="break-the-block-logo.svg" alt="Break the Block" style="height: 45px; width: auto;">
+                <img loading="lazy" src="break-the-block-logo.svg" alt="Break the Block">
             </a>
         </div>
         <div class="share-dropdown">
@@ -321,11 +324,11 @@ Use digital platforms to refine ideas and identify who is willing to engage seri
     </div>
 
     <footer>
-        <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
+        <div class="footer-container">
             <!-- Social Media Links -->
             <div class="footer-social">
-                <p style="margin-bottom: 0.8rem; font-family: 'Space Mono', monospace; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Follow the Author</p>
-                <div style="display: flex; gap: 1rem; justify-content: center;">
+                <p class="footer-social-heading">Follow the Author</p>
+                <div class="footer-social-icons">
                     <a href="https://www.sathyasankaran.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Website">
                         <i class="fas fa-globe"></i>
                     </a>
@@ -342,7 +345,7 @@ Use digital platforms to refine ideas and identify who is willing to engage seri
             </div>
             
             <!-- Copyright -->
-            <p style="text-align: center;">
+            <p class="footer-license">
                 &copy; Sathya Sankaran, 2026 (LD-9355/2026-CO). <em>Break the Block: Twelve Lessons for Citizen-Led Change from Bengaluru's Rail Campaign.</em>
             </p>
         </div>
