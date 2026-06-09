@@ -3755,6 +3755,10 @@
     background: linear-gradient(135deg, #3a86a8, #48bfe3);
 }
 
+.avatar-di {
+    background: linear-gradient(135deg, #ff9900, #ff6b35);
+}
+
 /* Comparison Section */
 .comparison-inner {
     max-width: 1000px;
